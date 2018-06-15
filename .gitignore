@@ -1,0 +1,10 @@
+# Ignored Folders:
+/.git
+/.idea
+/bin
+/obj
+
+# Ignored Files:
+.gitattributes
+BombGameSolver.csproj
+BombGameSolver.sln

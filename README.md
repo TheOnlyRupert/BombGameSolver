@@ -1,0 +1,1 @@
+Helper program for the game "Keep Talking and Nobody Explodes". It's really just a proof of concept for myself.
