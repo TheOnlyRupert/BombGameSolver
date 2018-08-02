@@ -1,0 +1,35 @@
+﻿<Page x:Class="BombGameSolver.Source.Modules.MazeModule"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      mc:Ignorable="d">
+    <Grid Background="DarkSlateGray">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <StackPanel Orientation="Horizontal" Grid.Row="0" VerticalAlignment="Bottom" HorizontalAlignment="Center">
+                <StackPanel>
+                    <TextBlock Text="Node" Foreground="White" FontSize="18" />
+                    <TextBox Text="11" FontSize="60" TextAlignment="Center" MaxLength="2" MinWidth="80" />
+                </StackPanel>
+                <StackPanel Margin="5 0 5 0">
+                    <TextBlock Text="You" Foreground="White" FontSize="18" />
+                    <TextBox Text="16" FontSize="60" TextAlignment="Center" MaxLength="2" MinWidth="80" />
+                </StackPanel>
+                <StackPanel>
+                    <TextBlock Text="Target" Foreground="White" FontSize="18" />
+                    <TextBox Text="23" FontSize="60" TextAlignment="Center" MaxLength="2" MinWidth="80" />
+                </StackPanel>
+            </StackPanel>
+            <TextBox Text="UP, LEFT, DOWN, DOWN, DOWN, LEFT, UP, LEFT DOWN, DOWN, DOWN, RIGHT" Grid.Row="1"
+                     FontSize="40"
+                     TextWrapping="Wrap" Background="Transparent" Foreground="White" MinWidth="150"
+                     TextAlignment="Left" VerticalAlignment="Center" Margin="30 0 30 0" MinHeight="110"
+                     IsEnabled="False" />
+        </Grid>
+    </Grid>
+</Page>

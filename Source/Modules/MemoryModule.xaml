@@ -1,0 +1,45 @@
+﻿<Page x:Class="BombGameSolver.Source.Modules.MemoryModule"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      mc:Ignorable="d">
+    <Grid Background="DarkSlateGray">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Image Source="../../Resources/memory/background.png" Margin="10" Grid.Column="0" />
+        <Image Source="../../Resources/memory/main_1.png" Margin="10" Grid.Column="0" />
+        <Image Source="../../Resources/memory/fir_1.png" Margin="10" Grid.Column="0" />
+        <Image Source="../../Resources/memory/sec_2.png" Margin="10" Grid.Column="0" />
+        <Image Source="../../Resources/memory/thi_3.png" Margin="10" Grid.Column="0" />
+        <Image Source="../../Resources/memory/fou_4.png" Margin="10" Grid.Column="0" />
+        <Image Source="../../Resources/memory/light_1.png" Margin="10" Grid.Column="0" />
+        <Image Source="../../Resources/memory/light_2.png" Margin="10" Grid.Column="0" />
+        <Image Source="../../Resources/memory/light_3.png" Margin="10" Grid.Column="0" />
+        <Image Source="../../Resources/memory/light_4.png" Margin="10" Grid.Column="0" />
+        <Image Source="../../Resources/memory/light_5.png" Margin="10" Grid.Column="0" />
+        <Image Source="../../Resources/memory/out_fir.png" Margin="10" Grid.Column="0" />
+
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Bottom">
+                <TextBox Text="14321" FontSize="50" MinWidth="150" TextAlignment="Center" MaxLength="5" />
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Button Content="prev" FontSize="18" Padding="10 5 10 5" />
+                    <TextBlock Text="Round  1/5" FontSize="18" Padding="10 5 10 5" IsEnabled="False"
+                               Background="Transparent" Foreground="White" VerticalAlignment="Center" />
+                    <Button Content="next" FontSize="18" Padding="10 5 10 5" />
+                </StackPanel>
+            </StackPanel>
+            <TextBlock Text="Press 1" VerticalAlignment="Center" FontSize="72" IsEnabled="False" TextAlignment="Center"
+                       Grid.Row="1" Foreground="White" />
+        </Grid>
+    </Grid>
+</Page>

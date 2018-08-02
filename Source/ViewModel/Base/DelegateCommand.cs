@@ -1,0 +1,24 @@
+using System;
+using System.Windows.Input;
+
+namespace BombGameSolver.Source.ViewModel.Base {
+    public class DelegateCommand : ICommand {
+        private readonly Action<object> _action;
+        private readonly bool _canExecute;
+
+        public event EventHandler CanExecuteChanged;
+
+        public DelegateCommand(Action<object> action, bool canExecute) {
+            _action = action;
+            _canExecute = canExecute;
+        }
+
+        public void Execute(object parameter) {
+            _action(parameter);
+        }
+
+        public bool CanExecute(object parameter) {
+            return _canExecute;
+        }
+    }
+}

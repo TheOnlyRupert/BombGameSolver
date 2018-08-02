@@ -6,8 +6,9 @@ namespace BombGameSolver {
         public MainWindow() {
             InitializeComponent();
 
-            Uri iconUri = new Uri("pack://application:,,,/Resources/folder.png", UriKind.RelativeOrAbsolute);
-            Icon = BitmapFrame.Create(iconUri);
+            /* Load window's icon */
+            Icon = BitmapFrame.Create(new Uri("pack://application:,,,/Resources/all_icon/icon.png",
+                                              UriKind.RelativeOrAbsolute));
         }
     }
 }
