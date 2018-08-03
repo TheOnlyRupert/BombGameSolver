@@ -5,7 +5,7 @@ namespace BombGameSolver.Source.Modules {
         public KeypadsModule() {
             InitializeComponent();
 
-            DataContext = new KeypadsViewModel();
+            DataContext = new KeypadsModuleVM();
         }
     }
 }

@@ -1,5 +1,5 @@
-namespace BombGameSolver.Source.Logic {
-    public static class SettingsLogic {
+namespace BombGameSolver.Source.Reference {
+    public static class ReferenceValues {
         public static bool IsSerialVowel { get; set; }
 
         public static bool IsSerialEven { get; set; }
@@ -11,5 +11,9 @@ namespace BombGameSolver.Source.Logic {
         public static bool HasParPort { get; set; }
 
         public static int BatteryNum { get; set; }
+
+        public static string CurrentModule { get; set; }
+
+        public static bool IsDebugEnabled { get; set; }
     }
 }

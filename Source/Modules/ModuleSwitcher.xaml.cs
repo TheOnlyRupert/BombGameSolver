@@ -1,11 +1,11 @@
 ﻿using BombGameSolver.Source.ViewModel;
 
 namespace BombGameSolver.Source.Modules {
-    public partial class ButtonModule {
-        public ButtonModule() {
+    public partial class ModuleSwitcher {
+        public ModuleSwitcher() {
             InitializeComponent();
 
-            DataContext = new ButtonModuleVM();
+            DataContext = new ModuleSwitcherVM();
         }
     }
 }

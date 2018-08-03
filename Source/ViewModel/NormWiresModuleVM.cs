@@ -1,10 +1,12 @@
 using System;
 using System.Windows.Input;
-using BombGameSolver.Source.Logic;
+using BombGameSolver.Source.Reference;
 using BombGameSolver.Source.ViewModel.Base;
 
 namespace BombGameSolver.Source.ViewModel {
     public class NormWiresViewModel : BaseViewModel {
+        private int _roundCounter;
+
         private string _wire1Image,
             _wire2Image,
             _wire3Image,
@@ -14,8 +16,7 @@ namespace BombGameSolver.Source.ViewModel {
             _wireBrokenImage,
             _outputText;
 
-        private string[] _wireArray = {"", "", "", "", "", ""};
-        private int _roundCounter;
+        private readonly string[] _wireArray = {"", "", "", "", "", ""};
 
         public NormWiresViewModel() {
             RoundCounter = 0;
@@ -31,6 +32,70 @@ namespace BombGameSolver.Source.ViewModel {
 
         public ICommand ButtonCommand => new DelegateCommand(ButtonLogic, true);
 
+        public string Wire1View {
+            get => _wire1Image;
+            set {
+                _wire1Image = value;
+                RaisePropertyChangedEvent("Wire1View");
+            }
+        }
+
+        public string Wire2View {
+            get => _wire2Image;
+            set {
+                _wire2Image = value;
+                RaisePropertyChangedEvent("Wire2View");
+            }
+        }
+
+        public string Wire3View {
+            get => _wire3Image;
+            set {
+                _wire3Image = value;
+                RaisePropertyChangedEvent("Wire3View");
+            }
+        }
+
+        public string Wire4View {
+            get => _wire4Image;
+            set {
+                _wire4Image = value;
+                RaisePropertyChangedEvent("Wire4View");
+            }
+        }
+
+        public string Wire5View {
+            get => _wire5Image;
+            set {
+                _wire5Image = value;
+                RaisePropertyChangedEvent("Wire5View");
+            }
+        }
+
+        public string Wire6View {
+            get => _wire6Image;
+            set {
+                _wire6Image = value;
+                RaisePropertyChangedEvent("Wire6View");
+            }
+        }
+
+        public string WireBrokenView {
+            get => _wireBrokenImage;
+            set {
+                _wireBrokenImage = value;
+                RaisePropertyChangedEvent("WireBrokenView");
+            }
+        }
+
+        public string OutputText {
+            get => _outputText;
+            set {
+                _outputText = value;
+                RaisePropertyChangedEvent("OutputText");
+            }
+        }
+
         private void ButtonLogic(object param) {
             /* If clear entry button */
             if (param.ToString() == "delete") {
@@ -44,7 +109,9 @@ namespace BombGameSolver.Source.ViewModel {
             } else if (RoundCounter < 6) {
                 _wireArray[RoundCounter] = param.ToString();
                 RoundCounter++;
-            } else return;
+            } else {
+                return;
+            }
 
             /* Display wires */
             Wire1View = "../../Resources/normal_wires/wire_1_" + _wireArray[0] + ".png";
@@ -80,18 +147,18 @@ namespace BombGameSolver.Source.ViewModel {
                 break;
             case 4:
                 /* If 2+ red && serial odd -> cut last red */
-                int temp = 0;
+                var temp = 0;
                 foreach (var str in _wireArray) {
                     if (str == "red") {
                         temp++;
                     }
                 }
 
-                if (temp > 1 && !SettingsLogic.IsSerialEven) {
+                if (temp > 1 && !ReferenceValues.IsSerialEven) {
                     Console.WriteLine("2+ Red && Serial Odd -> Cut Last Red");
 
                     /* Get largest value of wireArray that has a red wire */
-                    for (int i = 3; i < 4; i--) {
+                    for (var i = 3; i < 4; i--) {
                         if (_wireArray[i] == "red") {
                             /* Don't check for 1st wire... because like logic */
                             switch (i) {
@@ -162,7 +229,7 @@ namespace BombGameSolver.Source.ViewModel {
                 break;
             case 5:
                 /* If Last is Black && Serial Odd -> Cut Fourth */
-                if (_wireArray[4] == "bla" && !SettingsLogic.IsSerialEven) {
+                if (_wireArray[4] == "bla" && !ReferenceValues.IsSerialEven) {
                     Console.WriteLine("Last is Black && Serial Odd -> Cut Fourth");
                     OutputText = "Fourth";
                     WireBrokenView = "../../Resources/normal_wires/wire_4_broken.png";
@@ -210,7 +277,7 @@ namespace BombGameSolver.Source.ViewModel {
                 /* If No Yellow && Serial Odd -> Cut Third */
                 if (_wireArray[0] != "yel" && _wireArray[1] != "yel" && _wireArray[2] != "yel" &&
                     _wireArray[3] != "yel" && _wireArray[4] != "yel" && _wireArray[5] != "yel" &&
-                    !SettingsLogic.IsSerialEven) {
+                    !ReferenceValues.IsSerialEven) {
                     Console.WriteLine("No Yellow && Serial Odd -> Cut Third");
                     OutputText = "Third";
                     WireBrokenView = "../../Resources/normal_wires/wire_3_broken.png";
@@ -254,70 +321,6 @@ namespace BombGameSolver.Source.ViewModel {
                 }
 
                 break;
-            }
-        }
-
-        public string Wire1View {
-            get => _wire1Image;
-            set {
-                _wire1Image = value;
-                RaisePropertyChangedEvent("Wire1View");
-            }
-        }
-
-        public string Wire2View {
-            get => _wire2Image;
-            set {
-                _wire2Image = value;
-                RaisePropertyChangedEvent("Wire2View");
-            }
-        }
-
-        public string Wire3View {
-            get => _wire3Image;
-            set {
-                _wire3Image = value;
-                RaisePropertyChangedEvent("Wire3View");
-            }
-        }
-
-        public string Wire4View {
-            get => _wire4Image;
-            set {
-                _wire4Image = value;
-                RaisePropertyChangedEvent("Wire4View");
-            }
-        }
-
-        public string Wire5View {
-            get => _wire5Image;
-            set {
-                _wire5Image = value;
-                RaisePropertyChangedEvent("Wire5View");
-            }
-        }
-
-        public string Wire6View {
-            get => _wire6Image;
-            set {
-                _wire6Image = value;
-                RaisePropertyChangedEvent("Wire6View");
-            }
-        }
-
-        public string WireBrokenView {
-            get => _wireBrokenImage;
-            set {
-                _wireBrokenImage = value;
-                RaisePropertyChangedEvent("WireBrokenView");
-            }
-        }
-
-        public string OutputText {
-            get => _outputText;
-            set {
-                _outputText = value;
-                RaisePropertyChangedEvent("OutputText");
             }
         }
     }

@@ -1,17 +1,20 @@
 using System;
 using System.Windows.Input;
-using BombGameSolver.Source.Logic;
+using BombGameSolver.Source.Reference;
 using BombGameSolver.Source.ViewModel.Base;
 
 namespace BombGameSolver.Source.ViewModel {
-    public class ButtonViewModel : BaseViewModel {
+    public class ButtonModuleVM : BaseViewModel {
         private string _buttonColor, _buttonText, _outputText, _buttonImage;
 
-        public ButtonViewModel() {
+        public ButtonModuleVM() {
             _buttonColor = "Red";
             _buttonText = "Hold";
             _outputText = "Immediately";
             _buttonImage = "../../Resources/button/button_Red.png";
+
+            var simpleMessenger = CrossViewMessenger.Instance;
+            simpleMessenger.MessageValueChanged += OnSimpleMessengerValueChanged;
         }
 
         public string ButtonColor {
@@ -49,6 +52,15 @@ namespace BombGameSolver.Source.ViewModel {
 
         public ICommand ButtonCommand => new DelegateCommand(ButtonLogic, true);
 
+
+        private void OnSimpleMessengerValueChanged(object sender, MessageValueChangedEventArgs e) {
+            /* Update button if BatteryAmount, litCAR, or litFRK from SettingsModule are changed */
+            if (e.PropertyName == "BatteryAmountChanged" || e.PropertyName == "LitCarButtonText" ||
+                e.PropertyName == "LitFrkButtonText") {
+                ButtonLogic("null");
+            }
+        }
+
         private void ButtonLogic(object param) {
             switch (param.ToString()) {
             case "White":
@@ -70,38 +82,31 @@ namespace BombGameSolver.Source.ViewModel {
                 Console.WriteLine(@"Red & Hold -> Immediately");
                 OutputText = "Immediately";
             }
-
             /* Detonate & 2+ Batteries -> Immediate */
-            else if (ButtonText == "Detonate" && SettingsLogic.BatteryNum > 1) {
+            else if (ButtonText == "Detonate" && ReferenceValues.BatteryNum > 1) {
                 Console.WriteLine(@"Detonate & 2+ Batteries -> Immediately");
                 OutputText = "Immediately";
             }
-
             /* Blue & Abort -> Hold */
             else if (ButtonColor == "Blue" && ButtonText == "Abort") {
                 Console.WriteLine(@"Blue & Abort -> Hold");
                 OutputText = "Hold";
             }
-
             /* White & CAR -> Hold */
-            else if (ButtonColor == "White" && SettingsLogic.HasLitCar) {
+            else if (ButtonColor == "White" && ReferenceValues.HasLitCar) {
                 Console.WriteLine(@"White & CAR -> Hold");
                 OutputText = "Hold";
             }
-
             /* FRK & 3+ Batteries -> Immediately */
-            else if (SettingsLogic.HasLitFrk && SettingsLogic.BatteryNum == 3) {
+            else if (ReferenceValues.HasLitFrk && ReferenceValues.BatteryNum == 3) {
                 Console.WriteLine(@"FRK & 3+ Batteries -> Immediately");
                 OutputText = "Immediately";
             }
-
             /* Else -> Hold */
             else {
                 Console.WriteLine(@"Else -> Hold");
                 OutputText = "Hold";
             }
-
-            //Console.WriteLine($@"Color: {ButtonColor}, Text: {ButtonText}, Battery: {SettingsLogic.BatteryNum}, CAR: {SettingsLogic.HasLitCar}, FRK: {SettingsLogic.HasLitFrk} ");
         }
     }
 }

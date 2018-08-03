@@ -5,7 +5,7 @@ namespace BombGameSolver.Source.Groups {
         public MainSettingsGroup() {
             InitializeComponent();
 
-            DataContext = new SettingsViewModel();
+            DataContext = new MainSettingsGroupVM();
         }
     }
 }

@@ -1,22 +1,27 @@
 using System;
 using System.Windows.Input;
-using BombGameSolver.Source.Logic;
+using BombGameSolver.Source.Reference;
 using BombGameSolver.Source.ViewModel.Base;
 
 namespace BombGameSolver.Source.ViewModel {
-    public class SettingsViewModel : BaseViewModel {
+    public class MainSettingsGroupVM : BaseViewModel {
+        private readonly CrossViewMessenger _crossViewMessenger;
+        private bool _isDevEnabled;
+
         private string _serialVowelButtonText,
             _serialEvenButtonText,
             _litCarButtonText,
             _litFrkButtonText,
             _parPortButtonText;
 
-        public SettingsViewModel() {
+        public MainSettingsGroupVM() {
             SerialVowelButtonText = "False";
             SerialEvenButtonText = "False";
             LitCarButtonText = "False";
             LitFrkButtonText = "False";
             ParPortButtonText = "False";
+
+            _crossViewMessenger = CrossViewMessenger.Instance;
         }
 
 #region SerialVowel
@@ -32,9 +37,9 @@ namespace BombGameSolver.Source.ViewModel {
         public ICommand SerialVowelButtonCommand => new DelegateCommand(SerialVowelLogic, true);
 
         private void SerialVowelLogic(object param) {
-            SettingsLogic.IsSerialVowel = !SettingsLogic.IsSerialVowel;
+            ReferenceValues.IsSerialVowel = !ReferenceValues.IsSerialVowel;
 
-            SerialVowelButtonText = SettingsLogic.IsSerialVowel ? "True" : "False";
+            SerialVowelButtonText = ReferenceValues.IsSerialVowel ? "True" : "False";
         }
 
 #endregion
@@ -52,9 +57,9 @@ namespace BombGameSolver.Source.ViewModel {
         public ICommand SerialEvenButtonCommand => new DelegateCommand(SerialEvenLogic, true);
 
         private void SerialEvenLogic(object param) {
-            SettingsLogic.IsSerialEven = !SettingsLogic.IsSerialEven;
+            ReferenceValues.IsSerialEven = !ReferenceValues.IsSerialEven;
 
-            SerialEvenButtonText = SettingsLogic.IsSerialEven ? "True" : "False";
+            SerialEvenButtonText = ReferenceValues.IsSerialEven ? "True" : "False";
         }
 
 #endregion
@@ -72,9 +77,10 @@ namespace BombGameSolver.Source.ViewModel {
         public ICommand LitCarButtonCommand => new DelegateCommand(LitCarLogic, true);
 
         private void LitCarLogic(object param) {
-            SettingsLogic.HasLitCar = !SettingsLogic.HasLitCar;
+            ReferenceValues.HasLitCar = !ReferenceValues.HasLitCar;
 
-            LitCarButtonText = SettingsLogic.HasLitCar ? "True" : "False";
+            LitCarButtonText = ReferenceValues.HasLitCar ? "True" : "False";
+            _crossViewMessenger.PushMessage("LitCarButtonText", null);
         }
 
 #endregion
@@ -92,9 +98,10 @@ namespace BombGameSolver.Source.ViewModel {
         public ICommand LitFrkButtonCommand => new DelegateCommand(LitFrkLogic, true);
 
         private void LitFrkLogic(object param) {
-            SettingsLogic.HasLitFrk = !SettingsLogic.HasLitFrk;
+            ReferenceValues.HasLitFrk = !ReferenceValues.HasLitFrk;
 
-            LitFrkButtonText = SettingsLogic.HasLitFrk ? "True" : "False";
+            LitFrkButtonText = ReferenceValues.HasLitFrk ? "True" : "False";
+            _crossViewMessenger.PushMessage("LitFrkButtonText", null);
         }
 
 #endregion
@@ -112,9 +119,9 @@ namespace BombGameSolver.Source.ViewModel {
         public ICommand ParPortButtonCommand => new DelegateCommand(ParPortLogic, true);
 
         private void ParPortLogic(object param) {
-            SettingsLogic.HasParPort = !SettingsLogic.HasParPort;
+            ReferenceValues.HasParPort = !ReferenceValues.HasParPort;
 
-            ParPortButtonText = SettingsLogic.HasParPort ? "True" : "False";
+            ParPortButtonText = ReferenceValues.HasParPort ? "True" : "False";
         }
 
 #endregion
@@ -124,8 +131,8 @@ namespace BombGameSolver.Source.ViewModel {
         public ICommand ResetButtonCommand => new DelegateCommand(ResetButtonLogic, true);
 
         private void ResetButtonLogic(object param) {
-            SettingsLogic.IsSerialVowel = SettingsLogic.IsSerialEven = SettingsLogic.HasLitCar =
-                SettingsLogic.HasLitFrk = SettingsLogic.HasParPort = false;
+            ReferenceValues.IsSerialVowel = ReferenceValues.IsSerialEven = ReferenceValues.HasLitCar =
+                ReferenceValues.HasLitFrk = ReferenceValues.HasParPort = false;
             SerialVowelButtonText = SerialEvenButtonText = LitCarButtonText = LitFrkButtonText =
                 ParPortButtonText = "False";
             BatteryAmountChanged = "0";
@@ -137,7 +144,11 @@ namespace BombGameSolver.Source.ViewModel {
 
         public ICommand DevButtonCommand => new DelegateCommand(DevButtonLogic, true);
 
-        private void DevButtonLogic(object param) { }
+        private void DevButtonLogic(object param) {
+            _isDevEnabled = !_isDevEnabled;
+            ReferenceValues.IsDebugEnabled = _isDevEnabled;
+            _crossViewMessenger.PushMessage("DevButtonLogic", null);
+        }
 
 #endregion
 
@@ -146,17 +157,19 @@ namespace BombGameSolver.Source.ViewModel {
         public ICommand BatteryCommand => new DelegateCommand(BatteryLogic, true);
 
         private void BatteryLogic(object param) {
-             BatteryAmountChanged = param.ToString();
+            BatteryAmountChanged = param.ToString();
         }
 
         public string BatteryAmountChanged {
-            get => SettingsLogic.BatteryNum.ToString();
+            get => ReferenceValues.BatteryNum.ToString();
             set {
                 try {
-                    SettingsLogic.BatteryNum = int.Parse(value);
+                    ReferenceValues.BatteryNum = int.Parse(value);
                 } catch (Exception) {
-                    SettingsLogic.BatteryNum = 0;
+                    ReferenceValues.BatteryNum = 0;
                 }
+
+                _crossViewMessenger.PushMessage("BatteryAmountChanged", null);
                 RaisePropertyChangedEvent("BatteryAmountChanged");
             }
         }

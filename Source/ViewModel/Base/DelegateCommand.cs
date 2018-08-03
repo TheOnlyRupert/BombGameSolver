@@ -6,12 +6,12 @@ namespace BombGameSolver.Source.ViewModel.Base {
         private readonly Action<object> _action;
         private readonly bool _canExecute;
 
-        public event EventHandler CanExecuteChanged;
-
         public DelegateCommand(Action<object> action, bool canExecute) {
             _action = action;
             _canExecute = canExecute;
         }
+
+        public event EventHandler CanExecuteChanged;
 
         public void Execute(object parameter) {
             _action(parameter);

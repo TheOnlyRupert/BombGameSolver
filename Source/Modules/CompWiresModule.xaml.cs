@@ -5,7 +5,7 @@ namespace BombGameSolver.Source.Modules {
         public CompWiresModule() {
             InitializeComponent();
 
-            DataContext = new CompWiresViewModel();
+            DataContext = new CompWiresModuleVM();
         }
     }
 }

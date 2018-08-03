@@ -12,7 +12,7 @@
 
         <Image Source="{Binding ButtonImage}" Grid.Column="0" Margin="10" />
         <TextBlock Text="{Binding ButtonText}" Grid.Column="0" Margin="10" VerticalAlignment="Center"
-                   HorizontalAlignment="Center" FontSize="84" >
+                   HorizontalAlignment="Center" FontSize="84">
             <TextBlock.Style>
                 <Style TargetType="TextBlock">
                     <!-- Default -->
@@ -23,8 +23,8 @@
                             <Setter Property="Foreground" Value="Black" />
                         </DataTrigger>
                         <DataTrigger Binding="{Binding ButtonColor}" Value="Yellow">
-                             <!-- If True -->
-                             <Setter Property="Foreground" Value="Black" />
+                            <!-- If True -->
+                            <Setter Property="Foreground" Value="Black" />
                         </DataTrigger>
                     </Style.Triggers>
                 </Style>
@@ -83,7 +83,7 @@
                     <TextBlock Text="{Binding OutputText}" HorizontalAlignment="Center" Foreground="White"
                                FontSize="72" TextAlignment="Center" />
                     <TextBlock Text="Blue: 4,  Yellow: 5,  Other: 1" HorizontalAlignment="Center"
-                               Foreground="White" FontSize="32" TextAlignment="Center" >
+                               Foreground="White" FontSize="32" TextAlignment="Center">
                         <TextBlock.Style>
                             <Style TargetType="TextBlock">
                                 <!-- Default -->
@@ -93,10 +93,10 @@
                                         <!-- If True -->
                                         <Setter Property="Visibility" Value="Visible" />
                                     </DataTrigger>
-                                    </Style.Triggers>
-                                </Style>
-                            </TextBlock.Style>
-                        </TextBlock>
+                                </Style.Triggers>
+                            </Style>
+                        </TextBlock.Style>
+                    </TextBlock>
                 </StackPanel>
             </Grid>
         </Grid>

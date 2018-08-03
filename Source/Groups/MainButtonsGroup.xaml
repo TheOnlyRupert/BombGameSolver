@@ -5,21 +5,18 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       mc:Ignorable="d">
 
-    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center"
-                Background="DarkSlateGray">
+    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Background="DarkSlateGray" Margin="0 4 0 4">
         <StackPanel.Resources>
             <Style TargetType="Button">
                 <Setter Property="Foreground" Value="White" />
                 <Setter Property="Background" Value="Transparent" />
-                <Setter Property="VerticalAlignment" Value="Center" />
                 <Setter Property="FontSize" Value="24" />
-                <Setter Property="Padding" Value="5" />
+                <Setter Property="Padding" Value="10 5 10 5" />
                 <Setter Property="MinWidth" Value="180" />
             </Style>
         </StackPanel.Resources>
 
-        <Button Content="Main Menu (TAB)" Margin="0 5 20 5" />
-        <Button Content="Reset This (R)" Margin="0 5 20 5" />
-        <Button Content="Confirm (ENTER)" Margin="0 5 0 5" />
+        <Button Content="Main Menu (TAB)" Command="{Binding ButtonCommand}" />
+        <Button Content="Module Help (F1)" Margin="10 0 0 0" />
     </StackPanel>
 </Page>

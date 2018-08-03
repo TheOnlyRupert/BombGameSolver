@@ -2,7 +2,7 @@ using System.Windows.Input;
 using BombGameSolver.Source.ViewModel.Base;
 
 namespace BombGameSolver.Source.ViewModel {
-    public class TimerViewModel : BaseViewModel {
+    public class MainTimerGroupVM : BaseViewModel {
         private string _lButtonText;
         private string _rButtonText;
         private int _startTime;
@@ -13,7 +13,7 @@ namespace BombGameSolver.Source.ViewModel {
         /* 0: Stopped,  1: Running,  2: Paused */
         private int _timerState;
 
-        public TimerViewModel() {
+        public MainTimerGroupVM() {
             TimerDisplay = "05:00";
             LButtonText = "Start";
             RButtonText = "Reset";

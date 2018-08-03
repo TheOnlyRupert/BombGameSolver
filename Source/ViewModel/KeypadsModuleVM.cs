@@ -1,45 +1,14 @@
-using System;
 using System.Windows.Input;
 using BombGameSolver.Source.ViewModel.Base;
 
 namespace BombGameSolver.Source.ViewModel {
-    public class KeypadsViewModel : BaseViewModel {
+    public class KeypadsModuleVM : BaseViewModel {
         private string _columnDisabled0,
             _columnDisabled1,
             _columnDisabled2,
             _columnDisabled3,
             _columnDisabled4,
             _columnDisabled5;
-
-        private string[] _valueOfKeypad_3_Broken = {"24"};
-        private string[] _valueOfKeypad_3_Fancy = {"45"};
-        private string[] _valueOfKeypad_6 = {"30", "50"};
-        private string[] _valueOfKeypad_Ae = {"53"};
-        private string[] _valueOfKeypad_At = {"13", "22"};
-        private string[] _valueOfKeypad_Balloon = {"00", "11"};
-        private string[] _valueOfKeypad_Boobs = {"21"};
-        private string[] _valueOfKeypad_C = {"43"};
-        private string[] _valueOfKeypad_C_Rev = {"06", "12"};
-        private string[] _valueOfKeypad_Copyright = {"20"};
-        private string[] _valueOfKeypad_E = {"10", "51"};
-        private string[] _valueOfKeypad_Fork = {"40", "54"};
-        private string[] _valueOfKeypad_H = {"05"};
-        private string[] _valueOfKeypad_Hk = {"04", "33"};
-        private string[] _valueOfKeypad_Kk = {"23", "34"};
-        private string[] _valueOfKeypad_Lightning = {"03", "15"};
-        private string[] _valueOfKeypad_N = {"55"};
-        private string[] _valueOfKeypad_Omega = {"56"};
-        private string[] _valueOfKeypad_Paragraph = {"31", "44"};
-        private string[] _valueOfKeypad_Pound = {"52"};
-        private string[] _valueOfKeypad_Pyramid = {"01"};
-        private string[] _valueOfKeypad_Question = {"16", "35"};
-        private string[] _valueOfKeypad_Smile = {"36", "41"};
-        private string[] _valueOfKeypad_Star_Hol = {"14", "26"};
-        private string[] _valueOfKeypad_Star_Sol = {"46"};
-        private string[] _valueOfKeypad_Tb = {"32", "42"};
-        private string[] _valueOfKeypad_Y = {"02", "25"};
-
-        private string[] _keypadInput = {"", "", "", ""};
 
         private string _keypad_3_broken,
             _keypad_3_fancy,
@@ -69,7 +38,37 @@ namespace BombGameSolver.Source.ViewModel {
             _keypad_tb,
             _keypad_y;
 
-        public KeypadsViewModel() {
+        private string[] _keypadInput = {"", "", "", ""};
+
+        private string[] _valueOfKeypad_3_Broken = {"24"};
+        private string[] _valueOfKeypad_3_Fancy = {"45"};
+        private string[] _valueOfKeypad_6 = {"30", "50"};
+        private string[] _valueOfKeypad_Ae = {"53"};
+        private string[] _valueOfKeypad_At = {"13", "22"};
+        private string[] _valueOfKeypad_Balloon = {"00", "11"};
+        private string[] _valueOfKeypad_Boobs = {"21"};
+        private string[] _valueOfKeypad_C = {"43"};
+        private string[] _valueOfKeypad_C_Rev = {"06", "12"};
+        private string[] _valueOfKeypad_Copyright = {"20"};
+        private string[] _valueOfKeypad_E = {"10", "51"};
+        private string[] _valueOfKeypad_Fork = {"40", "54"};
+        private string[] _valueOfKeypad_H = {"05"};
+        private string[] _valueOfKeypad_Hk = {"04", "33"};
+        private string[] _valueOfKeypad_Kk = {"23", "34"};
+        private string[] _valueOfKeypad_Lightning = {"03", "15"};
+        private string[] _valueOfKeypad_N = {"55"};
+        private string[] _valueOfKeypad_Omega = {"56"};
+        private string[] _valueOfKeypad_Paragraph = {"31", "44"};
+        private string[] _valueOfKeypad_Pound = {"52"};
+        private string[] _valueOfKeypad_Pyramid = {"01"};
+        private string[] _valueOfKeypad_Question = {"16", "35"};
+        private string[] _valueOfKeypad_Smile = {"36", "41"};
+        private string[] _valueOfKeypad_Star_Hol = {"14", "26"};
+        private string[] _valueOfKeypad_Star_Sol = {"46"};
+        private string[] _valueOfKeypad_Tb = {"32", "42"};
+        private string[] _valueOfKeypad_Y = {"02", "25"};
+
+        public KeypadsModuleVM() {
             ColumnDisabled0 = "False";
             ColumnDisabled1 = "False";
             ColumnDisabled2 = "False";
@@ -82,24 +81,16 @@ namespace BombGameSolver.Source.ViewModel {
 
         private void ButtonLogic(object param) {
             /* First, check if button is not in a disabled column (if it is, just ignore it) */
-            if ((param.ToString()[0] == '0' && ColumnDisabled0 == "True") ||
-                (param.ToString()[0] == '1' && ColumnDisabled1 == "True") ||
-                (param.ToString()[0] == '2' && ColumnDisabled2 == "True") ||
-                (param.ToString()[0] == '3' && ColumnDisabled3 == "True") ||
-                (param.ToString()[0] == '4' && ColumnDisabled4 == "True") ||
-                (param.ToString()[0] == '5' && ColumnDisabled5 == "True")) {
-                return;
-            }
-
+            if (param.ToString()[0] == '0' && ColumnDisabled0 == "True" ||
+                param.ToString()[0] == '1' && ColumnDisabled1 == "True" ||
+                param.ToString()[0] == '2' && ColumnDisabled2 == "True" ||
+                param.ToString()[0] == '3' && ColumnDisabled3 == "True" ||
+                param.ToString()[0] == '4' && ColumnDisabled4 == "True" ||
+                param.ToString()[0] == '5' && ColumnDisabled5 == "True") { }
             /* Check actual button being clicked on... if button is not already checked,
              highlight all matching buttons and disable the columns not in use. */
-            else {
-
-            }
 
             /* If button is already checked, return back to normal and enable the disabled columns */
-
-
         }
 
 #region Columns

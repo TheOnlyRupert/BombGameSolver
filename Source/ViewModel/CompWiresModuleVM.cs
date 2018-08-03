@@ -1,16 +1,15 @@
-using System;
 using System.Windows.Input;
-using BombGameSolver.Source.Logic;
+using BombGameSolver.Source.Reference;
 using BombGameSolver.Source.ViewModel.Base;
 
 namespace BombGameSolver.Source.ViewModel {
-    public class CompWiresViewModel : BaseViewModel {
+    public class CompWiresModuleVM : BaseViewModel {
         private string _wireImage, _ledImage, _starImage, _ledButtonText, _starButtonText, _brokenWireImage,
             _outputText, _wireColor;
 
         private bool _isLedOn, _isStarOn;
 
-        public CompWiresViewModel() {
+        public CompWiresModuleVM() {
             WireImage = "../../Resources/comp_wires/wire_whi.png";
             LedButtonText = "LED OFF (5)";
             StarButtonText = "Star OFF (6)";
@@ -143,7 +142,7 @@ namespace BombGameSolver.Source.ViewModel {
                 }
                 /* LED TRUE, Star TRUE -> Yes if 2+ batteries */
                 else if (_isLedOn && _isStarOn) {
-                    if (SettingsLogic.BatteryNum > 1) {
+                    if (ReferenceValues.BatteryNum > 1) {
                         BrokenWireImage = "../../Resources/comp_wires/wire_broken.png";
                         OutputText = "Cut";
                     } else {
@@ -157,7 +156,7 @@ namespace BombGameSolver.Source.ViewModel {
             case "blue":
                 /* LED FALSE, Star FALSE -> Yes if even serial */
                 if (!_isLedOn && !_isStarOn) {
-                    if (SettingsLogic.IsSerialEven) {
+                    if (ReferenceValues.IsSerialEven) {
                         BrokenWireImage = "../../Resources/comp_wires/wire_broken.png";
                         OutputText = "Cut";
                     } else {
@@ -167,7 +166,7 @@ namespace BombGameSolver.Source.ViewModel {
                 }
                 /* LED TRUE, Star FALSE -> Yes if par port */
                 else if (_isLedOn && !_isStarOn) {
-                    if (SettingsLogic.HasParPort) {
+                    if (ReferenceValues.HasParPort) {
                         BrokenWireImage = "../../Resources/comp_wires/wire_broken.png";
                         OutputText = "Cut";
                     } else {
@@ -182,7 +181,7 @@ namespace BombGameSolver.Source.ViewModel {
                 }
                 /* LED TRUE, Star TRUE -> Yes if par port */
                 else if (_isLedOn && _isStarOn) {
-                    if (SettingsLogic.HasParPort) {
+                    if (ReferenceValues.HasParPort) {
                         BrokenWireImage = "../../Resources/comp_wires/wire_broken.png";
                         OutputText = "Cut";
                     } else {
@@ -196,7 +195,7 @@ namespace BombGameSolver.Source.ViewModel {
             case "red":
                 /* LED FALSE, Star FALSE -> Yes if even serial */
                 if (!_isLedOn && !_isStarOn) {
-                    if (SettingsLogic.IsSerialEven) {
+                    if (ReferenceValues.IsSerialEven) {
                         BrokenWireImage = "../../Resources/comp_wires/wire_broken.png";
                         OutputText = "Cut";
                     } else {
@@ -206,7 +205,7 @@ namespace BombGameSolver.Source.ViewModel {
                 }
                 /* LED TRUE, Star FALSE -> Yes if 2+ batteries */
                 else if (_isLedOn && !_isStarOn) {
-                    if (SettingsLogic.BatteryNum > 1) {
+                    if (ReferenceValues.BatteryNum > 1) {
                         BrokenWireImage = "../../Resources/comp_wires/wire_broken.png";
                         OutputText = "Cut";
                     } else {
@@ -221,7 +220,7 @@ namespace BombGameSolver.Source.ViewModel {
                 }
                 /* LED TRUE, Star TRUE -> Yes if 2+ batteries */
                 else if (_isLedOn && _isStarOn) {
-                    if (SettingsLogic.BatteryNum > 1) {
+                    if (ReferenceValues.BatteryNum > 1) {
                         BrokenWireImage = "../../Resources/comp_wires/wire_broken.png";
                         OutputText = "Cut";
                     } else {
@@ -235,7 +234,7 @@ namespace BombGameSolver.Source.ViewModel {
             case "bluered":
                 /* LED FALSE, Star FALSE -> Yes if even serial */
                 if (!_isLedOn && !_isStarOn) {
-                    if (SettingsLogic.IsSerialEven) {
+                    if (ReferenceValues.IsSerialEven) {
                         BrokenWireImage = "../../Resources/comp_wires/wire_broken.png";
                         OutputText = "Cut";
                     } else {
@@ -245,7 +244,7 @@ namespace BombGameSolver.Source.ViewModel {
                 }
                 /* LED TRUE, Star FALSE -> Yes if even serial */
                 else if (_isLedOn && !_isStarOn) {
-                    if (SettingsLogic.IsSerialEven) {
+                    if (ReferenceValues.IsSerialEven) {
                         BrokenWireImage = "../../Resources/comp_wires/wire_broken.png";
                         OutputText = "Cut";
                     } else {
@@ -255,7 +254,7 @@ namespace BombGameSolver.Source.ViewModel {
                 }
                 /* LED FALSE, Star TRUE -> Yes if par port */
                 else if (!_isLedOn && _isStarOn) {
-                    if (SettingsLogic.HasParPort) {
+                    if (ReferenceValues.HasParPort) {
                         BrokenWireImage = "../../Resources/comp_wires/wire_broken.png";
                         OutputText = "Cut";
                     } else {

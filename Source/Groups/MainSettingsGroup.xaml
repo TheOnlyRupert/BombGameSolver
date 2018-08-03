@@ -72,7 +72,7 @@
                 </Grid.RowDefinitions>
 
                 <RadioButton GroupName="BatteryCheck" FontSize="20" Content="None" VerticalContentAlignment="Center"
-                             Margin="30 0 0 0" Command="{Binding BatteryCommand}" CommandParameter="0" >
+                             Margin="30 0 0 0" Command="{Binding BatteryCommand}" CommandParameter="0">
                     <RadioButton.Style>
                         <Style TargetType="RadioButton">
                             <!-- Default -->
@@ -91,9 +91,9 @@
                         </Style>
                     </RadioButton.Style>
                 </RadioButton>
-                <RadioButton GroupName="BatteryCheck" FontSize="20" Content="1" BorderThickness="0"  Grid.Column="0"
+                <RadioButton GroupName="BatteryCheck" FontSize="20" Content="1" BorderThickness="0" Grid.Column="0"
                              Grid.Row="1" VerticalContentAlignment="Center" Margin="30 0 0 0"
-                             Command="{Binding BatteryCommand}" CommandParameter="1" >
+                             Command="{Binding BatteryCommand}" CommandParameter="1">
                     <RadioButton.Style>
                         <Style TargetType="RadioButton">
                             <!-- Default -->
@@ -106,10 +106,10 @@
                             </Style.Triggers>
                         </Style>
                     </RadioButton.Style>
-                    </RadioButton>
+                </RadioButton>
                 <RadioButton GroupName="BatteryCheck" FontSize="20" Content="2" Grid.Column="1" Grid.Row="0"
                              VerticalContentAlignment="Center" Margin="30 0 0 0"
-                             Command="{Binding BatteryCommand}" CommandParameter="2" >
+                             Command="{Binding BatteryCommand}" CommandParameter="2">
                     <RadioButton.Style>
                         <Style TargetType="RadioButton">
                             <!-- Default -->
@@ -122,10 +122,10 @@
                             </Style.Triggers>
                         </Style>
                     </RadioButton.Style>
-                    </RadioButton>
+                </RadioButton>
                 <RadioButton GroupName="BatteryCheck" FontSize="20" Content="3+" Grid.Column="1" Grid.Row="1"
                              VerticalContentAlignment="Center" Margin="30 0 0 0"
-                             Command="{Binding BatteryCommand}" CommandParameter="3" >
+                             Command="{Binding BatteryCommand}" CommandParameter="3">
                     <RadioButton.Style>
                         <Style TargetType="RadioButton">
                             <!-- Default -->
@@ -138,7 +138,7 @@
                             </Style.Triggers>
                         </Style>
                     </RadioButton.Style>
-                    </RadioButton>
+                </RadioButton>
             </Grid>
 
             <Label Content="Indicator Info" Foreground="CornflowerBlue" FontSize="32" HorizontalAlignment="Center" />

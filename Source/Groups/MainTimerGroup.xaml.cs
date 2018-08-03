@@ -5,7 +5,7 @@ namespace BombGameSolver.Source.Groups {
         public MainTimerGroup() {
             InitializeComponent();
 
-            DataContext = new TimerViewModel();
+            DataContext = new MainTimerGroupVM();
         }
     }
 }

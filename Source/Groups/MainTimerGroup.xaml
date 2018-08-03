@@ -5,13 +5,13 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       mc:Ignorable="d">
 
-    <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Right"
+    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right"
                 Background="DarkSlateGray">
         <StackPanel.Resources>
             <Style TargetType="Button">
                 <Setter Property="Foreground" Value="White" />
                 <Setter Property="Background" Value="Transparent" />
-                <Setter Property="VerticalAlignment" Value="Center" />
+
             </Style>
 
             <Style TargetType="TextBox">
@@ -30,7 +30,7 @@
                 Padding="5" FontSize="24" />
         <TextBox Text="{Binding TimerDisplay, UpdateSourceTrigger=PropertyChanged}" FontSize="30" MinWidth="80"
                  Margin="0 5 5 5" />
-        <StackPanel VerticalAlignment="Center">
+        <StackPanel VerticalAlignment="Center" Margin="0 0 5 0">
             <Button Content="▲" Command="{Binding AddTimeCommand}" BorderBrush="Transparent" />
             <Button Content="▼" Command="{Binding RemTimeCommand}" BorderBrush="Transparent" />
         </StackPanel>
