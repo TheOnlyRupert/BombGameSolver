@@ -26,33 +26,55 @@
                 </Grid.RowDefinitions>
 
                 <Button Content="Blue -> Alpha (7)" Grid.Column="0" Grid.Row="0" Background="Blue" FontSize="32"
-                        Foreground="White" />
+                        Foreground="White" Command="{Binding ButtonCommand}" CommandParameter="blu_a" />
                 <Button Content="Blue -> Bravo (4)" Grid.Column="0" Grid.Row="1" Background="Blue" FontSize="32"
-                        Foreground="White" />
+                        Foreground="White" Command="{Binding ButtonCommand}" CommandParameter="blu_b" />
                 <Button Content="Blue -> Charlie (1)" Grid.Column="0" Grid.Row="2" Background="Blue" FontSize="32"
-                        Foreground="White" />
+                        Foreground="White" Command="{Binding ButtonCommand}" CommandParameter="blu_c" />
                 <Button Content="1x Remove" Grid.Column="0" Grid.Row="3" Background="Transparent" FontSize="24"
-                        Foreground="DarkCyan" />
+                        Foreground="DarkCyan" Command="{Binding ButtonCommand}" CommandParameter="blu_del" />
                 <Button Content="Red -> Alpha (8)" Grid.Column="1" Grid.Row="0" Background="Red" FontSize="32"
-                        Foreground="White" />
+                        Foreground="White" Command="{Binding ButtonCommand}" CommandParameter="red_a" />
                 <Button Content="Red -> Bravo (5)" Grid.Column="1" Grid.Row="1" Background="Red" FontSize="32"
-                        Foreground="White" />
+                        Foreground="White" Command="{Binding ButtonCommand}" CommandParameter="red_b" />
                 <Button Content="Red -> Charlie (2)" Grid.Column="1" Grid.Row="2" Background="Red" FontSize="32"
-                        Foreground="White" />
+                        Foreground="White" Command="{Binding ButtonCommand}" CommandParameter="red_c" />
                 <Button Content="1x Remove" Grid.Column="1" Grid.Row="3" Background="Transparent" FontSize="24"
-                        Foreground="DarkCyan" />
+                        Foreground="DarkCyan" Command="{Binding ButtonCommand}" CommandParameter="red_del" />
                 <Button Content="Black -> Alpha (9)" Grid.Column="2" Grid.Row="0" Background="Black" FontSize="32"
-                        Foreground="White" />
+                        Foreground="White" Command="{Binding ButtonCommand}" CommandParameter="bla_a" />
                 <Button Content="Black -> Bravo (6)" Grid.Column="2" Grid.Row="1" Background="Black" FontSize="32"
-                        Foreground="White" />
+                        Foreground="White" Command="{Binding ButtonCommand}" CommandParameter="bla_b" />
                 <Button Content="Black -> Charlie (3)" Grid.Column="2" Grid.Row="2" Background="Black" FontSize="32"
-                        Foreground="White" />
+                        Foreground="White" Command="{Binding ButtonCommand}" CommandParameter="bla_c" />
                 <Button Content="1x Remove" Grid.Column="2" Grid.Row="3" Background="Transparent" FontSize="24"
-                        Foreground="DarkCyan" />
+                        Foreground="DarkCyan" Command="{Binding ButtonCommand}" CommandParameter="bla_del" />
             </Grid>
 
-            <TextBox Grid.Row="1" Text="FALSE" IsEnabled="False" FontSize="48" TextAlignment="Center"
-                     VerticalContentAlignment="Center" Margin="30" Background="Red" Foreground="White" />
+            <TextBox Grid.Row="1" Text="{Binding OutputTextBox}" IsReadOnly="True" FontSize="48" TextAlignment="Center"
+                     VerticalContentAlignment="Center" Margin="30">
+                <TextBox.Style>
+                    <Style TargetType="TextBox">
+                        <!-- Default -->
+                        <Setter Property="Background" Value="Transparent" />
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding OutputTextBox}" Value="TRUE">
+                                <!-- If True -->
+                                <Setter Property="Background" Value="Yellow" />
+                                <Setter Property="Foreground" Value="Black" />
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding OutputTextBox}" Value="FALSE">
+                                <!-- If True -->
+                                <Setter Property="Background" Value="Red" />
+                                <Setter Property="Foreground" Value="White" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBox.Style>
+            </TextBox>
         </Grid>
+
+        <Button Content="Reset This  (F12)" VerticalAlignment="Bottom" HorizontalAlignment="Right"
+                FontSize="20" Padding="10 4" Margin="0 0 -45 -15" />
     </Grid>
 </Page>

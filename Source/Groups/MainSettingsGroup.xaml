@@ -223,7 +223,7 @@
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                 <Button Content="Total Reset" Command="{Binding ResetButtonCommand}" FontSize="20"
                         Background="Transparent" Margin="5 0 5 0" Padding="2" MinWidth="110" Foreground="White" />
-                <Button Content="Dev Output" Command="{Binding DevButtonCommand}" FontSize="20"
+                <Button Content="Debug Log" Command="{Binding DevButtonCommand}" FontSize="20"
                         Background="Transparent" Margin="5 0 5 0" Padding="2" MinWidth="110" Foreground="White" />
             </StackPanel>
         </StackPanel>

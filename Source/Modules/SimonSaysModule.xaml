@@ -17,12 +17,57 @@
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
-            <Button Content="Strike 0" Grid.Column="0" Grid.Row="0" FontSize="24" Margin="10" Background="YellowGreen"
-                    Foreground="Black" />
-            <Button Content="Strike 1" Grid.Column="1" Grid.Row="0" FontSize="24" Margin="10" Background="Transparent"
-                    Foreground="White" />
-            <Button Content="Strike 2" Grid.Column="2" Grid.Row="0" FontSize="24" Margin="10" Background="Transparent"
-                    Foreground="White" />
+            <Button Content="Strike 0" Grid.Column="0" Grid.Row="0" FontSize="24" Margin="10"
+                    Command="{Binding ButtonCommand}" CommandParameter="0">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <!-- Default -->
+                        <Setter Property="Background" Value="Transparent" />
+                        <Setter Property="Foreground" Value="White" />
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding CurrentStrikes}" Value="0">
+                                <!-- If True -->
+                                <Setter Property="Background" Value="Yellow" />
+                                <Setter Property="Foreground" Value="Black" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
+            <Button Content="Strike 1" Grid.Column="1" Grid.Row="0" FontSize="24" Margin="10"
+                    Command="{Binding ButtonCommand}" CommandParameter="1">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <!-- Default -->
+                        <Setter Property="Background" Value="Transparent" />
+                        <Setter Property="Foreground" Value="White" />
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding CurrentStrikes}" Value="1">
+                                <!-- If True -->
+                                <Setter Property="Background" Value="Yellow" />
+                                <Setter Property="Foreground" Value="Black" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
+            <Button Content="Strike 2" Grid.Column="2" Grid.Row="0" FontSize="24" Margin="10"
+                    Command="{Binding ButtonCommand}" CommandParameter="2">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <!-- Default -->
+                        <Setter Property="Background" Value="Transparent" />
+                        <Setter Property="Foreground" Value="White" />
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding CurrentStrikes}" Value="2">
+                                <!-- If True -->
+                                <Setter Property="Background" Value="Yellow" />
+                                <Setter Property="Foreground" Value="Black" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
         </Grid>
 
         <Grid Grid.Row="1">
@@ -39,32 +84,91 @@
                 <RowDefinition Height="4*" />
             </Grid.RowDefinitions>
 
-            <TextBox IsEnabled="False" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
+            <TextBox IsReadOnly="True" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
                      Text="Yellow" Background="Yellow" Foreground="Black" FontSize="30" Grid.Column="0" Grid.Row="0" />
-            <TextBox IsEnabled="False" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
+            <TextBox IsReadOnly="True" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
                      Text="Green" Background="Green" Foreground="White" FontSize="30" Grid.Column="1" Grid.Row="0" />
-            <TextBox IsEnabled="False" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Text="Red"
-                     Background="Red" Foreground="White" FontSize="30" Grid.Column="2" Grid.Row="0" />
-            <TextBox IsEnabled="False" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
-                     Text="Blue" Background="Blue" Foreground="White" FontSize="30" Grid.Column="3" Grid.Row="0" />
+            <TextBox IsReadOnly="True" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
+                     Text="Blue" Background="Blue" Foreground="White" FontSize="30" Grid.Column="2" Grid.Row="0" />
+            <TextBox IsReadOnly="True" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Text="Red"
+                     Background="Red" Foreground="White" FontSize="30" Grid.Column="3" Grid.Row="0" />
 
             <TextBlock Text="▼" Grid.Column="0" Grid.Row="1" FontSize="20" VerticalAlignment="Center"
                        HorizontalAlignment="Center" Foreground="Yellow" />
             <TextBlock Text="▼" Grid.Column="1" Grid.Row="1" FontSize="20" VerticalAlignment="Center"
                        HorizontalAlignment="Center" Foreground="Green" />
             <TextBlock Text="▼" Grid.Column="2" Grid.Row="1" FontSize="20" VerticalAlignment="Center"
-                       HorizontalAlignment="Center" Foreground="Red" />
-            <TextBlock Text="▼" Grid.Column="3" Grid.Row="1" FontSize="20" VerticalAlignment="Center"
                        HorizontalAlignment="Center" Foreground="Blue" />
+            <TextBlock Text="▼" Grid.Column="3" Grid.Row="1" FontSize="20" VerticalAlignment="Center"
+                       HorizontalAlignment="Center" Foreground="Red" />
 
-            <TextBox IsEnabled="False" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Text="Red"
-                     Background="Red" Foreground="White" FontSize="30" Grid.Column="0" Grid.Row="2" />
-            <TextBox IsEnabled="False" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
-                     Text="Green" Background="Green" Foreground="White" FontSize="30" Grid.Column="1" Grid.Row="2" />
-            <TextBox IsEnabled="False" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
-                     Text="Blue" Background="Blue" Foreground="White" FontSize="30" Grid.Column="2" Grid.Row="2" />
-            <TextBox IsEnabled="False" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
-                     Text="Yellow" Background="Yellow" Foreground="Black" FontSize="30" Grid.Column="3" Grid.Row="2" />
+            <TextBox IsReadOnly="True" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
+                     Text="{Binding YellowOutput}" Background="{Binding YellowOutput}"
+                     FontSize="30" Grid.Column="0" Grid.Row="2">
+                <TextBox.Style>
+                    <Style TargetType="TextBox">
+                        <!-- Default -->
+                        <Setter Property="Foreground" Value="White" />
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding YellowOutput}" Value="Yellow">
+                                <!-- If True -->
+                                <Setter Property="Foreground" Value="Black" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBox.Style>
+            </TextBox>
+
+            <TextBox IsReadOnly="True" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
+                     Text="{Binding GreenOutput}" Background="{Binding GreenOutput}" FontSize="30" Grid.Column="1"
+                     Grid.Row="2">
+                <TextBox.Style>
+                    <Style TargetType="TextBox">
+                        <!-- Default -->
+                        <Setter Property="Foreground" Value="White" />
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding GreenOutput}" Value="Yellow">
+                                <!-- If True -->
+                                <Setter Property="Foreground" Value="Black" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBox.Style>
+            </TextBox>
+
+
+            <TextBox IsReadOnly="True" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
+                     Text="{Binding RedOutput}" Background="{Binding RedOutput}" FontSize="30" Grid.Column="2"
+                     Grid.Row="2">
+                <TextBox.Style>
+                    <Style TargetType="TextBox">
+                        <!-- Default -->
+                        <Setter Property="Foreground" Value="White" />
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding RedOutput}" Value="Yellow">
+                                <!-- If True -->
+                                <Setter Property="Foreground" Value="Black" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBox.Style>
+            </TextBox>
+            <TextBox IsReadOnly="True" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
+                     Text="{Binding BlueOutput}" Background="{Binding BlueOutput}" FontSize="30" Grid.Column="3"
+                     Grid.Row="2">
+                <TextBox.Style>
+                    <Style TargetType="TextBox">
+                        <!-- Default -->
+                        <Setter Property="Foreground" Value="White" />
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding BlueOutput}" Value="Yellow">
+                                <!-- If True -->
+                                <Setter Property="Foreground" Value="Black" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBox.Style>
+            </TextBox>
         </Grid>
     </Grid>
 </Page>

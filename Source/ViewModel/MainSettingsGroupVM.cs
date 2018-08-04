@@ -40,6 +40,7 @@ namespace BombGameSolver.Source.ViewModel {
             ReferenceValues.IsSerialVowel = !ReferenceValues.IsSerialVowel;
 
             SerialVowelButtonText = ReferenceValues.IsSerialVowel ? "True" : "False";
+            _crossViewMessenger.PushMessage("SerialVowelLogic", null);
         }
 
 #endregion

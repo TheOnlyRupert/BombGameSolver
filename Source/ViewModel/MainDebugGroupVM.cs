@@ -2,7 +2,7 @@ using BombGameSolver.Source.ViewModel.Base;
 
 namespace BombGameSolver.Source.ViewModel {
     public class MainDebugGroupVM : BaseViewModel {
-        private string _debugTextOutput;
+        private string _debugTextOutput, _caretIndexPos;
 
         public MainDebugGroupVM() {
             DebugTextOutput = "Copyright © 2018 Robert Higgins\n\n\n";
@@ -19,9 +19,18 @@ namespace BombGameSolver.Source.ViewModel {
             }
         }
 
+        public string CaretIndexPos {
+            get => _caretIndexPos;
+            set {
+                _caretIndexPos = value;
+                RaisePropertyChangedEvent("DebugTextOutput");
+            }
+        }
+
         private void OnSimpleMessengerValueChanged(object sender, MessageValueChangedEventArgs e) {
             if (e.PropertyName == "UpdateDebugTextOutput") {
-                DebugTextOutput = DebugTextOutput + e.Value;
+                DebugTextOutput = DebugTextOutput + "\n" + e.Value;
+                CaretIndexPos = DebugTextOutput.Length.ToString();
             }
         }
     }

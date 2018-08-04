@@ -4,175 +4,270 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       mc:Ignorable="d">
-    <Grid Background="DarkSlateGray">
+    <Grid Background="DarkSlateGray" Margin="10">
         <Grid.RowDefinitions>
-            <RowDefinition Height="3*" />
             <RowDefinition Height="*" />
+            <RowDefinition Height="120" />
         </Grid.RowDefinitions>
-        <ScrollViewer Grid.Row="0" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
-            <Grid>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Grid.Resources>
+                <Style TargetType="Button">
+                    <Setter Property="FontSize" Value="22" />
+                    <Setter Property="Background" Value="WhiteSmoke" />
+                </Style>
+
+                <Style TargetType="TextBlock">
+                    <Setter Property="TextAlignment" Value="Center" />
+                    <Setter Property="FontSize" Value="22" />
+                    <Setter Property="Background" Value="WhiteSmoke" />
+                    <Setter Property="Padding" Value="0 3 0 3" />
+                    <Setter Property="VerticalAlignment" Value="Center" />
+                </Style>
+            </Grid.Resources>
+
+            <Grid Margin="0 0 10 0">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
 
-                <StackPanel Grid.Column="0" Margin="20 5 5 5">
-                    <TextBox IsEnabled="False" MinWidth="50" Text="NULL" FontSize="20"
-                             HorizontalContentAlignment="Center" />
-                    <TextBox IsEnabled="False" MinWidth="50" Text="6" FontSize="20" HorizontalContentAlignment="Center"
-                             Margin="0 0 0 5" />
-                    <TextBox IsEnabled="False" MinWidth="50" Text="BLANK" FontSize="20"
-                             HorizontalContentAlignment="Center" />
-                    <TextBox IsEnabled="False" MinWidth="50" Text="5" FontSize="20" HorizontalContentAlignment="Center"
-                             Margin="0 0 0 5" />
-                    <TextBox IsEnabled="False" MinWidth="50" Text="C" FontSize="20" HorizontalContentAlignment="Center" />
-                    <TextBox IsEnabled="False" MinWidth="50" Text="4" FontSize="20" HorizontalContentAlignment="Center"
-                             Margin="0 0 0 5" />
-                    <TextBox IsEnabled="False" MinWidth="50" Text="CEE" FontSize="20"
-                             HorizontalContentAlignment="Center" />
-                    <TextBox IsEnabled="False" MinWidth="50" Text="6" FontSize="20" HorizontalContentAlignment="Center"
-                             Margin="0 0 0 5" />
-                    <TextBox IsEnabled="False" MinWidth="50" Text="DISPLAY" FontSize="20"
-                             HorizontalContentAlignment="Center" />
-                    <TextBox IsEnabled="False" MinWidth="50" Text="6" FontSize="20" HorizontalContentAlignment="Center"
-                             Margin="0 0 0 5" />
-                    <TextBox IsEnabled="False" MinWidth="50" Text="FIRST" FontSize="20"
-                             HorizontalContentAlignment="Center" />
-                    <TextBox IsEnabled="False" MinWidth="50" Text="4" FontSize="20" HorizontalContentAlignment="Center"
-                             Margin="0 0 0 5" />
-                    <TextBox IsEnabled="False" MinWidth="50" Text="HOLD ON" FontSize="20"
-                             HorizontalContentAlignment="Center" />
-                    <TextBox IsEnabled="False" MinWidth="50" Text="6" FontSize="20" HorizontalContentAlignment="Center" />
-                </StackPanel>
-                <StackPanel Grid.Column="1" Margin="0 5 5 5">
-                    <TextBox IsEnabled="False" MinWidth="50" Text="LEAD" FontSize="20"
-                             HorizontalContentAlignment="Center" />
-                    <TextBox IsEnabled="False" MinWidth="50" Text="6" FontSize="20" HorizontalContentAlignment="Center"
-                             Margin="0 0 0 5" />
-                    <TextBox IsEnabled="False" MinWidth="50" Text="LED" FontSize="20"
-                             HorizontalContentAlignment="Center" />
-                    <TextBox IsEnabled="False" MinWidth="50" Text="2" FontSize="20" HorizontalContentAlignment="Center"
-                             Margin="0 0 0 5" />
-                    <TextBox IsEnabled="False" MinWidth="50" Text="LEED" FontSize="20"
-                             HorizontalContentAlignment="Center" />
-                    <TextBox IsEnabled="False" MinWidth="50" Text="3" FontSize="20" HorizontalContentAlignment="Center"
-                             Margin="0 0 0 5" />
-                    <TextBox IsEnabled="False" MinWidth="50" Text="NO" FontSize="20"
-                             HorizontalContentAlignment="Center" />
-                    <TextBox IsEnabled="False" MinWidth="50" Text="6" FontSize="20" HorizontalContentAlignment="Center"
-                             Margin="0 0 0 5" />
-                    <TextBox IsEnabled="False" MinWidth="50" Text="NOTHING" FontSize="20"
-                             HorizontalContentAlignment="Center" />
-                    <TextBox IsEnabled="False" MinWidth="50" Text="2" FontSize="20" HorizontalContentAlignment="Center"
-                             Margin="0 0 0 5" />
-                    <TextBox IsEnabled="False" MinWidth="50" Text="OKAY" FontSize="20"
-                             HorizontalContentAlignment="Center" />
-                    <TextBox IsEnabled="False" MinWidth="50" Text="4" FontSize="20" HorizontalContentAlignment="Center"
-                             Margin="0 0 0 5" />
-                    <TextBox IsEnabled="False" MinWidth="50" Text="READ" FontSize="20"
-                             HorizontalContentAlignment="Center" />
-                    <TextBox IsEnabled="False" MinWidth="50" Text="5" FontSize="20" HorizontalContentAlignment="Center" />
-                </StackPanel>
-                <StackPanel Grid.Column="2" Margin="0 5 5 5">
-                    <TextBox IsEnabled="False" MinWidth="50" Text="RED" FontSize="20"
-                             HorizontalContentAlignment="Center" />
-                    <TextBox IsEnabled="False" MinWidth="50" Text="5" FontSize="20" HorizontalContentAlignment="Center"
-                             Margin="0 0 0 5" />
-                    <TextBox IsEnabled="False" MinWidth="50" Text="REED" FontSize="20"
-                             HorizontalContentAlignment="Center" />
-                    <TextBox IsEnabled="False" MinWidth="50" Text="3" FontSize="20" HorizontalContentAlignment="Center"
-                             Margin="0 0 0 5" />
-                    <TextBox IsEnabled="False" MinWidth="50" Text="SAYS" FontSize="20"
-                             HorizontalContentAlignment="Center" />
-                    <TextBox IsEnabled="False" MinWidth="50" Text="6" FontSize="20" HorizontalContentAlignment="Center"
-                             Margin="0 0 0 5" />
-                    <TextBox IsEnabled="False" MinWidth="50" Text="SEE" FontSize="20"
-                             HorizontalContentAlignment="Center" />
-                    <TextBox IsEnabled="False" MinWidth="50" Text="6" FontSize="20" HorizontalContentAlignment="Center"
-                             Margin="0 0 0 5" />
-                    <TextBox IsEnabled="False" MinWidth="50" Text="THEIR" FontSize="20"
-                             HorizontalContentAlignment="Center" />
-                    <TextBox IsEnabled="False" MinWidth="50" Text="5" FontSize="20" HorizontalContentAlignment="Center"
-                             Margin="0 0 0 5" />
-                    <TextBox IsEnabled="False" MinWidth="50" Text="THERE" FontSize="20"
-                             HorizontalContentAlignment="Center" />
-                    <TextBox IsEnabled="False" MinWidth="50" Text="6" FontSize="20" HorizontalContentAlignment="Center"
-                             Margin="0 0 0 5" />
-                    <TextBox IsEnabled="False" MinWidth="50" Text="THEY'RE" FontSize="20"
-                             HorizontalContentAlignment="Center" />
-                    <TextBox IsEnabled="False" MinWidth="50" Text="2" FontSize="20" HorizontalContentAlignment="Center" />
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
 
-                </StackPanel>
-                <StackPanel Grid.Column="3" Margin="0 5 5 5">
-                    <TextBox IsEnabled="False" MinWidth="50" Text="THEY ARE" FontSize="20"
-                             HorizontalContentAlignment="Center" />
-                    <TextBox IsEnabled="False" MinWidth="50" Text="3" FontSize="20" HorizontalContentAlignment="Center"
-                             Margin="0 0 0 5" />
-                    <TextBox IsEnabled="False" MinWidth="50" Text="UR" FontSize="20"
-                             HorizontalContentAlignment="Center" />
-                    <TextBox IsEnabled="False" MinWidth="50" Text="1" FontSize="20" HorizontalContentAlignment="Center"
-                             Margin="0 0 0 5" />
-                    <TextBox IsEnabled="False" MinWidth="50" Text="YES" FontSize="20"
-                             HorizontalContentAlignment="Center" />
-                    <TextBox IsEnabled="False" MinWidth="50" Text="2" FontSize="20" HorizontalContentAlignment="Center"
-                             Margin="0 0 0 5" />
-                    <TextBox IsEnabled="False" MinWidth="50" Text="YOU" FontSize="20"
-                             HorizontalContentAlignment="Center" />
-                    <TextBox IsEnabled="False" MinWidth="50" Text="5" FontSize="20" HorizontalContentAlignment="Center"
-                             Margin="0 0 0 5" />
-                    <TextBox IsEnabled="False" MinWidth="50" Text="YOUR" FontSize="20"
-                             HorizontalContentAlignment="Center" />
-                    <TextBox IsEnabled="False" MinWidth="50" Text="6" FontSize="20" HorizontalContentAlignment="Center"
-                             Margin="0 0 0 5" />
-                    <TextBox IsEnabled="False" MinWidth="50" Text="YOU'RE" FontSize="20"
-                             HorizontalContentAlignment="Center" />
-                    <TextBox IsEnabled="False" MinWidth="50" Text="5" FontSize="20" HorizontalContentAlignment="Center"
-                             Margin="0 0 0 5" />
-                    <TextBox IsEnabled="False" MinWidth="50" Text="YOU ARE" FontSize="20"
-                             HorizontalContentAlignment="Center" />
-                    <TextBox IsEnabled="False" MinWidth="50" Text="5" FontSize="20" HorizontalContentAlignment="Center" />
-                </StackPanel>
-
-                <StackPanel Grid.Column="4" Margin="5 5 5 0">
-                    <Button Content="BLANK" FontSize="20" HorizontalContentAlignment="Center" />
-                    <Button Content="DONE" FontSize="20" HorizontalContentAlignment="Center" />
-                    <Button Content="FIRST" FontSize="20" HorizontalContentAlignment="Center" />
-                    <Button Content="HOLD" FontSize="20" HorizontalContentAlignment="Center" />
-                    <Button Content="LEFT" FontSize="20" HorizontalContentAlignment="Center" />
-                    <Button Content="LIKE" FontSize="20" HorizontalContentAlignment="Center" />
-                    <Button Content="MIDDLE" FontSize="20" HorizontalContentAlignment="Center" />
-                    <Button Content="NEXT" FontSize="20" HorizontalContentAlignment="Center" />
-                    <Button Content="NO" FontSize="20" HorizontalContentAlignment="Center" />
-                    <Button Content="NOTHING" FontSize="20" HorizontalContentAlignment="Center" />
-                    <Button Content="OKAY" FontSize="20" HorizontalContentAlignment="Center" />
-                    <Button Content="PRESS" FontSize="20" HorizontalContentAlignment="Center" />
-                    <Button Content="READY" FontSize="20" HorizontalContentAlignment="Center" />
-                    <Button Content="RIGHT" FontSize="20" HorizontalContentAlignment="Center" />
-                </StackPanel>
-                <StackPanel Grid.Column="5" Margin="0 5 5 0">
-                    <Button Content="SURE" FontSize="20" HorizontalContentAlignment="Center" />
-                    <Button Content="U" FontSize="20" HorizontalContentAlignment="Center" />
-                    <Button Content="UR" FontSize="20" HorizontalContentAlignment="Center" />
-                    <Button Content="UHHH" FontSize="20" HorizontalContentAlignment="Center" />
-                    <Button Content="UH UH" FontSize="20" HorizontalContentAlignment="Center" />
-                    <Button Content="UH HUH" FontSize="20" HorizontalContentAlignment="Center" />
-                    <Button Content="WAIT" FontSize="20" HorizontalContentAlignment="Center" />
-                    <Button Content="WHAT" FontSize="20" HorizontalContentAlignment="Center" />
-                    <Button Content="WHAT?" FontSize="20" HorizontalContentAlignment="Center" />
-                    <Button Content="YES" FontSize="20" HorizontalContentAlignment="Center" />
-                    <Button Content="YOU" FontSize="20" HorizontalContentAlignment="Center" />
-                    <Button Content="YOUR" FontSize="20" HorizontalContentAlignment="Center" />
-                    <Button Content="YOU'RE" FontSize="20" HorizontalContentAlignment="Center" />
-                    <Button Content="YOU ARE" FontSize="20" HorizontalContentAlignment="Center" />
-                </StackPanel>
+                <TextBlock Grid.Column="0" Grid.Row="0">
+                    <Run Text="NULL" />
+                    <LineBreak />
+                    <Run Text="6" />
+                </TextBlock>
+                <TextBlock Grid.Column="0" Grid.Row="1">
+                    <Run Text="BLANK" />
+                    <LineBreak />
+                    <Run Text="5" />
+                </TextBlock>
+                <TextBlock Grid.Column="0" Grid.Row="2">
+                    <Run Text="C" />
+                    <LineBreak />
+                    <Run Text="4" />
+                </TextBlock>
+                <TextBlock Grid.Column="0" Grid.Row="3">
+                    <Run Text="CEE" />
+                    <LineBreak />
+                    <Run Text="6" />
+                </TextBlock>
+                <TextBlock Grid.Column="0" Grid.Row="4">
+                    <Run Text="DISPLAY" />
+                    <LineBreak />
+                    <Run Text="6" />
+                </TextBlock>
+                <TextBlock Grid.Column="0" Grid.Row="5">
+                    <Run Text="FIRST" />
+                    <LineBreak />
+                    <Run Text="4" />
+                </TextBlock>
+                <TextBlock Grid.Column="0" Grid.Row="6">
+                    <Run Text="HOLD ON" />
+                    <LineBreak />
+                    <Run Text="6" />
+                </TextBlock>
+                <TextBlock Grid.Column="1" Grid.Row="0">
+                    <Run Text="LEAD" />
+                    <LineBreak />
+                    <Run Text="6" />
+                </TextBlock>
+                <TextBlock Grid.Column="1" Grid.Row="1">
+                    <Run Text="LED" />
+                    <LineBreak />
+                    <Run Text="2" />
+                </TextBlock>
+                <TextBlock Grid.Column="1" Grid.Row="2">
+                    <Run Text="LEED" />
+                    <LineBreak />
+                    <Run Text="3" />
+                </TextBlock>
+                <TextBlock Grid.Column="1" Grid.Row="3">
+                    <Run Text="NO" />
+                    <LineBreak />
+                    <Run Text="6" />
+                </TextBlock>
+                <TextBlock Grid.Column="1" Grid.Row="4">
+                    <Run Text="NOTHING" />
+                    <LineBreak />
+                    <Run Text="2" />
+                </TextBlock>
+                <TextBlock Grid.Column="1" Grid.Row="5">
+                    <Run Text="OKAY" />
+                    <LineBreak />
+                    <Run Text="4" />
+                </TextBlock>
+                <TextBlock Grid.Column="1" Grid.Row="6">
+                    <Run Text="READ" />
+                    <LineBreak />
+                    <Run Text="5" />
+                </TextBlock>
+                <TextBlock Grid.Column="2" Grid.Row="0">
+                    <Run Text="RED" />
+                    <LineBreak />
+                    <Run Text="5" />
+                </TextBlock>
+                <TextBlock Grid.Column="2" Grid.Row="1">
+                    <Run Text="REED" />
+                    <LineBreak />
+                    <Run Text="3" />
+                </TextBlock>
+                <TextBlock Grid.Column="2" Grid.Row="2">
+                    <Run Text="SAYS" />
+                    <LineBreak />
+                    <Run Text="6" />
+                </TextBlock>
+                <TextBlock Grid.Column="2" Grid.Row="3">
+                    <Run Text="SEE" />
+                    <LineBreak />
+                    <Run Text="6" />
+                </TextBlock>
+                <TextBlock Grid.Column="2" Grid.Row="4">
+                    <Run Text="THEIR" />
+                    <LineBreak />
+                    <Run Text="5" />
+                </TextBlock>
+                <TextBlock Grid.Column="2" Grid.Row="5">
+                    <Run Text="THERE" />
+                    <LineBreak />
+                    <Run Text="6" />
+                </TextBlock>
+                <TextBlock Grid.Column="2" Grid.Row="6">
+                    <Run Text="THEY'RE" />
+                    <LineBreak />
+                    <Run Text="?" />
+                </TextBlock>
+                <TextBlock Grid.Column="3" Grid.Row="0">
+                    <Run Text="THEY ARE" />
+                    <LineBreak />
+                    <Run Text="3" />
+                </TextBlock>
+                <TextBlock Grid.Column="3" Grid.Row="1">
+                    <Run Text="UR" />
+                    <LineBreak />
+                    <Run Text="1" />
+                </TextBlock>
+                <TextBlock Grid.Column="3" Grid.Row="2">
+                    <Run Text="YES" />
+                    <LineBreak />
+                    <Run Text="?" />
+                </TextBlock>
+                <TextBlock Grid.Column="3" Grid.Row="3">
+                    <Run Text="YOU" />
+                    <LineBreak />
+                    <Run Text="5" />
+                </TextBlock>
+                <TextBlock Grid.Column="3" Grid.Row="4">
+                    <Run Text="YOUR" />
+                    <LineBreak />
+                    <Run Text="6" />
+                </TextBlock>
+                <TextBlock Grid.Column="3" Grid.Row="5">
+                    <Run Text="YOU'RE" />
+                    <LineBreak />
+                    <Run Text="6" />
+                </TextBlock>
+                <TextBlock Grid.Column="3" Grid.Row="6">
+                    <Run Text="YOU ARE" />
+                    <LineBreak />
+                    <Run Text="5" />
+                </TextBlock>
             </Grid>
-        </ScrollViewer>
-        <TextBox Text="RIGHT, MIDDLE, LEFT, WHAT?, UH HUH, UHHH, SURE, YES, NO, YOU, YOUR" Grid.Row="1" FontSize="40"
-                 TextWrapping="Wrap" Background="Transparent" Foreground="White" MinWidth="150"
-                 TextAlignment="Left" VerticalAlignment="Center" Margin="30 0 30 0" MinHeight="110" IsEnabled="False" />
+
+            <Grid Grid.Column="1" Margin="10 0 0 0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <Button Content="BLANK" Command="{Binding ButtonCommand}" CommandParameter="blank" />
+                <Button Grid.Column="0" Grid.Row="1" Content="DONE" Command="{Binding ButtonCommand}"
+                        CommandParameter="done" />
+                <Button Grid.Column="0" Grid.Row="2" Content="FIRST" Command="{Binding ButtonCommand}"
+                        CommandParameter="first" />
+                <Button Grid.Column="0" Grid.Row="3" Content="HOLD" Command="{Binding ButtonCommand}"
+                        CommandParameter="hold" />
+                <Button Grid.Column="0" Grid.Row="4" Content="LEFT" Command="{Binding ButtonCommand}"
+                        CommandParameter="left" />
+                <Button Grid.Column="0" Grid.Row="5" Content="LIKE" Command="{Binding ButtonCommand}"
+                        CommandParameter="like" />
+                <Button Grid.Column="0" Grid.Row="6" Content="MIDDLE" Command="{Binding ButtonCommand}"
+                        CommandParameter="middle" />
+                <Button Grid.Column="1" Grid.Row="0" Content="NEXT" Command="{Binding ButtonCommand}"
+                        CommandParameter="next" />
+                <Button Grid.Column="1" Grid.Row="1" Content="NO" Command="{Binding ButtonCommand}"
+                        CommandParameter="no" />
+                <Button Grid.Column="1" Grid.Row="2" Content="NOTHING" Command="{Binding ButtonCommand}"
+                        CommandParameter="nothing" />
+                <Button Grid.Column="1" Grid.Row="3" Content="OKAY" Command="{Binding ButtonCommand}"
+                        CommandParameter="okay" />
+                <Button Grid.Column="1" Grid.Row="4" Content="PRESS" Command="{Binding ButtonCommand}"
+                        CommandParameter="press" />
+                <Button Grid.Column="1" Grid.Row="5" Content="READY" Command="{Binding ButtonCommand}"
+                        CommandParameter="ready" />
+                <Button Grid.Column="1" Grid.Row="6" Content="RIGHT" Command="{Binding ButtonCommand}"
+                        CommandParameter="right" />
+                <Button Grid.Column="2" Grid.Row="0" Content="SURE" Command="{Binding ButtonCommand}"
+                        CommandParameter="sure" />
+                <Button Grid.Column="2" Grid.Row="1" Content="U" Command="{Binding ButtonCommand}" CommandParameter="u" />
+                <Button Grid.Column="2" Grid.Row="2" Content="UR" Command="{Binding ButtonCommand}"
+                        CommandParameter="ur" />
+                <Button Grid.Column="2" Grid.Row="3" Content="UHHH" Command="{Binding ButtonCommand}"
+                        CommandParameter="uhhh" />
+                <Button Grid.Column="2" Grid.Row="4" Content="UH UH" Command="{Binding ButtonCommand}"
+                        CommandParameter="uhuh" />
+                <Button Grid.Column="2" Grid.Row="5" Content="UH HUH" Command="{Binding ButtonCommand}"
+                        CommandParameter="uhhuh" />
+                <Button Grid.Column="2" Grid.Row="6" Content="WAIT" Command="{Binding ButtonCommand}"
+                        CommandParameter="wait" />
+                <Button Grid.Column="3" Grid.Row="0" Content="WHAT" Command="{Binding ButtonCommand}"
+                        CommandParameter="what" />
+                <Button Grid.Column="3" Grid.Row="1" Content="WHAT?" Command="{Binding ButtonCommand}"
+                        CommandParameter="what?" />
+                <Button Grid.Column="3" Grid.Row="2" Content="YES" Command="{Binding ButtonCommand}"
+                        CommandParameter="yes" />
+                <Button Grid.Column="3" Grid.Row="3" Content="YOU" Command="{Binding ButtonCommand}"
+                        CommandParameter="you" />
+                <Button Grid.Column="3" Grid.Row="4" Content="YOUR" Command="{Binding ButtonCommand}"
+                        CommandParameter="your" />
+                <Button Grid.Column="3" Grid.Row="5" Content="YOU'RE" Command="{Binding ButtonCommand}"
+                        CommandParameter="you're" />
+                <Button Grid.Column="3" Grid.Row="6" Content="YOU ARE" Command="{Binding ButtonCommand}"
+                        CommandParameter="youare" />
+            </Grid>
+        </Grid>
+
+        <TextBox Text="{Binding OutputTextBox}" Grid.Row="1" FontSize="36" Padding="5 0 0 0" TextWrapping="Wrap"
+                 VerticalAlignment="Stretch" Background="Transparent" Foreground="White" TextAlignment="Left"
+                 IsReadOnly="True" VerticalScrollBarVisibility="Auto" Margin="0 20 0 0" />
     </Grid>
 </Page>

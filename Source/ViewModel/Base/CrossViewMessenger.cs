@@ -9,7 +9,8 @@ namespace BombGameSolver.Source {
 
         public void PushMessage(string propertyName, string value) {
             MessageValueChanged?.Invoke(this, new MessageValueChangedEventArgs {
-                PropertyName = propertyName
+                PropertyName = propertyName,
+                Value = value
             });
         }
     }

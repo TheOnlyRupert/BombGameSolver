@@ -31,5 +31,8 @@
                      TextAlignment="Left" VerticalAlignment="Center" Margin="30 0 30 0" MinHeight="110"
                      IsEnabled="False" />
         </Grid>
+
+        <Button Content="Reset This  (F12)" VerticalAlignment="Bottom" HorizontalAlignment="Right"
+                FontSize="20" Padding="10 4" Margin="0 0 5 5" />
     </Grid>
 </Page>

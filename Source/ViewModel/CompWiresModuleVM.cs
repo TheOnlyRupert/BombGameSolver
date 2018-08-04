@@ -4,10 +4,10 @@ using BombGameSolver.Source.ViewModel.Base;
 
 namespace BombGameSolver.Source.ViewModel {
     public class CompWiresModuleVM : BaseViewModel {
+        private bool _isLedOn, _isStarOn;
+
         private string _wireImage, _ledImage, _starImage, _ledButtonText, _starButtonText, _brokenWireImage,
             _outputText, _wireColor;
-
-        private bool _isLedOn, _isStarOn;
 
         public CompWiresModuleVM() {
             WireImage = "../../Resources/comp_wires/wire_whi.png";
