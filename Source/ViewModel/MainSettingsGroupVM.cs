@@ -61,6 +61,7 @@ namespace BombGameSolver.Source.ViewModel {
             ReferenceValues.IsSerialEven = !ReferenceValues.IsSerialEven;
 
             SerialEvenButtonText = ReferenceValues.IsSerialEven ? "True" : "False";
+            _crossViewMessenger.PushMessage("SerialEvenLogic", null);
         }
 
 #endregion
@@ -81,7 +82,7 @@ namespace BombGameSolver.Source.ViewModel {
             ReferenceValues.HasLitCar = !ReferenceValues.HasLitCar;
 
             LitCarButtonText = ReferenceValues.HasLitCar ? "True" : "False";
-            _crossViewMessenger.PushMessage("LitCarButtonText", null);
+            _crossViewMessenger.PushMessage("LitCarLogic", null);
         }
 
 #endregion
@@ -102,7 +103,7 @@ namespace BombGameSolver.Source.ViewModel {
             ReferenceValues.HasLitFrk = !ReferenceValues.HasLitFrk;
 
             LitFrkButtonText = ReferenceValues.HasLitFrk ? "True" : "False";
-            _crossViewMessenger.PushMessage("LitFrkButtonText", null);
+            _crossViewMessenger.PushMessage("LitFrkLogic", null);
         }
 
 #endregion
@@ -123,6 +124,7 @@ namespace BombGameSolver.Source.ViewModel {
             ReferenceValues.HasParPort = !ReferenceValues.HasParPort;
 
             ParPortButtonText = ReferenceValues.HasParPort ? "True" : "False";
+            _crossViewMessenger.PushMessage("ParPortLogic", null);
         }
 
 #endregion
@@ -137,6 +139,13 @@ namespace BombGameSolver.Source.ViewModel {
             SerialVowelButtonText = SerialEvenButtonText = LitCarButtonText = LitFrkButtonText =
                 ParPortButtonText = "False";
             BatteryAmountChanged = "0";
+
+            _crossViewMessenger.PushMessage("LitCarLogic", null);
+            _crossViewMessenger.PushMessage("LitFrkLogic", null);
+            _crossViewMessenger.PushMessage("SerialVowelLogic", null);
+            _crossViewMessenger.PushMessage("SerialEvenLogic", null);
+            _crossViewMessenger.PushMessage("ParPortLogic", null);
+            _crossViewMessenger.PushMessage("BatteryAmountChanged", null);
         }
 
 #endregion
@@ -159,6 +168,7 @@ namespace BombGameSolver.Source.ViewModel {
 
         private void BatteryLogic(object param) {
             BatteryAmountChanged = param.ToString();
+            _crossViewMessenger.PushMessage("BatteryAmountChanged", null);
         }
 
         public string BatteryAmountChanged {
@@ -170,7 +180,6 @@ namespace BombGameSolver.Source.ViewModel {
                     ReferenceValues.BatteryNum = 0;
                 }
 
-                _crossViewMessenger.PushMessage("BatteryAmountChanged", null);
                 RaisePropertyChangedEvent("BatteryAmountChanged");
             }
         }

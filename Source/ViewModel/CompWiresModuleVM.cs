@@ -15,6 +15,17 @@ namespace BombGameSolver.Source.ViewModel {
             StarButtonText = "Star OFF (6)";
             _wireColor = "white";
             WireLogic();
+
+            var simpleMessenger = CrossViewMessenger.Instance;
+            simpleMessenger.MessageValueChanged += OnSimpleMessengerValueChanged;
+        }
+
+        private void OnSimpleMessengerValueChanged(object sender, MessageValueChangedEventArgs e) {
+            /* Update wires if SerialEven, BatteryAmount, or ParPort buttons from SettingsModule are changed */
+            if (e.PropertyName == "SerialEvenLogic" || e.PropertyName == "BatteryAmountChanged" ||
+                e.PropertyName == "ParPortLogic") {
+                WireLogic();
+            }
         }
 
         public string WireImage {
@@ -271,5 +282,20 @@ namespace BombGameSolver.Source.ViewModel {
                 break;
             }
         }
+
+        public ICommand ResetButtonCommand => new DelegateCommand(ResetButtonCommandLogic, true);
+
+        private void ResetButtonCommandLogic(object param) {
+            _isLedOn = _isStarOn = false;
+            LedButtonText = "LED OFF (5)";
+            LedImage = "NULL";
+            StarButtonText = "Star OFF (5)";
+            StarImage = "NULL";
+
+            WireImage = "../../Resources/comp_wires/wire_whi.png";
+            _wireColor = "white";
+            WireLogic();
+        }
+
     }
 }

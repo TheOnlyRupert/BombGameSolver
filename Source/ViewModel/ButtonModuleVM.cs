@@ -55,8 +55,8 @@ namespace BombGameSolver.Source.ViewModel {
 
         private void OnSimpleMessengerValueChanged(object sender, MessageValueChangedEventArgs e) {
             /* Update button if BatteryAmount, litCAR, or litFRK from SettingsModule are changed */
-            if (e.PropertyName == "BatteryAmountChanged" || e.PropertyName == "LitCarButtonText" ||
-                e.PropertyName == "LitFrkButtonText") {
+            if (e.PropertyName == "BatteryAmountChanged" || e.PropertyName == "LitCarLogic" ||
+                e.PropertyName == "LitFrkLogic") {
                 ButtonLogic("null");
             }
         }

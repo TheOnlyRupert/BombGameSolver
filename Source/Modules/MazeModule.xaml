@@ -11,28 +11,32 @@
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
 
-            <StackPanel Orientation="Horizontal" Grid.Row="0" VerticalAlignment="Bottom" HorizontalAlignment="Center">
+            <StackPanel VerticalAlignment="Bottom" HorizontalAlignment="Center">
+            <StackPanel Orientation="Horizontal">
                 <StackPanel>
                     <TextBlock Text="Node" Foreground="White" FontSize="18" />
-                    <TextBox Text="11" FontSize="60" TextAlignment="Center" MaxLength="2" MinWidth="80" />
+                    <TextBox FontSize="60" TextAlignment="Center" MaxLength="2" MinWidth="80" />
                 </StackPanel>
                 <StackPanel Margin="5 0 5 0">
                     <TextBlock Text="You" Foreground="White" FontSize="18" />
-                    <TextBox Text="16" FontSize="60" TextAlignment="Center" MaxLength="2" MinWidth="80" />
+                    <TextBox FontSize="60" TextAlignment="Center" MaxLength="2" MinWidth="80" />
                 </StackPanel>
                 <StackPanel>
                     <TextBlock Text="Target" Foreground="White" FontSize="18" />
-                    <TextBox Text="23" FontSize="60" TextAlignment="Center" MaxLength="2" MinWidth="80" />
+                    <TextBox FontSize="60" TextAlignment="Center" MaxLength="2" MinWidth="80" />
                 </StackPanel>
             </StackPanel>
-            <TextBox Text="UP, LEFT, DOWN, DOWN, DOWN, LEFT, UP, LEFT DOWN, DOWN, DOWN, RIGHT" Grid.Row="1"
-                     FontSize="40"
-                     TextWrapping="Wrap" Background="Transparent" Foreground="White" MinWidth="150"
-                     TextAlignment="Left" VerticalAlignment="Center" Margin="30 0 30 0" MinHeight="110"
-                     IsEnabled="False" />
+                <Button Content="Submit" FontSize="24" Background="Transparent" Foreground="White"
+                        Margin="0 10 0 0" Command="{Binding ButtonCommand}" />
+            </StackPanel>
+
+            <TextBox Text="{Binding OutputTextBox}" Grid.Row="1"
+                     FontSize="40" TextWrapping="Wrap" Background="Transparent" Foreground="White"
+                     TextAlignment="Left" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"
+                     Margin="30" IsReadOnly="True" VerticalScrollBarVisibility="Auto" />
         </Grid>
 
         <Button Content="Reset This  (F12)" VerticalAlignment="Bottom" HorizontalAlignment="Right"
-                FontSize="20" Padding="10 4" Margin="0 0 5 5" />
+                FontSize="20" Padding="10 4" Margin="0 0 5 5" Command="{Binding ResetButtonCommand}" />
     </Grid>
 </Page>

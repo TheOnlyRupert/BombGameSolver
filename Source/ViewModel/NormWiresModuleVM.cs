@@ -16,10 +16,20 @@ namespace BombGameSolver.Source.ViewModel {
             _wireBrokenImage,
             _outputText;
 
-        private readonly string[] _wireArray = {"", "", "", "", "", ""};
+        private string[] _wireArray = {"", "", "", "", "", ""};
 
         public NormWiresViewModel() {
             RoundCounter = 0;
+
+            var simpleMessenger = CrossViewMessenger.Instance;
+            simpleMessenger.MessageValueChanged += OnSimpleMessengerValueChanged;
+        }
+
+        private void OnSimpleMessengerValueChanged(object sender, MessageValueChangedEventArgs e) {
+            /* Update wires if SerialEven Button from SettingsModule is changed */
+            if (e.PropertyName == "SerialEvenLogic") {
+                ButtonLogic("update");
+            }
         }
 
         public int RoundCounter {
@@ -29,8 +39,6 @@ namespace BombGameSolver.Source.ViewModel {
                 RaisePropertyChangedEvent("RoundCounter");
             }
         }
-
-        public ICommand ButtonCommand => new DelegateCommand(ButtonLogic, true);
 
         public string Wire1View {
             get => _wire1Image;
@@ -96,8 +104,10 @@ namespace BombGameSolver.Source.ViewModel {
             }
         }
 
+        public ICommand ButtonCommand => new DelegateCommand(ButtonLogic, true);
+
         private void ButtonLogic(object param) {
-            /* If clear entry button */
+            /* Clear entry button */
             if (param.ToString() == "delete") {
                 RoundCounter--;
                 if (RoundCounter < 0) {
@@ -106,10 +116,23 @@ namespace BombGameSolver.Source.ViewModel {
 
                 _wireArray[RoundCounter] = "";
                 OutputText = "";
-            } else if (RoundCounter < 6) {
+            }
+
+            /* Reset all button */
+            else if (param.ToString() == "reset") {
+                RoundCounter = 0;
+                _wireArray = new[] {"", "", "", "", "", ""};
+                OutputText = "";
+            }
+
+            /* Normal execute */
+            else if (param.ToString() != "update" && RoundCounter < 6) {
                 _wireArray[RoundCounter] = param.ToString();
                 RoundCounter++;
-            } else {
+            }
+
+            /* Update or don't execute */
+            else if (param.ToString() != "update") {
                 return;
             }
 
@@ -120,7 +143,7 @@ namespace BombGameSolver.Source.ViewModel {
             Wire4View = "../../Resources/normal_wires/wire_4_" + _wireArray[3] + ".png";
             Wire5View = "../../Resources/normal_wires/wire_5_" + _wireArray[4] + ".png";
             Wire6View = "../../Resources/normal_wires/wire_6_" + _wireArray[5] + ".png";
-            WireBrokenView = "../../Resources/normal_wires/NOTHING.png";
+            WireBrokenView = "NULL";
 
             /* Logic of wire order */
             switch (RoundCounter) {
@@ -323,6 +346,12 @@ namespace BombGameSolver.Source.ViewModel {
 
                 break;
             }
+        }
+
+        public ICommand ResetButtonCommand => new DelegateCommand(ResetButtonCommandLogic, true);
+
+        private void ResetButtonCommandLogic(object param) {
+            ButtonLogic("reset");
         }
     }
 }
