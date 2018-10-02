@@ -322,14 +322,16 @@ namespace BombGameSolver.Source.ViewModel {
                             temp++;
                         }
                     }
+                } else {
+                    temp = 0;
                 }
 
                 if (temp > 1) {
                     Console.WriteLine("[6x] 1x Yellow and 2+ White -> Cut Fourth");
                     OutputText = "Fourth";
                     WireBrokenView = "../../Resources/normal_wires/wire_4_broken.png";
-
                 }
+
                 /* If No Red -> Cut Last */
                 else if (_wireArray[0] != "red" && _wireArray[1] != "red" && _wireArray[2] != "red" &&
                          _wireArray[3] != "red" && _wireArray[4] != "red" && _wireArray[5] != "red") {

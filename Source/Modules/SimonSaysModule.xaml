@@ -138,14 +138,14 @@
 
 
             <TextBox IsReadOnly="True" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
-                     Text="{Binding RedOutput}" Background="{Binding RedOutput}" FontSize="30" Grid.Column="2"
+                     Text="{Binding BlueOutput}" Background="{Binding BlueOutput}" FontSize="30" Grid.Column="2"
                      Grid.Row="2">
                 <TextBox.Style>
                     <Style TargetType="TextBox">
                         <!-- Default -->
                         <Setter Property="Foreground" Value="White" />
                         <Style.Triggers>
-                            <DataTrigger Binding="{Binding RedOutput}" Value="Yellow">
+                            <DataTrigger Binding="{Binding BlueOutput}" Value="Yellow">
                                 <!-- If True -->
                                 <Setter Property="Foreground" Value="Black" />
                             </DataTrigger>
@@ -154,14 +154,14 @@
                 </TextBox.Style>
             </TextBox>
             <TextBox IsReadOnly="True" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
-                     Text="{Binding BlueOutput}" Background="{Binding BlueOutput}" FontSize="30" Grid.Column="3"
+                     Text="{Binding RedOutput}" Background="{Binding RedOutput}" FontSize="30" Grid.Column="3"
                      Grid.Row="2">
                 <TextBox.Style>
                     <Style TargetType="TextBox">
                         <!-- Default -->
                         <Setter Property="Foreground" Value="White" />
                         <Style.Triggers>
-                            <DataTrigger Binding="{Binding BlueOutput}" Value="Yellow">
+                            <DataTrigger Binding="{Binding RedOutput}" Value="Yellow">
                                 <!-- If True -->
                                 <Setter Property="Foreground" Value="Black" />
                             </DataTrigger>

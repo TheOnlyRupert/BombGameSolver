@@ -45,8 +45,9 @@
                 </StackPanel>
             </StackPanel>
 
-            <TextBlock Text="{Binding OutputText}" Grid.Row="1" FontSize="72" HorizontalAlignment="Center"
-                       VerticalAlignment="Center" Foreground="White" />
+            <TextBox Text="{Binding OutputText}" Grid.Row="1" FontSize="72" HorizontalAlignment="Stretch"
+                     HorizontalContentAlignment="Center" Padding="5 0 5 0" VerticalAlignment="Center"
+                     Foreground="White" Background="Transparent" Margin="20" IsReadOnly="True" />
         </Grid>
 
         <Button Content="Reset This  (F12)" VerticalAlignment="Bottom" HorizontalAlignment="Right"

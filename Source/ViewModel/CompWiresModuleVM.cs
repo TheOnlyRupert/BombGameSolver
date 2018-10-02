@@ -1,3 +1,4 @@
+using System;
 using System.Windows.Input;
 using BombGameSolver.Source.Reference;
 using BombGameSolver.Source.ViewModel.Base;
@@ -5,9 +6,9 @@ using BombGameSolver.Source.ViewModel.Base;
 namespace BombGameSolver.Source.ViewModel {
     public class CompWiresModuleVM : BaseViewModel {
         private bool _isLedOn, _isStarOn;
-
         private string _wireImage, _ledImage, _starImage, _ledButtonText, _starButtonText, _brokenWireImage,
             _outputText, _wireColor;
+        private readonly CrossViewMessenger _crossViewMessenger;
 
         public CompWiresModuleVM() {
             WireImage = "../../Resources/comp_wires/wire_whi.png";
@@ -18,6 +19,7 @@ namespace BombGameSolver.Source.ViewModel {
 
             var simpleMessenger = CrossViewMessenger.Instance;
             simpleMessenger.MessageValueChanged += OnSimpleMessengerValueChanged;
+            _crossViewMessenger = CrossViewMessenger.Instance;
         }
 
         private void OnSimpleMessengerValueChanged(object sender, MessageValueChangedEventArgs e) {
@@ -134,6 +136,8 @@ namespace BombGameSolver.Source.ViewModel {
         }
 
         private void WireLogic() {
+            Console.WriteLine($"[CompWiresModuleVM] Wire: {_wireColor}, LED: {_isLedOn}, Star: {_isStarOn}");
+
             switch (_wireColor) {
             case "white":
                 /* LED FALSE, Star FALSE -> Yes */
@@ -161,7 +165,6 @@ namespace BombGameSolver.Source.ViewModel {
                         OutputText = "Do Not Cut";
                     }
                 }
-
                 break;
 
             case "blue":
@@ -281,6 +284,8 @@ namespace BombGameSolver.Source.ViewModel {
 
                 break;
             }
+
+            //_crossViewMessenger.PushMessage("UpdateDebugTextOutput", "[ButtonModuleVM] Red & Hold -> Immediately");
         }
 
         public ICommand ResetButtonCommand => new DelegateCommand(ResetButtonCommandLogic, true);

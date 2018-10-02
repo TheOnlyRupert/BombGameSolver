@@ -42,8 +42,9 @@
                 <Button Content="Submit  (RETURN)" FontSize="20" Padding="0 8" Command="{Binding ButtonCommand}"
                         CommandParameter="submit" />
             </StackPanel>
-            <TextBlock Text="Press 1" VerticalAlignment="Center" FontSize="72" IsEnabled="False" TextAlignment="Center"
-                       Grid.Row="1" Foreground="White" />
+            <TextBox Text="{Binding OutputText}" Grid.Row="1" FontSize="60" HorizontalAlignment="Stretch"
+                     HorizontalContentAlignment="Center" Padding="10" VerticalAlignment="Center"
+                     Foreground="White" Background="Transparent" Margin="10 0 15 0" IsReadOnly="True" />
         </Grid>
 
         <Button Content="Reset This  (F12)" VerticalAlignment="Bottom" HorizontalAlignment="Right" FontSize="20"

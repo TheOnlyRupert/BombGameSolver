@@ -79,8 +79,24 @@
                 </Button>
             </StackPanel>
 
-            <TextBlock Text="{Binding OutputText}" Grid.Row="1" FontSize="72" HorizontalAlignment="Center"
-                       VerticalAlignment="Center" Foreground="White" />
+            <TextBox Text="{Binding OutputText}" Grid.Row="1" FontSize="60" HorizontalAlignment="Stretch"
+                     HorizontalContentAlignment="Center" Padding="10" VerticalAlignment="Center"
+                     IsReadOnly="True" >
+                <TextBox.Style>
+                    <Style TargetType="TextBox">
+                        <!-- Default -->
+                        <Setter Property="Foreground" Value="White" />
+                        <Setter Property="Background" Value="Red" />
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding OutputText}" Value="Cut">
+                                <!-- If True -->
+                                <Setter Property="Foreground" Value="Black" />
+                                <Setter Property="Background" Value="Yellow" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBox.Style>
+            </TextBox>
         </Grid>
 
         <Button Content="Reset This  (F12)" VerticalAlignment="Bottom" HorizontalAlignment="Right"

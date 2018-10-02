@@ -6,7 +6,7 @@ namespace BombGameSolver.Source.ViewModel {
         private string _iconImage, _devLogWindowHeight;
 
         public MainWindowVM() {
-            IconImage = "Resources/all_icon/icon.png";
+            IconImage = "Resources/icons/nuke.png";
             DevLogWindowHeight = "0";
 
             var simpleMessenger = CrossViewMessenger.Instance;

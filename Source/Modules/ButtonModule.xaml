@@ -10,26 +10,27 @@
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
-        <Image Source="{Binding ButtonImage}" Grid.Column="0" Margin="10" />
-        <TextBlock Text="{Binding ButtonText}" Grid.Column="0" Margin="10" VerticalAlignment="Center"
-                   HorizontalAlignment="Center" FontSize="84">
-            <TextBlock.Style>
-                <Style TargetType="TextBlock">
-                    <!-- Default -->
-                    <Setter Property="Foreground" Value="White" />
-                    <Style.Triggers>
-                        <DataTrigger Binding="{Binding ButtonColor}" Value="White">
-                            <!-- If True -->
-                            <Setter Property="Foreground" Value="Black" />
-                        </DataTrigger>
-                        <DataTrigger Binding="{Binding ButtonColor}" Value="Yellow">
-                            <!-- If True -->
-                            <Setter Property="Foreground" Value="Black" />
-                        </DataTrigger>
-                    </Style.Triggers>
-                </Style>
-            </TextBlock.Style>
-        </TextBlock>
+        <Image Name="Image" Source="{Binding ButtonImage}" Grid.Column="0" Margin="10" />
+        <Viewbox Width="{Binding Path=ActualWidth, ElementName=Image}" Grid.Column="0" >
+            <TextBlock Text="{Binding ButtonText}" Margin="10" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <TextBlock.Style>
+                    <Style TargetType="TextBlock">
+                        <!-- Default -->
+                        <Setter Property="Foreground" Value="White" />
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding ButtonColor}" Value="White">
+                                <!-- If True -->
+                                <Setter Property="Foreground" Value="Black" />
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding ButtonColor}" Value="Yellow">
+                                <!-- If True -->
+                                <Setter Property="Foreground" Value="Black" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBlock.Style>
+            </TextBlock>
+        </Viewbox>
 
 
         <Grid Grid.Column="1" Margin="20 0 10 0">
@@ -78,27 +79,27 @@
                         Command="{Binding ButtonCommand}" CommandParameter="Detonate" />
             </Grid>
 
-            <Grid Grid.Row="1" VerticalAlignment="Center">
-                <StackPanel>
-                    <TextBlock Text="{Binding OutputText}" HorizontalAlignment="Center" Foreground="White"
-                               FontSize="72" TextAlignment="Center" />
-                    <TextBlock Text="Blue: 4,  Yellow: 5,  Other: 1" HorizontalAlignment="Center"
-                               Foreground="White" FontSize="32" TextAlignment="Center">
-                        <TextBlock.Style>
-                            <Style TargetType="TextBlock">
-                                <!-- Default -->
-                                <Setter Property="Visibility" Value="Collapsed" />
-                                <Style.Triggers>
-                                    <DataTrigger Binding="{Binding OutputText}" Value="Hold">
-                                        <!-- If True -->
-                                        <Setter Property="Visibility" Value="Visible" />
-                                    </DataTrigger>
-                                </Style.Triggers>
-                            </Style>
-                        </TextBlock.Style>
-                    </TextBlock>
-                </StackPanel>
-            </Grid>
+            <StackPanel Grid.Row="1" VerticalAlignment="Center">
+                <TextBox Text="{Binding OutputText}" FontSize="60" Padding="10"
+                         HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalAlignment="Center"
+                         Foreground="White" Background="Transparent" IsReadOnly="True" />
+
+                <TextBlock HorizontalAlignment="Center" Foreground="White" FontSize="32" TextAlignment="Center"
+                           Margin="0 8 0 0">
+                    <TextBlock.Style>
+                        <Style TargetType="TextBlock">
+                            <!-- Default -->
+                            <Setter Property="Text" Value=" " />
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding OutputText}" Value="Hold">
+                                    <!-- If True -->
+                                    <Setter Property="Text" Value="Blue: 4,  Yellow: 5,  Other: 1" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBlock.Style>
+                </TextBlock>
+            </StackPanel>
         </Grid>
     </Grid>
 </Page>

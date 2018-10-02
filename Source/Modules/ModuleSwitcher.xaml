@@ -30,73 +30,73 @@
         <Button Grid.Column="0" Grid.Row="0" Command="{Binding ButtonCommand}" CommandParameter="NormWiresModule">
             <StackPanel>
                 <TextBlock Text="Normal Wires" HorizontalAlignment="Center" Margin="0 0 0 5" />
-                <Image Source="../../Resources/all_icon/normal_wires.PNG" Width="128" />
+                <Image Source="../../Resources/icons/normal_wires.PNG" Width="128" />
             </StackPanel>
         </Button>
         <Button Grid.Column="0" Grid.Row="1" Command="{Binding ButtonCommand}" CommandParameter="ButtonModule">
             <StackPanel>
                 <TextBlock Text="Button" HorizontalAlignment="Center" Margin="0 0 0 5" />
-                <Image Source="../../Resources/all_icon/button.png" Width="128" />
+                <Image Source="../../Resources/icons/button.png" Width="128" />
             </StackPanel>
         </Button>
         <Button Grid.Column="0" Grid.Row="2" Command="{Binding ButtonCommand}" CommandParameter="KeypadsModule">
             <StackPanel>
                 <TextBlock Text="Keypads" HorizontalAlignment="Center" Margin="0 0 0 5" />
-                <Image Source="../../Resources/all_icon/keypads.PNG" Width="128" />
+                <Image Source="../../Resources/icons/keypads.PNG" Width="128" />
             </StackPanel>
         </Button>
         <Button Grid.Column="1" Grid.Row="0" Command="{Binding ButtonCommand}" CommandParameter="SimonSaysModule">
             <StackPanel>
                 <TextBlock Text="Simon Says" HorizontalAlignment="Center" Margin="0 0 0 5" />
-                <Image Source="../../Resources/all_icon/simon_says.png" Width="128" />
+                <Image Source="../../Resources/icons/simon_says.png" Width="128" />
             </StackPanel>
         </Button>
         <Button Grid.Column="1" Grid.Row="1" Command="{Binding ButtonCommand}" CommandParameter="WhoFirstModule">
             <StackPanel>
                 <TextBlock Text="Who's On First" HorizontalAlignment="Center" Margin="0 0 0 5" />
-                <Image Source="../../Resources/all_icon/who_first.PNG" Width="128" />
+                <Image Source="../../Resources/icons/who_first.PNG" Width="128" />
             </StackPanel>
         </Button>
         <Button Grid.Column="1" Grid.Row="2" Command="{Binding ButtonCommand}" CommandParameter="MemoryModule">
             <StackPanel>
                 <TextBlock Text="Memory" HorizontalAlignment="Center" Margin="0 0 0 5" />
-                <Image Source="../../Resources/all_icon/memory.png" Width="128" />
+                <Image Source="../../Resources/icons/memory.png" Width="128" />
             </StackPanel>
         </Button>
         <Button Grid.Column="2" Grid.Row="0" Command="{Binding ButtonCommand}" CommandParameter="MorseCodeModule">
             <StackPanel>
                 <TextBlock Text="Morse Code" HorizontalAlignment="Center" Margin="0 0 0 5" />
-                <Image Source="../../Resources/all_icon/morse_code.png" Width="128" />
+                <Image Source="../../Resources/icons/morse_code.png" Width="128" />
             </StackPanel>
         </Button>
         <Button Grid.Column="2" Grid.Row="1" Command="{Binding ButtonCommand}" CommandParameter="CompWiresModule">
             <StackPanel>
                 <TextBlock Text="Complicated Wires" HorizontalAlignment="Center" Margin="0 0 0 5" />
-                <Image Source="../../Resources/all_icon/comp_wires.png" Width="128" />
+                <Image Source="../../Resources/icons/comp_wires.png" Width="128" />
             </StackPanel>
         </Button>
         <Button Grid.Column="2" Grid.Row="2" Command="{Binding ButtonCommand}" CommandParameter="SequWiresModule">
             <StackPanel>
                 <TextBlock Text="Wire Sequence" HorizontalAlignment="Center" Margin="0 0 0 5" />
-                <Image Source="../../Resources/all_icon/wire_seq.png" Width="128" />
+                <Image Source="../../Resources/icons/wire_seq.png" Width="128" />
             </StackPanel>
         </Button>
         <Button Grid.Column="3" Grid.Row="0" Command="{Binding ButtonCommand}" CommandParameter="MazeModule">
             <StackPanel>
                 <TextBlock Text="Maze" HorizontalAlignment="Center" Margin="0 0 0 5" />
-                <Image Source="../../Resources/all_icon/maze.png" Width="128" />
+                <Image Source="../../Resources/icons/maze.png" Width="128" />
             </StackPanel>
         </Button>
         <Button Grid.Column="3" Grid.Row="1" Command="{Binding ButtonCommand}" CommandParameter="PasswordsModule">
             <StackPanel>
                 <TextBlock Text="Passwords" HorizontalAlignment="Center" Margin="0 0 0 5" />
-                <Image Source="../../Resources/all_icon/passwords.png" Width="128" />
+                <Image Source="../../Resources/icons/passwords.png" Width="128" />
             </StackPanel>
         </Button>
         <Button Grid.Column="3" Grid.Row="2" Command="{Binding ButtonCommand}" CommandParameter="KnobModule">
             <StackPanel>
                 <TextBlock Text="The Knob" HorizontalAlignment="Center" Margin="0 0 0 5" />
-                <Image Source="../../Resources/all_icon/knob.png" Width="128" />
+                <Image Source="../../Resources/icons/knob.png" Width="128" />
             </StackPanel>
         </Button>
     </Grid>
