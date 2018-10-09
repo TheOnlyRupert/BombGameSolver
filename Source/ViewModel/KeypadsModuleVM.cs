@@ -38,36 +38,6 @@ namespace BombGameSolver.Source.ViewModel {
             _keypad_tb,
             _keypad_y;
 
-        private string[] _keypadInput = {"", "", "", ""};
-
-        private string[] _valueOfKeypad_3_Broken = {"24"};
-        private string[] _valueOfKeypad_3_Fancy = {"45"};
-        private string[] _valueOfKeypad_6 = {"30", "50"};
-        private string[] _valueOfKeypad_Ae = {"53"};
-        private string[] _valueOfKeypad_At = {"13", "22"};
-        private string[] _valueOfKeypad_Balloon = {"00", "11"};
-        private string[] _valueOfKeypad_Boobs = {"21"};
-        private string[] _valueOfKeypad_C = {"43"};
-        private string[] _valueOfKeypad_C_Rev = {"06", "12"};
-        private string[] _valueOfKeypad_Copyright = {"20"};
-        private string[] _valueOfKeypad_E = {"10", "51"};
-        private string[] _valueOfKeypad_Fork = {"40", "54"};
-        private string[] _valueOfKeypad_H = {"05"};
-        private string[] _valueOfKeypad_Hk = {"04", "33"};
-        private string[] _valueOfKeypad_Kk = {"23", "34"};
-        private string[] _valueOfKeypad_Lightning = {"03", "15"};
-        private string[] _valueOfKeypad_N = {"55"};
-        private string[] _valueOfKeypad_Omega = {"56"};
-        private string[] _valueOfKeypad_Paragraph = {"31", "44"};
-        private string[] _valueOfKeypad_Pound = {"52"};
-        private string[] _valueOfKeypad_Pyramid = {"01"};
-        private string[] _valueOfKeypad_Question = {"16", "35"};
-        private string[] _valueOfKeypad_Smile = {"36", "41"};
-        private string[] _valueOfKeypad_Star_Hol = {"14", "26"};
-        private string[] _valueOfKeypad_Star_Sol = {"46"};
-        private string[] _valueOfKeypad_Tb = {"32", "42"};
-        private string[] _valueOfKeypad_Y = {"02", "25"};
-
         public KeypadsModuleVM() {
             ColumnDisabled0 = "False";
             ColumnDisabled1 = "False";
@@ -77,20 +47,291 @@ namespace BombGameSolver.Source.ViewModel {
             ColumnDisabled5 = "False";
         }
 
+        public ICommand ResetButtonCommand => new DelegateCommand(ResetButtonLogic, true);
+
+        private void ResetButtonLogic(object param) {
+            //ColumnDisabled0 = "False";
+            //ColumnDisabled1 = "False";
+            //ColumnDisabled2 = "False";
+            //ColumnDisabled3 = "False";
+            //ColumnDisabled4 = "False";
+            //ColumnDisabled5 = "False";
+            Keypad_6 = "False";
+            Keypad_3_Broken = "False";
+            Keypad_3_Fancy = "False";
+            Keypad_Ae = "False";
+            Keypad_At = "False";
+            Keypad_Balloon = "False";
+            Keypad_Boobs = "False";
+            Keypad_C = "False";
+            Keypad_Copyright = "False";
+            Keypad_E = "False";
+            Keypad_Fork = "False";
+            Keypad_H = "False";
+            Keypad_Hk = "False";
+            Keypad_Kk = "False";
+            Keypad_Lightning = "False";
+            Keypad_N = "False";
+            Keypad_Omega = "False";
+            Keypad_Paragraph = "False";
+            Keypad_Pound = "False";
+            Keypad_Pyramid = "False";
+            Keypad_Question = "False";
+            Keypad_Smile = "False";
+            Keypad_Tb = "False";
+            Keypad_Y = "False";
+            Keypad_C_Rev = "False";
+            Keypad_Star_Hol = "False";
+            Keypad_Star_Sol = "False";
+        }
+
         public ICommand ButtonCommand => new DelegateCommand(ButtonLogic, true);
 
         private void ButtonLogic(object param) {
-            /* First, check if button is not in a disabled column (if it is, just ignore it) */
-            if (param.ToString()[0] == '0' && ColumnDisabled0 == "True" ||
-                param.ToString()[0] == '1' && ColumnDisabled1 == "True" ||
-                param.ToString()[0] == '2' && ColumnDisabled2 == "True" ||
-                param.ToString()[0] == '3' && ColumnDisabled3 == "True" ||
-                param.ToString()[0] == '4' && ColumnDisabled4 == "True" ||
-                param.ToString()[0] == '5' && ColumnDisabled5 == "True") { }
-            /* Check actual button being clicked on... if button is not already checked,
-             highlight all matching buttons and disable the columns not in use. */
+            switch (param) {
+            case "balloon":
+                if (Keypad_Balloon == "True") {
+                    Keypad_Balloon = "False";
+                } else {
+                    Keypad_Balloon = "True";
+                }
 
-            /* If button is already checked, return back to normal and enable the disabled columns */
+                break;
+            case "pyramid":
+                if (Keypad_Pyramid == "True") {
+                    Keypad_Pyramid = "False";
+
+                } else {
+                    Keypad_Pyramid = "True";
+                }
+
+                break;
+            case "y":
+                if (Keypad_Y == "True") {
+                    Keypad_Y = "False";
+
+                } else {
+                    Keypad_Y = "True";
+                }
+
+                break;
+            case "lightning":
+                if (Keypad_Lightning == "True") {
+                    Keypad_Lightning = "False";
+
+                } else {
+                    Keypad_Lightning = "True";
+                }
+
+                break;
+            case "hk":
+                if (Keypad_Hk == "True") {
+                    Keypad_Hk = "False";
+
+                } else {
+                    Keypad_Hk = "True";
+                }
+
+                break;
+            case "h":
+                if (Keypad_H == "True") {
+                    Keypad_H = "False";
+
+                } else {
+                    Keypad_H = "True";
+                }
+
+                break;
+            case "c_rev":
+                if (Keypad_C_Rev == "True") {
+                    Keypad_C_Rev = "False";
+
+                } else {
+                    Keypad_C_Rev = "True";
+                }
+
+                break;
+            case "e":
+                if (Keypad_E == "True") {
+                    Keypad_E = "False";
+
+                } else {
+                    Keypad_E = "True";
+                }
+
+                break;
+            case "at":
+                if (Keypad_At == "True") {
+                    Keypad_At = "False";
+
+                } else {
+                    Keypad_At = "True";
+                }
+
+                break;
+            case "star_hol":
+                if (Keypad_Star_Hol == "True") {
+                    Keypad_Star_Hol = "False";
+
+                } else {
+                    Keypad_Star_Hol = "True";
+                }
+
+                break;
+            case "question":
+                if (Keypad_Question == "True") {
+                    Keypad_Question = "False";
+
+                } else {
+                    Keypad_Question = "True";
+                }
+
+                break;
+            case "copyright":
+                if (Keypad_Copyright == "True") {
+                    Keypad_Copyright = "False";
+
+                } else {
+                    Keypad_Copyright = "True";
+                }
+
+                break;
+            case "boobs":
+                if (Keypad_Boobs == "True") {
+                    Keypad_Boobs = "False";
+
+                } else {
+                    Keypad_Boobs = "True";
+                }
+
+                break;
+            case "3_broken":
+                if (Keypad_3_Broken == "True") {
+                    Keypad_3_Broken = "False";
+
+                } else {
+                    Keypad_3_Broken = "True";
+                }
+
+                break;
+            case "6":
+                if (Keypad_6 == "True") {
+                    Keypad_6 = "False";
+
+                } else {
+                    Keypad_6 = "True";
+                }
+
+                break;
+            case "paragraph":
+                if (Keypad_Paragraph == "True") {
+                    Keypad_Paragraph = "False";
+
+                } else {
+                    Keypad_Paragraph = "True";
+                }
+
+                break;
+            case "tb":
+                if (Keypad_Tb == "True") {
+                    Keypad_Tb = "False";
+
+                } else {
+                    Keypad_Tb = "True";
+                }
+
+                break;
+            case "kk":
+                if (Keypad_Kk == "True") {
+                    Keypad_Kk = "False";
+
+                } else {
+                    Keypad_Kk = "True";
+                }
+
+                break;
+            case "smile":
+                if (Keypad_Smile == "True") {
+                    Keypad_Smile = "False";
+
+                } else {
+                    Keypad_Smile = "True";
+                }
+
+                break;
+            case "fork":
+                if (Keypad_Fork == "True") {
+                    Keypad_Fork = "False";
+
+                } else {
+                    Keypad_Fork = "True";
+                }
+
+                break;
+            case "c":
+                if (Keypad_C == "True") {
+                    Keypad_C = "False";
+
+                } else {
+                    Keypad_C = "True";
+                }
+
+                break;
+            case "3_fancy":
+                if (Keypad_3_Fancy == "True") {
+                    Keypad_3_Fancy = "False";
+
+                } else {
+                    Keypad_3_Fancy = "True";
+                }
+
+                break;
+            case "star_sol":
+                if (Keypad_Star_Sol == "True") {
+                    Keypad_Star_Sol = "False";
+
+                } else {
+                    Keypad_Star_Sol = "True";
+                }
+
+                break;
+            case "pound":
+                if (Keypad_Pound == "True") {
+                    Keypad_Pound = "False";
+
+                } else {
+                    Keypad_Pound = "True";
+                }
+
+                break;
+            case "ae":
+                if (Keypad_Ae == "True") {
+                    Keypad_Ae = "False";
+
+                } else {
+                    Keypad_Ae = "True";
+                }
+
+                break;
+            case "n":
+                if (Keypad_N == "True") {
+                    Keypad_N = "False";
+
+                } else {
+                    Keypad_N = "True";
+                }
+
+                break;
+            case "omega":
+                if (Keypad_Omega == "True") {
+                    Keypad_Omega = "False";
+
+                } else {
+                    Keypad_Omega = "True";
+                }
+
+                break;
+            }
         }
 
 #region Columns
@@ -255,7 +496,7 @@ namespace BombGameSolver.Source.ViewModel {
             get => _keypad_hk;
             set {
                 _keypad_hk = value;
-                RaisePropertyChangedEvent("Keypad_HK");
+                RaisePropertyChangedEvent("Keypad_Hk");
             }
         }
 
@@ -263,7 +504,7 @@ namespace BombGameSolver.Source.ViewModel {
             get => _keypad_kk;
             set {
                 _keypad_kk = value;
-                RaisePropertyChangedEvent("Keypad_KK");
+                RaisePropertyChangedEvent("Keypad_Kk");
             }
         }
 

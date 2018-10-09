@@ -25,7 +25,7 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
-        <Button Width="90" Grid.Column="0" Grid.Row="0" Command="{Binding ButtonCommand}" CommandParameter="00">
+        <Button Width="90" Grid.Column="0" Grid.Row="0" Command="{Binding ButtonCommand}" CommandParameter="balloon">
             <Button.Style>
                 <Style TargetType="Button">
                     <!-- Default -->
@@ -47,7 +47,7 @@
                 <Image Source="../../Resources/keypads/balloon.png" />
             </StackPanel>
         </Button>
-        <Button Width="90" Grid.Column="0" Grid.Row="1" Command="{Binding ButtonCommand}" CommandParameter="01">
+        <Button Width="90" Grid.Column="0" Grid.Row="1" Command="{Binding ButtonCommand}" CommandParameter="pyramid">
             <Button.Style>
                 <Style TargetType="Button">
                     <!-- Default -->
@@ -69,7 +69,7 @@
                 <Image Source="../../Resources/keypads/pyramid.png" />
             </StackPanel>
         </Button>
-        <Button Width="90" Grid.Column="0" Grid.Row="2" Command="{Binding ButtonCommand}" CommandParameter="02">
+        <Button Width="90" Grid.Column="0" Grid.Row="2" Command="{Binding ButtonCommand}" CommandParameter="y">
             <Button.Style>
                 <Style TargetType="Button">
                     <!-- Default -->
@@ -91,7 +91,7 @@
                 <Image Source="../../Resources/keypads/y.png" />
             </StackPanel>
         </Button>
-        <Button Width="90" Grid.Column="0" Grid.Row="3" Command="{Binding ButtonCommand}" CommandParameter="03">
+        <Button Width="90" Grid.Column="0" Grid.Row="3" Command="{Binding ButtonCommand}" CommandParameter="lightning">
             <Button.Style>
                 <Style TargetType="Button">
                     <!-- Default -->
@@ -113,14 +113,14 @@
                 <Image Source="../../Resources/keypads/lightining.png" />
             </StackPanel>
         </Button>
-        <Button Width="90" Grid.Column="0" Grid.Row="4" Command="{Binding ButtonCommand}" CommandParameter="04">
+        <Button Width="90" Grid.Column="0" Grid.Row="4" Command="{Binding ButtonCommand}" CommandParameter="hk">
             <Button.Style>
                 <Style TargetType="Button">
                     <!-- Default -->
                     <Setter Property="Background" Value="LightGray" />
                     <Setter Property="Foreground" Value="Black" />
                     <Style.Triggers>
-                        <DataTrigger Binding="{Binding Keypad_HK}" Value="True">
+                        <DataTrigger Binding="{Binding Keypad_Hk}" Value="True">
                             <!-- If True -->
                             <Setter Property="Background" Value="GreenYellow" />
                         </DataTrigger>
@@ -135,7 +135,7 @@
                 <Image Source="../../Resources/keypads/hk.png" />
             </StackPanel>
         </Button>
-        <Button Width="90" Grid.Column="0" Grid.Row="5" Command="{Binding ButtonCommand}" CommandParameter="05">
+        <Button Width="90" Grid.Column="0" Grid.Row="5" Command="{Binding ButtonCommand}" CommandParameter="h">
             <Button.Style>
                 <Style TargetType="Button">
                     <!-- Default -->
@@ -157,7 +157,7 @@
                 <Image Source="../../Resources/keypads/h.png" />
             </StackPanel>
         </Button>
-        <Button Width="90" Grid.Column="0" Grid.Row="6" Command="{Binding ButtonCommand}" CommandParameter="06">
+        <Button Width="90" Grid.Column="0" Grid.Row="6" Command="{Binding ButtonCommand}" CommandParameter="c_rev">
             <Button.Style>
                 <Style TargetType="Button">
                     <!-- Default -->
@@ -179,7 +179,7 @@
                 <Image Source="../../Resources/keypads/c_rev.png" />
             </StackPanel>
         </Button>
-        <Button Width="90" Grid.Column="1" Grid.Row="0" Command="{Binding ButtonCommand}" CommandParameter="10">
+        <Button Width="90" Grid.Column="1" Grid.Row="0" Command="{Binding ButtonCommand}" CommandParameter="e">
             <Button.Style>
                 <Style TargetType="Button">
                     <!-- Default -->
@@ -201,7 +201,7 @@
                 <Image Source="../../Resources/keypads/e.png" />
             </StackPanel>
         </Button>
-        <Button Width="90" Grid.Column="1" Grid.Row="1" Command="{Binding ButtonCommand}" CommandParameter="11">
+        <Button Width="90" Grid.Column="1" Grid.Row="1" Command="{Binding ButtonCommand}" CommandParameter="balloon">
             <Button.Style>
                 <Style TargetType="Button">
                     <!-- Default -->
@@ -223,7 +223,7 @@
                 <Image Source="../../Resources/keypads/balloon.png" />
             </StackPanel>
         </Button>
-        <Button Width="90" Grid.Column="1" Grid.Row="2" Command="{Binding ButtonCommand}" CommandParameter="12">
+        <Button Width="90" Grid.Column="1" Grid.Row="2" Command="{Binding ButtonCommand}" CommandParameter="c_rev">
             <Button.Style>
                 <Style TargetType="Button">
                     <!-- Default -->
@@ -245,7 +245,7 @@
                 <Image Source="../../Resources/keypads/c_rev.png" />
             </StackPanel>
         </Button>
-        <Button Width="90" Grid.Column="1" Grid.Row="3" Command="{Binding ButtonCommand}" CommandParameter="13">
+        <Button Width="90" Grid.Column="1" Grid.Row="3" Command="{Binding ButtonCommand}" CommandParameter="at">
             <Button.Style>
                 <Style TargetType="Button">
                     <!-- Default -->
@@ -267,7 +267,7 @@
                 <Image Source="../../Resources/keypads/at.png" />
             </StackPanel>
         </Button>
-        <Button Width="90" Grid.Column="1" Grid.Row="4" Command="{Binding ButtonCommand}" CommandParameter="14">
+        <Button Width="90" Grid.Column="1" Grid.Row="4" Command="{Binding ButtonCommand}" CommandParameter="star_hol">
             <Button.Style>
                 <Style TargetType="Button">
                     <!-- Default -->
@@ -289,7 +289,7 @@
                 <Image Source="../../Resources/keypads/star_hol.png" />
             </StackPanel>
         </Button>
-        <Button Width="90" Grid.Column="1" Grid.Row="5" Command="{Binding ButtonCommand}" CommandParameter="15">
+        <Button Width="90" Grid.Column="1" Grid.Row="5" Command="{Binding ButtonCommand}" CommandParameter="h">
             <Button.Style>
                 <Style TargetType="Button">
                     <!-- Default -->
@@ -311,7 +311,7 @@
                 <Image Source="../../Resources/keypads/h.png" />
             </StackPanel>
         </Button>
-        <Button Width="90" Grid.Column="1" Grid.Row="6" Command="{Binding ButtonCommand}" CommandParameter="16">
+        <Button Width="90" Grid.Column="1" Grid.Row="6" Command="{Binding ButtonCommand}" CommandParameter="question">
             <Button.Style>
                 <Style TargetType="Button">
                     <!-- Default -->
@@ -333,7 +333,7 @@
                 <Image Source="../../Resources/keypads/question.png" />
             </StackPanel>
         </Button>
-        <Button Width="90" Grid.Column="2" Grid.Row="0" Command="{Binding ButtonCommand}" CommandParameter="20">
+        <Button Width="90" Grid.Column="2" Grid.Row="0" Command="{Binding ButtonCommand}" CommandParameter="copyright">
             <Button.Style>
                 <Style TargetType="Button">
                     <!-- Default -->
@@ -355,7 +355,7 @@
                 <Image Source="../../Resources/keypads/copyright.png" />
             </StackPanel>
         </Button>
-        <Button Width="90" Grid.Column="2" Grid.Row="1" Command="{Binding ButtonCommand}" CommandParameter="21">
+        <Button Width="90" Grid.Column="2" Grid.Row="1" Command="{Binding ButtonCommand}" CommandParameter="boobs">
             <Button.Style>
                 <Style TargetType="Button">
                     <!-- Default -->
@@ -377,7 +377,7 @@
                 <Image Source="../../Resources/keypads/boobs.png" />
             </StackPanel>
         </Button>
-        <Button Width="90" Grid.Column="2" Grid.Row="2" Command="{Binding ButtonCommand}" CommandParameter="22">
+        <Button Width="90" Grid.Column="2" Grid.Row="2" Command="{Binding ButtonCommand}" CommandParameter="at">
             <Button.Style>
                 <Style TargetType="Button">
                     <!-- Default -->
@@ -399,14 +399,14 @@
                 <Image Source="../../Resources/keypads/at.png" />
             </StackPanel>
         </Button>
-        <Button Width="90" Grid.Column="2" Grid.Row="3" Command="{Binding ButtonCommand}" CommandParameter="23">
+        <Button Width="90" Grid.Column="2" Grid.Row="3" Command="{Binding ButtonCommand}" CommandParameter="kk">
             <Button.Style>
                 <Style TargetType="Button">
                     <!-- Default -->
                     <Setter Property="Background" Value="LightGray" />
                     <Setter Property="Foreground" Value="Black" />
                     <Style.Triggers>
-                        <DataTrigger Binding="{Binding Keypad_KK}" Value="True">
+                        <DataTrigger Binding="{Binding Keypad_Kk}" Value="True">
                             <!-- If True -->
                             <Setter Property="Background" Value="GreenYellow" />
                         </DataTrigger>
@@ -421,7 +421,7 @@
                 <Image Source="../../Resources/keypads/kk.png" />
             </StackPanel>
         </Button>
-        <Button Width="90" Grid.Column="2" Grid.Row="4" Command="{Binding ButtonCommand}" CommandParameter="24">
+        <Button Width="90" Grid.Column="2" Grid.Row="4" Command="{Binding ButtonCommand}" CommandParameter="3_broken">
             <Button.Style>
                 <Style TargetType="Button">
                     <!-- Default -->
@@ -443,7 +443,7 @@
                 <Image Source="../../Resources/keypads/3_broken.png" />
             </StackPanel>
         </Button>
-        <Button Width="90" Grid.Column="2" Grid.Row="5" Command="{Binding ButtonCommand}" CommandParameter="25">
+        <Button Width="90" Grid.Column="2" Grid.Row="5" Command="{Binding ButtonCommand}" CommandParameter="y">
             <Button.Style>
                 <Style TargetType="Button">
                     <!-- Default -->
@@ -465,7 +465,7 @@
                 <Image Source="../../Resources/keypads/y.png" />
             </StackPanel>
         </Button>
-        <Button Width="90" Grid.Column="2" Grid.Row="6" Command="{Binding ButtonCommand}" CommandParameter="26">
+        <Button Width="90" Grid.Column="2" Grid.Row="6" Command="{Binding ButtonCommand}" CommandParameter="star_hol">
             <Button.Style>
                 <Style TargetType="Button">
                     <!-- Default -->
@@ -487,7 +487,7 @@
                 <Image Source="../../Resources/keypads/star_hol.png" />
             </StackPanel>
         </Button>
-        <Button Width="90" Grid.Column="3" Grid.Row="0" Command="{Binding ButtonCommand}" CommandParameter="30">
+        <Button Width="90" Grid.Column="3" Grid.Row="0" Command="{Binding ButtonCommand}" CommandParameter="6">
             <Button.Style>
                 <Style TargetType="Button">
                     <!-- Default -->
@@ -509,7 +509,7 @@
                 <Image Source="../../Resources/keypads/6.png" />
             </StackPanel>
         </Button>
-        <Button Width="90" Grid.Column="3" Grid.Row="1" Command="{Binding ButtonCommand}" CommandParameter="31">
+        <Button Width="90" Grid.Column="3" Grid.Row="1" Command="{Binding ButtonCommand}" CommandParameter="paragraph">
             <Button.Style>
                 <Style TargetType="Button">
                     <!-- Default -->
@@ -531,7 +531,7 @@
                 <Image Source="../../Resources/keypads/paragraph.png" />
             </StackPanel>
         </Button>
-        <Button Width="90" Grid.Column="3" Grid.Row="2" Command="{Binding ButtonCommand}" CommandParameter="32">
+        <Button Width="90" Grid.Column="3" Grid.Row="2" Command="{Binding ButtonCommand}" CommandParameter="tb">
             <Button.Style>
                 <Style TargetType="Button">
                     <!-- Default -->
@@ -553,14 +553,14 @@
                 <Image Source="../../Resources/keypads/tb.png" />
             </StackPanel>
         </Button>
-        <Button Width="90" Grid.Column="3" Grid.Row="3" Command="{Binding ButtonCommand}" CommandParameter="33">
+        <Button Width="90" Grid.Column="3" Grid.Row="3" Command="{Binding ButtonCommand}" CommandParameter="hk">
             <Button.Style>
                 <Style TargetType="Button">
                     <!-- Default -->
                     <Setter Property="Background" Value="LightGray" />
                     <Setter Property="Foreground" Value="Black" />
                     <Style.Triggers>
-                        <DataTrigger Binding="{Binding Keypad_HK}" Value="True">
+                        <DataTrigger Binding="{Binding Keypad_Hk}" Value="True">
                             <!-- If True -->
                             <Setter Property="Background" Value="GreenYellow" />
                         </DataTrigger>
@@ -575,14 +575,14 @@
                 <Image Source="../../Resources/keypads/hk.png" />
             </StackPanel>
         </Button>
-        <Button Width="90" Grid.Column="3" Grid.Row="4" Command="{Binding ButtonCommand}" CommandParameter="34">
+        <Button Width="90" Grid.Column="3" Grid.Row="4" Command="{Binding ButtonCommand}" CommandParameter="kk">
             <Button.Style>
                 <Style TargetType="Button">
                     <!-- Default -->
                     <Setter Property="Background" Value="LightGray" />
                     <Setter Property="Foreground" Value="Black" />
                     <Style.Triggers>
-                        <DataTrigger Binding="{Binding Keypad_KK}" Value="True">
+                        <DataTrigger Binding="{Binding Keypad_Kk}" Value="True">
                             <!-- If True -->
                             <Setter Property="Background" Value="GreenYellow" />
                         </DataTrigger>
@@ -597,7 +597,7 @@
                 <Image Source="../../Resources/keypads/kk.png" />
             </StackPanel>
         </Button>
-        <Button Width="90" Grid.Column="3" Grid.Row="5" Command="{Binding ButtonCommand}" CommandParameter="35">
+        <Button Width="90" Grid.Column="3" Grid.Row="5" Command="{Binding ButtonCommand}" CommandParameter="question">
             <Button.Style>
                 <Style TargetType="Button">
                     <!-- Default -->
@@ -619,7 +619,7 @@
                 <Image Source="../../Resources/keypads/question.png" />
             </StackPanel>
         </Button>
-        <Button Width="90" Grid.Column="3" Grid.Row="6" Command="{Binding ButtonCommand}" CommandParameter="36">
+        <Button Width="90" Grid.Column="3" Grid.Row="6" Command="{Binding ButtonCommand}" CommandParameter="smile">
             <Button.Style>
                 <Style TargetType="Button">
                     <!-- Default -->
@@ -641,7 +641,7 @@
                 <Image Source="../../Resources/keypads/smile.png" />
             </StackPanel>
         </Button>
-        <Button Width="90" Grid.Column="4" Grid.Row="0" Command="{Binding ButtonCommand}" CommandParameter="40">
+        <Button Width="90" Grid.Column="4" Grid.Row="0" Command="{Binding ButtonCommand}" CommandParameter="fork">
             <Button.Style>
                 <Style TargetType="Button">
                     <!-- Default -->
@@ -663,7 +663,7 @@
                 <Image Source="../../Resources/keypads/fork.png" />
             </StackPanel>
         </Button>
-        <Button Width="90" Grid.Column="4" Grid.Row="1" Command="{Binding ButtonCommand}" CommandParameter="41">
+        <Button Width="90" Grid.Column="4" Grid.Row="1" Command="{Binding ButtonCommand}" CommandParameter="smile">
             <Button.Style>
                 <Style TargetType="Button">
                     <!-- Default -->
@@ -685,7 +685,7 @@
                 <Image Source="../../Resources/keypads/smile.png" />
             </StackPanel>
         </Button>
-        <Button Width="90" Grid.Column="4" Grid.Row="2" Command="{Binding ButtonCommand}" CommandParameter="42">
+        <Button Width="90" Grid.Column="4" Grid.Row="2" Command="{Binding ButtonCommand}" CommandParameter="tb">
             <Button.Style>
                 <Style TargetType="Button">
                     <!-- Default -->
@@ -707,7 +707,7 @@
                 <Image Source="../../Resources/keypads/tb.png" />
             </StackPanel>
         </Button>
-        <Button Width="90" Grid.Column="4" Grid.Row="3" Command="{Binding ButtonCommand}" CommandParameter="43">
+        <Button Width="90" Grid.Column="4" Grid.Row="3" Command="{Binding ButtonCommand}" CommandParameter="c">
             <Button.Style>
                 <Style TargetType="Button">
                     <!-- Default -->
@@ -729,7 +729,7 @@
                 <Image Source="../../Resources/keypads/c.png" />
             </StackPanel>
         </Button>
-        <Button Width="90" Grid.Column="4" Grid.Row="4" Command="{Binding ButtonCommand}" CommandParameter="44">
+        <Button Width="90" Grid.Column="4" Grid.Row="4" Command="{Binding ButtonCommand}" CommandParameter="paragraph">
             <Button.Style>
                 <Style TargetType="Button">
                     <!-- Default -->
@@ -751,7 +751,7 @@
                 <Image Source="../../Resources/keypads/paragraph.png" />
             </StackPanel>
         </Button>
-        <Button Width="90" Grid.Column="4" Grid.Row="5" Command="{Binding ButtonCommand}" CommandParameter="45">
+        <Button Width="90" Grid.Column="4" Grid.Row="5" Command="{Binding ButtonCommand}" CommandParameter="3_fancy">
             <Button.Style>
                 <Style TargetType="Button">
                     <!-- Default -->
@@ -773,7 +773,7 @@
                 <Image Source="../../Resources/keypads/3_fancy.png" />
             </StackPanel>
         </Button>
-        <Button Width="90" Grid.Column="4" Grid.Row="6" Command="{Binding ButtonCommand}" CommandParameter="46">
+        <Button Width="90" Grid.Column="4" Grid.Row="6" Command="{Binding ButtonCommand}" CommandParameter="star_sol">
             <Button.Style>
                 <Style TargetType="Button">
                     <!-- Default -->
@@ -795,7 +795,7 @@
                 <Image Source="../../Resources/keypads/star_sol.png" />
             </StackPanel>
         </Button>
-        <Button Width="90" Grid.Column="5" Grid.Row="0" Command="{Binding ButtonCommand}" CommandParameter="50">
+        <Button Width="90" Grid.Column="5" Grid.Row="0" Command="{Binding ButtonCommand}" CommandParameter="6">
             <Button.Style>
                 <Style TargetType="Button">
                     <!-- Default -->
@@ -817,7 +817,7 @@
                 <Image Source="../../Resources/keypads/6.png" />
             </StackPanel>
         </Button>
-        <Button Width="90" Grid.Column="5" Grid.Row="1" Command="{Binding ButtonCommand}" CommandParameter="51">
+        <Button Width="90" Grid.Column="5" Grid.Row="1" Command="{Binding ButtonCommand}" CommandParameter="e">
             <Button.Style>
                 <Style TargetType="Button">
                     <!-- Default -->
@@ -839,7 +839,7 @@
                 <Image Source="../../Resources/keypads/e.png" />
             </StackPanel>
         </Button>
-        <Button Width="90" Grid.Column="5" Grid.Row="2" Command="{Binding ButtonCommand}" CommandParameter="52">
+        <Button Width="90" Grid.Column="5" Grid.Row="2" Command="{Binding ButtonCommand}" CommandParameter="pound">
             <Button.Style>
                 <Style TargetType="Button">
                     <!-- Default -->
@@ -861,7 +861,7 @@
                 <Image Source="../../Resources/keypads/pound.png" />
             </StackPanel>
         </Button>
-        <Button Width="90" Grid.Column="5" Grid.Row="3" Command="{Binding ButtonCommand}" CommandParameter="53">
+        <Button Width="90" Grid.Column="5" Grid.Row="3" Command="{Binding ButtonCommand}" CommandParameter="ae">
             <Button.Style>
                 <Style TargetType="Button">
                     <!-- Default -->
@@ -883,7 +883,7 @@
                 <Image Source="../../Resources/keypads/ae.png" />
             </StackPanel>
         </Button>
-        <Button Width="90" Grid.Column="5" Grid.Row="4" Command="{Binding ButtonCommand}" CommandParameter="54">
+        <Button Width="90" Grid.Column="5" Grid.Row="4" Command="{Binding ButtonCommand}" CommandParameter="fork">
             <Button.Style>
                 <Style TargetType="Button">
                     <!-- Default -->
@@ -905,7 +905,7 @@
                 <Image Source="../../Resources/keypads/fork.png" />
             </StackPanel>
         </Button>
-        <Button Width="90" Grid.Column="5" Grid.Row="5" Command="{Binding ButtonCommand}" CommandParameter="55">
+        <Button Width="90" Grid.Column="5" Grid.Row="5" Command="{Binding ButtonCommand}" CommandParameter="n">
             <Button.Style>
                 <Style TargetType="Button">
                     <!-- Default -->
@@ -927,7 +927,7 @@
                 <Image Source="../../Resources/keypads/n.png" />
             </StackPanel>
         </Button>
-        <Button Width="90" Grid.Column="5" Grid.Row="6" Command="{Binding ButtonCommand}" CommandParameter="56">
+        <Button Width="90" Grid.Column="5" Grid.Row="6" Command="{Binding ButtonCommand}" CommandParameter="omega">
             <Button.Style>
                 <Style TargetType="Button">
                     <!-- Default -->
