@@ -5,9 +5,8 @@ namespace BombGameSolver.Source.Maze {
     public class Maze {
         /* Load image into memory */
         public Maze() {
-            Bitmap myBitmap =
-                new Bitmap("C:/Users/Robert/Development/projects/BombGameSolver/Resources/maze/maze11.png");
-
+            var myBitmap = new Bitmap(
+                "C:/Users/Robert/Development/projects/BombGameSolver/Resources/maze/maze11.png");
             Console.WriteLine(myBitmap.ToString());
         }
 

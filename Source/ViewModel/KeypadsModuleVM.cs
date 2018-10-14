@@ -49,6 +49,8 @@ namespace BombGameSolver.Source.ViewModel {
 
         public ICommand ResetButtonCommand => new DelegateCommand(ResetButtonLogic, true);
 
+        public ICommand ButtonCommand => new DelegateCommand(ButtonLogic, true);
+
         private void ResetButtonLogic(object param) {
             //ColumnDisabled0 = "False";
             //ColumnDisabled1 = "False";
@@ -85,8 +87,6 @@ namespace BombGameSolver.Source.ViewModel {
             Keypad_Star_Sol = "False";
         }
 
-        public ICommand ButtonCommand => new DelegateCommand(ButtonLogic, true);
-
         private void ButtonLogic(object param) {
             switch (param) {
             case "balloon":
@@ -100,7 +100,6 @@ namespace BombGameSolver.Source.ViewModel {
             case "pyramid":
                 if (Keypad_Pyramid == "True") {
                     Keypad_Pyramid = "False";
-
                 } else {
                     Keypad_Pyramid = "True";
                 }
@@ -109,7 +108,6 @@ namespace BombGameSolver.Source.ViewModel {
             case "y":
                 if (Keypad_Y == "True") {
                     Keypad_Y = "False";
-
                 } else {
                     Keypad_Y = "True";
                 }
@@ -118,7 +116,6 @@ namespace BombGameSolver.Source.ViewModel {
             case "lightning":
                 if (Keypad_Lightning == "True") {
                     Keypad_Lightning = "False";
-
                 } else {
                     Keypad_Lightning = "True";
                 }
@@ -127,7 +124,6 @@ namespace BombGameSolver.Source.ViewModel {
             case "hk":
                 if (Keypad_Hk == "True") {
                     Keypad_Hk = "False";
-
                 } else {
                     Keypad_Hk = "True";
                 }
@@ -136,7 +132,6 @@ namespace BombGameSolver.Source.ViewModel {
             case "h":
                 if (Keypad_H == "True") {
                     Keypad_H = "False";
-
                 } else {
                     Keypad_H = "True";
                 }
@@ -145,7 +140,6 @@ namespace BombGameSolver.Source.ViewModel {
             case "c_rev":
                 if (Keypad_C_Rev == "True") {
                     Keypad_C_Rev = "False";
-
                 } else {
                     Keypad_C_Rev = "True";
                 }
@@ -154,7 +148,6 @@ namespace BombGameSolver.Source.ViewModel {
             case "e":
                 if (Keypad_E == "True") {
                     Keypad_E = "False";
-
                 } else {
                     Keypad_E = "True";
                 }
@@ -163,7 +156,6 @@ namespace BombGameSolver.Source.ViewModel {
             case "at":
                 if (Keypad_At == "True") {
                     Keypad_At = "False";
-
                 } else {
                     Keypad_At = "True";
                 }
@@ -172,7 +164,6 @@ namespace BombGameSolver.Source.ViewModel {
             case "star_hol":
                 if (Keypad_Star_Hol == "True") {
                     Keypad_Star_Hol = "False";
-
                 } else {
                     Keypad_Star_Hol = "True";
                 }
@@ -181,7 +172,6 @@ namespace BombGameSolver.Source.ViewModel {
             case "question":
                 if (Keypad_Question == "True") {
                     Keypad_Question = "False";
-
                 } else {
                     Keypad_Question = "True";
                 }
@@ -190,7 +180,6 @@ namespace BombGameSolver.Source.ViewModel {
             case "copyright":
                 if (Keypad_Copyright == "True") {
                     Keypad_Copyright = "False";
-
                 } else {
                     Keypad_Copyright = "True";
                 }
@@ -199,7 +188,6 @@ namespace BombGameSolver.Source.ViewModel {
             case "boobs":
                 if (Keypad_Boobs == "True") {
                     Keypad_Boobs = "False";
-
                 } else {
                     Keypad_Boobs = "True";
                 }
@@ -208,7 +196,6 @@ namespace BombGameSolver.Source.ViewModel {
             case "3_broken":
                 if (Keypad_3_Broken == "True") {
                     Keypad_3_Broken = "False";
-
                 } else {
                     Keypad_3_Broken = "True";
                 }
@@ -217,7 +204,6 @@ namespace BombGameSolver.Source.ViewModel {
             case "6":
                 if (Keypad_6 == "True") {
                     Keypad_6 = "False";
-
                 } else {
                     Keypad_6 = "True";
                 }
@@ -226,7 +212,6 @@ namespace BombGameSolver.Source.ViewModel {
             case "paragraph":
                 if (Keypad_Paragraph == "True") {
                     Keypad_Paragraph = "False";
-
                 } else {
                     Keypad_Paragraph = "True";
                 }
@@ -235,7 +220,6 @@ namespace BombGameSolver.Source.ViewModel {
             case "tb":
                 if (Keypad_Tb == "True") {
                     Keypad_Tb = "False";
-
                 } else {
                     Keypad_Tb = "True";
                 }
@@ -244,7 +228,6 @@ namespace BombGameSolver.Source.ViewModel {
             case "kk":
                 if (Keypad_Kk == "True") {
                     Keypad_Kk = "False";
-
                 } else {
                     Keypad_Kk = "True";
                 }
@@ -253,7 +236,6 @@ namespace BombGameSolver.Source.ViewModel {
             case "smile":
                 if (Keypad_Smile == "True") {
                     Keypad_Smile = "False";
-
                 } else {
                     Keypad_Smile = "True";
                 }
@@ -262,7 +244,6 @@ namespace BombGameSolver.Source.ViewModel {
             case "fork":
                 if (Keypad_Fork == "True") {
                     Keypad_Fork = "False";
-
                 } else {
                     Keypad_Fork = "True";
                 }
@@ -271,7 +252,6 @@ namespace BombGameSolver.Source.ViewModel {
             case "c":
                 if (Keypad_C == "True") {
                     Keypad_C = "False";
-
                 } else {
                     Keypad_C = "True";
                 }
@@ -280,7 +260,6 @@ namespace BombGameSolver.Source.ViewModel {
             case "3_fancy":
                 if (Keypad_3_Fancy == "True") {
                     Keypad_3_Fancy = "False";
-
                 } else {
                     Keypad_3_Fancy = "True";
                 }
@@ -289,7 +268,6 @@ namespace BombGameSolver.Source.ViewModel {
             case "star_sol":
                 if (Keypad_Star_Sol == "True") {
                     Keypad_Star_Sol = "False";
-
                 } else {
                     Keypad_Star_Sol = "True";
                 }
@@ -298,7 +276,6 @@ namespace BombGameSolver.Source.ViewModel {
             case "pound":
                 if (Keypad_Pound == "True") {
                     Keypad_Pound = "False";
-
                 } else {
                     Keypad_Pound = "True";
                 }
@@ -307,7 +284,6 @@ namespace BombGameSolver.Source.ViewModel {
             case "ae":
                 if (Keypad_Ae == "True") {
                     Keypad_Ae = "False";
-
                 } else {
                     Keypad_Ae = "True";
                 }
@@ -316,7 +292,6 @@ namespace BombGameSolver.Source.ViewModel {
             case "n":
                 if (Keypad_N == "True") {
                     Keypad_N = "False";
-
                 } else {
                     Keypad_N = "True";
                 }
@@ -325,7 +300,6 @@ namespace BombGameSolver.Source.ViewModel {
             case "omega":
                 if (Keypad_Omega == "True") {
                     Keypad_Omega = "False";
-
                 } else {
                     Keypad_Omega = "True";
                 }

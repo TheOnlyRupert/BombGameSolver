@@ -11,7 +11,7 @@
         </Grid.ColumnDefinitions>
 
         <Image Name="Image" Source="{Binding ButtonImage}" Grid.Column="0" Margin="10" />
-        <Viewbox Width="{Binding Path=ActualWidth, ElementName=Image}" Grid.Column="0" >
+        <Viewbox Width="{Binding Path=ActualWidth, ElementName=Image}" Grid.Column="0">
             <TextBlock Text="{Binding ButtonText}" Margin="10" VerticalAlignment="Center" HorizontalAlignment="Center">
                 <TextBlock.Style>
                     <Style TargetType="TextBlock">

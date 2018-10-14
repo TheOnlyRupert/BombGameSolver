@@ -5,7 +5,6 @@ using BombGameSolver.Source.ViewModel.Base;
 namespace BombGameSolver.Source.ViewModel {
     public class ButtonModuleVM : BaseViewModel {
         private string _buttonColor, _buttonText, _outputText, _buttonImage;
-        //private readonly CrossViewMessenger _crossViewMessenger;
 
         public ButtonModuleVM() {
             _buttonColor = "Red";
@@ -15,7 +14,6 @@ namespace BombGameSolver.Source.ViewModel {
 
             var simpleMessenger = CrossViewMessenger.Instance;
             simpleMessenger.MessageValueChanged += OnSimpleMessengerValueChanged;
-            //_crossViewMessenger = CrossViewMessenger.Instance;
         }
 
         public string ButtonColor {
@@ -80,34 +78,26 @@ namespace BombGameSolver.Source.ViewModel {
 
             /* Red & Hold -> Immediately */
             if (ButtonColor == "Red" && ButtonText == "Hold") {
-                //_crossViewMessenger.PushMessage("UpdateDebugTextOutput", "[ButtonModuleVM] Red & Hold -> Immediately");
                 OutputText = "Immediately";
             }
             /* Detonate & 2+ Batteries -> Immediate */
             else if (ButtonText == "Detonate" && ReferenceValues.BatteryNum > 1) {
-                //_crossViewMessenger.PushMessage("UpdateDebugTextOutput",
-                                                //"[ButtonModuleVM] Detonate & 2+ Batteries -> Immediate");
                 OutputText = "Immediately";
             }
             /* Blue & Abort -> Hold */
             else if (ButtonColor == "Blue" && ButtonText == "Abort") {
-                //_crossViewMessenger.PushMessage("UpdateDebugTextOutput", "[ButtonModuleVM] Blue & Abort -> Hold");
                 OutputText = "Hold";
             }
             /* White & CAR -> Hold */
             else if (ButtonColor == "White" && ReferenceValues.HasLitCar) {
-                //_crossViewMessenger.PushMessage("UpdateDebugTextOutput", "[ButtonModuleVM] White & CAR -> Hold");
                 OutputText = "Hold";
             }
             /* FRK & 3+ Batteries -> Immediately */
             else if (ReferenceValues.HasLitFrk && ReferenceValues.BatteryNum == 3) {
-                //_crossViewMessenger.PushMessage("UpdateDebugTextOutput",
-                //                                "[ButtonModuleVM] FRK & 3+ Batteries -> Immediately");
                 OutputText = "Immediately";
             }
             /* Else -> Hold */
             else {
-                //_crossViewMessenger.PushMessage("UpdateDebugTextOutput", "[ButtonModuleVM] Else -> Hold");
                 OutputText = "Hold";
             }
         }

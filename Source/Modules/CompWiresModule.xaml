@@ -81,7 +81,7 @@
 
             <TextBox Text="{Binding OutputText}" Grid.Row="1" FontSize="60" HorizontalAlignment="Stretch"
                      HorizontalContentAlignment="Center" Padding="10" VerticalAlignment="Center"
-                     IsReadOnly="True" >
+                     IsReadOnly="True">
                 <TextBox.Style>
                     <Style TargetType="TextBox">
                         <!-- Default -->

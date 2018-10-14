@@ -12,16 +12,12 @@
 
         <Image Source="../../Resources/memory/background.png" Margin="10" Grid.Column="0" />
         <Image Source="{Binding DisplayMainImage}" Margin="10" Grid.Column="0" />
-        <Image Source="../../Resources/memory/light_1.png" Margin="10" Grid.Column="0" />
+        <Image Source="{Binding FirMainImage}" Margin="10" Grid.Column="0" />
         <Image Source="{Binding SecMainImage}" Margin="10" Grid.Column="0" />
         <Image Source="{Binding ThiMainImage}" Margin="10" Grid.Column="0" />
         <Image Source="{Binding FouMainImage}" Margin="10" Grid.Column="0" />
-        <Image Source="{Binding Light1Image}" Margin="10" Grid.Column="0" />
-        <Image Source="{Binding Light2Image}" Margin="10" Grid.Column="0" />
-        <Image Source="{Binding Light3Image}" Margin="10" Grid.Column="0" />
-        <Image Source="{Binding Light4Image}" Margin="10" Grid.Column="0" />
-        <Image Source="{Binding Light5Image}" Margin="10" Grid.Column="0" />
-        <Image Source="{Binding OutputImage}" Margin="10" Grid.Column="0" />
+        <Image Source="{Binding LightImage}" Margin="10" Grid.Column="0" />
+        <Image Source="{Binding OutputHighlightImage}" Margin="10" Grid.Column="0" />
 
         <Grid Grid.Column="1">
             <Grid.RowDefinitions>
@@ -30,16 +26,18 @@
             </Grid.RowDefinitions>
 
             <StackPanel HorizontalAlignment="Center" VerticalAlignment="Bottom">
-                <TextBox FontSize="50" MinWidth="150" TextAlignment="Center" MaxLength="5" />
+                <TextBox FontSize="50" MinWidth="150" TextAlignment="Center" MaxLength="4"
+                         Text="{Binding InputTextBox, UpdateSourceTrigger=PropertyChanged}"
+                         CommandManager.PreviewExecuted="DisablePasteCommand" />
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <Button Content="prev" FontSize="18" Padding="10 5 10 5" Command="{Binding ButtonCommand}"
                             CommandParameter="prev" />
-                    <TextBlock Text="Round  1/5" FontSize="18" Padding="10 5 10 5" IsEnabled="False"
+                    <TextBlock Text="{Binding RoundText}" FontSize="18" Padding="10 5 10 5" IsEnabled="False"
                                Background="Transparent" Foreground="White" VerticalAlignment="Center" />
                     <Button Content="next" FontSize="18" Padding="10 5 10 5" Command="{Binding ButtonCommand}"
                             CommandParameter="next" />
                 </StackPanel>
-                <Button Content="Submit  (RETURN)" FontSize="20" Padding="0 8" Command="{Binding ButtonCommand}"
+                <Button Content="Next Round  (RETURN)" FontSize="20" Padding="0 8" Command="{Binding ButtonCommand}"
                         CommandParameter="submit" />
             </StackPanel>
             <TextBox Text="{Binding OutputText}" Grid.Row="1" FontSize="60" HorizontalAlignment="Stretch"

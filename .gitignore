@@ -6,5 +6,7 @@
 
 # Ignored Files:
 .gitattributes
-BombGameSolver.csproj
-BombGameSolver.sln
+*.csproj
+*.sln
+*.sln.DotSettings
+*.sln.DotSettings.user

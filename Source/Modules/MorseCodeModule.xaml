@@ -21,19 +21,124 @@
 
             <StackPanel Grid.Column="0">
                 <Button HorizontalContentAlignment="Left" VerticalAlignment="Center" Padding="20 10 0 10"
-                        Foreground="Black" Content="B   ▄▄▄  ▄  ▄  ▄" FontSize="24" />
+                        Foreground="Black" Content="B   ▄▄▄  ▄  ▄  ▄" FontSize="24"
+                        Command="{Binding ButtonCommand}" CommandParameter="1b">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <!-- Default -->
+                            <Setter Property="Background" Value="LightGray" />
+                            <Setter Property="Foreground" Value="Black" />
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Button_1b}" Value="True">
+                                    <!-- If True -->
+                                    <Setter Property="Background" Value="GreenYellow" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
                 <Button HorizontalContentAlignment="Left" VerticalAlignment="Center" Padding="20 10 0 10"
-                        Foreground="Black" Content="F   ▄  ▄  ▄▄▄  ▄" FontSize="24" />
+                        Foreground="Black" Content="F   ▄  ▄  ▄▄▄  ▄" FontSize="24"
+                        Command="{Binding ButtonCommand}" CommandParameter="1f">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <!-- Default -->
+                            <Setter Property="Background" Value="LightGray" />
+                            <Setter Property="Foreground" Value="Black" />
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Button_1f}" Value="True">
+                                    <!-- If True -->
+                                    <Setter Property="Background" Value="GreenYellow" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
                 <Button HorizontalContentAlignment="Left" VerticalAlignment="Center" Padding="20 10 0 10"
-                        Foreground="Black" Content="H   ▄  ▄  ▄  ▄" FontSize="24" />
+                        Foreground="Black" Content="H   ▄  ▄  ▄  ▄" FontSize="24"
+                        Command="{Binding ButtonCommand}" CommandParameter="1h">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <!-- Default -->
+                            <Setter Property="Background" Value="LightGray" />
+                            <Setter Property="Foreground" Value="Black" />
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Button_1h}" Value="True">
+                                    <!-- If True -->
+                                    <Setter Property="Background" Value="GreenYellow" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
                 <Button HorizontalContentAlignment="Left" VerticalAlignment="Center" Padding="20 10 0 10"
-                        Foreground="Black" Content="L   ▄  ▄▄▄  ▄  ▄" FontSize="24" />
+                        Foreground="Black" Content="L   ▄  ▄▄▄  ▄  ▄" FontSize="24"
+                        Command="{Binding ButtonCommand}" CommandParameter="1l">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <!-- Default -->
+                            <Setter Property="Background" Value="LightGray" />
+                            <Setter Property="Foreground" Value="Black" />
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Button_1l}" Value="True">
+                                    <!-- If True -->
+                                    <Setter Property="Background" Value="GreenYellow" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
                 <Button HorizontalContentAlignment="Left" VerticalAlignment="Center" Padding="20 10 0 10"
-                        Foreground="Black" Content="S   ▄  ▄  ▄" FontSize="24" />
+                        Foreground="Black" Content="S   ▄  ▄  ▄" FontSize="24"
+                        Command="{Binding ButtonCommand}" CommandParameter="1s">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <!-- Default -->
+                            <Setter Property="Background" Value="LightGray" />
+                            <Setter Property="Foreground" Value="Black" />
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Button_1s}" Value="True">
+                                    <!-- If True -->
+                                    <Setter Property="Background" Value="GreenYellow" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
                 <Button HorizontalContentAlignment="Left" VerticalAlignment="Center" Padding="20 10 0 10"
-                        Foreground="Black" Content="T   ▄▄▄" FontSize="24" />
+                        Foreground="Black" Content="T   ▄▄▄" FontSize="24"
+                        Command="{Binding ButtonCommand}" CommandParameter="1t">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <!-- Default -->
+                            <Setter Property="Background" Value="LightGray" />
+                            <Setter Property="Foreground" Value="Black" />
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Button_1t}" Value="True">
+                                    <!-- If True -->
+                                    <Setter Property="Background" Value="GreenYellow" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
                 <Button HorizontalContentAlignment="Left" VerticalAlignment="Center" Padding="20 10 0 10"
-                        Foreground="Black" Content="V   ▄  ▄  ▄  ▄▄▄" FontSize="24" />
+                        Foreground="Black" Content="V   ▄  ▄  ▄  ▄▄▄" FontSize="24"
+                        Command="{Binding ButtonCommand}" CommandParameter="1v">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <!-- Default -->
+                            <Setter Property="Background" Value="LightGray" />
+                            <Setter Property="Foreground" Value="Black" />
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Button_1v}" Value="True">
+                                    <!-- If True -->
+                                    <Setter Property="Background" Value="GreenYellow" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
             </StackPanel>
 
             <StackPanel Grid.Column="1">
@@ -45,19 +150,152 @@
 
             <StackPanel Grid.Column="2">
                 <Button HorizontalContentAlignment="Left" VerticalAlignment="Center" Padding="20 10 0 10"
-                        Foreground="Black" Content="E   ▄" FontSize="24" />
+                        Foreground="Black" Content="E   ▄" FontSize="24"
+                        Command="{Binding ButtonCommand}" CommandParameter="2e">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <!-- Default -->
+                            <Setter Property="Background" Value="LightGray" />
+                            <Setter Property="Foreground" Value="Black" />
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Button_2e}" Value="True">
+                                    <!-- If True -->
+                                    <Setter Property="Background" Value="GreenYellow" />
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding ColumnDisabled2}" Value="True">
+                                    <!-- If True -->
+                                    <Setter Property="Background" Value="Transparent" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
                 <Button HorizontalContentAlignment="Left" VerticalAlignment="Center" Padding="20 10 0 10"
-                        Foreground="Black" Content="I   ▄  ▄" FontSize="24" />
+                        Foreground="Black" Content="I   ▄  ▄" FontSize="24"
+                        Command="{Binding ButtonCommand}" CommandParameter="2i">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <!-- Default -->
+                            <Setter Property="Background" Value="LightGray" />
+                            <Setter Property="Foreground" Value="Black" />
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Button_1i}" Value="True">
+                                    <!-- If True -->
+                                    <Setter Property="Background" Value="GreenYellow" />
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding ColumnDisabled2}" Value="True">
+                                    <!-- If True -->
+                                    <Setter Property="Background" Value="Transparent" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
                 <Button HorizontalContentAlignment="Left" VerticalAlignment="Center" Padding="20 10 0 10"
-                        Foreground="Black" Content="O  ▄▄▄  ▄▄▄  ▄▄▄" FontSize="24" />
+                        Foreground="Black" Content="O  ▄▄▄  ▄▄▄  ▄▄▄" FontSize="24"
+                        Command="{Binding ButtonCommand}" CommandParameter="2o">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <!-- Default -->
+                            <Setter Property="Background" Value="LightGray" />
+                            <Setter Property="Foreground" Value="Black" />
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Button_2o}" Value="True">
+                                    <!-- If True -->
+                                    <Setter Property="Background" Value="GreenYellow" />
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding ColumnDisabled2}" Value="True">
+                                    <!-- If True -->
+                                    <Setter Property="Background" Value="Transparent" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
                 <Button HorizontalContentAlignment="Left" VerticalAlignment="Center" Padding="20 10 0 10"
-                        Foreground="Black" Content="R   ▄  ▄▄▄  ▄" FontSize="24" />
+                        Foreground="Black" Content="R   ▄  ▄▄▄  ▄" FontSize="24"
+                        Command="{Binding ButtonCommand}" CommandParameter="2r">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <!-- Default -->
+                            <Setter Property="Background" Value="LightGray" />
+                            <Setter Property="Foreground" Value="Black" />
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Button_2r}" Value="True">
+                                    <!-- If True -->
+                                    <Setter Property="Background" Value="GreenYellow" />
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding ColumnDisabled2}" Value="True">
+                                    <!-- If True -->
+                                    <Setter Property="Background" Value="Transparent" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
                 <Button HorizontalContentAlignment="Left" VerticalAlignment="Center" Padding="20 10 0 10"
-                        Foreground="Black" Content="H   ▄  ▄  ▄  ▄" FontSize="24" />
+                        Foreground="Black" Content="H   ▄  ▄  ▄  ▄" FontSize="24"
+                        Command="{Binding ButtonCommand}" CommandParameter="2h">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <!-- Default -->
+                            <Setter Property="Background" Value="LightGray" />
+                            <Setter Property="Foreground" Value="Black" />
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Button_2h}" Value="True">
+                                    <!-- If True -->
+                                    <Setter Property="Background" Value="GreenYellow" />
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding ColumnDisabled2}" Value="True">
+                                    <!-- If True -->
+                                    <Setter Property="Background" Value="Transparent" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
                 <Button HorizontalContentAlignment="Left" VerticalAlignment="Center" Padding="20 10 0 10"
-                        Foreground="Black" Content="L   ▄  ▄▄▄  ▄  ▄" FontSize="24" />
+                        Foreground="Black" Content="L   ▄  ▄▄▄  ▄  ▄" FontSize="24"
+                        Command="{Binding ButtonCommand}" CommandParameter="2l">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <!-- Default -->
+                            <Setter Property="Background" Value="LightGray" />
+                            <Setter Property="Foreground" Value="Black" />
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Button_2l}" Value="True">
+                                    <!-- If True -->
+                                    <Setter Property="Background" Value="GreenYellow" />
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding ColumnDisabled2}" Value="True">
+                                    <!-- If True -->
+                                    <Setter Property="Background" Value="Transparent" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
                 <Button HorizontalContentAlignment="Left" VerticalAlignment="Center" Padding="20 10 0 10"
-                        Foreground="Black" Content="T   ▄▄▄" FontSize="24" />
+                        Foreground="Black" Content="T   ▄▄▄" FontSize="24"
+                        Command="{Binding ButtonCommand}" CommandParameter="2t">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <!-- Default -->
+                            <Setter Property="Background" Value="LightGray" />
+                            <Setter Property="Foreground" Value="Black" />
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Button_2t}" Value="True">
+                                    <!-- If True -->
+                                    <Setter Property="Background" Value="GreenYellow" />
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding ColumnDisabled2}" Value="True">
+                                    <!-- If True -->
+                                    <Setter Property="Background" Value="Transparent" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
             </StackPanel>
 
             <StackPanel Grid.Column="3">
@@ -71,15 +309,110 @@
 
             <StackPanel Grid.Column="4">
                 <Button HorizontalContentAlignment="Left" VerticalAlignment="Center" Padding="20 10 0 10"
-                        Foreground="Black" Content="M   ▄▄▄  ▄▄▄" FontSize="24" />
+                        Foreground="Black" Content="M   ▄▄▄  ▄▄▄" FontSize="24"
+                        Command="{Binding ButtonCommand}" CommandParameter="3m">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <!-- Default -->
+                            <Setter Property="Background" Value="LightGray" />
+                            <Setter Property="Foreground" Value="Black" />
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Button_3m}" Value="True">
+                                    <!-- If True -->
+                                    <Setter Property="Background" Value="GreenYellow" />
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding ColumnDisabled3}" Value="True">
+                                    <!-- If True -->
+                                    <Setter Property="Background" Value="Transparent" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
                 <Button HorizontalContentAlignment="Left" VerticalAlignment="Center" Padding="20 10 0 10"
-                        Foreground="Black" Content="X   ▄▄▄  ▄  ▄  ▄▄▄" FontSize="24" />
+                        Foreground="Black" Content="X   ▄▄▄  ▄  ▄  ▄▄▄" FontSize="24"
+                        Command="{Binding ButtonCommand}" CommandParameter="3x">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <!-- Default -->
+                            <Setter Property="Background" Value="LightGray" />
+                            <Setter Property="Foreground" Value="Black" />
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Button_3x}" Value="True">
+                                    <!-- If True -->
+                                    <Setter Property="Background" Value="GreenYellow" />
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding ColumnDisabled3}" Value="True">
+                                    <!-- If True -->
+                                    <Setter Property="Background" Value="Transparent" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
                 <Button HorizontalContentAlignment="Left" VerticalAlignment="Center" Padding="20 10 0 10"
-                        Foreground="Black" Content="E   ▄" FontSize="24" />
+                        Foreground="Black" Content="E   ▄" FontSize="24"
+                        Command="{Binding ButtonCommand}" CommandParameter="3e">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <!-- Default -->
+                            <Setter Property="Background" Value="LightGray" />
+                            <Setter Property="Foreground" Value="Black" />
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Button_3e}" Value="True">
+                                    <!-- If True -->
+                                    <Setter Property="Background" Value="GreenYellow" />
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding ColumnDisabled3}" Value="True">
+                                    <!-- If True -->
+                                    <Setter Property="Background" Value="Transparent" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
                 <Button HorizontalContentAlignment="Left" VerticalAlignment="Center" Padding="20 10 0 10"
-                        Foreground="Black" Content="I   ▄  ▄" FontSize="24" />
+                        Foreground="Black" Content="I   ▄  ▄" FontSize="24"
+                        Command="{Binding ButtonCommand}" CommandParameter="3i">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <!-- Default -->
+                            <Setter Property="Background" Value="LightGray" />
+                            <Setter Property="Foreground" Value="Black" />
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Button_3i}" Value="True">
+                                    <!-- If True -->
+                                    <Setter Property="Background" Value="GreenYellow" />
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding ColumnDisabled3}" Value="True">
+                                    <!-- If True -->
+                                    <Setter Property="Background" Value="Transparent" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
                 <Button HorizontalContentAlignment="Left" VerticalAlignment="Center" Padding="20 10 0 10"
-                        Foreground="Black" Content="R   ▄  ▄▄▄  ▄" FontSize="24" />
+                        Foreground="Black" Content="R   ▄  ▄▄▄  ▄" FontSize="24"
+                        Command="{Binding ButtonCommand}" CommandParameter="3r">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <!-- Default -->
+                            <Setter Property="Background" Value="LightGray" />
+                            <Setter Property="Foreground" Value="Black" />
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Button_3r}" Value="True">
+                                    <!-- If True -->
+                                    <Setter Property="Background" Value="GreenYellow" />
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding ColumnDisabled3}" Value="True">
+                                    <!-- If True -->
+                                    <Setter Property="Background" Value="Transparent" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
             </StackPanel>
         </Grid>
 

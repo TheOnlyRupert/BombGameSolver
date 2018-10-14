@@ -25,13 +25,6 @@ namespace BombGameSolver.Source.ViewModel {
             simpleMessenger.MessageValueChanged += OnSimpleMessengerValueChanged;
         }
 
-        private void OnSimpleMessengerValueChanged(object sender, MessageValueChangedEventArgs e) {
-            /* Update wires if SerialEven Button from SettingsModule is changed */
-            if (e.PropertyName == "SerialEvenLogic") {
-                ButtonLogic("update");
-            }
-        }
-
         public int RoundCounter {
             get => _roundCounter;
             set {
@@ -106,6 +99,15 @@ namespace BombGameSolver.Source.ViewModel {
 
         public ICommand ButtonCommand => new DelegateCommand(ButtonLogic, true);
 
+        public ICommand ResetButtonCommand => new DelegateCommand(ResetButtonCommandLogic, true);
+
+        private void OnSimpleMessengerValueChanged(object sender, MessageValueChangedEventArgs e) {
+            /* Update wires if SerialEven Button from SettingsModule is changed */
+            if (e.PropertyName == "SerialEvenLogic") {
+                ButtonLogic("update");
+            }
+        }
+
         private void ButtonLogic(object param) {
             /* Clear entry button */
             if (param.ToString() == "delete") {
@@ -117,20 +119,17 @@ namespace BombGameSolver.Source.ViewModel {
                 _wireArray[RoundCounter] = "";
                 OutputText = "";
             }
-
             /* Reset all button */
             else if (param.ToString() == "reset") {
                 RoundCounter = 0;
                 _wireArray = new[] {"", "", "", "", "", ""};
                 OutputText = "";
             }
-
             /* Normal execute */
             else if (param.ToString() != "update" && RoundCounter < 6) {
                 _wireArray[RoundCounter] = param.ToString();
                 RoundCounter++;
             }
-
             /* Update or don't execute */
             else if (param.ToString() != "update") {
                 return;
@@ -331,7 +330,6 @@ namespace BombGameSolver.Source.ViewModel {
                     OutputText = "Fourth";
                     WireBrokenView = "../../Resources/normal_wires/wire_4_broken.png";
                 }
-
                 /* If No Red -> Cut Last */
                 else if (_wireArray[0] != "red" && _wireArray[1] != "red" && _wireArray[2] != "red" &&
                          _wireArray[3] != "red" && _wireArray[4] != "red" && _wireArray[5] != "red") {
@@ -349,8 +347,6 @@ namespace BombGameSolver.Source.ViewModel {
                 break;
             }
         }
-
-        public ICommand ResetButtonCommand => new DelegateCommand(ResetButtonCommandLogic, true);
 
         private void ResetButtonCommandLogic(object param) {
             ButtonLogic("reset");

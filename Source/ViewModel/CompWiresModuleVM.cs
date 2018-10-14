@@ -5,10 +5,11 @@ using BombGameSolver.Source.ViewModel.Base;
 
 namespace BombGameSolver.Source.ViewModel {
     public class CompWiresModuleVM : BaseViewModel {
+        private readonly CrossViewMessenger _crossViewMessenger;
         private bool _isLedOn, _isStarOn;
+
         private string _wireImage, _ledImage, _starImage, _ledButtonText, _starButtonText, _brokenWireImage,
             _outputText, _wireColor;
-        private readonly CrossViewMessenger _crossViewMessenger;
 
         public CompWiresModuleVM() {
             WireImage = "../../Resources/comp_wires/wire_whi.png";
@@ -20,14 +21,6 @@ namespace BombGameSolver.Source.ViewModel {
             var simpleMessenger = CrossViewMessenger.Instance;
             simpleMessenger.MessageValueChanged += OnSimpleMessengerValueChanged;
             _crossViewMessenger = CrossViewMessenger.Instance;
-        }
-
-        private void OnSimpleMessengerValueChanged(object sender, MessageValueChangedEventArgs e) {
-            /* Update wires if SerialEven, BatteryAmount, or ParPort buttons from SettingsModule are changed */
-            if (e.PropertyName == "SerialEvenLogic" || e.PropertyName == "BatteryAmountChanged" ||
-                e.PropertyName == "ParPortLogic") {
-                WireLogic();
-            }
         }
 
         public string WireImage {
@@ -87,6 +80,16 @@ namespace BombGameSolver.Source.ViewModel {
         }
 
         public ICommand ButtonCommand => new DelegateCommand(ButtonCommandLogic, true);
+
+        public ICommand ResetButtonCommand => new DelegateCommand(ResetButtonCommandLogic, true);
+
+        private void OnSimpleMessengerValueChanged(object sender, MessageValueChangedEventArgs e) {
+            /* Update wires if SerialEven, BatteryAmount, or ParPort buttons from SettingsModule are changed */
+            if (e.PropertyName == "SerialEvenLogic" || e.PropertyName == "BatteryAmountChanged" ||
+                e.PropertyName == "ParPortLogic") {
+                WireLogic();
+            }
+        }
 
         private void ButtonCommandLogic(object param) {
             switch (param.ToString()) {
@@ -165,6 +168,7 @@ namespace BombGameSolver.Source.ViewModel {
                         OutputText = "Do Not Cut";
                     }
                 }
+
                 break;
 
             case "blue":
@@ -288,8 +292,6 @@ namespace BombGameSolver.Source.ViewModel {
             //_crossViewMessenger.PushMessage("UpdateDebugTextOutput", "[ButtonModuleVM] Red & Hold -> Immediately");
         }
 
-        public ICommand ResetButtonCommand => new DelegateCommand(ResetButtonCommandLogic, true);
-
         private void ResetButtonCommandLogic(object param) {
             _isLedOn = _isStarOn = false;
             LedButtonText = "LED OFF (5)";
@@ -301,6 +303,5 @@ namespace BombGameSolver.Source.ViewModel {
             _wireColor = "white";
             WireLogic();
         }
-
     }
 }
