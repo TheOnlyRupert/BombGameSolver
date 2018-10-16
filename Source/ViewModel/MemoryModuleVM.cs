@@ -5,7 +5,9 @@ using BombGameSolver.Source.ViewModel.Base;
 
 namespace BombGameSolver.Source.ViewModel {
     public class MemoryModuleVM : BaseViewModel {
+        private readonly int[] _roundLab = new int[5];
         private readonly int[,] _roundLogic = new int[5, 5];
+        private readonly int[] _roundPos = new int[5];
         private bool _canSubmit;
 
         private string _inputTextBox, _displayMainImage, _firMainImage, _secMainImage, _thiMainImage, _fouMainImage,
@@ -122,62 +124,91 @@ namespace BombGameSolver.Source.ViewModel {
         }
 
         private void OutputLogic() {
-            foreach (var num in _roundLogic) {
-                Console.WriteLine(num);
-            }
-
             switch (_roundNum) {
             case 1:
                 switch (_roundLogic[0, 0]) {
                 /* Position 2 */
                 case 1:
                 case 2:
-                    OutputText = "Click on: " + _roundLogic[0, 2];
-                    OutputHighlightImage = "../../Resources/memory/out_sec.png";
+                    _roundPos[0] = 2;
+                    _roundLab[0] = _roundLogic[0, 2];
                     break;
                 /* Position 3 */
                 case 3:
-                    OutputText = "Click on: " + _roundLogic[0, 3];
-                    OutputHighlightImage = "../../Resources/memory/out_thi.png";
+                    _roundPos[0] = 3;
+                    _roundLab[0] = _roundLogic[0, 3];
                     break;
                 /* Position 4 */
                 case 4:
-                    OutputText = "Click on: " + _roundLogic[0, 4];
-                    OutputHighlightImage = "../../Resources/memory/out_fou.png";
+                    _roundPos[0] = 4;
+                    _roundLab[0] = _roundLogic[0, 4];
                     break;
                 }
+
+                OutputText = "Click on: " + _roundLab[0];
+                OutputHighlightImage = "../../Resources/memory/out_" + _roundPos[0] + ".png";
+                Console.WriteLine("First Round pos: " + _roundPos[0] + ", act: " + _roundLab[0]);
 
                 break;
             case 2:
                 switch (_roundLogic[1, 0]) {
                 /* Labeled 4 */
                 case 1:
+                    if (_roundLogic[1, 1] == 4) {
+                        _roundPos[1] = 1;
+                    } else if (_roundLogic[1, 2] == 4) {
+                        _roundPos[1] = 2;
+                    } else if (_roundLogic[1, 3] == 4) {
+                        _roundPos[1] = 3;
+                    } else {
+                        _roundPos[1] = 4;
+                    }
+
+                    _roundLab[1] = 4;
                     break;
                 /* Same position as stage 1 */
                 case 2:
                 case 4:
+                    _roundPos[1] = _roundPos[0];
+                    _roundLab[1] = _roundLogic[1, _roundPos[0]];
                     break;
                 /* Position 1 */
                 case 3:
+                    _roundPos[1] = 1;
+                    _roundLab[1] = _roundLogic[1, 1];
                     break;
                 }
+
+                OutputText = "Click on: " + _roundLab[1];
+                OutputHighlightImage = "../../Resources/memory/out_" + _roundPos[1] + ".png";
+                Console.WriteLine("Second Round pos: " + _roundPos[1] + ", act: " + _roundLab[1]);
 
                 break;
             case 3:
                 switch (_roundLogic[2, 0]) {
                 /* Same label as stage 2 */
                 case 1:
+                    _roundLab[2] = _roundLab[1];
+
                     break;
                 /* Same label as stage 1 */
                 case 2:
                     break;
                 /* Position 3 */
                 case 3:
+                    OutputText = "Click on: " + _roundLogic[2, 3];
+                    OutputHighlightImage = "../../Resources/memory/out_thi.png";
+                    _roundPos[2] = 1;
+                    _roundLab[2] = _roundLogic[2, 3];
                     break;
                 /* Labeled 4 */
                 case 4:
                     break;
                 }
+
+                OutputText = "Click on: " + _roundLab[2];
+                OutputHighlightImage = "../../Resources/memory/out_" + _roundPos[2] + ".png";
+                Console.WriteLine("Third Round pos: " + _roundPos[2] + ", act: " + _roundLab[2]);
 
                 break;
             case 4:
@@ -193,6 +224,10 @@ namespace BombGameSolver.Source.ViewModel {
                 case 4:
                     break;
                 }
+
+                OutputText = "Click on: " + _roundLab[3];
+                OutputHighlightImage = "../../Resources/memory/out_" + _roundPos[3] + ".png";
+                Console.WriteLine("Fourth Round pos: " + _roundPos[3] + ", act: " + _roundLab[3]);
 
                 break;
             case 5:
@@ -210,6 +245,10 @@ namespace BombGameSolver.Source.ViewModel {
                 case 4:
                     break;
                 }
+
+                OutputText = "Click on: " + _roundLab[4];
+                OutputHighlightImage = "../../Resources/memory/out_" + _roundPos[4] + ".png";
+                Console.WriteLine("Fifth Round pos: " + _roundPos[4] + ", act: " + _roundLab[4]);
 
                 break;
             }

@@ -17,14 +17,15 @@
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
 
-                <Image Name="Image" Source="../../Resources/maze/maze11.png" VerticalAlignment="Center"
+                <Image Name="Image" Source="{Binding MazeImage}" VerticalAlignment="Center"
                        HorizontalAlignment="Center" Margin="20" />
 
                 <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="1">
                     <StackPanel Orientation="Horizontal">
                         <StackPanel>
                             <TextBlock Text="Node" Foreground="White" FontSize="18" />
-                            <TextBox FontSize="60" TextAlignment="Center" MaxLength="2" MinWidth="80" />
+                            <TextBox FontSize="60" TextAlignment="Center" MaxLength="2" MinWidth="80"
+                                     Text="{Binding InputNodeText, UpdateSourceTrigger=PropertyChanged}" />
                         </StackPanel>
                         <StackPanel Margin="5 0 5 0">
                             <TextBlock Text="You" Foreground="White" FontSize="18" />

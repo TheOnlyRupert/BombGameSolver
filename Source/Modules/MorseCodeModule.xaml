@@ -162,7 +162,7 @@
                                     <!-- If True -->
                                     <Setter Property="Background" Value="GreenYellow" />
                                 </DataTrigger>
-                                <DataTrigger Binding="{Binding ColumnDisabled2}" Value="True">
+                                <DataTrigger Binding="{Binding ColumnDisabled2a}" Value="True">
                                     <!-- If True -->
                                     <Setter Property="Background" Value="Transparent" />
                                 </DataTrigger>
@@ -179,11 +179,11 @@
                             <Setter Property="Background" Value="LightGray" />
                             <Setter Property="Foreground" Value="Black" />
                             <Style.Triggers>
-                                <DataTrigger Binding="{Binding Button_1i}" Value="True">
+                                <DataTrigger Binding="{Binding Button_2i}" Value="True">
                                     <!-- If True -->
                                     <Setter Property="Background" Value="GreenYellow" />
                                 </DataTrigger>
-                                <DataTrigger Binding="{Binding ColumnDisabled2}" Value="True">
+                                <DataTrigger Binding="{Binding ColumnDisabled2a}" Value="True">
                                     <!-- If True -->
                                     <Setter Property="Background" Value="Transparent" />
                                 </DataTrigger>
@@ -204,7 +204,7 @@
                                     <!-- If True -->
                                     <Setter Property="Background" Value="GreenYellow" />
                                 </DataTrigger>
-                                <DataTrigger Binding="{Binding ColumnDisabled2}" Value="True">
+                                <DataTrigger Binding="{Binding ColumnDisabled2a}" Value="True">
                                     <!-- If True -->
                                     <Setter Property="Background" Value="Transparent" />
                                 </DataTrigger>
@@ -225,7 +225,7 @@
                                     <!-- If True -->
                                     <Setter Property="Background" Value="GreenYellow" />
                                 </DataTrigger>
-                                <DataTrigger Binding="{Binding ColumnDisabled2}" Value="True">
+                                <DataTrigger Binding="{Binding ColumnDisabled2a}" Value="True">
                                     <!-- If True -->
                                     <Setter Property="Background" Value="Transparent" />
                                 </DataTrigger>
@@ -246,7 +246,7 @@
                                     <!-- If True -->
                                     <Setter Property="Background" Value="GreenYellow" />
                                 </DataTrigger>
-                                <DataTrigger Binding="{Binding ColumnDisabled2}" Value="True">
+                                <DataTrigger Binding="{Binding ColumnDisabled2b}" Value="True">
                                     <!-- If True -->
                                     <Setter Property="Background" Value="Transparent" />
                                 </DataTrigger>
@@ -267,7 +267,7 @@
                                     <!-- If True -->
                                     <Setter Property="Background" Value="GreenYellow" />
                                 </DataTrigger>
-                                <DataTrigger Binding="{Binding ColumnDisabled2}" Value="True">
+                                <DataTrigger Binding="{Binding ColumnDisabled2b}" Value="True">
                                     <!-- If True -->
                                     <Setter Property="Background" Value="Transparent" />
                                 </DataTrigger>
@@ -288,7 +288,7 @@
                                     <!-- If True -->
                                     <Setter Property="Background" Value="GreenYellow" />
                                 </DataTrigger>
-                                <DataTrigger Binding="{Binding ColumnDisabled2}" Value="True">
+                                <DataTrigger Binding="{Binding ColumnDisabled2b}" Value="True">
                                     <!-- If True -->
                                     <Setter Property="Background" Value="Transparent" />
                                 </DataTrigger>
@@ -321,7 +321,7 @@
                                     <!-- If True -->
                                     <Setter Property="Background" Value="GreenYellow" />
                                 </DataTrigger>
-                                <DataTrigger Binding="{Binding ColumnDisabled3}" Value="True">
+                                <DataTrigger Binding="{Binding ColumnDisabled3a}" Value="True">
                                     <!-- If True -->
                                     <Setter Property="Background" Value="Transparent" />
                                 </DataTrigger>
@@ -342,7 +342,7 @@
                                     <!-- If True -->
                                     <Setter Property="Background" Value="GreenYellow" />
                                 </DataTrigger>
-                                <DataTrigger Binding="{Binding ColumnDisabled3}" Value="True">
+                                <DataTrigger Binding="{Binding ColumnDisabled3a}" Value="True">
                                     <!-- If True -->
                                     <Setter Property="Background" Value="Transparent" />
                                 </DataTrigger>
@@ -363,7 +363,7 @@
                                     <!-- If True -->
                                     <Setter Property="Background" Value="GreenYellow" />
                                 </DataTrigger>
-                                <DataTrigger Binding="{Binding ColumnDisabled3}" Value="True">
+                                <DataTrigger Binding="{Binding ColumnDisabled3b}" Value="True">
                                     <!-- If True -->
                                     <Setter Property="Background" Value="Transparent" />
                                 </DataTrigger>
@@ -384,7 +384,7 @@
                                     <!-- If True -->
                                     <Setter Property="Background" Value="GreenYellow" />
                                 </DataTrigger>
-                                <DataTrigger Binding="{Binding ColumnDisabled3}" Value="True">
+                                <DataTrigger Binding="{Binding ColumnDisabled3c}" Value="True">
                                     <!-- If True -->
                                     <Setter Property="Background" Value="Transparent" />
                                 </DataTrigger>
@@ -405,7 +405,7 @@
                                     <!-- If True -->
                                     <Setter Property="Background" Value="GreenYellow" />
                                 </DataTrigger>
-                                <DataTrigger Binding="{Binding ColumnDisabled3}" Value="True">
+                                <DataTrigger Binding="{Binding ColumnDisabled3d}" Value="True">
                                     <!-- If True -->
                                     <Setter Property="Background" Value="Transparent" />
                                 </DataTrigger>
