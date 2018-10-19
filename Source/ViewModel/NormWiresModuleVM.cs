@@ -23,6 +23,7 @@ namespace BombGameSolver.Source.ViewModel {
 
             var simpleMessenger = CrossViewMessenger.Instance;
             simpleMessenger.MessageValueChanged += OnSimpleMessengerValueChanged;
+            simpleMessenger.PushMessage("KeyBindings_NormWiresModule", null);
         }
 
         public int RoundCounter {
@@ -99,12 +100,34 @@ namespace BombGameSolver.Source.ViewModel {
 
         public ICommand ButtonCommand => new DelegateCommand(ButtonLogic, true);
 
-        public ICommand ResetButtonCommand => new DelegateCommand(ResetButtonCommandLogic, true);
-
         private void OnSimpleMessengerValueChanged(object sender, MessageValueChangedEventArgs e) {
-            /* Update wires if SerialEven Button from SettingsModule is changed */
-            if (e.PropertyName == "SerialEvenLogic") {
-                ButtonLogic("update");
+            if (ReferenceValues.CurrentModule == "../Modules/NormWiresModule.xaml") {
+                switch (e.PropertyName) {
+                case "SerialEvenLogic":
+                    ButtonLogic("update");
+                    break;
+                case "KEY_NumPad1":
+                    ButtonLogic("whi");
+                    break;
+                case "KEY_NumPad2":
+                    ButtonLogic("yel");
+                    break;
+                case "KEY_NumPad3":
+                    ButtonLogic("blu");
+                    break;
+                case "KEY_NumPad4":
+                    ButtonLogic("red");
+                    break;
+                case "KEY_NumPad5":
+                    ButtonLogic("bla");
+                    break;
+                case "KEY_Back":
+                    ButtonLogic("delete");
+                    break;
+                case "KEY_F12":
+                    ButtonLogic("reset");
+                    break;
+                }
             }
         }
 
@@ -346,10 +369,6 @@ namespace BombGameSolver.Source.ViewModel {
 
                 break;
             }
-        }
-
-        private void ResetButtonCommandLogic(object param) {
-            ButtonLogic("reset");
         }
     }
 }

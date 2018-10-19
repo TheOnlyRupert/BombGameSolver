@@ -3,8 +3,8 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-      mc:Ignorable="d">
-    <Grid Background="DarkSlateGray" Margin="40">
+      mc:Ignorable="d" Focusable="False">
+    <Grid Background="DarkSlateGray" Margin="40" Focusable="False">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
@@ -14,9 +14,9 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
-        <StackPanel Grid.Column="0" Grid.Row="0">
-            <Label Content="UP" Foreground="White" FontSize="40" HorizontalAlignment="Center" />
-            <Grid Margin="60 10 80 0">
+        <StackPanel Grid.Column="0" Grid.Row="0" Focusable="False">
+            <Label Content="UP" Foreground="White" FontSize="40" HorizontalAlignment="Center" Focusable="False" />
+            <Grid Margin="60 10 80 0" Focusable="False">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
@@ -30,26 +30,38 @@
                     <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
 
-                <TextBox IsEnabled="False" Background="Black" Grid.Column="0" Grid.Row="0" FontSize="20" />
-                <TextBox IsEnabled="False" Background="Yellow" Grid.Column="0" Grid.Row="1" FontSize="20" />
-                <TextBox IsEnabled="False" Background="Yellow" Grid.Column="1" Grid.Row="0" FontSize="20" />
-                <TextBox IsEnabled="False" Background="Black" Grid.Column="1" Grid.Row="1" FontSize="20" />
-                <TextBox IsEnabled="False" Background="Yellow" Grid.Column="2" Grid.Row="0" FontSize="20" />
-                <TextBox IsEnabled="False" Background="Yellow" Grid.Column="2" Grid.Row="1" FontSize="20" />
+                <TextBox IsEnabled="False" Background="Black" Grid.Column="0" Grid.Row="0" FontSize="20"
+                         Focusable="False" />
+                <TextBox IsEnabled="False" Background="Yellow" Grid.Column="0" Grid.Row="1" FontSize="20"
+                         Focusable="False" />
+                <TextBox IsEnabled="False" Background="Yellow" Grid.Column="1" Grid.Row="0" FontSize="20"
+                         Focusable="False" />
+                <TextBox IsEnabled="False" Background="Black" Grid.Column="1" Grid.Row="1" FontSize="20"
+                         Focusable="False" />
+                <TextBox IsEnabled="False" Background="Yellow" Grid.Column="2" Grid.Row="0" FontSize="20"
+                         Focusable="False" />
+                <TextBox IsEnabled="False" Background="Yellow" Grid.Column="2" Grid.Row="1" FontSize="20"
+                         Focusable="False" />
                 <TextBlock Grid.Column="1" Grid.Row="2" FontSize="30" HorizontalAlignment="Center"
-                           TextAlignment="Center" />
-                <TextBox IsEnabled="False" Background="Black" Grid.Column="0" Grid.Row="3" FontSize="20" />
-                <TextBox IsEnabled="False" Background="Black" Grid.Column="0" Grid.Row="4" FontSize="20" />
-                <TextBox IsEnabled="False" Background="Yellow" Grid.Column="1" Grid.Row="3" FontSize="20" />
-                <TextBox IsEnabled="False" Background="Yellow" Grid.Column="1" Grid.Row="4" FontSize="20" />
-                <TextBox IsEnabled="False" Background="Black" Grid.Column="2" Grid.Row="3" FontSize="20" />
-                <TextBox IsEnabled="False" Background="Yellow" Grid.Column="2" Grid.Row="4" FontSize="20" />
+                           TextAlignment="Center" Focusable="False" />
+                <TextBox IsEnabled="False" Background="Black" Grid.Column="0" Grid.Row="3" FontSize="20"
+                         Focusable="False" />
+                <TextBox IsEnabled="False" Background="Black" Grid.Column="0" Grid.Row="4" FontSize="20"
+                         Focusable="False" />
+                <TextBox IsEnabled="False" Background="Yellow" Grid.Column="1" Grid.Row="3" FontSize="20"
+                         Focusable="False" />
+                <TextBox IsEnabled="False" Background="Yellow" Grid.Column="1" Grid.Row="4" FontSize="20"
+                         Focusable="False" />
+                <TextBox IsEnabled="False" Background="Black" Grid.Column="2" Grid.Row="3" FontSize="20"
+                         Focusable="False" />
+                <TextBox IsEnabled="False" Background="Yellow" Grid.Column="2" Grid.Row="4" FontSize="20"
+                         Focusable="False" />
             </Grid>
         </StackPanel>
 
-        <StackPanel Grid.Column="1" Grid.Row="0">
-            <Label Content="DOWN" Foreground="White" FontSize="40" HorizontalAlignment="Center" />
-            <Grid Margin="80 10 60 0">
+        <StackPanel Grid.Column="1" Grid.Row="0" Focusable="False">
+            <Label Content="DOWN" Foreground="White" FontSize="40" HorizontalAlignment="Center" Focusable="False" />
+            <Grid Margin="80 10 60 0" Focusable="False">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
@@ -63,26 +75,38 @@
                     <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
 
-                <TextBox IsEnabled="False" Background="Black" Grid.Column="0" Grid.Row="0" FontSize="20" />
-                <TextBox IsEnabled="False" Background="Yellow" Grid.Column="0" Grid.Row="1" FontSize="20" />
-                <TextBox IsEnabled="False" Background="Black" Grid.Column="1" Grid.Row="0" FontSize="20" />
-                <TextBox IsEnabled="False" Background="Black" Grid.Column="1" Grid.Row="1" FontSize="20" />
-                <TextBox IsEnabled="False" Background="Yellow" Grid.Column="2" Grid.Row="0" FontSize="20" />
-                <TextBox IsEnabled="False" Background="Yellow" Grid.Column="2" Grid.Row="1" FontSize="20" />
+                <TextBox IsEnabled="False" Background="Black" Grid.Column="0" Grid.Row="0" FontSize="20"
+                         Focusable="False" />
+                <TextBox IsEnabled="False" Background="Yellow" Grid.Column="0" Grid.Row="1" FontSize="20"
+                         Focusable="False" />
+                <TextBox IsEnabled="False" Background="Black" Grid.Column="1" Grid.Row="0" FontSize="20"
+                         Focusable="False" />
+                <TextBox IsEnabled="False" Background="Black" Grid.Column="1" Grid.Row="1" FontSize="20"
+                         Focusable="False" />
+                <TextBox IsEnabled="False" Background="Yellow" Grid.Column="2" Grid.Row="0" FontSize="20"
+                         Focusable="False" />
+                <TextBox IsEnabled="False" Background="Yellow" Grid.Column="2" Grid.Row="1" FontSize="20"
+                         Focusable="False" />
                 <TextBlock Grid.Column="1" Grid.Row="2" FontSize="30" HorizontalAlignment="Center"
-                           TextAlignment="Center" />
-                <TextBox IsEnabled="False" Background="Black" Grid.Column="0" Grid.Row="3" FontSize="20" />
-                <TextBox IsEnabled="False" Background="Black" Grid.Column="0" Grid.Row="4" FontSize="20" />
-                <TextBox IsEnabled="False" Background="Yellow" Grid.Column="1" Grid.Row="3" FontSize="20" />
-                <TextBox IsEnabled="False" Background="Black" Grid.Column="1" Grid.Row="4" FontSize="20" />
-                <TextBox IsEnabled="False" Background="Black" Grid.Column="2" Grid.Row="3" FontSize="20" />
-                <TextBox IsEnabled="False" Background="Yellow" Grid.Column="2" Grid.Row="4" FontSize="20" />
+                           TextAlignment="Center" Focusable="False" />
+                <TextBox IsEnabled="False" Background="Black" Grid.Column="0" Grid.Row="3" FontSize="20"
+                         Focusable="False" />
+                <TextBox IsEnabled="False" Background="Black" Grid.Column="0" Grid.Row="4" FontSize="20"
+                         Focusable="False" />
+                <TextBox IsEnabled="False" Background="Yellow" Grid.Column="1" Grid.Row="3" FontSize="20"
+                         Focusable="False" />
+                <TextBox IsEnabled="False" Background="Black" Grid.Column="1" Grid.Row="4" FontSize="20"
+                         Focusable="False" />
+                <TextBox IsEnabled="False" Background="Black" Grid.Column="2" Grid.Row="3" FontSize="20"
+                         Focusable="False" />
+                <TextBox IsEnabled="False" Background="Yellow" Grid.Column="2" Grid.Row="4" FontSize="20"
+                         Focusable="False" />
             </Grid>
         </StackPanel>
 
-        <StackPanel Grid.Column="0" Grid.Row="1">
-            <Label Content="LEFT" Foreground="White" FontSize="40" HorizontalAlignment="Center" />
-            <Grid Margin="60 10 80 0">
+        <StackPanel Grid.Column="0" Grid.Row="1" Focusable="False">
+            <Label Content="LEFT" Foreground="White" FontSize="40" HorizontalAlignment="Center" Focusable="False" />
+            <Grid Margin="60 10 80 0" Focusable="False">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
@@ -96,14 +120,20 @@
                     <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
 
-                <TextBox IsEnabled="False" Background="Black" Grid.Column="0" Grid.Row="0" FontSize="20" />
-                <TextBox IsEnabled="False" Background="Yellow" Grid.Column="0" Grid.Row="1" FontSize="20" />
-                <TextBox IsEnabled="False" Background="Yellow" Grid.Column="1" Grid.Row="0" FontSize="20" />
-                <TextBox IsEnabled="False" Background="Yellow" Grid.Column="1" Grid.Row="1" FontSize="20" />
-                <TextBox IsEnabled="False" Background="Black" Grid.Column="2" Grid.Row="0" FontSize="20" />
-                <TextBox IsEnabled="False" Background="Yellow" Grid.Column="2" Grid.Row="1" FontSize="20" />
+                <TextBox IsEnabled="False" Background="Black" Grid.Column="0" Grid.Row="0" FontSize="20"
+                         Focusable="False" />
+                <TextBox IsEnabled="False" Background="Yellow" Grid.Column="0" Grid.Row="1" FontSize="20"
+                         Focusable="False" />
+                <TextBox IsEnabled="False" Background="Yellow" Grid.Column="1" Grid.Row="0" FontSize="20"
+                         Focusable="False" />
+                <TextBox IsEnabled="False" Background="Yellow" Grid.Column="1" Grid.Row="1" FontSize="20"
+                         Focusable="False" />
+                <TextBox IsEnabled="False" Background="Black" Grid.Column="2" Grid.Row="0" FontSize="20"
+                         Focusable="False" />
+                <TextBox IsEnabled="False" Background="Yellow" Grid.Column="2" Grid.Row="1" FontSize="20"
+                         Focusable="False" />
                 <TextBlock Grid.Column="1" Grid.Row="2" FontSize="30" HorizontalAlignment="Center"
-                           TextAlignment="Center" />
+                           TextAlignment="Center" Focusable="False" />
                 <TextBox IsEnabled="False" Background="Black" Grid.Column="0" Grid.Row="3" FontSize="20" />
                 <TextBox IsEnabled="False" Background="Yellow" Grid.Column="0" Grid.Row="4" FontSize="20" />
                 <TextBox IsEnabled="False" Background="Yellow" Grid.Column="1" Grid.Row="3" FontSize="20" />
@@ -113,9 +143,9 @@
             </Grid>
         </StackPanel>
 
-        <StackPanel Grid.Column="1" Grid.Row="1">
-            <Label Content="RIGHT" Foreground="White" FontSize="40" HorizontalAlignment="Center" />
-            <Grid Margin="80 10 60 0">
+        <StackPanel Grid.Column="1" Grid.Row="1" Focusable="False">
+            <Label Content="RIGHT" Foreground="White" FontSize="40" HorizontalAlignment="Center" Focusable="False" />
+            <Grid Margin="80 10 60 0" Focusable="False">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
@@ -129,20 +159,32 @@
                     <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
 
-                <TextBox IsEnabled="False" Background="Yellow" Grid.Column="0" Grid.Row="0" FontSize="20" />
-                <TextBox IsEnabled="False" Background="Black" Grid.Column="0" Grid.Row="1" FontSize="20" />
-                <TextBox IsEnabled="False" Background="Yellow" Grid.Column="1" Grid.Row="0" FontSize="20" />
-                <TextBox IsEnabled="False" Background="Yellow" Grid.Column="1" Grid.Row="1" FontSize="20" />
-                <TextBox IsEnabled="False" Background="Yellow" Grid.Column="2" Grid.Row="0" FontSize="20" />
-                <TextBox IsEnabled="False" Background="Black" Grid.Column="2" Grid.Row="1" FontSize="20" />
+                <TextBox IsEnabled="False" Background="Yellow" Grid.Column="0" Grid.Row="0" FontSize="20"
+                         Focusable="False" />
+                <TextBox IsEnabled="False" Background="Black" Grid.Column="0" Grid.Row="1" FontSize="20"
+                         Focusable="False" />
+                <TextBox IsEnabled="False" Background="Yellow" Grid.Column="1" Grid.Row="0" FontSize="20"
+                         Focusable="False" />
+                <TextBox IsEnabled="False" Background="Yellow" Grid.Column="1" Grid.Row="1" FontSize="20"
+                         Focusable="False" />
+                <TextBox IsEnabled="False" Background="Yellow" Grid.Column="2" Grid.Row="0" FontSize="20"
+                         Focusable="False" />
+                <TextBox IsEnabled="False" Background="Black" Grid.Column="2" Grid.Row="1" FontSize="20"
+                         Focusable="False" />
                 <TextBlock Grid.Column="1" Grid.Row="2" FontSize="30" HorizontalAlignment="Center"
-                           TextAlignment="Center" />
-                <TextBox IsEnabled="False" Background="Yellow" Grid.Column="0" Grid.Row="3" FontSize="20" />
-                <TextBox IsEnabled="False" Background="Black" Grid.Column="0" Grid.Row="4" FontSize="20" />
-                <TextBox IsEnabled="False" Background="Black" Grid.Column="1" Grid.Row="3" FontSize="20" />
-                <TextBox IsEnabled="False" Background="Yellow" Grid.Column="1" Grid.Row="4" FontSize="20" />
-                <TextBox IsEnabled="False" Background="Black" Grid.Column="2" Grid.Row="3" FontSize="20" />
-                <TextBox IsEnabled="False" Background="Black" Grid.Column="2" Grid.Row="4" FontSize="20" />
+                           TextAlignment="Center" Focusable="False" />
+                <TextBox IsEnabled="False" Background="Yellow" Grid.Column="0" Grid.Row="3" FontSize="20"
+                         Focusable="False" />
+                <TextBox IsEnabled="False" Background="Black" Grid.Column="0" Grid.Row="4" FontSize="20"
+                         Focusable="False" />
+                <TextBox IsEnabled="False" Background="Black" Grid.Column="1" Grid.Row="3" FontSize="20"
+                         Focusable="False" />
+                <TextBox IsEnabled="False" Background="Yellow" Grid.Column="1" Grid.Row="4" FontSize="20"
+                         Focusable="False" />
+                <TextBox IsEnabled="False" Background="Black" Grid.Column="2" Grid.Row="3" FontSize="20"
+                         Focusable="False" />
+                <TextBox IsEnabled="False" Background="Black" Grid.Column="2" Grid.Row="4" FontSize="20"
+                         Focusable="False" />
             </Grid>
         </StackPanel>
     </Grid>

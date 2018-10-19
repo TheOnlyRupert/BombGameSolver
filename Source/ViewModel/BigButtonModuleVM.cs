@@ -3,10 +3,10 @@ using BombGameSolver.Source.Reference;
 using BombGameSolver.Source.ViewModel.Base;
 
 namespace BombGameSolver.Source.ViewModel {
-    public class ButtonModuleVM : BaseViewModel {
+    public class BigButtonModuleVM : BaseViewModel {
         private string _buttonColor, _buttonText, _outputText, _buttonImage;
 
-        public ButtonModuleVM() {
+        public BigButtonModuleVM() {
             _buttonColor = "Red";
             _buttonText = "Hold";
             _outputText = "Immediately";
@@ -14,6 +14,7 @@ namespace BombGameSolver.Source.ViewModel {
 
             var simpleMessenger = CrossViewMessenger.Instance;
             simpleMessenger.MessageValueChanged += OnSimpleMessengerValueChanged;
+            simpleMessenger.PushMessage("KeyBindings_BigButtonModule", null);
         }
 
         public string ButtonColor {

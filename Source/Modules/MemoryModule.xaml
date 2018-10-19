@@ -3,49 +3,46 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-      mc:Ignorable="d">
-    <Grid Background="DarkSlateGray">
+      mc:Ignorable="d" Focusable="False">
+    <Grid Background="DarkSlateGray" Focusable="False">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="3*" />
             <ColumnDefinition Width="2*" />
         </Grid.ColumnDefinitions>
 
-        <Image Source="../../Resources/memory/background.png" Margin="10" Grid.Column="0" />
-        <Image Source="{Binding DisplayMainImage}" Margin="10" Grid.Column="0" />
-        <Image Source="{Binding FirMainImage}" Margin="10" Grid.Column="0" />
-        <Image Source="{Binding SecMainImage}" Margin="10" Grid.Column="0" />
-        <Image Source="{Binding ThiMainImage}" Margin="10" Grid.Column="0" />
-        <Image Source="{Binding FouMainImage}" Margin="10" Grid.Column="0" />
-        <Image Source="{Binding LightImage}" Margin="10" Grid.Column="0" />
-        <Image Source="{Binding OutputHighlightImage}" Margin="10" Grid.Column="0" />
+        <Image Source="../../Resources/memory/background.png" Margin="10" Grid.Column="0" Focusable="False" />
+        <Image Source="{Binding DisplayMainImage}" Margin="10" Grid.Column="0" Focusable="False" />
+        <Image Source="{Binding FirMainImage}" Margin="10" Grid.Column="0" Focusable="False" />
+        <Image Source="{Binding SecMainImage}" Margin="10" Grid.Column="0" Focusable="False" />
+        <Image Source="{Binding ThiMainImage}" Margin="10" Grid.Column="0" Focusable="False" />
+        <Image Source="{Binding FouMainImage}" Margin="10" Grid.Column="0" Focusable="False" />
+        <Image Source="{Binding LightImage}" Margin="10" Grid.Column="0" Focusable="False" />
+        <Image Source="{Binding OutputHighlightImage}" Margin="10" Grid.Column="0" Focusable="False" />
 
-        <Grid Grid.Column="1">
+        <Grid Grid.Column="1" Focusable="False">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
 
-            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Bottom">
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Bottom" Focusable="False">
                 <TextBox FontSize="50" MinWidth="150" TextAlignment="Center" MaxLength="4"
                          Text="{Binding InputTextBox, UpdateSourceTrigger=PropertyChanged}"
                          CommandManager.PreviewExecuted="DisablePasteCommand" />
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Focusable="False">
                     <Button Content="prev" FontSize="18" Padding="10 5 10 5" Command="{Binding ButtonCommand}"
-                            CommandParameter="prev" />
+                            CommandParameter="prev" Focusable="False" />
                     <TextBlock Text="{Binding RoundText}" FontSize="18" Padding="10 5 10 5" IsEnabled="False"
-                               Background="Transparent" Foreground="White" VerticalAlignment="Center" />
+                               Background="Transparent" Foreground="White" VerticalAlignment="Center" Focusable="False" />
                     <Button Content="next" FontSize="18" Padding="10 5 10 5" Command="{Binding ButtonCommand}"
-                            CommandParameter="next" />
+                            CommandParameter="next" Focusable="False" />
                 </StackPanel>
                 <Button Content="Next Round  (RETURN)" FontSize="20" Padding="0 8" Command="{Binding ButtonCommand}"
-                        CommandParameter="submit" />
+                        CommandParameter="submit" Focusable="False" />
             </StackPanel>
             <TextBox Text="{Binding OutputText}" Grid.Row="1" FontSize="60" HorizontalAlignment="Stretch"
-                     HorizontalContentAlignment="Center" Padding="10" VerticalAlignment="Center"
+                     HorizontalContentAlignment="Center" Padding="10" VerticalAlignment="Center" Focusable="False"
                      Foreground="White" Background="Transparent" Margin="10 0 15 0" IsReadOnly="True" />
         </Grid>
-
-        <Button Content="Reset This  (F12)" VerticalAlignment="Bottom" HorizontalAlignment="Right" FontSize="20"
-                Padding="10 4" Margin="0 0 5 5" Grid.Column="1" Command="{Binding ResetButtonCommand}" />
     </Grid>
 </Page>

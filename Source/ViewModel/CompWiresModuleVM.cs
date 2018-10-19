@@ -5,7 +5,6 @@ using BombGameSolver.Source.ViewModel.Base;
 
 namespace BombGameSolver.Source.ViewModel {
     public class CompWiresModuleVM : BaseViewModel {
-        private readonly CrossViewMessenger _crossViewMessenger;
         private bool _isLedOn, _isStarOn;
 
         private string _wireImage, _ledImage, _starImage, _ledButtonText, _starButtonText, _brokenWireImage,
@@ -20,7 +19,6 @@ namespace BombGameSolver.Source.ViewModel {
 
             var simpleMessenger = CrossViewMessenger.Instance;
             simpleMessenger.MessageValueChanged += OnSimpleMessengerValueChanged;
-            _crossViewMessenger = CrossViewMessenger.Instance;
         }
 
         public string WireImage {
@@ -81,13 +79,45 @@ namespace BombGameSolver.Source.ViewModel {
 
         public ICommand ButtonCommand => new DelegateCommand(ButtonCommandLogic, true);
 
-        public ICommand ResetButtonCommand => new DelegateCommand(ResetButtonCommandLogic, true);
-
         private void OnSimpleMessengerValueChanged(object sender, MessageValueChangedEventArgs e) {
             /* Update wires if SerialEven, BatteryAmount, or ParPort buttons from SettingsModule are changed */
-            if (e.PropertyName == "SerialEvenLogic" || e.PropertyName == "BatteryAmountChanged" ||
-                e.PropertyName == "ParPortLogic") {
-                WireLogic();
+            if (ReferenceValues.CurrentModule == "../Modules/CompWiresModule.xaml") {
+                switch (e.PropertyName) {
+                case "SerialEvenLogic":
+                case "BatteryAmountChanged":
+                case "ParPortLogic":
+                    WireLogic();
+                    break;
+                case "KEY_NumPad1":
+                    ButtonCommandLogic("white");
+                    break;
+                case "KEY_NumPad2":
+                    ButtonCommandLogic("blue");
+                    break;
+                case "KEY_NumPad3":
+                    ButtonCommandLogic("red");
+                    break;
+                case "KEY_NumPad4":
+                    ButtonCommandLogic("bluered");
+                    break;
+                case "KEY_NumPad5":
+                    ButtonCommandLogic("led");
+                    break;
+                case "KEY_NumPad6":
+                    ButtonCommandLogic("star");
+                    break;
+                case "KEY_F12":
+                    _isLedOn = _isStarOn = false;
+                    LedButtonText = "LED OFF (5)";
+                    LedImage = "NULL";
+                    StarButtonText = "Star OFF (5)";
+                    StarImage = "NULL";
+
+                    WireImage = "../../Resources/comp_wires/wire_whi.png";
+                    _wireColor = "white";
+                    WireLogic();
+                    break;
+                }
             }
         }
 
@@ -139,7 +169,7 @@ namespace BombGameSolver.Source.ViewModel {
         }
 
         private void WireLogic() {
-            Console.WriteLine($"[CompWiresModuleVM] Wire: {_wireColor}, LED: {_isLedOn}, Star: {_isStarOn}");
+            Console.WriteLine($"Wire: {_wireColor}, LED: {_isLedOn}, Star: {_isStarOn}");
 
             switch (_wireColor) {
             case "white":
@@ -288,20 +318,6 @@ namespace BombGameSolver.Source.ViewModel {
 
                 break;
             }
-
-            //_crossViewMessenger.PushMessage("UpdateDebugTextOutput", "[ButtonModuleVM] Red & Hold -> Immediately");
-        }
-
-        private void ResetButtonCommandLogic(object param) {
-            _isLedOn = _isStarOn = false;
-            LedButtonText = "LED OFF (5)";
-            LedImage = "NULL";
-            StarButtonText = "Star OFF (5)";
-            StarImage = "NULL";
-
-            WireImage = "../../Resources/comp_wires/wire_whi.png";
-            _wireColor = "white";
-            WireLogic();
         }
     }
 }

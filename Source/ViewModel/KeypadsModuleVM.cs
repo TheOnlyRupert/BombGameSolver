@@ -1,4 +1,5 @@
 using System.Windows.Input;
+using BombGameSolver.Source.Reference;
 using BombGameSolver.Source.ViewModel.Base;
 
 namespace BombGameSolver.Source.ViewModel {
@@ -45,13 +46,22 @@ namespace BombGameSolver.Source.ViewModel {
             ColumnDisabled3 = "False";
             ColumnDisabled4 = "False";
             ColumnDisabled5 = "False";
-        }
 
-        public ICommand ResetButtonCommand => new DelegateCommand(ResetButtonLogic, true);
+            var simpleMessenger = CrossViewMessenger.Instance;
+            simpleMessenger.MessageValueChanged += OnSimpleMessengerValueChanged;
+        }
 
         public ICommand ButtonCommand => new DelegateCommand(ButtonLogic, true);
 
-        private void ResetButtonLogic(object param) {
+        private void OnSimpleMessengerValueChanged(object sender, MessageValueChangedEventArgs e) {
+            if (ReferenceValues.CurrentModule == "../Modules/KeypadsModule.xaml") {
+                if (e.PropertyName == "KEY_F12") {
+                    ResetButtonLogic();
+                }
+            }
+        }
+
+        private void ResetButtonLogic() {
             //ColumnDisabled0 = "False";
             //ColumnDisabled1 = "False";
             //ColumnDisabled2 = "False";

@@ -3,14 +3,14 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-      mc:Ignorable="d">
-    <Grid Background="DarkSlateGray" Margin="80">
+      mc:Ignorable="d" Focusable="False">
+    <Grid Background="DarkSlateGray" Margin="80" Focusable="False">
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
             <RowDefinition Height="6*" />
         </Grid.RowDefinitions>
 
-        <Grid Grid.Column="0">
+        <Grid Grid.Column="0" Focusable="False">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
@@ -18,7 +18,7 @@
             </Grid.ColumnDefinitions>
 
             <Button Content="Strike 0" Grid.Column="0" Grid.Row="0" FontSize="24" Margin="10"
-                    Command="{Binding ButtonCommand}" CommandParameter="0">
+                    Command="{Binding ButtonCommand}" CommandParameter="0" Focusable="False">
                 <Button.Style>
                     <Style TargetType="Button">
                         <!-- Default -->
@@ -35,7 +35,7 @@
                 </Button.Style>
             </Button>
             <Button Content="Strike 1" Grid.Column="1" Grid.Row="0" FontSize="24" Margin="10"
-                    Command="{Binding ButtonCommand}" CommandParameter="1">
+                    Command="{Binding ButtonCommand}" CommandParameter="1" Focusable="False">
                 <Button.Style>
                     <Style TargetType="Button">
                         <!-- Default -->
@@ -52,7 +52,7 @@
                 </Button.Style>
             </Button>
             <Button Content="Strike 2" Grid.Column="2" Grid.Row="0" FontSize="24" Margin="10"
-                    Command="{Binding ButtonCommand}" CommandParameter="2">
+                    Command="{Binding ButtonCommand}" CommandParameter="2" Focusable="False">
                 <Button.Style>
                     <Style TargetType="Button">
                         <!-- Default -->
@@ -70,7 +70,7 @@
             </Button>
         </Grid>
 
-        <Grid Grid.Row="1">
+        <Grid Grid.Row="1" Focusable="False">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
@@ -85,26 +85,29 @@
             </Grid.RowDefinitions>
 
             <TextBox IsReadOnly="True" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
-                     Text="Yellow" Background="Yellow" Foreground="Black" FontSize="30" Grid.Column="0" Grid.Row="0" />
+                     Text="Yellow" Background="Yellow" Foreground="Black" FontSize="30" Grid.Column="0" Grid.Row="0"
+                     Focusable="False" />
             <TextBox IsReadOnly="True" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
-                     Text="Green" Background="Green" Foreground="White" FontSize="30" Grid.Column="1" Grid.Row="0" />
+                     Text="Green" Background="Green" Foreground="White" FontSize="30" Grid.Column="1" Grid.Row="0"
+                     Focusable="False" />
             <TextBox IsReadOnly="True" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
-                     Text="Blue" Background="Blue" Foreground="White" FontSize="30" Grid.Column="2" Grid.Row="0" />
+                     Text="Blue" Background="Blue" Foreground="White" FontSize="30" Grid.Column="2" Grid.Row="0"
+                     Focusable="False" />
             <TextBox IsReadOnly="True" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Text="Red"
-                     Background="Red" Foreground="White" FontSize="30" Grid.Column="3" Grid.Row="0" />
+                     Background="Red" Foreground="White" FontSize="30" Grid.Column="3" Grid.Row="0" Focusable="False" />
 
             <TextBlock Text="▼" Grid.Column="0" Grid.Row="1" FontSize="20" VerticalAlignment="Center"
-                       HorizontalAlignment="Center" Foreground="Yellow" />
+                       HorizontalAlignment="Center" Foreground="Yellow" Focusable="False" />
             <TextBlock Text="▼" Grid.Column="1" Grid.Row="1" FontSize="20" VerticalAlignment="Center"
-                       HorizontalAlignment="Center" Foreground="Green" />
+                       HorizontalAlignment="Center" Foreground="Green" Focusable="False" />
             <TextBlock Text="▼" Grid.Column="2" Grid.Row="1" FontSize="20" VerticalAlignment="Center"
-                       HorizontalAlignment="Center" Foreground="Blue" />
+                       HorizontalAlignment="Center" Foreground="Blue" Focusable="False" />
             <TextBlock Text="▼" Grid.Column="3" Grid.Row="1" FontSize="20" VerticalAlignment="Center"
-                       HorizontalAlignment="Center" Foreground="Red" />
+                       HorizontalAlignment="Center" Foreground="Red" Focusable="False" />
 
             <TextBox IsReadOnly="True" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
                      Text="{Binding YellowOutput}" Background="{Binding YellowOutput}"
-                     FontSize="30" Grid.Column="0" Grid.Row="2">
+                     FontSize="30" Grid.Column="0" Grid.Row="2" Focusable="False">
                 <TextBox.Style>
                     <Style TargetType="TextBox">
                         <!-- Default -->
@@ -121,7 +124,7 @@
 
             <TextBox IsReadOnly="True" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
                      Text="{Binding GreenOutput}" Background="{Binding GreenOutput}" FontSize="30" Grid.Column="1"
-                     Grid.Row="2">
+                     Grid.Row="2" Focusable="False">
                 <TextBox.Style>
                     <Style TargetType="TextBox">
                         <!-- Default -->
@@ -139,7 +142,7 @@
 
             <TextBox IsReadOnly="True" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
                      Text="{Binding BlueOutput}" Background="{Binding BlueOutput}" FontSize="30" Grid.Column="2"
-                     Grid.Row="2">
+                     Grid.Row="2" Focusable="False">
                 <TextBox.Style>
                     <Style TargetType="TextBox">
                         <!-- Default -->
@@ -155,7 +158,7 @@
             </TextBox>
             <TextBox IsReadOnly="True" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
                      Text="{Binding RedOutput}" Background="{Binding RedOutput}" FontSize="30" Grid.Column="3"
-                     Grid.Row="2">
+                     Grid.Row="2" Focusable="False">
                 <TextBox.Style>
                     <Style TargetType="TextBox">
                         <!-- Default -->

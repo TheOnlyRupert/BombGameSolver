@@ -15,7 +15,6 @@ namespace BombGameSolver.Source.ViewModel {
         private void ButtonCommandLogic(object param) {
             ReferenceValues.CurrentModule = "../Modules/" + param + ".xaml";
             _crossViewMessenger.PushMessage("SwitchCurrentModule", null);
-            _crossViewMessenger.PushMessage("UpdateDebugTextOutput", $"[ModuleSwitcherVM] Module switch to: {param}");
         }
     }
 }

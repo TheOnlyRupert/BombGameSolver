@@ -3,108 +3,106 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-      mc:Ignorable="d">
-    <Grid Background="DarkSlateGray" Margin="50 50 50 20">
-        <Grid>
+      mc:Ignorable="d" Focusable="False">
+    <Grid Background="DarkSlateGray" Margin="50 50 50 20" Focusable="False">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Focusable="False">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
             <Grid.RowDefinitions>
+                <RowDefinition Height="2*" />
+                <RowDefinition Height="2*" />
                 <RowDefinition Height="2*" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
 
-            <Grid Grid.Row="0">
+            <Button Content="Blue -> Alpha (7)" Grid.Column="0" Grid.Row="0" Background="Blue" FontSize="32"
+                    Foreground="White" Command="{Binding ButtonCommand}" CommandParameter="blu_a" Focusable="False" />
+            <Button Content="Blue -> Bravo (4)" Grid.Column="0" Grid.Row="1" Background="Blue" FontSize="32"
+                    Foreground="White" Command="{Binding ButtonCommand}" CommandParameter="blu_b" Focusable="False" />
+            <Button Content="Blue -> Charlie (1)" Grid.Column="0" Grid.Row="2" Background="Blue" FontSize="32"
+                    Foreground="White" Command="{Binding ButtonCommand}" CommandParameter="blu_c" Focusable="False" />
+
+            <Grid Grid.Column="0" Grid.Row="3" Focusable="False">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="4*" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
 
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="2*" />
-                    <RowDefinition Height="2*" />
-                    <RowDefinition Height="2*" />
-                    <RowDefinition Height="*" />
-                </Grid.RowDefinitions>
-
-                <Button Content="Blue -> Alpha (7)" Grid.Column="0" Grid.Row="0" Background="Blue" FontSize="32"
-                        Foreground="White" Command="{Binding ButtonCommand}" CommandParameter="blu_a" />
-                <Button Content="Blue -> Bravo (4)" Grid.Column="0" Grid.Row="1" Background="Blue" FontSize="32"
-                        Foreground="White" Command="{Binding ButtonCommand}" CommandParameter="blu_b" />
-                <Button Content="Blue -> Charlie (1)" Grid.Column="0" Grid.Row="2" Background="Blue" FontSize="32"
-                        Foreground="White" Command="{Binding ButtonCommand}" CommandParameter="blu_c" />
-                <Grid Grid.Column="0" Grid.Row="3">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="4*" />
-                        <ColumnDefinition Width="*" />
-                    </Grid.ColumnDefinitions>
-
-                    <Button Content="1x Remove" Background="Transparent" FontSize="24" Foreground="DarkCyan"
-                            Command="{Binding ButtonCommand}" CommandParameter="blu_del" />
-                    <TextBox Grid.Column="1" Text="{Binding BluRoundTextBox}" Background="Transparent" FontSize="24"
-                             Foreground="DarkCyan" BorderBrush="DarkCyan" IsReadOnly="True"
-                             HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
-                </Grid>
-                <Button Content="Red -> Alpha (8)" Grid.Column="1" Grid.Row="0" Background="Red" FontSize="32"
-                        Foreground="White" Command="{Binding ButtonCommand}" CommandParameter="red_a" />
-                <Button Content="Red -> Bravo (5)" Grid.Column="1" Grid.Row="1" Background="Red" FontSize="32"
-                        Foreground="White" Command="{Binding ButtonCommand}" CommandParameter="red_b" />
-                <Button Content="Red -> Charlie (2)" Grid.Column="1" Grid.Row="2" Background="Red" FontSize="32"
-                        Foreground="White" Command="{Binding ButtonCommand}" CommandParameter="red_c" />
-                <Grid Grid.Column="1" Grid.Row="3">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="4*" />
-                        <ColumnDefinition Width="*" />
-                    </Grid.ColumnDefinitions>
-
-                    <Button Content="1x Remove" Background="Transparent" FontSize="24" Foreground="DarkCyan"
-                            Command="{Binding ButtonCommand}" CommandParameter="red_del" />
-                    <TextBox Grid.Column="1" Text="{Binding RedRoundTextBox}" Background="Transparent" FontSize="24"
-                             Foreground="DarkCyan" BorderBrush="DarkCyan" IsReadOnly="True"
-                             HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
-                </Grid>
-                <Button Content="Black -> Alpha (9)" Grid.Column="2" Grid.Row="0" Background="Black" FontSize="32"
-                        Foreground="White" Command="{Binding ButtonCommand}" CommandParameter="bla_a" />
-                <Button Content="Black -> Bravo (6)" Grid.Column="2" Grid.Row="1" Background="Black" FontSize="32"
-                        Foreground="White" Command="{Binding ButtonCommand}" CommandParameter="bla_b" />
-                <Button Content="Black -> Charlie (3)" Grid.Column="2" Grid.Row="2" Background="Black" FontSize="32"
-                        Foreground="White" Command="{Binding ButtonCommand}" CommandParameter="bla_c" />
-                <Grid Grid.Column="2" Grid.Row="3">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="4*" />
-                        <ColumnDefinition Width="*" />
-                    </Grid.ColumnDefinitions>
-
-                    <Button Content="1x Remove" Background="Transparent" FontSize="24" Foreground="DarkCyan"
-                            Command="{Binding ButtonCommand}" CommandParameter="bla_del" />
-                    <TextBox Grid.Column="1" Text="{Binding BlaRoundTextBox}" Background="Transparent" FontSize="24"
-                             Foreground="DarkCyan" BorderBrush="DarkCyan" IsReadOnly="True"
-                             HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
-                </Grid>
+                <Button Content="1x Remove" Background="Transparent" FontSize="24" Foreground="DarkCyan"
+                        Command="{Binding ButtonCommand}" CommandParameter="blu_del" Focusable="False" />
+                <TextBox Grid.Column="1" Text="{Binding BluRoundTextBox}" Background="Transparent" FontSize="24"
+                         Foreground="DarkCyan" BorderBrush="DarkCyan" IsReadOnly="True" Focusable="False"
+                         HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
             </Grid>
+            <Button Content="Red -> Alpha (8)" Grid.Column="1" Grid.Row="0" Background="Red" FontSize="32"
+                    Foreground="White" Command="{Binding ButtonCommand}" CommandParameter="red_a" Focusable="False" />
+            <Button Content="Red -> Bravo (5)" Grid.Column="1" Grid.Row="1" Background="Red" FontSize="32"
+                    Foreground="White" Command="{Binding ButtonCommand}" CommandParameter="red_b" Focusable="False" />
+            <Button Content="Red -> Charlie (2)" Grid.Column="1" Grid.Row="2" Background="Red" FontSize="32"
+                    Foreground="White" Command="{Binding ButtonCommand}" CommandParameter="red_c" Focusable="False" />
 
-            <TextBox Grid.Row="1" Text="{Binding OutputTextBox}" IsReadOnly="True" FontSize="48" TextAlignment="Center"
-                     VerticalContentAlignment="Center" Margin="30">
-                <TextBox.Style>
-                    <Style TargetType="TextBox">
-                        <!-- Default -->
-                        <Setter Property="Background" Value="Transparent" />
-                        <Style.Triggers>
-                            <DataTrigger Binding="{Binding OutputTextBox}" Value="TRUE">
-                                <!-- If True -->
-                                <Setter Property="Background" Value="Yellow" />
-                                <Setter Property="Foreground" Value="Black" />
-                            </DataTrigger>
-                            <DataTrigger Binding="{Binding OutputTextBox}" Value="FALSE">
-                                <!-- If True -->
-                                <Setter Property="Background" Value="Red" />
-                                <Setter Property="Foreground" Value="White" />
-                            </DataTrigger>
-                        </Style.Triggers>
-                    </Style>
-                </TextBox.Style>
-            </TextBox>
+            <Grid Grid.Column="1" Grid.Row="3" Focusable="False">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="4*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Button Content="1x Remove" Background="Transparent" FontSize="24" Foreground="DarkCyan"
+                        Command="{Binding ButtonCommand}" CommandParameter="red_del" Focusable="False" />
+                <TextBox Grid.Column="1" Text="{Binding RedRoundTextBox}" Background="Transparent" FontSize="24"
+                         Foreground="DarkCyan" BorderBrush="DarkCyan" IsReadOnly="True" Focusable="False"
+                         HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+            </Grid>
+            <Button Content="Black -> Alpha (9)" Grid.Column="2" Grid.Row="0" Background="Black" FontSize="32"
+                    Foreground="White" Command="{Binding ButtonCommand}" CommandParameter="bla_a" Focusable="False" />
+            <Button Content="Black -> Bravo (6)" Grid.Column="2" Grid.Row="1" Background="Black" FontSize="32"
+                    Foreground="White" Command="{Binding ButtonCommand}" CommandParameter="bla_b" Focusable="False" />
+            <Button Content="Black -> Charlie (3)" Grid.Column="2" Grid.Row="2" Background="Black" FontSize="32"
+                    Foreground="White" Command="{Binding ButtonCommand}" CommandParameter="bla_c" Focusable="False" />
+
+            <Grid Grid.Column="2" Grid.Row="3" Focusable="False">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="4*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Button Content="1x Remove" Background="Transparent" FontSize="24" Foreground="DarkCyan"
+                        Command="{Binding ButtonCommand}" CommandParameter="bla_del" Focusable="False" />
+                <TextBox Grid.Column="1" Text="{Binding BlaRoundTextBox}" Background="Transparent" FontSize="24"
+                         Foreground="DarkCyan" BorderBrush="DarkCyan" IsReadOnly="True" Focusable="False"
+                         HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+            </Grid>
         </Grid>
 
-        <Button Content="Reset This  (F12)" VerticalAlignment="Bottom" HorizontalAlignment="Right"
-                FontSize="20" Padding="10 4" Margin="0 0 -45 -15" Command="{Binding ResetButtonCommand}" />
+        <TextBox Grid.Row="1" Text="{Binding OutputTextBox}" IsReadOnly="True" FontSize="48" TextAlignment="Center"
+                 VerticalContentAlignment="Center" Margin="30" Focusable="False">
+            <TextBox.Style>
+                <Style TargetType="TextBox">
+                    <!-- Default -->
+                    <Setter Property="Background" Value="Transparent" />
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding OutputTextBox}" Value="TRUE">
+                            <!-- If True -->
+                            <Setter Property="Background" Value="Yellow" />
+                            <Setter Property="Foreground" Value="Black" />
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding OutputTextBox}" Value="FALSE">
+                            <!-- If True -->
+                            <Setter Property="Background" Value="Red" />
+                            <Setter Property="Foreground" Value="White" />
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </TextBox.Style>
+        </TextBox>
     </Grid>
 </Page>

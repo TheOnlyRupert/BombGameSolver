@@ -3,20 +3,32 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-      mc:Ignorable="d">
+      mc:Ignorable="d" Focusable="False">
 
-    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Background="DarkSlateGray" Margin="0 4 0 4">
-        <StackPanel.Resources>
+    <Grid Background="DarkSlateGray" Margin="4 4 4 4" Focusable="False">
+        <Grid.Resources>
             <Style TargetType="Button">
-                <Setter Property="Foreground" Value="White" />
                 <Setter Property="Background" Value="Transparent" />
                 <Setter Property="FontSize" Value="24" />
                 <Setter Property="Padding" Value="10 5 10 5" />
-                <Setter Property="MinWidth" Value="180" />
+                <Setter Property="MinWidth" Value="200" />
+                <Setter Property="Focusable" Value="False" />
             </Style>
-        </StackPanel.Resources>
+        </Grid.Resources>
 
-        <Button Content="Main Menu (TAB)" Command="{Binding ButtonCommand}" />
-        <Button Content="Module Help (F1)" Margin="10 0 0 0" />
-    </StackPanel>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Grid.Column="0">
+
+            <Button Content="Main Menu (Tab)" Command="{Binding ButtonCommand}" CommandParameter="main"
+                    Foreground="CornflowerBlue" />
+            <Button Content="Reset This (F12)" Command="{Binding ButtonCommand}" CommandParameter="reset"
+                    Foreground="Coral" />
+        </StackPanel>
+        <Button Content="{Binding HelpText}" Command="{Binding ButtonCommand}" CommandParameter="help"
+                Focusable="False" Grid.Column="1" HorizontalAlignment="Right" Foreground="White" />
+    </Grid>
 </Page>

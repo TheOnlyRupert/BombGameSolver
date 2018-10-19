@@ -3,14 +3,14 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-      mc:Ignorable="d">
-    <Grid Background="DarkSlateGray" Margin="10">
+      mc:Ignorable="d" Focusable="False">
+    <Grid Background="DarkSlateGray" Margin="10" Focusable="False">
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
             <RowDefinition Height="120" />
         </Grid.RowDefinitions>
 
-        <Grid>
+        <Grid Focusable="False">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
@@ -31,7 +31,7 @@
                 </Style>
             </Grid.Resources>
 
-            <Grid Margin="0 0 10 0">
+            <Grid Margin="0 0 10 0" Focusable="False">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
@@ -49,149 +49,149 @@
                     <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
 
-                <TextBlock Grid.Column="0" Grid.Row="0">
+                <TextBlock Grid.Column="0" Grid.Row="0" Focusable="False">
                     <Run Text="NULL" />
                     <LineBreak />
                     <Run Text="3" />
                 </TextBlock>
-                <TextBlock Grid.Column="0" Grid.Row="1">
+                <TextBlock Grid.Column="0" Grid.Row="1" Focusable="False">
                     <Run Text="BLANK" />
                     <LineBreak />
                     <Run Text="5" />
                 </TextBlock>
-                <TextBlock Grid.Column="0" Grid.Row="2">
+                <TextBlock Grid.Column="0" Grid.Row="2" Focusable="False">
                     <Run Text="C" />
                     <LineBreak />
                     <Run Text="4" />
                 </TextBlock>
-                <TextBlock Grid.Column="0" Grid.Row="3">
+                <TextBlock Grid.Column="0" Grid.Row="3" Focusable="False">
                     <Run Text="CEE" />
                     <LineBreak />
                     <Run Text="6" />
                 </TextBlock>
-                <TextBlock Grid.Column="0" Grid.Row="4">
+                <TextBlock Grid.Column="0" Grid.Row="4" Focusable="False">
                     <Run Text="DISPLAY" />
                     <LineBreak />
                     <Run Text="6" />
                 </TextBlock>
-                <TextBlock Grid.Column="0" Grid.Row="5">
+                <TextBlock Grid.Column="0" Grid.Row="5" Focusable="False">
                     <Run Text="FIRST" />
                     <LineBreak />
                     <Run Text="4" />
                 </TextBlock>
-                <TextBlock Grid.Column="0" Grid.Row="6">
+                <TextBlock Grid.Column="0" Grid.Row="6" Focusable="False">
                     <Run Text="HOLD ON" />
                     <LineBreak />
                     <Run Text="6" />
                 </TextBlock>
-                <TextBlock Grid.Column="1" Grid.Row="0">
+                <TextBlock Grid.Column="1" Grid.Row="0" Focusable="False">
                     <Run Text="LEAD" />
                     <LineBreak />
                     <Run Text="6" />
                 </TextBlock>
-                <TextBlock Grid.Column="1" Grid.Row="1">
+                <TextBlock Grid.Column="1" Grid.Row="1" Focusable="False">
                     <Run Text="LED" />
                     <LineBreak />
                     <Run Text="2" />
                 </TextBlock>
-                <TextBlock Grid.Column="1" Grid.Row="2">
+                <TextBlock Grid.Column="1" Grid.Row="2" Focusable="False">
                     <Run Text="LEED" />
                     <LineBreak />
                     <Run Text="3" />
                 </TextBlock>
-                <TextBlock Grid.Column="1" Grid.Row="3">
+                <TextBlock Grid.Column="1" Grid.Row="3" Focusable="False">
                     <Run Text="NO" />
                     <LineBreak />
                     <Run Text="6" />
                 </TextBlock>
-                <TextBlock Grid.Column="1" Grid.Row="4">
+                <TextBlock Grid.Column="1" Grid.Row="4" Focusable="False">
                     <Run Text="NOTHING" />
                     <LineBreak />
                     <Run Text="2" />
                 </TextBlock>
-                <TextBlock Grid.Column="1" Grid.Row="5">
+                <TextBlock Grid.Column="1" Grid.Row="5" Focusable="False">
                     <Run Text="OKAY" />
                     <LineBreak />
                     <Run Text="4" />
                 </TextBlock>
-                <TextBlock Grid.Column="1" Grid.Row="6">
+                <TextBlock Grid.Column="1" Grid.Row="6" Focusable="False">
                     <Run Text="READ" />
                     <LineBreak />
                     <Run Text="5" />
                 </TextBlock>
-                <TextBlock Grid.Column="2" Grid.Row="0">
+                <TextBlock Grid.Column="2" Grid.Row="0" Focusable="False">
                     <Run Text="RED" />
                     <LineBreak />
                     <Run Text="5" />
                 </TextBlock>
-                <TextBlock Grid.Column="2" Grid.Row="1">
+                <TextBlock Grid.Column="2" Grid.Row="1" Focusable="False">
                     <Run Text="REED" />
                     <LineBreak />
                     <Run Text="3" />
                 </TextBlock>
-                <TextBlock Grid.Column="2" Grid.Row="2">
+                <TextBlock Grid.Column="2" Grid.Row="2" Focusable="False">
                     <Run Text="SAYS" />
                     <LineBreak />
                     <Run Text="6" />
                 </TextBlock>
-                <TextBlock Grid.Column="2" Grid.Row="3">
+                <TextBlock Grid.Column="2" Grid.Row="3" Focusable="False">
                     <Run Text="SEE" />
                     <LineBreak />
                     <Run Text="6" />
                 </TextBlock>
-                <TextBlock Grid.Column="2" Grid.Row="4">
+                <TextBlock Grid.Column="2" Grid.Row="4" Focusable="False">
                     <Run Text="THEIR" />
                     <LineBreak />
                     <Run Text="5" />
                 </TextBlock>
-                <TextBlock Grid.Column="2" Grid.Row="5">
+                <TextBlock Grid.Column="2" Grid.Row="5" Focusable="False">
                     <Run Text="THERE" />
                     <LineBreak />
                     <Run Text="6" />
                 </TextBlock>
-                <TextBlock Grid.Column="2" Grid.Row="6">
+                <TextBlock Grid.Column="2" Grid.Row="6" Focusable="False">
                     <Run Text="THEY'RE" />
                     <LineBreak />
                     <Run Text="3" />
                 </TextBlock>
-                <TextBlock Grid.Column="3" Grid.Row="0">
+                <TextBlock Grid.Column="3" Grid.Row="0" Focusable="False">
                     <Run Text="THEY ARE" />
                     <LineBreak />
                     <Run Text="2" />
                 </TextBlock>
-                <TextBlock Grid.Column="3" Grid.Row="1">
+                <TextBlock Grid.Column="3" Grid.Row="1" Focusable="False">
                     <Run Text="UR" />
                     <LineBreak />
                     <Run Text="1" />
                 </TextBlock>
-                <TextBlock Grid.Column="3" Grid.Row="2">
+                <TextBlock Grid.Column="3" Grid.Row="2" Focusable="False">
                     <Run Text="YES" />
                     <LineBreak />
                     <Run Text="2" />
                 </TextBlock>
-                <TextBlock Grid.Column="3" Grid.Row="3">
+                <TextBlock Grid.Column="3" Grid.Row="3" Focusable="False">
                     <Run Text="YOU" />
                     <LineBreak />
                     <Run Text="5" />
                 </TextBlock>
-                <TextBlock Grid.Column="3" Grid.Row="4">
+                <TextBlock Grid.Column="3" Grid.Row="4" Focusable="False">
                     <Run Text="YOUR" />
                     <LineBreak />
                     <Run Text="5" />
                 </TextBlock>
-                <TextBlock Grid.Column="3" Grid.Row="5">
+                <TextBlock Grid.Column="3" Grid.Row="5" Focusable="False">
                     <Run Text="YOU'RE" />
                     <LineBreak />
                     <Run Text="5" />
                 </TextBlock>
-                <TextBlock Grid.Column="3" Grid.Row="6">
+                <TextBlock Grid.Column="3" Grid.Row="6" Focusable="False">
                     <Run Text="YOU ARE" />
                     <LineBreak />
                     <Run Text="6" />
                 </TextBlock>
             </Grid>
 
-            <Grid Grid.Column="1" Margin="10 0 0 0">
+            <Grid Grid.Column="1" Margin="10 0 0 0" Focusable="False">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
@@ -209,65 +209,67 @@
                     <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
 
-                <Button Content="BLANK" Command="{Binding ButtonCommand}" CommandParameter="blank" />
+                <Button Grid.Column="0" Grid.Row="0" Content="BLANK" Command="{Binding ButtonCommand}"
+                        CommandParameter="blank" Focusable="False" />
                 <Button Grid.Column="0" Grid.Row="1" Content="DONE" Command="{Binding ButtonCommand}"
-                        CommandParameter="done" />
+                        CommandParameter="done" Focusable="False" />
                 <Button Grid.Column="0" Grid.Row="2" Content="FIRST" Command="{Binding ButtonCommand}"
-                        CommandParameter="first" />
+                        CommandParameter="first" Focusable="False" />
                 <Button Grid.Column="0" Grid.Row="3" Content="HOLD" Command="{Binding ButtonCommand}"
-                        CommandParameter="hold" />
+                        CommandParameter="hold" Focusable="False" />
                 <Button Grid.Column="0" Grid.Row="4" Content="LEFT" Command="{Binding ButtonCommand}"
-                        CommandParameter="left" />
+                        CommandParameter="left" Focusable="False" />
                 <Button Grid.Column="0" Grid.Row="5" Content="LIKE" Command="{Binding ButtonCommand}"
-                        CommandParameter="like" />
+                        CommandParameter="like" Focusable="False" />
                 <Button Grid.Column="0" Grid.Row="6" Content="MIDDLE" Command="{Binding ButtonCommand}"
-                        CommandParameter="middle" />
+                        CommandParameter="middle" Focusable="False" />
                 <Button Grid.Column="1" Grid.Row="0" Content="NEXT" Command="{Binding ButtonCommand}"
-                        CommandParameter="next" />
+                        CommandParameter="next" Focusable="False" />
                 <Button Grid.Column="1" Grid.Row="1" Content="NO" Command="{Binding ButtonCommand}"
-                        CommandParameter="no" />
+                        CommandParameter="no" Focusable="False" />
                 <Button Grid.Column="1" Grid.Row="2" Content="NOTHING" Command="{Binding ButtonCommand}"
-                        CommandParameter="nothing" />
+                        CommandParameter="nothing" Focusable="False" />
                 <Button Grid.Column="1" Grid.Row="3" Content="OKAY" Command="{Binding ButtonCommand}"
-                        CommandParameter="okay" />
+                        CommandParameter="okay" Focusable="False" />
                 <Button Grid.Column="1" Grid.Row="4" Content="PRESS" Command="{Binding ButtonCommand}"
-                        CommandParameter="press" />
+                        CommandParameter="press" Focusable="False" />
                 <Button Grid.Column="1" Grid.Row="5" Content="READY" Command="{Binding ButtonCommand}"
-                        CommandParameter="ready" />
+                        CommandParameter="ready" Focusable="False" />
                 <Button Grid.Column="1" Grid.Row="6" Content="RIGHT" Command="{Binding ButtonCommand}"
-                        CommandParameter="right" />
+                        CommandParameter="right" Focusable="False" />
                 <Button Grid.Column="2" Grid.Row="0" Content="SURE" Command="{Binding ButtonCommand}"
-                        CommandParameter="sure" />
-                <Button Grid.Column="2" Grid.Row="1" Content="U" Command="{Binding ButtonCommand}" CommandParameter="u" />
+                        CommandParameter="sure" Focusable="False" />
+                <Button Grid.Column="2" Grid.Row="1" Content="U" Command="{Binding ButtonCommand}"
+                        CommandParameter="u" Focusable="False" />
                 <Button Grid.Column="2" Grid.Row="2" Content="UR" Command="{Binding ButtonCommand}"
-                        CommandParameter="ur" />
+                        CommandParameter="ur" Focusable="False" />
                 <Button Grid.Column="2" Grid.Row="3" Content="UHHH" Command="{Binding ButtonCommand}"
-                        CommandParameter="uhhh" />
+                        CommandParameter="uhhh" Focusable="False" />
                 <Button Grid.Column="2" Grid.Row="4" Content="UH UH" Command="{Binding ButtonCommand}"
-                        CommandParameter="uhuh" />
+                        CommandParameter="uhuh" Focusable="False" />
                 <Button Grid.Column="2" Grid.Row="5" Content="UH HUH" Command="{Binding ButtonCommand}"
-                        CommandParameter="uhhuh" />
+                        CommandParameter="uhhuh" Focusable="False" />
                 <Button Grid.Column="2" Grid.Row="6" Content="WAIT" Command="{Binding ButtonCommand}"
-                        CommandParameter="wait" />
+                        CommandParameter="wait" Focusable="False" />
                 <Button Grid.Column="3" Grid.Row="0" Content="WHAT" Command="{Binding ButtonCommand}"
-                        CommandParameter="what" />
+                        CommandParameter="what" Focusable="False" />
                 <Button Grid.Column="3" Grid.Row="1" Content="WHAT?" Command="{Binding ButtonCommand}"
-                        CommandParameter="what?" />
+                        CommandParameter="what?" Focusable="False" />
                 <Button Grid.Column="3" Grid.Row="2" Content="YES" Command="{Binding ButtonCommand}"
-                        CommandParameter="yes" />
+                        CommandParameter="yes" Focusable="False" />
                 <Button Grid.Column="3" Grid.Row="3" Content="YOU" Command="{Binding ButtonCommand}"
-                        CommandParameter="you" />
+                        CommandParameter="you" Focusable="False" />
                 <Button Grid.Column="3" Grid.Row="4" Content="YOUR" Command="{Binding ButtonCommand}"
-                        CommandParameter="your" />
+                        CommandParameter="your" Focusable="False" />
                 <Button Grid.Column="3" Grid.Row="5" Content="YOU'RE" Command="{Binding ButtonCommand}"
-                        CommandParameter="you're" />
+                        CommandParameter="you're" Focusable="False" />
                 <Button Grid.Column="3" Grid.Row="6" Content="YOU ARE" Command="{Binding ButtonCommand}"
-                        CommandParameter="youare" />
+                        CommandParameter="youare" Focusable="False" />
             </Grid>
         </Grid>
 
         <TextBox Text="{Binding OutputTextBox}" Grid.Row="1" FontSize="36" Padding="5 0 0 0" TextWrapping="Wrap"
                  VerticalAlignment="Stretch" Background="Transparent" Foreground="White" TextAlignment="Left"
-                 IsReadOnly="True" VerticalScrollBarVisibility="Auto" Margin="0 20 0 0" />
+                 IsReadOnly="True" VerticalScrollBarVisibility="Auto" Margin="0 20 0 0" Focusable="False" />
     </Grid>
 </Page>

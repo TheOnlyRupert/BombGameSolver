@@ -3,36 +3,34 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-      mc:Ignorable="d">
-    <Grid Background="DarkSlateGray">
+      mc:Ignorable="d" Focusable="False">
+    <Grid Background="DarkSlateGray" Focusable="False">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="4*" />
             <ColumnDefinition Width="3*" />
-            <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
-        <Image Source="../../Resources/comp_wires/ports.png" Grid.Column="0" />
-        <Image Source="{Binding WireImage}" Grid.Column="0" />
-        <Image Source="{Binding LedImage}" Grid.Column="0" />
-        <Image Source="{Binding StarImage}" Grid.Column="0" />
-        <Image Source="{Binding BrokenWireImage}" Grid.Column="0" />
+        <Image Source="../../Resources/comp_wires/ports.png" Grid.Column="0" Margin="10" Focusable="False" />
+        <Image Source="{Binding WireImage}" Grid.Column="0" Margin="10" Focusable="False" />
+        <Image Source="{Binding LedImage}" Grid.Column="0" Margin="10" Focusable="False" />
+        <Image Source="{Binding StarImage}" Grid.Column="0" Margin="10" Focusable="False" />
+        <Image Source="{Binding BrokenWireImage}" Grid.Column="0" Margin="10" Focusable="False" />
 
-        <Grid Grid.Column="1">
-
+        <Grid Grid.Column="1" Focusable="False">
             <Grid.RowDefinitions>
                 <RowDefinition Height="2*" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
 
-            <StackPanel VerticalAlignment="Bottom" Margin="20 0 10 0">
+            <StackPanel VerticalAlignment="Bottom" Margin="10 0 10 0" Focusable="False">
                 <Button Content="White (1)" Padding="5" FontSize="20" Margin="5" Foreground="Black" Background="White"
-                        Command="{Binding ButtonCommand}" CommandParameter="white" />
+                        Command="{Binding ButtonCommand}" CommandParameter="white" Focusable="False" />
                 <Button Content="Blue  (2)" Padding="5" FontSize="20" Margin="5" Foreground="White" Background="Blue"
-                        Command="{Binding ButtonCommand}" CommandParameter="blue" />
+                        Command="{Binding ButtonCommand}" CommandParameter="blue" Focusable="False" />
                 <Button Content="Red  (3)" Padding="5" FontSize="20" Margin="5" Foreground="White" Background="Red"
-                        Command="{Binding ButtonCommand}" CommandParameter="red" />
+                        Command="{Binding ButtonCommand}" CommandParameter="red" Focusable="False" />
                 <Button Content="Blue + Red (4)" Padding="5" FontSize="20" Margin="5" Foreground="White"
-                        Command="{Binding ButtonCommand}" CommandParameter="bluered">
+                        Command="{Binding ButtonCommand}" CommandParameter="bluered" Focusable="False">
                     <Button.Background>
                         <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
                             <GradientStop Color="Red" Offset="0" />
@@ -44,7 +42,7 @@
                 </Button>
 
                 <Button Content="{Binding LedButtonText}" Padding="5" FontSize="20" Margin="5 50 5 5"
-                        Command="{Binding ButtonCommand}" CommandParameter="led">
+                        Command="{Binding ButtonCommand}" CommandParameter="led" Focusable="False">
                     <Button.Style>
                         <Style TargetType="Button">
                             <!-- Default -->
@@ -61,7 +59,7 @@
                     </Button.Style>
                 </Button>
                 <Button Content="{Binding StarButtonText}" Padding="5" FontSize="20" Margin="5"
-                        Command="{Binding ButtonCommand}" CommandParameter="star">
+                        Command="{Binding ButtonCommand}" CommandParameter="star" Focusable="False">
                     <Button.Style>
                         <Style TargetType="Button">
                             <!-- Default -->
@@ -80,8 +78,8 @@
             </StackPanel>
 
             <TextBox Text="{Binding OutputText}" Grid.Row="1" FontSize="60" HorizontalAlignment="Stretch"
-                     HorizontalContentAlignment="Center" Padding="10" VerticalAlignment="Center"
-                     IsReadOnly="True">
+                     HorizontalContentAlignment="Center" Padding="5 0 5 0" VerticalAlignment="Center" Focusable="False"
+                     IsReadOnly="True" Margin="20">
                 <TextBox.Style>
                     <Style TargetType="TextBox">
                         <!-- Default -->
@@ -98,8 +96,5 @@
                 </TextBox.Style>
             </TextBox>
         </Grid>
-
-        <Button Content="Reset This  (F12)" VerticalAlignment="Bottom" HorizontalAlignment="Right"
-                FontSize="20" Padding="10 4" Margin="0 0 5 5" Grid.Column="2" Command="{Binding ResetButtonCommand}" />
     </Grid>
 </Page>

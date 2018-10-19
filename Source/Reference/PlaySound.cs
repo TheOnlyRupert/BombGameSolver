@@ -1,5 +1,6 @@
 using System;
 using System.Media;
+using System.Windows;
 
 namespace BombGameSolver.Source.Reference {
     public class PlaySound {
@@ -7,13 +8,14 @@ namespace BombGameSolver.Source.Reference {
         private readonly bool _canPlay;
 
         public PlaySound(string name) {
-            _audio = new SoundPlayer("../../Resources/global/" + name + ".wav");
+            var sri = Application.GetResourceStream(
+                new Uri("pack://application:,,,/BombGameSolver;component/Resources/global/" + name + ".wav"));
 
-            try {
+            if (sri != null) {
+                _audio = new SoundPlayer(sri.Stream);
                 _audio.Load();
                 _canPlay = true;
-            } catch (Exception) {
-                Console.WriteLine("broke af");
+            } else {
                 _canPlay = false;
             }
         }

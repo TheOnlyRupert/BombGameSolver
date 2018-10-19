@@ -1,3 +1,4 @@
+using BombGameSolver.Source.Reference;
 using BombGameSolver.Source.ViewModel.Base;
 
 namespace BombGameSolver.Source.ViewModel {
@@ -6,6 +7,10 @@ namespace BombGameSolver.Source.ViewModel {
 
         public MazeModuleVM() {
             MazeImage = "../../Resources/maze/maze11.png";
+
+            var simpleMessenger = CrossViewMessenger.Instance;
+            simpleMessenger.MessageValueChanged += OnSimpleMessengerValueChanged;
+            simpleMessenger.PushMessage("KeyBindings_MazeModule", null);
         }
 
         public string MazeImage {
@@ -21,6 +26,14 @@ namespace BombGameSolver.Source.ViewModel {
             set {
                 _inputNodeText = VerifyNodeText(value);
                 RaisePropertyChangedEvent("InputNodeText");
+            }
+        }
+
+        private void OnSimpleMessengerValueChanged(object sender, MessageValueChangedEventArgs e) {
+            if (ReferenceValues.CurrentModule == "../Modules/MazeModule.xaml") {
+                if (e.PropertyName == "KEY_F12") {
+                    //Reset;
+                }
             }
         }
 

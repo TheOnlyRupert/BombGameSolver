@@ -3,14 +3,14 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-      mc:Ignorable="d">
-    <Grid Margin="30 0 30 0" Background="DarkSlateGray">
+      mc:Ignorable="d" Focusable="False">
+    <Grid Margin="30 0 30 0" Background="DarkSlateGray" Focusable="False">
         <Grid.RowDefinitions>
             <RowDefinition Height="3*" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
-        <Grid VerticalAlignment="Center">
+        <Grid VerticalAlignment="Center" Focusable="False">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="7*" />
                 <ColumnDefinition Width="*" />
@@ -19,9 +19,9 @@
                 <ColumnDefinition Width="7*" />
             </Grid.ColumnDefinitions>
 
-            <StackPanel Grid.Column="0">
+            <StackPanel Grid.Column="0" Focusable="False">
                 <Button HorizontalContentAlignment="Left" VerticalAlignment="Center" Padding="20 10 0 10"
-                        Foreground="Black" Content="B   ▄▄▄  ▄  ▄  ▄" FontSize="24"
+                        Foreground="Black" Content="B   ▄▄▄  ▄  ▄  ▄" FontSize="24" Focusable="False"
                         Command="{Binding ButtonCommand}" CommandParameter="1b">
                     <Button.Style>
                         <Style TargetType="Button">
@@ -38,7 +38,7 @@
                     </Button.Style>
                 </Button>
                 <Button HorizontalContentAlignment="Left" VerticalAlignment="Center" Padding="20 10 0 10"
-                        Foreground="Black" Content="F   ▄  ▄  ▄▄▄  ▄" FontSize="24"
+                        Foreground="Black" Content="F   ▄  ▄  ▄▄▄  ▄" FontSize="24" Focusable="False"
                         Command="{Binding ButtonCommand}" CommandParameter="1f">
                     <Button.Style>
                         <Style TargetType="Button">
@@ -55,7 +55,7 @@
                     </Button.Style>
                 </Button>
                 <Button HorizontalContentAlignment="Left" VerticalAlignment="Center" Padding="20 10 0 10"
-                        Foreground="Black" Content="H   ▄  ▄  ▄  ▄" FontSize="24"
+                        Foreground="Black" Content="H   ▄  ▄  ▄  ▄" FontSize="24" Focusable="False"
                         Command="{Binding ButtonCommand}" CommandParameter="1h">
                     <Button.Style>
                         <Style TargetType="Button">
@@ -72,7 +72,7 @@
                     </Button.Style>
                 </Button>
                 <Button HorizontalContentAlignment="Left" VerticalAlignment="Center" Padding="20 10 0 10"
-                        Foreground="Black" Content="L   ▄  ▄▄▄  ▄  ▄" FontSize="24"
+                        Foreground="Black" Content="L   ▄  ▄▄▄  ▄  ▄" FontSize="24" Focusable="False"
                         Command="{Binding ButtonCommand}" CommandParameter="1l">
                     <Button.Style>
                         <Style TargetType="Button">
@@ -89,7 +89,7 @@
                     </Button.Style>
                 </Button>
                 <Button HorizontalContentAlignment="Left" VerticalAlignment="Center" Padding="20 10 0 10"
-                        Foreground="Black" Content="S   ▄  ▄  ▄" FontSize="24"
+                        Foreground="Black" Content="S   ▄  ▄  ▄" FontSize="24" Focusable="False"
                         Command="{Binding ButtonCommand}" CommandParameter="1s">
                     <Button.Style>
                         <Style TargetType="Button">
@@ -106,7 +106,7 @@
                     </Button.Style>
                 </Button>
                 <Button HorizontalContentAlignment="Left" VerticalAlignment="Center" Padding="20 10 0 10"
-                        Foreground="Black" Content="T   ▄▄▄" FontSize="24"
+                        Foreground="Black" Content="T   ▄▄▄" FontSize="24" Focusable="False"
                         Command="{Binding ButtonCommand}" CommandParameter="1t">
                     <Button.Style>
                         <Style TargetType="Button">
@@ -123,7 +123,7 @@
                     </Button.Style>
                 </Button>
                 <Button HorizontalContentAlignment="Left" VerticalAlignment="Center" Padding="20 10 0 10"
-                        Foreground="Black" Content="V   ▄  ▄  ▄  ▄▄▄" FontSize="24"
+                        Foreground="Black" Content="V   ▄  ▄  ▄  ▄▄▄" FontSize="24" Focusable="False"
                         Command="{Binding ButtonCommand}" CommandParameter="1v">
                     <Button.Style>
                         <Style TargetType="Button">
@@ -141,16 +141,16 @@
                 </Button>
             </StackPanel>
 
-            <StackPanel Grid.Column="1">
+            <StackPanel Grid.Column="1" Focusable="False">
                 <TextBlock Text="▶" Margin="0 10 0 0" VerticalAlignment="Center" HorizontalAlignment="Center"
-                           Background="Transparent" Foreground="White" FontSize="24" />
+                           Background="Transparent" Foreground="White" FontSize="24" Focusable="False" />
                 <TextBlock Text="▶" Margin="0 182 0 0" VerticalAlignment="Center" HorizontalAlignment="Center"
-                           Background="Transparent" Foreground="White" FontSize="24" />
+                           Background="Transparent" Foreground="White" FontSize="24" Focusable="False" />
             </StackPanel>
 
-            <StackPanel Grid.Column="2">
+            <StackPanel Grid.Column="2" Focusable="False">
                 <Button HorizontalContentAlignment="Left" VerticalAlignment="Center" Padding="20 10 0 10"
-                        Foreground="Black" Content="E   ▄" FontSize="24"
+                        Foreground="Black" Content="E   ▄" FontSize="24" Focusable="False"
                         Command="{Binding ButtonCommand}" CommandParameter="2e">
                     <Button.Style>
                         <Style TargetType="Button">
@@ -171,7 +171,7 @@
                     </Button.Style>
                 </Button>
                 <Button HorizontalContentAlignment="Left" VerticalAlignment="Center" Padding="20 10 0 10"
-                        Foreground="Black" Content="I   ▄  ▄" FontSize="24"
+                        Foreground="Black" Content="I   ▄  ▄" FontSize="24" Focusable="False"
                         Command="{Binding ButtonCommand}" CommandParameter="2i">
                     <Button.Style>
                         <Style TargetType="Button">
@@ -192,7 +192,7 @@
                     </Button.Style>
                 </Button>
                 <Button HorizontalContentAlignment="Left" VerticalAlignment="Center" Padding="20 10 0 10"
-                        Foreground="Black" Content="O  ▄▄▄  ▄▄▄  ▄▄▄" FontSize="24"
+                        Foreground="Black" Content="O  ▄▄▄  ▄▄▄  ▄▄▄" FontSize="24" Focusable="False"
                         Command="{Binding ButtonCommand}" CommandParameter="2o">
                     <Button.Style>
                         <Style TargetType="Button">
@@ -213,7 +213,7 @@
                     </Button.Style>
                 </Button>
                 <Button HorizontalContentAlignment="Left" VerticalAlignment="Center" Padding="20 10 0 10"
-                        Foreground="Black" Content="R   ▄  ▄▄▄  ▄" FontSize="24"
+                        Foreground="Black" Content="R   ▄  ▄▄▄  ▄" FontSize="24" Focusable="False"
                         Command="{Binding ButtonCommand}" CommandParameter="2r">
                     <Button.Style>
                         <Style TargetType="Button">
@@ -234,7 +234,7 @@
                     </Button.Style>
                 </Button>
                 <Button HorizontalContentAlignment="Left" VerticalAlignment="Center" Padding="20 10 0 10"
-                        Foreground="Black" Content="H   ▄  ▄  ▄  ▄" FontSize="24"
+                        Foreground="Black" Content="H   ▄  ▄  ▄  ▄" FontSize="24" Focusable="False"
                         Command="{Binding ButtonCommand}" CommandParameter="2h">
                     <Button.Style>
                         <Style TargetType="Button">
@@ -255,7 +255,7 @@
                     </Button.Style>
                 </Button>
                 <Button HorizontalContentAlignment="Left" VerticalAlignment="Center" Padding="20 10 0 10"
-                        Foreground="Black" Content="L   ▄  ▄▄▄  ▄  ▄" FontSize="24"
+                        Foreground="Black" Content="L   ▄  ▄▄▄  ▄  ▄" FontSize="24" Focusable="False"
                         Command="{Binding ButtonCommand}" CommandParameter="2l">
                     <Button.Style>
                         <Style TargetType="Button">
@@ -276,7 +276,7 @@
                     </Button.Style>
                 </Button>
                 <Button HorizontalContentAlignment="Left" VerticalAlignment="Center" Padding="20 10 0 10"
-                        Foreground="Black" Content="T   ▄▄▄" FontSize="24"
+                        Foreground="Black" Content="T   ▄▄▄" FontSize="24" Focusable="False"
                         Command="{Binding ButtonCommand}" CommandParameter="2t">
                     <Button.Style>
                         <Style TargetType="Button">
@@ -298,18 +298,18 @@
                 </Button>
             </StackPanel>
 
-            <StackPanel Grid.Column="3">
+            <StackPanel Grid.Column="3" Focusable="False">
                 <TextBlock Text="▶" Margin="0 120 0 0" VerticalAlignment="Center" HorizontalAlignment="Center"
-                           Background="Transparent" Foreground="White" FontSize="24" />
+                           Background="Transparent" Foreground="White" FontSize="24" Focusable="False" />
                 <TextBlock Text="▶" Margin="0 20 0 0" VerticalAlignment="Center" HorizontalAlignment="Center"
-                           Background="Transparent" Foreground="White" FontSize="24" />
+                           Background="Transparent" Foreground="White" FontSize="24" Focusable="False" />
                 <TextBlock Text="▶" Margin="0 130 0 0" VerticalAlignment="Center" HorizontalAlignment="Center"
-                           Background="Transparent" Foreground="White" FontSize="24" />
+                           Background="Transparent" Foreground="White" FontSize="24" Focusable="False" />
             </StackPanel>
 
-            <StackPanel Grid.Column="4">
+            <StackPanel Grid.Column="4" Focusable="False">
                 <Button HorizontalContentAlignment="Left" VerticalAlignment="Center" Padding="20 10 0 10"
-                        Foreground="Black" Content="M   ▄▄▄  ▄▄▄" FontSize="24"
+                        Foreground="Black" Content="M   ▄▄▄  ▄▄▄" FontSize="24" Focusable="False"
                         Command="{Binding ButtonCommand}" CommandParameter="3m">
                     <Button.Style>
                         <Style TargetType="Button">
@@ -330,7 +330,7 @@
                     </Button.Style>
                 </Button>
                 <Button HorizontalContentAlignment="Left" VerticalAlignment="Center" Padding="20 10 0 10"
-                        Foreground="Black" Content="X   ▄▄▄  ▄  ▄  ▄▄▄" FontSize="24"
+                        Foreground="Black" Content="X   ▄▄▄  ▄  ▄  ▄▄▄" FontSize="24" Focusable="False"
                         Command="{Binding ButtonCommand}" CommandParameter="3x">
                     <Button.Style>
                         <Style TargetType="Button">
@@ -351,7 +351,7 @@
                     </Button.Style>
                 </Button>
                 <Button HorizontalContentAlignment="Left" VerticalAlignment="Center" Padding="20 10 0 10"
-                        Foreground="Black" Content="E   ▄" FontSize="24"
+                        Foreground="Black" Content="E   ▄" FontSize="24" Focusable="False"
                         Command="{Binding ButtonCommand}" CommandParameter="3e">
                     <Button.Style>
                         <Style TargetType="Button">
@@ -372,7 +372,7 @@
                     </Button.Style>
                 </Button>
                 <Button HorizontalContentAlignment="Left" VerticalAlignment="Center" Padding="20 10 0 10"
-                        Foreground="Black" Content="I   ▄  ▄" FontSize="24"
+                        Foreground="Black" Content="I   ▄  ▄" FontSize="24" Focusable="False"
                         Command="{Binding ButtonCommand}" CommandParameter="3i">
                     <Button.Style>
                         <Style TargetType="Button">
@@ -393,7 +393,7 @@
                     </Button.Style>
                 </Button>
                 <Button HorizontalContentAlignment="Left" VerticalAlignment="Center" Padding="20 10 0 10"
-                        Foreground="Black" Content="R   ▄  ▄▄▄  ▄" FontSize="24"
+                        Foreground="Black" Content="R   ▄  ▄▄▄  ▄" FontSize="24" Focusable="False"
                         Command="{Binding ButtonCommand}" CommandParameter="3r">
                     <Button.Style>
                         <Style TargetType="Button">
@@ -417,10 +417,7 @@
         </Grid>
 
         <TextBox Text="{Binding OutputText}" Grid.Row="1" FontSize="60" HorizontalAlignment="Stretch"
-                 HorizontalContentAlignment="Center" Padding="10" VerticalAlignment="Center"
+                 HorizontalContentAlignment="Center" Padding="10" VerticalAlignment="Center" Focusable="False"
                  Foreground="White" Background="Transparent" Margin="160 0 160 0" IsReadOnly="True" />
-
-        <Button Content="Reset This  (F12)" VerticalAlignment="Bottom" HorizontalAlignment="Right"
-                FontSize="20" Padding="10 4" Margin="0 0 -25 5" Grid.Row="1" Command="{Binding ResetButtonCommand}" />
     </Grid>
 </Page>

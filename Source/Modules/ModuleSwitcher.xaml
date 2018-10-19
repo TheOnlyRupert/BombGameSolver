@@ -3,9 +3,9 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-      mc:Ignorable="d">
+      mc:Ignorable="d" Focusable="False">
 
-    <Grid Margin="30">
+    <Grid Margin="30" Focusable="False">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
@@ -27,73 +27,85 @@
             </Style>
         </Grid.Resources>
 
-        <Button Grid.Column="0" Grid.Row="0" Command="{Binding ButtonCommand}" CommandParameter="NormWiresModule">
+        <Button Grid.Column="0" Grid.Row="0" Command="{Binding ButtonCommand}" CommandParameter="NormWiresModule"
+                Focusable="False">
             <StackPanel>
                 <TextBlock Text="Normal Wires" HorizontalAlignment="Center" Margin="0 0 0 5" />
                 <Image Source="../../Resources/icons/normal_wires.PNG" Width="128" />
             </StackPanel>
         </Button>
-        <Button Grid.Column="0" Grid.Row="1" Command="{Binding ButtonCommand}" CommandParameter="ButtonModule">
+        <Button Grid.Column="0" Grid.Row="1" Command="{Binding ButtonCommand}" CommandParameter="BigButtonModule"
+                Focusable="False">
             <StackPanel>
                 <TextBlock Text="Button" HorizontalAlignment="Center" Margin="0 0 0 5" />
                 <Image Source="../../Resources/icons/button.png" Width="128" />
             </StackPanel>
         </Button>
-        <Button Grid.Column="0" Grid.Row="2" Command="{Binding ButtonCommand}" CommandParameter="KeypadsModule">
+        <Button Grid.Column="0" Grid.Row="2" Command="{Binding ButtonCommand}" CommandParameter="KeypadsModule"
+                Focusable="False">
             <StackPanel>
                 <TextBlock Text="Keypads" HorizontalAlignment="Center" Margin="0 0 0 5" />
                 <Image Source="../../Resources/icons/keypads.PNG" Width="128" />
             </StackPanel>
         </Button>
-        <Button Grid.Column="1" Grid.Row="0" Command="{Binding ButtonCommand}" CommandParameter="SimonSaysModule">
+        <Button Grid.Column="1" Grid.Row="0" Command="{Binding ButtonCommand}" CommandParameter="SimonSaysModule"
+                Focusable="False">
             <StackPanel>
                 <TextBlock Text="Simon Says" HorizontalAlignment="Center" Margin="0 0 0 5" />
                 <Image Source="../../Resources/icons/simon_says.png" Width="128" />
             </StackPanel>
         </Button>
-        <Button Grid.Column="1" Grid.Row="1" Command="{Binding ButtonCommand}" CommandParameter="WhoFirstModule">
+        <Button Grid.Column="1" Grid.Row="1" Command="{Binding ButtonCommand}" CommandParameter="WhoFirstModule"
+                Focusable="False">
             <StackPanel>
                 <TextBlock Text="Who's On First" HorizontalAlignment="Center" Margin="0 0 0 5" />
                 <Image Source="../../Resources/icons/who_first.PNG" Width="128" />
             </StackPanel>
         </Button>
-        <Button Grid.Column="1" Grid.Row="2" Command="{Binding ButtonCommand}" CommandParameter="MemoryModule">
+        <Button Grid.Column="1" Grid.Row="2" Command="{Binding ButtonCommand}" CommandParameter="MemoryModule"
+                Focusable="False">
             <StackPanel>
                 <TextBlock Text="Memory" HorizontalAlignment="Center" Margin="0 0 0 5" />
                 <Image Source="../../Resources/icons/memory.png" Width="128" />
             </StackPanel>
         </Button>
-        <Button Grid.Column="2" Grid.Row="0" Command="{Binding ButtonCommand}" CommandParameter="MorseCodeModule">
+        <Button Grid.Column="2" Grid.Row="0" Command="{Binding ButtonCommand}" CommandParameter="MorseCodeModule"
+                Focusable="False">
             <StackPanel>
                 <TextBlock Text="Morse Code" HorizontalAlignment="Center" Margin="0 0 0 5" />
                 <Image Source="../../Resources/icons/morse_code.png" Width="128" />
             </StackPanel>
         </Button>
-        <Button Grid.Column="2" Grid.Row="1" Command="{Binding ButtonCommand}" CommandParameter="CompWiresModule">
+        <Button Grid.Column="2" Grid.Row="1" Command="{Binding ButtonCommand}" CommandParameter="CompWiresModule"
+                Focusable="False">
             <StackPanel>
                 <TextBlock Text="Complicated Wires" HorizontalAlignment="Center" Margin="0 0 0 5" />
                 <Image Source="../../Resources/icons/comp_wires.png" Width="128" />
             </StackPanel>
         </Button>
-        <Button Grid.Column="2" Grid.Row="2" Command="{Binding ButtonCommand}" CommandParameter="SequWiresModule">
+        <Button Grid.Column="2" Grid.Row="2" Command="{Binding ButtonCommand}" CommandParameter="SequWiresModule"
+                Focusable="False">
             <StackPanel>
                 <TextBlock Text="Wire Sequence" HorizontalAlignment="Center" Margin="0 0 0 5" />
                 <Image Source="../../Resources/icons/wire_seq.png" Width="128" />
             </StackPanel>
         </Button>
-        <Button Grid.Column="3" Grid.Row="0" Command="{Binding ButtonCommand}" CommandParameter="MazeModule">
+        <Button Grid.Column="3" Grid.Row="0" Command="{Binding ButtonCommand}" CommandParameter="MazeModule"
+                Focusable="False">
             <StackPanel>
                 <TextBlock Text="Maze" HorizontalAlignment="Center" Margin="0 0 0 5" />
                 <Image Source="../../Resources/icons/maze.png" Width="128" />
             </StackPanel>
         </Button>
-        <Button Grid.Column="3" Grid.Row="1" Command="{Binding ButtonCommand}" CommandParameter="PasswordsModule">
+        <Button Grid.Column="3" Grid.Row="1" Command="{Binding ButtonCommand}" CommandParameter="PasswordsModule"
+                Focusable="False">
             <StackPanel>
                 <TextBlock Text="Passwords" HorizontalAlignment="Center" Margin="0 0 0 5" />
                 <Image Source="../../Resources/icons/passwords.png" Width="128" />
             </StackPanel>
         </Button>
-        <Button Grid.Column="3" Grid.Row="2" Command="{Binding ButtonCommand}" CommandParameter="KnobModule">
+        <Button Grid.Column="3" Grid.Row="2" Command="{Binding ButtonCommand}" CommandParameter="KnobModule"
+                Focusable="False">
             <StackPanel>
                 <TextBlock Text="The Knob" HorizontalAlignment="Center" Margin="0 0 0 5" />
                 <Image Source="../../Resources/icons/knob.png" Width="128" />

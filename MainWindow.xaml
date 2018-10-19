@@ -10,6 +10,24 @@
         Height="720" Width="1280"
         MinHeight="540" MinWidth="960">
 
+    <Window.InputBindings>
+        <KeyBinding Key="Back" Command="{Binding GlobalKeyboardListener}" CommandParameter="Back" />
+        <KeyBinding Key="Tab" Command="{Binding GlobalKeyboardListener}" CommandParameter="Tab" />
+        <KeyBinding Key="{Binding Key_D1}" Command="{Binding GlobalKeyboardListener}" CommandParameter="NumPad1" />
+        <KeyBinding Key="{Binding Key_NumPad1}" Command="{Binding GlobalKeyboardListener}" CommandParameter="NumPad1" />
+        <KeyBinding Key="{Binding Key_D2}" Command="{Binding GlobalKeyboardListener}" CommandParameter="NumPad2" />
+        <KeyBinding Key="{Binding Key_NumPad2}" Command="{Binding GlobalKeyboardListener}" CommandParameter="NumPad2" />
+        <KeyBinding Key="{Binding Key_D3}" Command="{Binding GlobalKeyboardListener}" CommandParameter="NumPad3" />
+        <KeyBinding Key="{Binding Key_NumPad3}" Command="{Binding GlobalKeyboardListener}" CommandParameter="NumPad3" />
+        <KeyBinding Key="{Binding Key_D4}" Command="{Binding GlobalKeyboardListener}" CommandParameter="NumPad4" />
+        <KeyBinding Key="{Binding Key_NumPad4}" Command="{Binding GlobalKeyboardListener}" CommandParameter="NumPad4" />
+        <KeyBinding Key="{Binding Key_D5}" Command="{Binding GlobalKeyboardListener}" CommandParameter="NumPad5" />
+        <KeyBinding Key="{Binding Key_NumPad5}" Command="{Binding GlobalKeyboardListener}" CommandParameter="NumPad5" />
+        <KeyBinding Key="{Binding Key_D6}" Command="{Binding GlobalKeyboardListener}" CommandParameter="NumPad6" />
+        <KeyBinding Key="{Binding Key_NumPad6}" Command="{Binding GlobalKeyboardListener}" CommandParameter="NumPad6" />
+        <KeyBinding Key="F12" Command="{Binding GlobalKeyboardListener}" CommandParameter="F12" />
+    </Window.InputBindings>
+
     <Grid Background="DarkSlateGray">
         <Grid.Resources>
             <Style TargetType="Frame">
@@ -31,18 +49,8 @@
                 <RowDefinition Height="{Binding DevLogWindowHeight}" />
             </Grid.RowDefinitions>
 
-            <Frame Source="Source/Groups/MainDisplayGroup.xaml" />
-
-            <Grid Grid.Row="1">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                </Grid.ColumnDefinitions>
-
-                <Frame Grid.Column="0" Source="Source/Groups/MainButtonsGroup.xaml" />
-                <Frame Grid.Column="1" Source="Source/Groups/MainTimerGroup.xaml" />
-            </Grid>
-
+            <Frame Grid.Row="0" Source="Source/Groups/MainDisplayGroup.xaml" />
+            <Frame Grid.Row="1" Source="Source/Groups/MainButtonsGroup.xaml" />
             <Frame Grid.Row="2" Source="Source/Groups/MainDebugGroup.xaml" />
         </Grid>
     </Grid>
