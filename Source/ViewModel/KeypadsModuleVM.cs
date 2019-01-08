@@ -62,12 +62,12 @@ namespace BombGameSolver.Source.ViewModel {
         }
 
         private void ResetButtonLogic() {
-            //ColumnDisabled0 = "False";
-            //ColumnDisabled1 = "False";
-            //ColumnDisabled2 = "False";
-            //ColumnDisabled3 = "False";
-            //ColumnDisabled4 = "False";
-            //ColumnDisabled5 = "False";
+            ColumnDisabled0 = "False";
+            ColumnDisabled1 = "False";
+            ColumnDisabled2 = "False";
+            ColumnDisabled3 = "False";
+            ColumnDisabled4 = "False";
+            ColumnDisabled5 = "False";
             Keypad_6 = "False";
             Keypad_3_Broken = "False";
             Keypad_3_Fancy = "False";

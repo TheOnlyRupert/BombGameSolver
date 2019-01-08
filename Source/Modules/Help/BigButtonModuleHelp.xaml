@@ -11,6 +11,6 @@
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
-        <TextBlock Text="Button Mod Help" Focusable="False"/>
+        <TextBlock Text="Button Mod Help" Focusable="False" />
     </Grid>
 </Page>

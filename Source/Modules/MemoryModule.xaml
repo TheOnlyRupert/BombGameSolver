@@ -25,18 +25,13 @@
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
 
-            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Bottom" Focusable="False">
-                <TextBox FontSize="50" MinWidth="150" TextAlignment="Center" MaxLength="4"
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Bottom" Focusable="False" MinWidth="300">
+                <TextBlock Text="{Binding RoundText}" FontSize="18" Padding="10 5 10 5" IsEnabled="False"
+                           HorizontalAlignment="Center"
+                           Background="Transparent" Foreground="White" VerticalAlignment="Center" Focusable="False" />
+                <TextBox FontSize="50" TextAlignment="Center" MaxLength="4"
                          Text="{Binding InputTextBox, UpdateSourceTrigger=PropertyChanged}"
                          CommandManager.PreviewExecuted="DisablePasteCommand" />
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Focusable="False">
-                    <Button Content="prev" FontSize="18" Padding="10 5 10 5" Command="{Binding ButtonCommand}"
-                            CommandParameter="prev" Focusable="False" />
-                    <TextBlock Text="{Binding RoundText}" FontSize="18" Padding="10 5 10 5" IsEnabled="False"
-                               Background="Transparent" Foreground="White" VerticalAlignment="Center" Focusable="False" />
-                    <Button Content="next" FontSize="18" Padding="10 5 10 5" Command="{Binding ButtonCommand}"
-                            CommandParameter="next" Focusable="False" />
-                </StackPanel>
                 <Button Content="Next Round  (RETURN)" FontSize="20" Padding="0 8" Command="{Binding ButtonCommand}"
                         CommandParameter="submit" Focusable="False" />
             </StackPanel>

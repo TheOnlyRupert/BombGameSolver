@@ -13,6 +13,7 @@
     <Window.InputBindings>
         <KeyBinding Key="Back" Command="{Binding GlobalKeyboardListener}" CommandParameter="Back" />
         <KeyBinding Key="Tab" Command="{Binding GlobalKeyboardListener}" CommandParameter="Tab" />
+        <KeyBinding Key="Enter" Command="{Binding GlobalKeyboardListener}" CommandParameter="Enter" />
         <KeyBinding Key="{Binding Key_D1}" Command="{Binding GlobalKeyboardListener}" CommandParameter="NumPad1" />
         <KeyBinding Key="{Binding Key_NumPad1}" Command="{Binding GlobalKeyboardListener}" CommandParameter="NumPad1" />
         <KeyBinding Key="{Binding Key_D2}" Command="{Binding GlobalKeyboardListener}" CommandParameter="NumPad2" />
@@ -25,6 +26,12 @@
         <KeyBinding Key="{Binding Key_NumPad5}" Command="{Binding GlobalKeyboardListener}" CommandParameter="NumPad5" />
         <KeyBinding Key="{Binding Key_D6}" Command="{Binding GlobalKeyboardListener}" CommandParameter="NumPad6" />
         <KeyBinding Key="{Binding Key_NumPad6}" Command="{Binding GlobalKeyboardListener}" CommandParameter="NumPad6" />
+        <KeyBinding Key="{Binding Key_D7}" Command="{Binding GlobalKeyboardListener}" CommandParameter="NumPad7" />
+        <KeyBinding Key="{Binding Key_NumPad7}" Command="{Binding GlobalKeyboardListener}" CommandParameter="NumPad7" />
+        <KeyBinding Key="{Binding Key_D8}" Command="{Binding GlobalKeyboardListener}" CommandParameter="NumPad8" />
+        <KeyBinding Key="{Binding Key_NumPad8}" Command="{Binding GlobalKeyboardListener}" CommandParameter="NumPad8" />
+        <KeyBinding Key="{Binding Key_D9}" Command="{Binding GlobalKeyboardListener}" CommandParameter="NumPad9" />
+        <KeyBinding Key="{Binding Key_NumPad9}" Command="{Binding GlobalKeyboardListener}" CommandParameter="NumPad9" />
         <KeyBinding Key="F12" Command="{Binding GlobalKeyboardListener}" CommandParameter="F12" />
     </Window.InputBindings>
 

@@ -255,6 +255,38 @@ namespace BombGameSolver.Source.ViewModel {
                 Key_D6 = Key.None;
                 Key_NumPad6 = Key.None;
                 break;
+            case "KeyBindings_SequWiresModule":
+                Console.WriteLine("Switching Key bindings to SequWiresModule");
+                Key_D1 = Key.D1;
+                Key_NumPad1 = Key.NumPad1;
+                Key_D2 = Key.D2;
+                Key_NumPad2 = Key.NumPad2;
+                Key_D3 = Key.D3;
+                Key_NumPad3 = Key.NumPad3;
+                Key_D4 = Key.D4;
+                Key_NumPad4 = Key.NumPad4;
+                Key_D5 = Key.D5;
+                Key_NumPad5 = Key.NumPad5;
+                Key_D6 = Key.D6;
+                Key_NumPad6 = Key.NumPad6;
+                Key_D7 = Key.D7;
+                Key_NumPad7 = Key.NumPad7;
+                Key_D8 = Key.D8;
+                Key_NumPad8 = Key.NumPad8;
+                Key_D9 = Key.D9;
+                Key_NumPad9 = Key.NumPad9;
+                break;
+            case "KeyBindings_MemoryModule":
+                Console.WriteLine("Switching Key bindings to MemoryModule");
+                Key_D1 = Key.None;
+                Key_NumPad1 = Key.None;
+                Key_D2 = Key.None;
+                Key_NumPad2 = Key.None;
+                Key_D3 = Key.None;
+                Key_NumPad3 = Key.None;
+                Key_D4 = Key.None;
+                Key_NumPad4 = Key.None;
+                break;
             }
         }
     }

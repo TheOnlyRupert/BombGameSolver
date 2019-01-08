@@ -6,8 +6,6 @@ namespace BombGameSolver.Source.Modules {
         public MemoryModule() {
             InitializeComponent();
             DataContext = new MemoryModuleVM();
-
-            InitializeComponent();
         }
 
         private void DisablePasteCommand(object sender, ExecutedRoutedEventArgs e) {

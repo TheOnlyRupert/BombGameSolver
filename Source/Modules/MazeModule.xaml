@@ -24,19 +24,26 @@
                     <StackPanel Focusable="False">
                         <TextBlock Text="Node" Foreground="White" FontSize="18" Focusable="False" />
                         <TextBox FontSize="60" TextAlignment="Center" MaxLength="2" MinWidth="80"
-                                 Text="{Binding InputNodeText, UpdateSourceTrigger=PropertyChanged}" />
+                                 Text="{Binding InputNodeText, UpdateSourceTrigger=PropertyChanged}"
+                                 CommandManager.PreviewExecuted="DisablePasteCommand" />
                     </StackPanel>
                     <StackPanel Margin="5 0 5 0">
                         <TextBlock Text="You" Foreground="White" FontSize="18" Focusable="False" />
                         <TextBox FontSize="60" TextAlignment="Center" MaxLength="2" MinWidth="80"
-                                 Text="{Binding InputYouText, UpdateSourceTrigger=PropertyChanged}" />
+                                 Text="{Binding InputYouText, UpdateSourceTrigger=PropertyChanged}"
+                                 CommandManager.PreviewExecuted="DisablePasteCommand" />
                     </StackPanel>
                     <StackPanel Focusable="False">
                         <TextBlock Text="Target" Foreground="White" FontSize="18" Focusable="False" />
                         <TextBox FontSize="60" TextAlignment="Center" MaxLength="2" MinWidth="80"
-                                 Text="{Binding InputTargetText, UpdateSourceTrigger=PropertyChanged}" />
+                                 Text="{Binding InputTargetText, UpdateSourceTrigger=PropertyChanged}"
+                                 CommandManager.PreviewExecuted="DisablePasteCommand" />
                     </StackPanel>
                 </StackPanel>
+
+                <TextBlock Text="{Binding CurrentMazeText, UpdateSourceTrigger=PropertyChanged}" Foreground="White"
+                           FontSize="18" Focusable="False" Margin="0,20,0,0" />
+
             </StackPanel>
         </Grid>
 
