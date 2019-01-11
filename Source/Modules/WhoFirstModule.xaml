@@ -17,17 +17,14 @@
             </Grid.ColumnDefinitions>
 
             <Grid.Resources>
-                <Style TargetType="Button">
-                    <Setter Property="FontSize" Value="22" />
-                    <Setter Property="Background" Value="WhiteSmoke" />
-                </Style>
-
                 <Style TargetType="TextBlock">
                     <Setter Property="TextAlignment" Value="Center" />
                     <Setter Property="FontSize" Value="22" />
                     <Setter Property="Background" Value="WhiteSmoke" />
                     <Setter Property="Padding" Value="0 3 0 3" />
                     <Setter Property="VerticalAlignment" Value="Center" />
+                    <Setter Property="HorizontalAlignment" Value="Center" />
+                    <Setter Property="MinWidth" Value="100" />
                 </Style>
             </Grid.Resources>
 
@@ -210,61 +207,453 @@
                 </Grid.RowDefinitions>
 
                 <Button Grid.Column="0" Grid.Row="0" Content="BLANK" Command="{Binding ButtonCommand}"
-                        CommandParameter="blank" Focusable="False" />
+                        CommandParameter="blank" Focusable="False" FontSize="22">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <!-- Default -->
+                            <Setter Property="Background" Value="LightGray" />
+                            <Setter Property="Foreground" Value="Black" />
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Button_Blank}" Value="True">
+                                    <!-- If True -->
+                                    <Setter Property="Background" Value="GreenYellow" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
                 <Button Grid.Column="0" Grid.Row="1" Content="DONE" Command="{Binding ButtonCommand}"
-                        CommandParameter="done" Focusable="False" />
+                        CommandParameter="done" Focusable="False" FontSize="22">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <!-- Default -->
+                            <Setter Property="Background" Value="LightGray" />
+                            <Setter Property="Foreground" Value="Black" />
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Button_Done}" Value="True">
+                                    <!-- If True -->
+                                    <Setter Property="Background" Value="GreenYellow" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
                 <Button Grid.Column="0" Grid.Row="2" Content="FIRST" Command="{Binding ButtonCommand}"
-                        CommandParameter="first" Focusable="False" />
+                        CommandParameter="first" Focusable="False" FontSize="22">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <!-- Default -->
+                            <Setter Property="Background" Value="LightGray" />
+                            <Setter Property="Foreground" Value="Black" />
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Button_First}" Value="True">
+                                    <!-- If True -->
+                                    <Setter Property="Background" Value="GreenYellow" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
                 <Button Grid.Column="0" Grid.Row="3" Content="HOLD" Command="{Binding ButtonCommand}"
-                        CommandParameter="hold" Focusable="False" />
+                        CommandParameter="hold" Focusable="False" FontSize="22">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <!-- Default -->
+                            <Setter Property="Background" Value="LightGray" />
+                            <Setter Property="Foreground" Value="Black" />
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Button_Hold}" Value="True">
+                                    <!-- If True -->
+                                    <Setter Property="Background" Value="GreenYellow" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
                 <Button Grid.Column="0" Grid.Row="4" Content="LEFT" Command="{Binding ButtonCommand}"
-                        CommandParameter="left" Focusable="False" />
+                        CommandParameter="left" Focusable="False" FontSize="22">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <!-- Default -->
+                            <Setter Property="Background" Value="LightGray" />
+                            <Setter Property="Foreground" Value="Black" />
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Button_Left}" Value="True">
+                                    <!-- If True -->
+                                    <Setter Property="Background" Value="GreenYellow" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
                 <Button Grid.Column="0" Grid.Row="5" Content="LIKE" Command="{Binding ButtonCommand}"
-                        CommandParameter="like" Focusable="False" />
+                        CommandParameter="like" Focusable="False" FontSize="22">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <!-- Default -->
+                            <Setter Property="Background" Value="LightGray" />
+                            <Setter Property="Foreground" Value="Black" />
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Button_Like}" Value="True">
+                                    <!-- If True -->
+                                    <Setter Property="Background" Value="GreenYellow" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
                 <Button Grid.Column="0" Grid.Row="6" Content="MIDDLE" Command="{Binding ButtonCommand}"
-                        CommandParameter="middle" Focusable="False" />
+                        CommandParameter="middle" Focusable="False" FontSize="22">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <!-- Default -->
+                            <Setter Property="Background" Value="LightGray" />
+                            <Setter Property="Foreground" Value="Black" />
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Button_Middle}" Value="True">
+                                    <!-- If True -->
+                                    <Setter Property="Background" Value="GreenYellow" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
                 <Button Grid.Column="1" Grid.Row="0" Content="NEXT" Command="{Binding ButtonCommand}"
-                        CommandParameter="next" Focusable="False" />
+                        CommandParameter="next" Focusable="False" FontSize="22">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <!-- Default -->
+                            <Setter Property="Background" Value="LightGray" />
+                            <Setter Property="Foreground" Value="Black" />
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Button_Next}" Value="True">
+                                    <!-- If True -->
+                                    <Setter Property="Background" Value="GreenYellow" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
                 <Button Grid.Column="1" Grid.Row="1" Content="NO" Command="{Binding ButtonCommand}"
-                        CommandParameter="no" Focusable="False" />
+                        CommandParameter="no" Focusable="False" FontSize="22">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <!-- Default -->
+                            <Setter Property="Background" Value="LightGray" />
+                            <Setter Property="Foreground" Value="Black" />
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Button_No}" Value="True">
+                                    <!-- If True -->
+                                    <Setter Property="Background" Value="GreenYellow" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
                 <Button Grid.Column="1" Grid.Row="2" Content="NOTHING" Command="{Binding ButtonCommand}"
-                        CommandParameter="nothing" Focusable="False" />
+                        CommandParameter="nothing" Focusable="False" FontSize="22">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <!-- Default -->
+                            <Setter Property="Background" Value="LightGray" />
+                            <Setter Property="Foreground" Value="Black" />
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Button_Nothing}" Value="True">
+                                    <!-- If True -->
+                                    <Setter Property="Background" Value="GreenYellow" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
                 <Button Grid.Column="1" Grid.Row="3" Content="OKAY" Command="{Binding ButtonCommand}"
-                        CommandParameter="okay" Focusable="False" />
+                        CommandParameter="okay" Focusable="False" FontSize="22">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <!-- Default -->
+                            <Setter Property="Background" Value="LightGray" />
+                            <Setter Property="Foreground" Value="Black" />
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Button_Okay}" Value="True">
+                                    <!-- If True -->
+                                    <Setter Property="Background" Value="GreenYellow" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
                 <Button Grid.Column="1" Grid.Row="4" Content="PRESS" Command="{Binding ButtonCommand}"
-                        CommandParameter="press" Focusable="False" />
+                        CommandParameter="press" Focusable="False" FontSize="22">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <!-- Default -->
+                            <Setter Property="Background" Value="LightGray" />
+                            <Setter Property="Foreground" Value="Black" />
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Button_Press}" Value="True">
+                                    <!-- If True -->
+                                    <Setter Property="Background" Value="GreenYellow" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
                 <Button Grid.Column="1" Grid.Row="5" Content="READY" Command="{Binding ButtonCommand}"
-                        CommandParameter="ready" Focusable="False" />
+                        CommandParameter="ready" Focusable="False" FontSize="22">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <!-- Default -->
+                            <Setter Property="Background" Value="LightGray" />
+                            <Setter Property="Foreground" Value="Black" />
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Button_Ready}" Value="True">
+                                    <!-- If True -->
+                                    <Setter Property="Background" Value="GreenYellow" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
                 <Button Grid.Column="1" Grid.Row="6" Content="RIGHT" Command="{Binding ButtonCommand}"
-                        CommandParameter="right" Focusable="False" />
+                        CommandParameter="right" Focusable="False" FontSize="22">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <!-- Default -->
+                            <Setter Property="Background" Value="LightGray" />
+                            <Setter Property="Foreground" Value="Black" />
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Button_Right}" Value="True">
+                                    <!-- If True -->
+                                    <Setter Property="Background" Value="GreenYellow" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
                 <Button Grid.Column="2" Grid.Row="0" Content="SURE" Command="{Binding ButtonCommand}"
-                        CommandParameter="sure" Focusable="False" />
+                        CommandParameter="sure" Focusable="False" FontSize="22">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <!-- Default -->
+                            <Setter Property="Background" Value="LightGray" />
+                            <Setter Property="Foreground" Value="Black" />
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Button_Sure}" Value="True">
+                                    <!-- If True -->
+                                    <Setter Property="Background" Value="GreenYellow" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
                 <Button Grid.Column="2" Grid.Row="1" Content="U" Command="{Binding ButtonCommand}"
-                        CommandParameter="u" Focusable="False" />
+                        CommandParameter="u" Focusable="False" FontSize="22">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <!-- Default -->
+                            <Setter Property="Background" Value="LightGray" />
+                            <Setter Property="Foreground" Value="Black" />
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Button_U}" Value="True">
+                                    <!-- If True -->
+                                    <Setter Property="Background" Value="GreenYellow" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
                 <Button Grid.Column="2" Grid.Row="2" Content="UR" Command="{Binding ButtonCommand}"
-                        CommandParameter="ur" Focusable="False" />
+                        CommandParameter="ur" Focusable="False" FontSize="22">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <!-- Default -->
+                            <Setter Property="Background" Value="LightGray" />
+                            <Setter Property="Foreground" Value="Black" />
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Button_Ur}" Value="True">
+                                    <!-- If True -->
+                                    <Setter Property="Background" Value="GreenYellow" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
                 <Button Grid.Column="2" Grid.Row="3" Content="UHHH" Command="{Binding ButtonCommand}"
-                        CommandParameter="uhhh" Focusable="False" />
+                        CommandParameter="uhhh" Focusable="False" FontSize="22">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <!-- Default -->
+                            <Setter Property="Background" Value="LightGray" />
+                            <Setter Property="Foreground" Value="Black" />
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Button_Uhhh}" Value="True">
+                                    <!-- If True -->
+                                    <Setter Property="Background" Value="GreenYellow" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
                 <Button Grid.Column="2" Grid.Row="4" Content="UH UH" Command="{Binding ButtonCommand}"
-                        CommandParameter="uhuh" Focusable="False" />
+                        CommandParameter="uhuh" Focusable="False" FontSize="22">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <!-- Default -->
+                            <Setter Property="Background" Value="LightGray" />
+                            <Setter Property="Foreground" Value="Black" />
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Button_Uh_Uh}" Value="True">
+                                    <!-- If True -->
+                                    <Setter Property="Background" Value="GreenYellow" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
                 <Button Grid.Column="2" Grid.Row="5" Content="UH HUH" Command="{Binding ButtonCommand}"
-                        CommandParameter="uhhuh" Focusable="False" />
+                        CommandParameter="uhhuh" Focusable="False" FontSize="22">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <!-- Default -->
+                            <Setter Property="Background" Value="LightGray" />
+                            <Setter Property="Foreground" Value="Black" />
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Button_Uh_Huh}" Value="True">
+                                    <!-- If True -->
+                                    <Setter Property="Background" Value="GreenYellow" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
                 <Button Grid.Column="2" Grid.Row="6" Content="WAIT" Command="{Binding ButtonCommand}"
-                        CommandParameter="wait" Focusable="False" />
+                        CommandParameter="wait" Focusable="False" FontSize="22">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <!-- Default -->
+                            <Setter Property="Background" Value="LightGray" />
+                            <Setter Property="Foreground" Value="Black" />
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Button_Wait}" Value="True">
+                                    <!-- If True -->
+                                    <Setter Property="Background" Value="GreenYellow" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
                 <Button Grid.Column="3" Grid.Row="0" Content="WHAT" Command="{Binding ButtonCommand}"
-                        CommandParameter="what" Focusable="False" />
+                        CommandParameter="what" Focusable="False" FontSize="22">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <!-- Default -->
+                            <Setter Property="Background" Value="LightGray" />
+                            <Setter Property="Foreground" Value="Black" />
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Button_What}" Value="True">
+                                    <!-- If True -->
+                                    <Setter Property="Background" Value="GreenYellow" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
                 <Button Grid.Column="3" Grid.Row="1" Content="WHAT?" Command="{Binding ButtonCommand}"
-                        CommandParameter="what?" Focusable="False" />
+                        CommandParameter="what?" Focusable="False" FontSize="22">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <!-- Default -->
+                            <Setter Property="Background" Value="LightGray" />
+                            <Setter Property="Foreground" Value="Black" />
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Button_WhatQuestion}" Value="True">
+                                    <!-- If True -->
+                                    <Setter Property="Background" Value="GreenYellow" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
                 <Button Grid.Column="3" Grid.Row="2" Content="YES" Command="{Binding ButtonCommand}"
-                        CommandParameter="yes" Focusable="False" />
+                        CommandParameter="yes" Focusable="False" FontSize="22">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <!-- Default -->
+                            <Setter Property="Background" Value="LightGray" />
+                            <Setter Property="Foreground" Value="Black" />
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Button_Yes}" Value="True">
+                                    <!-- If True -->
+                                    <Setter Property="Background" Value="GreenYellow" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
                 <Button Grid.Column="3" Grid.Row="3" Content="YOU" Command="{Binding ButtonCommand}"
-                        CommandParameter="you" Focusable="False" />
+                        CommandParameter="you" Focusable="False" FontSize="22">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <!-- Default -->
+                            <Setter Property="Background" Value="LightGray" />
+                            <Setter Property="Foreground" Value="Black" />
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Button_You}" Value="True">
+                                    <!-- If True -->
+                                    <Setter Property="Background" Value="GreenYellow" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
                 <Button Grid.Column="3" Grid.Row="4" Content="YOUR" Command="{Binding ButtonCommand}"
-                        CommandParameter="your" Focusable="False" />
+                        CommandParameter="your" Focusable="False" FontSize="22">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <!-- Default -->
+                            <Setter Property="Background" Value="LightGray" />
+                            <Setter Property="Foreground" Value="Black" />
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Button_Your}" Value="True">
+                                    <!-- If True -->
+                                    <Setter Property="Background" Value="GreenYellow" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
                 <Button Grid.Column="3" Grid.Row="5" Content="YOU'RE" Command="{Binding ButtonCommand}"
-                        CommandParameter="you're" Focusable="False" />
+                        CommandParameter="you're" Focusable="False" FontSize="22">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <!-- Default -->
+                            <Setter Property="Background" Value="LightGray" />
+                            <Setter Property="Foreground" Value="Black" />
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Button_YoureMarked}" Value="True">
+                                    <!-- If True -->
+                                    <Setter Property="Background" Value="GreenYellow" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
                 <Button Grid.Column="3" Grid.Row="6" Content="YOU ARE" Command="{Binding ButtonCommand}"
-                        CommandParameter="youare" Focusable="False" />
+                        CommandParameter="youare" Focusable="False" FontSize="22">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <!-- Default -->
+                            <Setter Property="Background" Value="LightGray" />
+                            <Setter Property="Foreground" Value="Black" />
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Button_You_Are}" Value="True">
+                                    <!-- If True -->
+                                    <Setter Property="Background" Value="GreenYellow" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
             </Grid>
         </Grid>
 

@@ -1,4 +1,3 @@
-using System;
 using System.Windows.Input;
 using BombGameSolver.Source.Reference;
 using BombGameSolver.Source.ViewModel.Base;
@@ -60,16 +59,6 @@ namespace BombGameSolver.Source.ViewModel {
         private void OnSimpleMessengerValueChanged(object sender, MessageValueChangedEventArgs e) {
             if (ReferenceValues.CurrentModule == "../Modules/SequWiresModule.xaml") {
                 switch (e.PropertyName) {
-                case "KEY_F12":
-                    OutputTextBox = "Reset";
-                    _roundCounter[0] = 0;
-                    _roundCounter[1] = 0;
-                    _roundCounter[2] = 0;
-
-                    BluRoundTextBox = "0";
-                    RedRoundTextBox = "0";
-                    BlaRoundTextBox = "0";
-                    break;
                 case "KEY_NumPad1":
                     ButtonCommandLogic("blu_c");
                     break;
@@ -97,6 +86,9 @@ namespace BombGameSolver.Source.ViewModel {
                 case "KEY_NumPad9":
                     ButtonCommandLogic("bla_a");
                     break;
+                case "KEY_F12":
+                    ResetButtonLogic();
+                    break;
                 }
             }
         }
@@ -113,8 +105,9 @@ namespace BombGameSolver.Source.ViewModel {
                 _roundCounter[0]--;
                 if (_roundCounter[0] < 0) {
                     _roundCounter[0] = 0;
+                    OutputTextBox = "";
                 } else {
-                    OutputTextBox = "REMOVED BLUE";
+                    OutputTextBox = "Removed 1x Blue";
                 }
 
                 break;
@@ -122,8 +115,9 @@ namespace BombGameSolver.Source.ViewModel {
                 _roundCounter[1]--;
                 if (_roundCounter[1] < 0) {
                     _roundCounter[1] = 0;
+                    OutputTextBox = "";
                 } else {
-                    OutputTextBox = "REMOVED RED";
+                    OutputTextBox = "Removed 1x Red";
                 }
 
                 break;
@@ -131,8 +125,9 @@ namespace BombGameSolver.Source.ViewModel {
                 _roundCounter[2]--;
                 if (_roundCounter[2] < 0) {
                     _roundCounter[2] = 0;
+                    OutputTextBox = "";
                 } else {
-                    OutputTextBox = "REMOVED BLACK";
+                    OutputTextBox = "Removed 1x Black";
                 }
 
                 break;
@@ -140,8 +135,6 @@ namespace BombGameSolver.Source.ViewModel {
             /* Check blues */
             case "blu_a":
                 if (_roundCounter[0] < 9) {
-                    Console.WriteLine(OutputTextBox + " round: " + _roundCounter[0] + ", Result: " +
-                                      _bluWireStatic[_roundCounter[0]]);
                     if (_bluWireStatic[_roundCounter[0]] == 0 || _bluWireStatic[_roundCounter[0]] == 3 ||
                         _bluWireStatic[_roundCounter[0]] == 5 || _bluWireStatic[_roundCounter[0]] == 6) {
                         OutputTextBox = "TRUE";
@@ -154,14 +147,12 @@ namespace BombGameSolver.Source.ViewModel {
                     _roundCounter[0]++;
                 } else {
                     _roundCounter[0] = 9;
-                    OutputTextBox = "EXCEEDED_MAX_BLUE";
+                    OutputTextBox = "Max Blue";
                 }
 
                 break;
             case "blu_b":
                 if (_roundCounter[0] < 9) {
-                    Console.WriteLine(OutputTextBox + " round: " + _roundCounter[2] + ", Result: " +
-                                      _bluWireStatic[_roundCounter[2]]);
                     if (_bluWireStatic[_roundCounter[0]] == 1 || _bluWireStatic[_roundCounter[0]] == 3 ||
                         _bluWireStatic[_roundCounter[0]] == 4 || _bluWireStatic[_roundCounter[0]] == 6) {
                         OutputTextBox = "TRUE";
@@ -174,14 +165,12 @@ namespace BombGameSolver.Source.ViewModel {
                     _roundCounter[0]++;
                 } else {
                     _roundCounter[0] = 9;
-                    OutputTextBox = "EXCEEDED_MAX_BLUE";
+                    OutputTextBox = "Max Blue";
                 }
 
                 break;
             case "blu_c":
                 if (_roundCounter[0] < 9) {
-                    Console.WriteLine(OutputTextBox + " round: " + _roundCounter[2] + ", Result: " +
-                                      _bluWireStatic[_roundCounter[2]]);
                     if (_bluWireStatic[_roundCounter[0]] == 2 || _bluWireStatic[_roundCounter[0]] == 4 ||
                         _bluWireStatic[_roundCounter[0]] == 5 || _bluWireStatic[_roundCounter[0]] == 6) {
                         OutputTextBox = "TRUE";
@@ -194,7 +183,7 @@ namespace BombGameSolver.Source.ViewModel {
                     _roundCounter[0]++;
                 } else {
                     _roundCounter[0] = 9;
-                    OutputTextBox = "EXCEEDED_MAX_BLUE";
+                    OutputTextBox = "Max Blue";
                 }
 
                 break;
@@ -202,8 +191,6 @@ namespace BombGameSolver.Source.ViewModel {
             /* Check Reds */
             case "red_a":
                 if (_roundCounter[1] < 9) {
-                    Console.WriteLine(OutputTextBox + " round: " + _roundCounter[2] + ", Result: " +
-                                      _redWireStatic[_roundCounter[2]]);
                     if (_redWireStatic[_roundCounter[1]] == 0 || _redWireStatic[_roundCounter[1]] == 3 ||
                         _redWireStatic[_roundCounter[1]] == 5 || _redWireStatic[_roundCounter[1]] == 6) {
                         OutputTextBox = "TRUE";
@@ -216,14 +203,12 @@ namespace BombGameSolver.Source.ViewModel {
                     _roundCounter[1]++;
                 } else {
                     _roundCounter[1] = 9;
-                    OutputTextBox = "EXCEEDED_MAX_RED";
+                    OutputTextBox = "Max Red";
                 }
 
                 break;
             case "red_b":
                 if (_roundCounter[1] < 9) {
-                    Console.WriteLine(OutputTextBox + " round: " + _roundCounter[2] + ", Result: " +
-                                      _redWireStatic[_roundCounter[2]]);
                     if (_redWireStatic[_roundCounter[1]] == 1 || _redWireStatic[_roundCounter[1]] == 3 ||
                         _redWireStatic[_roundCounter[1]] == 4 || _redWireStatic[_roundCounter[1]] == 6) {
                         OutputTextBox = "TRUE";
@@ -236,14 +221,12 @@ namespace BombGameSolver.Source.ViewModel {
                     _roundCounter[1]++;
                 } else {
                     _roundCounter[1] = 9;
-                    OutputTextBox = "EXCEEDED_MAX_RED";
+                    OutputTextBox = "Max Red";
                 }
 
                 break;
             case "red_c":
                 if (_roundCounter[1] < 9) {
-                    Console.WriteLine(OutputTextBox + " round: " + _roundCounter[2] + ", Result: " +
-                                      _redWireStatic[_roundCounter[2]]);
                     if (_redWireStatic[_roundCounter[1]] == 2 || _redWireStatic[_roundCounter[1]] == 4 ||
                         _redWireStatic[_roundCounter[1]] == 5 || _redWireStatic[_roundCounter[1]] == 6) {
                         OutputTextBox = "TRUE";
@@ -256,7 +239,7 @@ namespace BombGameSolver.Source.ViewModel {
                     _roundCounter[1]++;
                 } else {
                     _roundCounter[1] = 9;
-                    OutputTextBox = "EXCEEDED_MAX_RED";
+                    OutputTextBox = "Max Red";
                 }
 
                 break;
@@ -264,8 +247,6 @@ namespace BombGameSolver.Source.ViewModel {
             /* check Blacks */
             case "bla_a":
                 if (_roundCounter[2] < 9) {
-                    Console.WriteLine(OutputTextBox + " round: " + _roundCounter[2] + ", Result: " +
-                                      _blaWireStatic[_roundCounter[2]]);
                     if (_blaWireStatic[_roundCounter[2]] == 0 || _blaWireStatic[_roundCounter[2]] == 3 ||
                         _blaWireStatic[_roundCounter[2]] == 5 || _blaWireStatic[_roundCounter[2]] == 6) {
                         OutputTextBox = "TRUE";
@@ -278,14 +259,12 @@ namespace BombGameSolver.Source.ViewModel {
                     _roundCounter[2]++;
                 } else {
                     _roundCounter[2] = 9;
-                    OutputTextBox = "EXCEEDED_MAX_BLACK";
+                    OutputTextBox = "Max Black";
                 }
 
                 break;
             case "bla_b":
                 if (_roundCounter[2] < 9) {
-                    Console.WriteLine(OutputTextBox + " round: " + _roundCounter[2] + ", Result: " +
-                                      _blaWireStatic[_roundCounter[2]]);
                     if (_blaWireStatic[_roundCounter[2]] == 1 || _blaWireStatic[_roundCounter[2]] == 3 ||
                         _blaWireStatic[_roundCounter[2]] == 4 || _blaWireStatic[_roundCounter[2]] == 6) {
                         OutputTextBox = "TRUE";
@@ -298,14 +277,12 @@ namespace BombGameSolver.Source.ViewModel {
                     _roundCounter[2]++;
                 } else {
                     _roundCounter[2] = 9;
-                    OutputTextBox = "EXCEEDED_MAX_BLACK";
+                    OutputTextBox = "Max Black";
                 }
 
                 break;
             case "bla_c":
                 if (_roundCounter[2] < 9) {
-                    Console.WriteLine(OutputTextBox + " round: " + _roundCounter[2] + ", Result: " +
-                                      _blaWireStatic[_roundCounter[2]]);
                     if (_blaWireStatic[_roundCounter[2]] == 2 || _blaWireStatic[_roundCounter[2]] == 4 ||
                         _blaWireStatic[_roundCounter[2]] == 5 || _blaWireStatic[_roundCounter[2]] == 6) {
                         OutputTextBox = "TRUE";
@@ -318,7 +295,7 @@ namespace BombGameSolver.Source.ViewModel {
                     _roundCounter[2]++;
                 } else {
                     _roundCounter[2] = 9;
-                    OutputTextBox = "EXCEEDED_MAX_BLACK";
+                    OutputTextBox = "Max Black";
                 }
 
                 break;
@@ -327,6 +304,17 @@ namespace BombGameSolver.Source.ViewModel {
             BluRoundTextBox = _roundCounter[0].ToString();
             RedRoundTextBox = _roundCounter[1].ToString();
             BlaRoundTextBox = _roundCounter[2].ToString();
+        }
+
+        private void ResetButtonLogic() {
+            OutputTextBox = "Reset";
+            _roundCounter[0] = 0;
+            _roundCounter[1] = 0;
+            _roundCounter[2] = 0;
+
+            BluRoundTextBox = "0";
+            RedRoundTextBox = "0";
+            BlaRoundTextBox = "0";
         }
     }
 }

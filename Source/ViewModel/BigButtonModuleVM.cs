@@ -7,10 +7,10 @@ namespace BombGameSolver.Source.ViewModel {
         private string _buttonColor, _buttonText, _outputText, _buttonImage;
 
         public BigButtonModuleVM() {
-            _buttonColor = "Red";
-            _buttonText = "Hold";
-            _outputText = "Immediately";
-            _buttonImage = "../../Resources/button/button_Red.png";
+            ButtonColor = "Red";
+            ButtonText = "Hold";
+            OutputText = "Immediately";
+            ButtonImage = "../../Resources/button/button_Red.png";
 
             var simpleMessenger = CrossViewMessenger.Instance;
             simpleMessenger.MessageValueChanged += OnSimpleMessengerValueChanged;
@@ -52,12 +52,40 @@ namespace BombGameSolver.Source.ViewModel {
 
         public ICommand ButtonCommand => new DelegateCommand(ButtonLogic, true);
 
-
         private void OnSimpleMessengerValueChanged(object sender, MessageValueChangedEventArgs e) {
             /* Update button if BatteryAmount, litCAR, or litFRK from SettingsModule are changed */
-            if (e.PropertyName == "BatteryAmountChanged" || e.PropertyName == "LitCarLogic" ||
-                e.PropertyName == "LitFrkLogic") {
-                ButtonLogic("null");
+            if (ReferenceValues.CurrentModule == "../Modules/BigButtonModule.xaml") {
+                switch (e.PropertyName) {
+                case "BatteryAmountChanged":
+                case "LitCarLogic":
+                case "LitFrkLogic":
+                    ButtonLogic("null");
+                    break;
+                case "KEY_NumPad1":
+                    ButtonLogic("White");
+                    break;
+                case "KEY_NumPad2":
+                    ButtonLogic("Yellow");
+                    break;
+                case "KEY_NumPad3":
+                    ButtonLogic("Blue");
+                    break;
+                case "KEY_NumPad4":
+                    ButtonLogic("Red");
+                    break;
+                case "KEY_NumPad7":
+                    ButtonLogic("Abort");
+                    break;
+                case "KEY_NumPad8":
+                    ButtonLogic("Press");
+                    break;
+                case "KEY_NumPad9":
+                    ButtonLogic("Hold");
+                    break;
+                case "KEY_NumPad0":
+                    ButtonLogic("Detonate");
+                    break;
+                }
             }
         }
 

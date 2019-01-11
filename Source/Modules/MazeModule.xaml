@@ -3,7 +3,8 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-      mc:Ignorable="d" Focusable="False">
+      mc:Ignorable="d" Focusable="False"
+      FocusManager.FocusedElement="{Binding ElementName=MainFocusItem}">
     <Grid Background="DarkSlateGray" Focusable="False">
         <Grid.RowDefinitions>
             <RowDefinition Height="2*" />
@@ -16,39 +17,25 @@
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
-            <Image Name="Image" Source="{Binding MazeImage}" VerticalAlignment="Center"
-                   HorizontalAlignment="Center" Margin="20" Focusable="False" />
+            <Image Name="Image" Source="{Binding MazeImage}" VerticalAlignment="Center" HorizontalAlignment="Center"
+                   Margin="20" Focusable="False" />
 
-            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="1" Focusable="False">
-                <StackPanel Orientation="Horizontal" Focusable="False">
-                    <StackPanel Focusable="False">
-                        <TextBlock Text="Node" Foreground="White" FontSize="18" Focusable="False" />
-                        <TextBox FontSize="60" TextAlignment="Center" MaxLength="2" MinWidth="80"
-                                 Text="{Binding InputNodeText, UpdateSourceTrigger=PropertyChanged}"
-                                 CommandManager.PreviewExecuted="DisablePasteCommand" />
-                    </StackPanel>
-                    <StackPanel Margin="5 0 5 0">
-                        <TextBlock Text="You" Foreground="White" FontSize="18" Focusable="False" />
-                        <TextBox FontSize="60" TextAlignment="Center" MaxLength="2" MinWidth="80"
-                                 Text="{Binding InputYouText, UpdateSourceTrigger=PropertyChanged}"
-                                 CommandManager.PreviewExecuted="DisablePasteCommand" />
-                    </StackPanel>
-                    <StackPanel Focusable="False">
-                        <TextBlock Text="Target" Foreground="White" FontSize="18" Focusable="False" />
-                        <TextBox FontSize="60" TextAlignment="Center" MaxLength="2" MinWidth="80"
-                                 Text="{Binding InputTargetText, UpdateSourceTrigger=PropertyChanged}"
-                                 CommandManager.PreviewExecuted="DisablePasteCommand" />
-                    </StackPanel>
-                </StackPanel>
-
-                <TextBlock Text="{Binding CurrentMazeText, UpdateSourceTrigger=PropertyChanged}" Foreground="White"
-                           FontSize="18" Focusable="False" Margin="0,20,0,0" />
-
+            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="1" Focusable="False"
+                        MinWidth="300">
+                <TextBlock Text="Node,  You,  Target" Foreground="White" FontSize="20" Focusable="False"
+                           Margin="0 0 0 2" />
+                <TextBox Name="MainFocusItem" FontSize="50" TextAlignment="Center" MaxLength="6"
+                         Text="{Binding InputMazeData, UpdateSourceTrigger=PropertyChanged}"
+                         CommandManager.PreviewExecuted="DisablePasteCommand" SelectionChanged="MoveCursorToEndChar" />
             </StackPanel>
+
+            <TextBlock Text="Give coords in format:   Left,Down" Grid.Column="1"
+                       HorizontalAlignment="Left" VerticalAlignment="Bottom" FontSize="18"
+                       TextWrapping="WrapWithOverflow" Foreground="White" />
         </Grid>
 
         <TextBox Text="{Binding OutputTextBox}" Grid.Row="1" Focusable="False"
-                 FontSize="40" TextWrapping="Wrap" Background="Transparent" Foreground="White"
+                 FontSize="34" TextWrapping="Wrap" Background="Transparent" Foreground="White"
                  TextAlignment="Left" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"
                  Margin="30" IsReadOnly="True" VerticalScrollBarVisibility="Auto" />
     </Grid>

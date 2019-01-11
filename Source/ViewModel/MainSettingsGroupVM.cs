@@ -146,6 +146,7 @@ namespace BombGameSolver.Source.ViewModel {
             _crossViewMessenger.PushMessage("SerialEvenLogic", null);
             _crossViewMessenger.PushMessage("ParPortLogic", null);
             _crossViewMessenger.PushMessage("BatteryAmountChanged", null);
+            _crossViewMessenger.PushMessage("KEY_F12", null);
         }
 
 #endregion

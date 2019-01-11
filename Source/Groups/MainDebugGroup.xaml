@@ -3,7 +3,7 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-      xmlns:autoScrollTextBox="clr-namespace:BombGameSolver.Source.Control"
+      xmlns:control="clr-namespace:BombGameSolver.Source.Control"
       mc:Ignorable="d" Background="DarkSlateGray">
     <Grid>
         <Grid.RowDefinitions>
@@ -11,9 +11,9 @@
             <RowDefinition Height="30" />
         </Grid.RowDefinitions>
 
-        <autoScrollTextBox:AutoScrollingTextBox Text="{Binding DebugTextOutput}" FontSize="16" Background="Transparent"
-                                                Foreground="LightGray" TextWrapping="Wrap" IsReadOnly="True"
-                                                VerticalScrollBarVisibility="Auto" />
+        <control:AutoScrollingTextBox Text="{Binding DebugTextOutput}" FontSize="16" Background="Transparent"
+                                      Foreground="LightGray" TextWrapping="Wrap" IsReadOnly="True"
+                                      VerticalScrollBarVisibility="Auto" />
 
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>

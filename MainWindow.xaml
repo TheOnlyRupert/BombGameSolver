@@ -14,6 +14,8 @@
         <KeyBinding Key="Back" Command="{Binding GlobalKeyboardListener}" CommandParameter="Back" />
         <KeyBinding Key="Tab" Command="{Binding GlobalKeyboardListener}" CommandParameter="Tab" />
         <KeyBinding Key="Enter" Command="{Binding GlobalKeyboardListener}" CommandParameter="Enter" />
+        <KeyBinding Key="{Binding Key_D0}" Command="{Binding GlobalKeyboardListener}" CommandParameter="NumPad0" />
+        <KeyBinding Key="{Binding Key_NumPad0}" Command="{Binding GlobalKeyboardListener}" CommandParameter="NumPad0" />
         <KeyBinding Key="{Binding Key_D1}" Command="{Binding GlobalKeyboardListener}" CommandParameter="NumPad1" />
         <KeyBinding Key="{Binding Key_NumPad1}" Command="{Binding GlobalKeyboardListener}" CommandParameter="NumPad1" />
         <KeyBinding Key="{Binding Key_D2}" Command="{Binding GlobalKeyboardListener}" CommandParameter="NumPad2" />

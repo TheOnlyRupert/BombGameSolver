@@ -5,18 +5,17 @@ using BombGameSolver.Source.ViewModel.Base;
 
 namespace BombGameSolver.Source.ViewModel {
     public class MemoryModuleVM : BaseViewModel {
-        // round pos, round lab
         private readonly int[,] _memoryLogic = new int[5, 5];
+
+        /* _memoryPosNum -> round pos, round lab */
         private readonly int[,] _memoryPosNum = new int[5, 2];
         private bool _canSubmit;
 
         private string _inputTextBox, _displayMainImage, _firMainImage, _secMainImage, _thiMainImage, _fouMainImage,
             _roundText, _outputHighlightImage, _lightImage, _outputText;
 
-        // round num 0 - 4
+        /* round num -> 0 - 4 */
         private int _roundNum;
-
-        private int _selectedIndex;
 
         public MemoryModuleVM() {
             _roundNum = 0;
@@ -212,7 +211,7 @@ namespace BombGameSolver.Source.ViewModel {
 
                     FouMainImage = "../../Resources/memory/fou_" + lastNum + ".png";
 
-                    Console.WriteLine("TEST");
+                    Console.WriteLine(@"TEST");
 
                     /* Add inputs into respective array in _memoryLogic */
                     for (var i = 0; i < input.Length; i++) {
@@ -490,9 +489,6 @@ namespace BombGameSolver.Source.ViewModel {
                 OutputText = "";
 
                 LightImage = "../../Resources/memory/light_" + (_roundNum + 1) + ".png";
-            } else if (param.ToString() == "next" || param.ToString() == "prev") {
-                var sound = new PlaySound("not_implemented");
-                sound.Play();
             }
         }
     }

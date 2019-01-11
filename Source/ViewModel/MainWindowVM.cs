@@ -13,14 +13,12 @@ namespace BombGameSolver.Source.ViewModel {
             _key_D1, _key_D2, _key_D3, _key_D4, _key_D5, _key_D6, _key_D7, _key_D8, _key_D9, _key_D0;
 
         public MainWindowVM() {
-            IconImage = "Resources/icons/nuke.png";
+            IconImage = "Resources/icons/icon.png";
             DevLogWindowHeight = "0";
 
             _crossViewMessenger = CrossViewMessenger.Instance;
             _crossViewMessenger.MessageValueChanged += OnSimpleMessengerValueChanged;
         }
-
-        public ICommand GlobalKeyboardListener => new DelegateCommand(GlobalKeyboardListenerLogic, true);
 
         public string IconImage {
             get => _iconImage;
@@ -198,6 +196,8 @@ namespace BombGameSolver.Source.ViewModel {
             }
         }
 
+        public ICommand GlobalKeyboardListener => new DelegateCommand(GlobalKeyboardListenerLogic, true);
+
         private void GlobalKeyboardListenerLogic(object obj) {
             _crossViewMessenger.PushMessage("KEY_" + obj, null);
         }
@@ -209,7 +209,7 @@ namespace BombGameSolver.Source.ViewModel {
                 DevLogWindowHeight = ReferenceValues.IsDebugEnabled ? "200" : "0";
                 break;
             case "KeyBindings_NormWiresModule":
-                Console.WriteLine("Switching Key bindings to NormWiresModule");
+                Console.WriteLine(@"Switching Key bindings to NormWiresModule");
                 Key_D1 = Key.D1;
                 Key_NumPad1 = Key.NumPad1;
                 Key_D2 = Key.D2;
@@ -222,7 +222,7 @@ namespace BombGameSolver.Source.ViewModel {
                 Key_NumPad5 = Key.NumPad5;
                 break;
             case "KeyBindings_BigButtonModule":
-                Console.WriteLine("Switching Key bindings to BigButtonModule");
+                Console.WriteLine(@"Switching Key bindings to BigButtonModule");
                 Key_D1 = Key.D1;
                 Key_NumPad1 = Key.NumPad1;
                 Key_D2 = Key.D2;
@@ -241,7 +241,7 @@ namespace BombGameSolver.Source.ViewModel {
                 Key_NumPad0 = Key.NumPad0;
                 break;
             case "KeyBindings_MazeModule":
-                Console.WriteLine("Switching Key bindings to MazeModule");
+                Console.WriteLine(@"Switching Key bindings to MazeModule");
                 Key_D1 = Key.None;
                 Key_NumPad1 = Key.None;
                 Key_D2 = Key.None;
@@ -256,7 +256,7 @@ namespace BombGameSolver.Source.ViewModel {
                 Key_NumPad6 = Key.None;
                 break;
             case "KeyBindings_SequWiresModule":
-                Console.WriteLine("Switching Key bindings to SequWiresModule");
+                Console.WriteLine(@"Switching Key bindings to SequWiresModule");
                 Key_D1 = Key.D1;
                 Key_NumPad1 = Key.NumPad1;
                 Key_D2 = Key.D2;
@@ -277,7 +277,7 @@ namespace BombGameSolver.Source.ViewModel {
                 Key_NumPad9 = Key.NumPad9;
                 break;
             case "KeyBindings_MemoryModule":
-                Console.WriteLine("Switching Key bindings to MemoryModule");
+                Console.WriteLine(@"Switching Key bindings to MemoryModule");
                 Key_D1 = Key.None;
                 Key_NumPad1 = Key.None;
                 Key_D2 = Key.None;
@@ -286,6 +286,15 @@ namespace BombGameSolver.Source.ViewModel {
                 Key_NumPad3 = Key.None;
                 Key_D4 = Key.None;
                 Key_NumPad4 = Key.None;
+                break;
+            case "KeyBindings_SimonSaysModule":
+                Console.WriteLine(@"Switching Key bindings to SimonSaysModule");
+                Key_D0 = Key.D0;
+                Key_NumPad0 = Key.NumPad0;
+                Key_D1 = Key.D1;
+                Key_NumPad1 = Key.NumPad1;
+                Key_D2 = Key.D2;
+                Key_NumPad2 = Key.NumPad2;
                 break;
             }
         }

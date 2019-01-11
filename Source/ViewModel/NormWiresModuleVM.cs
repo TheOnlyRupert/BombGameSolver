@@ -125,7 +125,7 @@ namespace BombGameSolver.Source.ViewModel {
                     ButtonLogic("delete");
                     break;
                 case "KEY_F12":
-                    ButtonLogic("reset");
+                    ResetButtonLogic();
                     break;
                 }
             }
@@ -142,19 +142,13 @@ namespace BombGameSolver.Source.ViewModel {
                 _wireArray[RoundCounter] = "";
                 OutputText = "";
             }
-            /* Reset all button */
-            else if (param.ToString() == "reset") {
-                RoundCounter = 0;
-                _wireArray = new[] {"", "", "", "", "", ""};
-                OutputText = "";
-            }
             /* Normal execute */
-            else if (param.ToString() != "update" && RoundCounter < 6) {
+            else if (param.ToString() == "update") {
+                //continue
+            } else if (RoundCounter < 6) {
                 _wireArray[RoundCounter] = param.ToString();
                 RoundCounter++;
-            }
-            /* Update or don't execute */
-            else if (param.ToString() != "update") {
+            } else {
                 return;
             }
 
@@ -172,19 +166,19 @@ namespace BombGameSolver.Source.ViewModel {
             case 3:
                 /* If no red -> cut 2nd */
                 if (_wireArray[0] != "red" && _wireArray[1] != "red" && _wireArray[2] != "red") {
-                    Console.WriteLine("[3x] No red -> Cut Second");
+                    Console.WriteLine(@"[3x] No red -> Cut Second");
                     OutputText = "Second";
                     WireBrokenView = "../../Resources/normal_wires/wire_2_broken.png";
                 }
                 /* Blue, blue, red -> cut 2nd */
                 else if (_wireArray[0] == "blu" && _wireArray[1] == "blu" && _wireArray[2] == "red") {
-                    Console.WriteLine("[3x] Blue, Blue, Red -> Cut Second");
+                    Console.WriteLine(@"[3x] Blue, Blue, Red -> Cut Second");
                     OutputText = "Second";
                     WireBrokenView = "../../Resources/normal_wires/wire_2_broken.png";
                 }
                 /* Else -> cut 3rd */
                 else {
-                    Console.WriteLine("[3x] Else -> Cut Last");
+                    Console.WriteLine(@"[3x] Else -> Cut Last");
                     OutputText = "Last";
                     WireBrokenView = "../../Resources/normal_wires/wire_3_broken.png";
                 }
@@ -200,7 +194,7 @@ namespace BombGameSolver.Source.ViewModel {
                 }
 
                 if (temp > 1 && !ReferenceValues.IsSerialEven) {
-                    Console.WriteLine("[4x] 2+ Red && Serial Odd -> Cut Last Red");
+                    Console.WriteLine(@"[4x] 2+ Red && Serial Odd -> Cut Last Red");
 
                     /* Get largest value of wireArray that has a red wire */
                     for (var i = 3; i < 4; i--) {
@@ -230,7 +224,7 @@ namespace BombGameSolver.Source.ViewModel {
                 /* If last is yellow && no red -> cut first */
                 else if (_wireArray[0] != "red" && _wireArray[1] != "red" && _wireArray[2] != "red" &&
                          _wireArray[3] == "yel") {
-                    Console.WriteLine("[4x] Last is Yellow && No Red -> Cut First");
+                    Console.WriteLine(@"[4x] Last is Yellow && No Red -> Cut First");
                     WireBrokenView = "../../Resources/normal_wires/wire_1_broken.png";
                     OutputText = "First";
                     return;
@@ -245,7 +239,7 @@ namespace BombGameSolver.Source.ViewModel {
                 }
 
                 if (temp == 1) {
-                    Console.WriteLine("[4x] 1x Blue -> Cut First");
+                    Console.WriteLine(@"[4x] 1x Blue -> Cut First");
                     WireBrokenView = "../../Resources/normal_wires/wire_1_broken.png";
                     OutputText = "First";
                     return;
@@ -260,13 +254,13 @@ namespace BombGameSolver.Source.ViewModel {
                 }
 
                 if (temp > 1) {
-                    Console.WriteLine("[4x] 2+ Yellow -> Cut Last");
+                    Console.WriteLine(@"[4x] 2+ Yellow -> Cut Last");
                     WireBrokenView = "../../Resources/normal_wires/wire_4_broken.png";
                     OutputText = "Last";
                 }
                 /* Else -> Cut last */
                 else {
-                    Console.WriteLine("[4x] Else -> Cut Second");
+                    Console.WriteLine(@"[4x] Else -> Cut Second");
                     WireBrokenView = "../../Resources/normal_wires/wire_2_broken.png";
                     OutputText = "Second";
                 }
@@ -275,7 +269,7 @@ namespace BombGameSolver.Source.ViewModel {
             case 5:
                 /* If Last is Black && Serial Odd -> Cut Fourth */
                 if (_wireArray[4] == "bla" && !ReferenceValues.IsSerialEven) {
-                    Console.WriteLine("[5x] Last is Black && Serial Odd -> Cut Fourth");
+                    Console.WriteLine(@"[5x] Last is Black && Serial Odd -> Cut Fourth");
                     OutputText = "Fourth";
                     WireBrokenView = "../../Resources/normal_wires/wire_4_broken.png";
                     break;
@@ -298,7 +292,7 @@ namespace BombGameSolver.Source.ViewModel {
                     }
 
                     if (temp > 1) {
-                        Console.WriteLine("[5x] 1x Red && 2+ Yellow -> Cut First");
+                        Console.WriteLine(@"[5x] 1x Red && 2+ Yellow -> Cut First");
                         OutputText = "First";
                         WireBrokenView = "../../Resources/normal_wires/wire_1_broken.png";
                     }
@@ -306,13 +300,13 @@ namespace BombGameSolver.Source.ViewModel {
                 /* If No Black -> Cut Second */
                 else if (_wireArray[0] != "bla" && _wireArray[1] != "bla" && _wireArray[2] != "bla" &&
                          _wireArray[3] != "bla" && _wireArray[4] != "bla") {
-                    Console.WriteLine("[5x] No Black -> Cut Second");
+                    Console.WriteLine(@"[5x] No Black -> Cut Second");
                     OutputText = "Second";
                     WireBrokenView = "../../Resources/normal_wires/wire_2_broken.png";
                 }
                 /* Else -> Cut First */
                 else {
-                    Console.WriteLine("[5x] Else -> Cut First");
+                    Console.WriteLine(@"[5x] Else -> Cut First");
                     OutputText = "First";
                     WireBrokenView = "../../Resources/normal_wires/wire_1_broken.png";
                 }
@@ -323,7 +317,7 @@ namespace BombGameSolver.Source.ViewModel {
                 if (_wireArray[0] != "yel" && _wireArray[1] != "yel" && _wireArray[2] != "yel" &&
                     _wireArray[3] != "yel" && _wireArray[4] != "yel" && _wireArray[5] != "yel" &&
                     !ReferenceValues.IsSerialEven) {
-                    Console.WriteLine("[6x] No Yellow && Serial Odd -> Cut Third");
+                    Console.WriteLine(@"[6x] No Yellow && Serial Odd -> Cut Third");
                     OutputText = "Third";
                     WireBrokenView = "../../Resources/normal_wires/wire_3_broken.png";
                     break;
@@ -349,26 +343,33 @@ namespace BombGameSolver.Source.ViewModel {
                 }
 
                 if (temp > 1) {
-                    Console.WriteLine("[6x] 1x Yellow and 2+ White -> Cut Fourth");
+                    Console.WriteLine(@"[6x] 1x Yellow and 2+ White -> Cut Fourth");
                     OutputText = "Fourth";
                     WireBrokenView = "../../Resources/normal_wires/wire_4_broken.png";
                 }
                 /* If No Red -> Cut Last */
                 else if (_wireArray[0] != "red" && _wireArray[1] != "red" && _wireArray[2] != "red" &&
                          _wireArray[3] != "red" && _wireArray[4] != "red" && _wireArray[5] != "red") {
-                    Console.WriteLine("[6x] If No Red -> Cut Last");
+                    Console.WriteLine(@"[6x] If No Red -> Cut Last");
                     OutputText = "Last";
                     WireBrokenView = "../../Resources/normal_wires/wire_6_broken.png";
                 }
                 /* Else -> Cut Fourth */
                 else {
-                    Console.WriteLine("[6x] Else -> Cut Fourth");
+                    Console.WriteLine(@"[6x] Else -> Cut Fourth");
                     OutputText = "Fourth";
                     WireBrokenView = "../../Resources/normal_wires/wire_4_broken.png";
                 }
 
                 break;
             }
+        }
+
+        private void ResetButtonLogic() {
+            RoundCounter = 0;
+            _wireArray = new[] {"", "", "", "", "", ""};
+            OutputText = "";
+            ButtonLogic("update");
         }
     }
 }

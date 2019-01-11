@@ -1,4 +1,3 @@
-using System;
 using System.Windows.Input;
 using BombGameSolver.Source.Reference;
 using BombGameSolver.Source.ViewModel.Base;
@@ -8,23 +7,18 @@ namespace BombGameSolver.Source.ViewModel {
         private string _currentStrikes, _blueOutput, _redOutput, _yellowOutput, _greenOutput;
 
         public SimonSaysModuleVM() {
-            CurrentStrikes = ReferenceValues.CurrentStrikes.ToString();
+            CurrentStrikes = "0";
             ButtonCommandLogic(CurrentStrikes);
 
             var simpleMessenger = CrossViewMessenger.Instance;
             simpleMessenger.MessageValueChanged += OnSimpleMessengerValueChanged;
+            simpleMessenger.PushMessage("KeyBindings_SimonSaysModule", null);
         }
 
         public string CurrentStrikes {
             get => _currentStrikes;
             set {
                 _currentStrikes = value;
-                try {
-                    ReferenceValues.CurrentStrikes = int.Parse(value);
-                } catch (Exception) {
-                    ReferenceValues.CurrentStrikes = 0;
-                }
-
                 RaisePropertyChangedEvent("CurrentStrikes");
             }
         }
@@ -64,9 +58,23 @@ namespace BombGameSolver.Source.ViewModel {
         public ICommand ButtonCommand => new DelegateCommand(ButtonCommandLogic, true);
 
         private void OnSimpleMessengerValueChanged(object sender, MessageValueChangedEventArgs e) {
-            /* Update button if BatteryAmount, litCAR, or litFRK from SettingsModule are changed */
-            if (e.PropertyName == "SerialVowelLogic") {
-                ButtonCommandLogic(CurrentStrikes);
+            /* Update view if SerialVowel from SettingsModule is changed */
+            if (ReferenceValues.CurrentModule == "../Modules/SimonSaysModule.xaml") {
+                switch (e.PropertyName) {
+                case "SerialVowelLogic":
+                    ButtonCommandLogic(CurrentStrikes);
+                    break;
+                case "KEY_NumPad1":
+                    ButtonCommandLogic("1");
+                    break;
+                case "KEY_NumPad2":
+                    ButtonCommandLogic("2");
+                    break;
+                case "KEY_NumPad0":
+                case "KEY_F12":
+                    ButtonCommandLogic("0");
+                    break;
+                }
             }
         }
 

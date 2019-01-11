@@ -25,11 +25,11 @@ namespace BombGameSolver.Source.ViewModel {
         private void OnSimpleMessengerValueChanged(object sender, MessageValueChangedEventArgs e) {
             /* Switch current module if requested */
             if (e.PropertyName == "SwitchCurrentModule") {
-                Console.WriteLine("Switching from " + CurrentModule + " to " + ReferenceValues.CurrentModule);
+                Console.WriteLine(@"Switching from " + CurrentModule + @" to " + ReferenceValues.CurrentModule);
                 CurrentModule = ReferenceValues.CurrentModule;
             } else if (e.PropertyName == "KEY_Tab" && CurrentModule != "../Modules/ModuleSwitcher.xaml") {
-                Console.WriteLine("Switching from " + ReferenceValues.CurrentModule + " to " +
-                                  "../Modules/ModuleSwitcher.xaml");
+                Console.WriteLine(@"Switching from " + ReferenceValues.CurrentModule + @" to " +
+                                  @"../Modules/ModuleSwitcher.xaml");
                 CurrentModule = "../Modules/ModuleSwitcher.xaml";
             }
         }

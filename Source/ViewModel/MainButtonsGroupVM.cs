@@ -12,8 +12,6 @@ namespace BombGameSolver.Source.ViewModel {
             HelpText = "Global Help";
         }
 
-        public ICommand ButtonCommand => new DelegateCommand(ButtonCommandLogic, true);
-
         public string HelpText {
             get => _helpText;
             set {
@@ -21,6 +19,8 @@ namespace BombGameSolver.Source.ViewModel {
                 RaisePropertyChangedEvent("HelpText");
             }
         }
+
+        public ICommand ButtonCommand => new DelegateCommand(ButtonCommandLogic, true);
 
         private void ButtonCommandLogic(object param) {
             switch (param) {

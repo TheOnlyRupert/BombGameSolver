@@ -3,7 +3,8 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-      mc:Ignorable="d" Focusable="False">
+      mc:Ignorable="d" Focusable="False"
+      FocusManager.FocusedElement="{Binding ElementName=MainFocusItem}">
     <Grid Background="DarkSlateGray" Focusable="False">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="3*" />
@@ -29,9 +30,9 @@
                 <TextBlock Text="{Binding RoundText}" FontSize="18" Padding="10 5 10 5" IsEnabled="False"
                            HorizontalAlignment="Center"
                            Background="Transparent" Foreground="White" VerticalAlignment="Center" Focusable="False" />
-                <TextBox FontSize="50" TextAlignment="Center" MaxLength="4"
+                <TextBox Name="MainFocusItem" FontSize="50" TextAlignment="Center" MaxLength="4"
                          Text="{Binding InputTextBox, UpdateSourceTrigger=PropertyChanged}"
-                         CommandManager.PreviewExecuted="DisablePasteCommand" />
+                         CommandManager.PreviewExecuted="DisablePasteCommand" SelectionChanged="MoveCursorToEndChar" />
                 <Button Content="Next Round  (RETURN)" FontSize="20" Padding="0 8" Command="{Binding ButtonCommand}"
                         CommandParameter="submit" Focusable="False" />
             </StackPanel>

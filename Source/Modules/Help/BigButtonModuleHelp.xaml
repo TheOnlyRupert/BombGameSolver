@@ -6,11 +6,29 @@
       mc:Ignorable="d" Focusable="False">
 
     <Grid Background="DarkSlateGray" Focusable="False">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
-        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="3*" />
+        </Grid.RowDefinitions>
 
-        <TextBlock Text="Button Mod Help" Focusable="False" />
+        <Grid Focusable="False">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="3*" />
+            </Grid.ColumnDefinitions>
+
+            <Image Name="Image" Source="{Binding ButtonImage}" Grid.Column="0" Margin="10" Focusable="False" />
+            <Viewbox Width="{Binding Path=ActualWidth, ElementName=Image}" Grid.Column="0" Focusable="False">
+                <TextBlock Text="{Binding ButtonText}" Margin="10" VerticalAlignment="Center"
+                           HorizontalAlignment="Center"
+                           Focusable="False" />
+            </Viewbox>
+
+            <TextBlock Text="Big Button Help" Focusable="False" Grid.Column="1" FontSize="40" Foreground="LightGray" />
+
+        </Grid>
+
+        <TextBlock Text="{Binding MainText}" Focusable="False" Grid.Row="1" FontSize="24" Foreground="LightGray"
+                   TextWrapping="Wrap" />
     </Grid>
 </Page>

@@ -1,5 +1,5 @@
-using System;
 using System.Windows.Input;
+using BombGameSolver.Source.Reference;
 using BombGameSolver.Source.ViewModel.Base;
 
 namespace BombGameSolver.Source.ViewModel {
@@ -15,21 +15,31 @@ namespace BombGameSolver.Source.ViewModel {
             ColumnDisabled2a = ColumnDisabled2b = ColumnDisabled3a = ColumnDisabled3b = ColumnDisabled3c =
                 ColumnDisabled3d = "True";
             isColumnSet = new[] {false, false, false};
+
+            var simpleMessenger = CrossViewMessenger.Instance;
+            simpleMessenger.MessageValueChanged += OnSimpleMessengerValueChanged;
         }
 
         public ICommand ButtonCommand => new DelegateCommand(ButtonLogic, true);
 
-        public ICommand ResetButtonCommand => new DelegateCommand(ResetButtonLogic, true);
+        private void OnSimpleMessengerValueChanged(object sender, MessageValueChangedEventArgs e) {
+            if (ReferenceValues.CurrentModule == "../Modules/MorseCodeModule.xaml") {
+                switch (e.PropertyName) {
+                case "KEY_F12":
+                    ResetButtonLogic();
+                    break;
+                }
+            }
+        }
 
         private void ButtonLogic(object param) {
-            Console.WriteLine(param);
             switch (param) {
             case "1b":
                 if (Button_1b == "True") {
-                    ResetButtonLogic("null");
+                    ResetButtonLogic();
                 } else {
                     if (isColumnSet[0]) {
-                        ResetButtonLogic("null");
+                        ResetButtonLogic();
                     }
 
                     Button_1b = "True";
@@ -40,10 +50,10 @@ namespace BombGameSolver.Source.ViewModel {
                 break;
             case "1f":
                 if (Button_1f == "True") {
-                    ResetButtonLogic("null");
+                    ResetButtonLogic();
                 } else {
                     if (isColumnSet[0]) {
-                        ResetButtonLogic("null");
+                        ResetButtonLogic();
                     }
 
                     Button_1f = "True";
@@ -54,10 +64,10 @@ namespace BombGameSolver.Source.ViewModel {
                 break;
             case "1h":
                 if (Button_1h == "True") {
-                    ResetButtonLogic("null");
+                    ResetButtonLogic();
                 } else {
                     if (isColumnSet[0]) {
-                        ResetButtonLogic("null");
+                        ResetButtonLogic();
                     }
 
                     Button_1h = "True";
@@ -68,10 +78,10 @@ namespace BombGameSolver.Source.ViewModel {
                 break;
             case "1l":
                 if (Button_1l == "True") {
-                    ResetButtonLogic("null");
+                    ResetButtonLogic();
                 } else {
                     if (isColumnSet[0]) {
-                        ResetButtonLogic("null");
+                        ResetButtonLogic();
                     }
 
                     Button_1l = "True";
@@ -82,10 +92,10 @@ namespace BombGameSolver.Source.ViewModel {
                 break;
             case "1s":
                 if (Button_1s == "True") {
-                    ResetButtonLogic("null");
+                    ResetButtonLogic();
                 } else {
                     if (isColumnSet[0]) {
-                        ResetButtonLogic("null");
+                        ResetButtonLogic();
                     }
 
                     Button_1s = "True";
@@ -96,10 +106,10 @@ namespace BombGameSolver.Source.ViewModel {
                 break;
             case "1t":
                 if (Button_1t == "True") {
-                    ResetButtonLogic("null");
+                    ResetButtonLogic();
                 } else {
                     if (isColumnSet[0]) {
-                        ResetButtonLogic("null");
+                        ResetButtonLogic();
                     }
 
                     Button_1t = "True";
@@ -110,10 +120,10 @@ namespace BombGameSolver.Source.ViewModel {
                 break;
             case "1v":
                 if (Button_1v == "True") {
-                    ResetButtonLogic("null");
+                    ResetButtonLogic();
                 } else {
                     if (isColumnSet[0]) {
-                        ResetButtonLogic("null");
+                        ResetButtonLogic();
                     }
 
                     Button_1v = "True";
@@ -126,11 +136,11 @@ namespace BombGameSolver.Source.ViewModel {
             case "2e":
                 if (Button_1b == "True") {
                     if (Button_2e == "True") {
-                        ResetButtonLogic("null");
+                        ResetButtonLogic();
                         ButtonLogic("1b");
                     } else {
                         if (isColumnSet[1]) {
-                            ResetButtonLogic("null");
+                            ResetButtonLogic();
                             ButtonLogic("1b");
                         }
 
@@ -144,11 +154,11 @@ namespace BombGameSolver.Source.ViewModel {
             case "2i":
                 if (Button_1b == "True") {
                     if (Button_2i == "True") {
-                        ResetButtonLogic("null");
+                        ResetButtonLogic();
                         ButtonLogic("1b");
                     } else {
                         if (isColumnSet[1]) {
-                            ResetButtonLogic("null");
+                            ResetButtonLogic();
                             ButtonLogic("1b");
                         }
 
@@ -163,11 +173,11 @@ namespace BombGameSolver.Source.ViewModel {
             case "2o":
                 if (Button_1b == "True") {
                     if (Button_2o == "True") {
-                        ResetButtonLogic("null");
+                        ResetButtonLogic();
                         ButtonLogic("1b");
                     } else {
                         if (isColumnSet[1]) {
-                            ResetButtonLogic("null");
+                            ResetButtonLogic();
                             ButtonLogic("1b");
                         }
 
@@ -182,11 +192,11 @@ namespace BombGameSolver.Source.ViewModel {
             case "2r":
                 if (Button_1b == "True") {
                     if (Button_2r == "True") {
-                        ResetButtonLogic("null");
+                        ResetButtonLogic();
                         ButtonLogic("1b");
                     } else {
                         if (isColumnSet[1]) {
-                            ResetButtonLogic("null");
+                            ResetButtonLogic();
                             ButtonLogic("1b");
                         }
 
@@ -201,11 +211,11 @@ namespace BombGameSolver.Source.ViewModel {
             case "2h":
                 if (Button_1s == "True") {
                     if (Button_2h == "True") {
-                        ResetButtonLogic("null");
+                        ResetButtonLogic();
                         ButtonLogic("1s");
                     } else {
                         if (isColumnSet[1]) {
-                            ResetButtonLogic("null");
+                            ResetButtonLogic();
                             ButtonLogic("1s");
                         }
 
@@ -220,11 +230,11 @@ namespace BombGameSolver.Source.ViewModel {
             case "2l":
                 if (Button_1s == "True") {
                     if (Button_2l == "True") {
-                        ResetButtonLogic("null");
+                        ResetButtonLogic();
                         ButtonLogic("1s");
                     } else {
                         if (isColumnSet[1]) {
-                            ResetButtonLogic("null");
+                            ResetButtonLogic();
                             ButtonLogic("1s");
                         }
 
@@ -239,11 +249,11 @@ namespace BombGameSolver.Source.ViewModel {
             case "2t":
                 if (Button_1s == "True") {
                     if (Button_2t == "True") {
-                        ResetButtonLogic("null");
+                        ResetButtonLogic();
                         ButtonLogic("1s");
                     } else {
                         if (isColumnSet[1]) {
-                            ResetButtonLogic("null");
+                            ResetButtonLogic();
                             ButtonLogic("1s");
                         }
 
@@ -258,12 +268,12 @@ namespace BombGameSolver.Source.ViewModel {
             case "3m":
                 if (Button_2o == "True") {
                     if (Button_3m == "True") {
-                        ResetButtonLogic("null");
+                        ResetButtonLogic();
                         ButtonLogic("1b");
                         ButtonLogic("2o");
                     } else {
                         if (isColumnSet[2]) {
-                            ResetButtonLogic("null");
+                            ResetButtonLogic();
                             ButtonLogic("1b");
                             ButtonLogic("2o");
                         }
@@ -279,12 +289,12 @@ namespace BombGameSolver.Source.ViewModel {
             case "3x":
                 if (Button_2o == "True") {
                     if (Button_3x == "True") {
-                        ResetButtonLogic("null");
+                        ResetButtonLogic();
                         ButtonLogic("1b");
                         ButtonLogic("2o");
                     } else {
                         if (isColumnSet[2]) {
-                            ResetButtonLogic("null");
+                            ResetButtonLogic();
                             ButtonLogic("1b");
                             ButtonLogic("2o");
                         }
@@ -302,22 +312,22 @@ namespace BombGameSolver.Source.ViewModel {
                 if (Button_2r == "True" || Button_2t == "True") {
                     if (Button_3e == "True") {
                         if (Button_2r == "True") {
-                            ResetButtonLogic("null");
+                            ResetButtonLogic();
                             ButtonLogic("1b");
                             ButtonLogic("2r");
                         } else {
-                            ResetButtonLogic("null");
+                            ResetButtonLogic();
                             ButtonLogic("1s");
                             ButtonLogic("2t");
                         }
                     } else {
                         if (isColumnSet[2]) {
                             if (Button_2r == "True") {
-                                ResetButtonLogic("null");
+                                ResetButtonLogic();
                                 ButtonLogic("1b");
                                 ButtonLogic("2r");
                             } else {
-                                ResetButtonLogic("null");
+                                ResetButtonLogic();
                                 ButtonLogic("1s");
                                 ButtonLogic("2t");
                             }
@@ -336,22 +346,22 @@ namespace BombGameSolver.Source.ViewModel {
                 if (Button_2r == "True" || Button_2t == "True") {
                     if (Button_3i == "True") {
                         if (Button_2r == "True") {
-                            ResetButtonLogic("null");
+                            ResetButtonLogic();
                             ButtonLogic("1b");
                             ButtonLogic("2r");
                         } else {
-                            ResetButtonLogic("null");
+                            ResetButtonLogic();
                             ButtonLogic("1s");
                             ButtonLogic("2t");
                         }
                     } else {
                         if (isColumnSet[2]) {
                             if (Button_2r == "True") {
-                                ResetButtonLogic("null");
+                                ResetButtonLogic();
                                 ButtonLogic("1b");
                                 ButtonLogic("2r");
                             } else {
-                                ResetButtonLogic("null");
+                                ResetButtonLogic();
                                 ButtonLogic("1s");
                                 ButtonLogic("2t");
                             }
@@ -368,12 +378,12 @@ namespace BombGameSolver.Source.ViewModel {
             case "3r":
                 if (Button_2t == "True") {
                     if (Button_3r == "True") {
-                        ResetButtonLogic("null");
+                        ResetButtonLogic();
                         ButtonLogic("1s");
                         ButtonLogic("2t");
                     } else {
                         if (isColumnSet[2]) {
-                            ResetButtonLogic("null");
+                            ResetButtonLogic();
                             ButtonLogic("1s");
                             ButtonLogic("2t");
                         }
@@ -388,7 +398,7 @@ namespace BombGameSolver.Source.ViewModel {
             }
         }
 
-        private void ResetButtonLogic(object param) {
+        private void ResetButtonLogic() {
             Button_1b = Button_1f = Button_1h = Button_1l = Button_1s = Button_1t = Button_1v = Button_2e =
                 Button_2i = Button_2o = Button_2r = Button_2h = Button_2l = Button_2t = Button_3m = Button_3x =
                     Button_3e = Button_3i = Button_3r = "False";

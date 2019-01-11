@@ -107,15 +107,7 @@ namespace BombGameSolver.Source.ViewModel {
                     ButtonCommandLogic("star");
                     break;
                 case "KEY_F12":
-                    _isLedOn = _isStarOn = false;
-                    LedButtonText = "LED OFF (5)";
-                    LedImage = "NULL";
-                    StarButtonText = "Star OFF (5)";
-                    StarImage = "NULL";
-
-                    WireImage = "../../Resources/comp_wires/wire_whi.png";
-                    _wireColor = "white";
-                    WireLogic();
+                    ResetButtonLogic();
                     break;
                 }
             }
@@ -169,7 +161,7 @@ namespace BombGameSolver.Source.ViewModel {
         }
 
         private void WireLogic() {
-            Console.WriteLine($"Wire: {_wireColor}, LED: {_isLedOn}, Star: {_isStarOn}");
+            Console.WriteLine(@"Wire: {_wireColor}, LED: {_isLedOn}, Star: {_isStarOn}");
 
             switch (_wireColor) {
             case "white":
@@ -318,6 +310,18 @@ namespace BombGameSolver.Source.ViewModel {
 
                 break;
             }
+        }
+
+        private void ResetButtonLogic() {
+            _isLedOn = _isStarOn = false;
+            LedButtonText = "LED OFF (5)";
+            LedImage = "NULL";
+            StarButtonText = "Star OFF (5)";
+            StarImage = "NULL";
+
+            WireImage = "../../Resources/comp_wires/wire_whi.png";
+            _wireColor = "white";
+            WireLogic();
         }
     }
 }

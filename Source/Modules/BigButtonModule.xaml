@@ -66,17 +66,17 @@
                         Grid.Row="3" Grid.Column="0" Focusable="False"
                         Command="{Binding ButtonCommand}" CommandParameter="Red" />
 
-                <Button Content="ABORT" Padding="5" FontSize="20" Margin="5" Foreground="White"
-                        Background="Transparent" Grid.Row="0" Grid.Column="1" Focusable="False"
+                <Button Content="ABORT (7)" Padding="5" FontSize="20" Margin="5" Foreground="Black"
+                        Background="White" Grid.Row="0" Grid.Column="1" Focusable="False"
                         Command="{Binding ButtonCommand}" CommandParameter="Abort" />
-                <Button Content="PRESS" Padding="5" FontSize="20" Margin="5" Foreground="White"
-                        Background="Transparent" Grid.Row="1" Grid.Column="1" Focusable="False"
+                <Button Content="PRESS (8)" Padding="5" FontSize="20" Margin="5" Foreground="Black"
+                        Background="White" Grid.Row="1" Grid.Column="1" Focusable="False"
                         Command="{Binding ButtonCommand}" CommandParameter="Press" />
-                <Button Content="HOLD" Padding="5" FontSize="20" Margin="5" Foreground="White"
-                        Background="Transparent" Grid.Row="2" Grid.Column="1" Focusable="False"
+                <Button Content="HOLD  (9)" Padding="5" FontSize="20" Margin="5" Foreground="Black"
+                        Background="White" Grid.Row="2" Grid.Column="1" Focusable="False"
                         Command="{Binding ButtonCommand}" CommandParameter="Hold" />
-                <Button Content="DETONATE" Padding="5" FontSize="20" Margin="5" Foreground="White"
-                        Background="Transparent" Grid.Row="3" Grid.Column="1" Focusable="False"
+                <Button Content="DETONATE (0)" Padding="5" FontSize="20" Margin="5" Foreground="Black"
+                        Background="White" Grid.Row="3" Grid.Column="1" Focusable="False"
                         Command="{Binding ButtonCommand}" CommandParameter="Detonate" />
             </Grid>
 
