@@ -4,28 +4,18 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       mc:Ignorable="d" Focusable="False">
-    <Grid Background="DarkSlateGray" Margin="80" Focusable="False">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*" />
-            <RowDefinition Height="6*" />
-        </Grid.RowDefinitions>
-
-        <Grid Grid.Column="0" Focusable="False">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-            </Grid.ColumnDefinitions>
-
-            <Button Content="Strike 0" Grid.Column="0" Grid.Row="0" FontSize="24" Margin="10"
-                    Command="{Binding ButtonCommand}" CommandParameter="0" Focusable="False">
+    <Grid Background="DarkSlateGray" Focusable="False">
+        <StackPanel Focusable="False">
+            <Button Content="Colors" FontSize="24" VerticalAlignment="Top" HorizontalAlignment="Right" Padding="10"
+                    Command="{Binding ButtonCommand}" CommandParameter="view_0" Focusable="False" Margin="10,10,5,5"
+                    MinWidth="140">
                 <Button.Style>
                     <Style TargetType="Button">
                         <!-- Default -->
                         <Setter Property="Background" Value="Transparent" />
                         <Setter Property="Foreground" Value="White" />
                         <Style.Triggers>
-                            <DataTrigger Binding="{Binding CurrentStrikes}" Value="0">
+                            <DataTrigger Binding="{Binding CurrentViewType}" Value="view_0">
                                 <!-- If True -->
                                 <Setter Property="Background" Value="Yellow" />
                                 <Setter Property="Foreground" Value="Black" />
@@ -34,15 +24,16 @@
                     </Style>
                 </Button.Style>
             </Button>
-            <Button Content="Strike 1" Grid.Column="1" Grid.Row="0" FontSize="24" Margin="10"
-                    Command="{Binding ButtonCommand}" CommandParameter="1" Focusable="False">
+            <Button Content="Directions" FontSize="24" VerticalAlignment="Top" HorizontalAlignment="Right" Padding="10"
+                    Command="{Binding ButtonCommand}" CommandParameter="view_1" Focusable="False" Margin="10,5,5,5"
+                    MinWidth="140">
                 <Button.Style>
                     <Style TargetType="Button">
                         <!-- Default -->
                         <Setter Property="Background" Value="Transparent" />
                         <Setter Property="Foreground" Value="White" />
                         <Style.Triggers>
-                            <DataTrigger Binding="{Binding CurrentStrikes}" Value="1">
+                            <DataTrigger Binding="{Binding CurrentViewType}" Value="view_1">
                                 <!-- If True -->
                                 <Setter Property="Background" Value="Yellow" />
                                 <Setter Property="Foreground" Value="Black" />
@@ -51,15 +42,16 @@
                     </Style>
                 </Button.Style>
             </Button>
-            <Button Content="Strike 2" Grid.Column="2" Grid.Row="0" FontSize="24" Margin="10"
-                    Command="{Binding ButtonCommand}" CommandParameter="2" Focusable="False">
+            <Button Content="Cardinal" FontSize="24" VerticalAlignment="Top" HorizontalAlignment="Right" Padding="10"
+                    Command="{Binding ButtonCommand}" CommandParameter="view_2" Focusable="False" Margin="10,5,5,5"
+                    MinWidth="140">
                 <Button.Style>
                     <Style TargetType="Button">
                         <!-- Default -->
                         <Setter Property="Background" Value="Transparent" />
                         <Setter Property="Foreground" Value="White" />
                         <Style.Triggers>
-                            <DataTrigger Binding="{Binding CurrentStrikes}" Value="2">
+                            <DataTrigger Binding="{Binding CurrentViewType}" Value="view_2">
                                 <!-- If True -->
                                 <Setter Property="Background" Value="Yellow" />
                                 <Setter Property="Foreground" Value="Black" />
@@ -68,110 +60,76 @@
                     </Style>
                 </Button.Style>
             </Button>
-        </Grid>
+        </StackPanel>
 
-        <Grid Grid.Row="1" Focusable="False">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-            </Grid.ColumnDefinitions>
-
-            <Grid.RowDefinitions>
-                <RowDefinition Height="4*" />
-                <RowDefinition Height="*" />
-                <RowDefinition Height="4*" />
-            </Grid.RowDefinitions>
-
-            <TextBox IsReadOnly="True" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
-                     Text="Yellow" Background="Yellow" Foreground="Black" FontSize="30" Grid.Column="0" Grid.Row="0"
-                     Focusable="False" />
-            <TextBox IsReadOnly="True" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
-                     Text="Green" Background="Green" Foreground="White" FontSize="30" Grid.Column="1" Grid.Row="0"
-                     Focusable="False" />
-            <TextBox IsReadOnly="True" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
-                     Text="Blue" Background="Blue" Foreground="White" FontSize="30" Grid.Column="2" Grid.Row="0"
-                     Focusable="False" />
-            <TextBox IsReadOnly="True" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Text="Red"
-                     Background="Red" Foreground="White" FontSize="30" Grid.Column="3" Grid.Row="0" Focusable="False" />
-
-            <TextBlock Text="▼" Grid.Column="0" Grid.Row="1" FontSize="20" VerticalAlignment="Center"
-                       HorizontalAlignment="Center" Foreground="Yellow" Focusable="False" />
-            <TextBlock Text="▼" Grid.Column="1" Grid.Row="1" FontSize="20" VerticalAlignment="Center"
-                       HorizontalAlignment="Center" Foreground="Green" Focusable="False" />
-            <TextBlock Text="▼" Grid.Column="2" Grid.Row="1" FontSize="20" VerticalAlignment="Center"
-                       HorizontalAlignment="Center" Foreground="Blue" Focusable="False" />
-            <TextBlock Text="▼" Grid.Column="3" Grid.Row="1" FontSize="20" VerticalAlignment="Center"
-                       HorizontalAlignment="Center" Foreground="Red" Focusable="False" />
-
-            <TextBox IsReadOnly="True" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
-                     Text="{Binding YellowOutput}" Background="{Binding YellowOutput}"
-                     FontSize="30" Grid.Column="0" Grid.Row="2" Focusable="False">
-                <TextBox.Style>
-                    <Style TargetType="TextBox">
+        <StackPanel Focusable="False">
+            <Button Content="Strike 0" FontSize="24" VerticalAlignment="Top" HorizontalAlignment="Left" Padding="10"
+                    Command="{Binding ButtonCommand}" CommandParameter="strike_0" Focusable="False" Margin="10,10,5,5"
+                    MinWidth="140">
+                <Button.Style>
+                    <Style TargetType="Button">
                         <!-- Default -->
+                        <Setter Property="Background" Value="Transparent" />
                         <Setter Property="Foreground" Value="White" />
                         <Style.Triggers>
-                            <DataTrigger Binding="{Binding YellowOutput}" Value="Yellow">
+                            <DataTrigger Binding="{Binding CurrentStrikes}" Value="strike_0">
                                 <!-- If True -->
+                                <Setter Property="Background" Value="Yellow" />
                                 <Setter Property="Foreground" Value="Black" />
                             </DataTrigger>
                         </Style.Triggers>
                     </Style>
-                </TextBox.Style>
-            </TextBox>
-
-            <TextBox IsReadOnly="True" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
-                     Text="{Binding GreenOutput}" Background="{Binding GreenOutput}" FontSize="30" Grid.Column="1"
-                     Grid.Row="2" Focusable="False">
-                <TextBox.Style>
-                    <Style TargetType="TextBox">
+                </Button.Style>
+            </Button>
+            <Button Content="Strike 1" FontSize="24" VerticalAlignment="Top" HorizontalAlignment="Left" Padding="10"
+                    Command="{Binding ButtonCommand}" CommandParameter="strike_1" Focusable="False" Margin="10,5,5,5"
+                    MinWidth="140">
+                <Button.Style>
+                    <Style TargetType="Button">
                         <!-- Default -->
+                        <Setter Property="Background" Value="Transparent" />
                         <Setter Property="Foreground" Value="White" />
                         <Style.Triggers>
-                            <DataTrigger Binding="{Binding GreenOutput}" Value="Yellow">
+                            <DataTrigger Binding="{Binding CurrentStrikes}" Value="strike_1">
                                 <!-- If True -->
+                                <Setter Property="Background" Value="Yellow" />
                                 <Setter Property="Foreground" Value="Black" />
                             </DataTrigger>
                         </Style.Triggers>
                     </Style>
-                </TextBox.Style>
-            </TextBox>
-
-
-            <TextBox IsReadOnly="True" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
-                     Text="{Binding BlueOutput}" Background="{Binding BlueOutput}" FontSize="30" Grid.Column="2"
-                     Grid.Row="2" Focusable="False">
-                <TextBox.Style>
-                    <Style TargetType="TextBox">
+                </Button.Style>
+            </Button>
+            <Button Content="Strike 2" FontSize="24" VerticalAlignment="Top" HorizontalAlignment="Left" Padding="10"
+                    Command="{Binding ButtonCommand}" CommandParameter="strike_2" Focusable="False" Margin="10,5,5,5"
+                    MinWidth="140">
+                <Button.Style>
+                    <Style TargetType="Button">
                         <!-- Default -->
+                        <Setter Property="Background" Value="Transparent" />
                         <Setter Property="Foreground" Value="White" />
                         <Style.Triggers>
-                            <DataTrigger Binding="{Binding BlueOutput}" Value="Yellow">
+                            <DataTrigger Binding="{Binding CurrentStrikes}" Value="strike_2">
                                 <!-- If True -->
+                                <Setter Property="Background" Value="Yellow" />
                                 <Setter Property="Foreground" Value="Black" />
                             </DataTrigger>
                         </Style.Triggers>
                     </Style>
-                </TextBox.Style>
-            </TextBox>
-            <TextBox IsReadOnly="True" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
-                     Text="{Binding RedOutput}" Background="{Binding RedOutput}" FontSize="30" Grid.Column="3"
-                     Grid.Row="2" Focusable="False">
-                <TextBox.Style>
-                    <Style TargetType="TextBox">
-                        <!-- Default -->
-                        <Setter Property="Foreground" Value="White" />
-                        <Style.Triggers>
-                            <DataTrigger Binding="{Binding RedOutput}" Value="Yellow">
-                                <!-- If True -->
-                                <Setter Property="Foreground" Value="Black" />
-                            </DataTrigger>
-                        </Style.Triggers>
-                    </Style>
-                </TextBox.Style>
-            </TextBox>
+                </Button.Style>
+            </Button>
+        </StackPanel>
+
+        <Grid Focusable="False">
+            <Image Source="{Binding BackgroundType}" Margin="10" Focusable="False" />
+            <Image Source="{Binding BluOutput}" Margin="10" Focusable="False" />
+            <Image Source="{Binding RedOutput}" Margin="10" Focusable="False" />
+            <Image Source="{Binding GreOutput}" Margin="10" Focusable="False" />
+            <Image Source="{Binding YelOutput}" Margin="10" Focusable="False" />
+
+            <Image Source="{Binding TextBluOutput}" Margin="10" Focusable="False" />
+            <Image Source="{Binding TextRedOutput}" Margin="10" Focusable="False" />
+            <Image Source="{Binding TextGreOutput}" Margin="10" Focusable="False" />
+            <Image Source="{Binding TextYelOutput}" Margin="10" Focusable="False" />
         </Grid>
     </Grid>
 </Page>

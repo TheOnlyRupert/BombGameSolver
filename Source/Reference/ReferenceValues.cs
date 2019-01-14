@@ -15,5 +15,7 @@ namespace BombGameSolver.Source.Reference {
         public static string CurrentModule { get; set; }
 
         public static bool IsDebugEnabled { get; set; }
+
+        public static int SimonSaysViewType { get; set; }
     }
 }

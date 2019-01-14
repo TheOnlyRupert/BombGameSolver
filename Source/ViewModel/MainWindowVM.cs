@@ -13,7 +13,7 @@ namespace BombGameSolver.Source.ViewModel {
             _key_D1, _key_D2, _key_D3, _key_D4, _key_D5, _key_D6, _key_D7, _key_D8, _key_D9, _key_D0;
 
         public MainWindowVM() {
-            IconImage = "Resources/icons/icon.png";
+            IconImage = "../../Resources/icons/icon_main.png";
             DevLogWindowHeight = "0";
 
             _crossViewMessenger = CrossViewMessenger.Instance;
