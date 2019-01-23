@@ -14,7 +14,7 @@ namespace BombGameSolver.Source.Reference {
                 if (!File.Exists(_fileDirectory + "settings.csv")) {
                     Console.WriteLine(@"settings.csv does not exist. Restoring default settings");
                     var file = new StreamWriter(_fileDirectory + "settings.csv", true);
-                    file.WriteLine("!KEY,VALUE\nSimonSaysViewType,0");
+                    file.WriteLine("!KEY,VALUE\nSimonSaysViewType,0\nSequWiresSounds,1");
                     file.Close();
                 }
             } catch (Exception) {
@@ -23,7 +23,11 @@ namespace BombGameSolver.Source.Reference {
             }
         }
 
-        private void GetSettings_OneTime() {
+        public void GetSettings_OneTime() {
+            /* Set default values first */
+            ReferenceValues.SimonSaysViewType = 0;
+            ReferenceValues.SequWiresSounds = true;
+
             try {
                 var streamReader = new StreamReader(_fileDirectory + "settings.csv");
 
@@ -36,9 +40,15 @@ namespace BombGameSolver.Source.Reference {
                         case "SimonSaysViewType":
                             ReferenceValues.SimonSaysViewType = int.Parse(strArray[1]);
                             break;
+                        case "SequWiresSounds":
+                            ReferenceValues.SequWiresSounds = strArray[1] == "1";
+                            break;
                         }
                     }
                 }
+
+                Console.WriteLine(@"SimonSaysViewType: " + ReferenceValues.SimonSaysViewType);
+                Console.WriteLine(@"SequWiresSounds: " + ReferenceValues.SequWiresSounds);
             } catch (Exception) {
                 Console.WriteLine(@"Error! settings.csv file read error.");
             }

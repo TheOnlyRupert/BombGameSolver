@@ -1,3 +1,4 @@
+using System;
 using System.Windows.Input;
 using BombGameSolver.Source.Reference;
 using BombGameSolver.Source.ViewModel.Base;
@@ -10,12 +11,14 @@ namespace BombGameSolver.Source.ViewModel {
         private readonly int[] _bluWireStatic = {1, 5, 1, 0, 1, 4, 2, 5, 0};
         private readonly int[] _redWireStatic = {2, 1, 0, 5, 1, 5, 6, 3, 1};
         private readonly int[] _roundCounter = {0, 0, 0};
+        private bool _enableSoundsCheck;
         private string _outputTextBox, _bluRoundTextBox, _redRoundTextBox, _blaRoundTextBox;
 
         public SequWiresModuleVM() {
             BluRoundTextBox = _roundCounter[0].ToString();
             RedRoundTextBox = _roundCounter[1].ToString();
             BlaRoundTextBox = _roundCounter[2].ToString();
+            EnableSoundsCheck = ReferenceValues.SequWiresSounds;
 
             var simpleMessenger = CrossViewMessenger.Instance;
             simpleMessenger.MessageValueChanged += OnSimpleMessengerValueChanged;
@@ -51,6 +54,21 @@ namespace BombGameSolver.Source.ViewModel {
             set {
                 _blaRoundTextBox = value;
                 RaisePropertyChangedEvent("BlaRoundTextBox");
+            }
+        }
+
+        public bool EnableSoundsCheck {
+            get => _enableSoundsCheck;
+            set {
+                if (_enableSoundsCheck == value) {
+                    return;
+                }
+
+                _enableSoundsCheck = value;
+                /* Change value if checkbox changes */
+                Console.WriteLine(@"Changing setting SequWiresSounds to: " + _enableSoundsCheck);
+                ReferenceValues.SequWiresSounds = _enableSoundsCheck;
+                RaisePropertyChangedEvent("EnableSoundsCheck");
             }
         }
 
@@ -138,10 +156,14 @@ namespace BombGameSolver.Source.ViewModel {
                     if (_bluWireStatic[_roundCounter[0]] == 0 || _bluWireStatic[_roundCounter[0]] == 3 ||
                         _bluWireStatic[_roundCounter[0]] == 5 || _bluWireStatic[_roundCounter[0]] == 6) {
                         OutputTextBox = "TRUE";
-                        soundYes.Play();
+                        if (ReferenceValues.SequWiresSounds) {
+                            soundYes.Play();
+                        }
                     } else {
                         OutputTextBox = "FALSE";
-                        soundNo.Play();
+                        if (ReferenceValues.SequWiresSounds) {
+                            soundNo.Play();
+                        }
                     }
 
                     _roundCounter[0]++;
@@ -156,10 +178,14 @@ namespace BombGameSolver.Source.ViewModel {
                     if (_bluWireStatic[_roundCounter[0]] == 1 || _bluWireStatic[_roundCounter[0]] == 3 ||
                         _bluWireStatic[_roundCounter[0]] == 4 || _bluWireStatic[_roundCounter[0]] == 6) {
                         OutputTextBox = "TRUE";
-                        soundYes.Play();
+                        if (ReferenceValues.SequWiresSounds) {
+                            soundYes.Play();
+                        }
                     } else {
                         OutputTextBox = "FALSE";
-                        soundNo.Play();
+                        if (ReferenceValues.SequWiresSounds) {
+                            soundNo.Play();
+                        }
                     }
 
                     _roundCounter[0]++;
@@ -174,10 +200,14 @@ namespace BombGameSolver.Source.ViewModel {
                     if (_bluWireStatic[_roundCounter[0]] == 2 || _bluWireStatic[_roundCounter[0]] == 4 ||
                         _bluWireStatic[_roundCounter[0]] == 5 || _bluWireStatic[_roundCounter[0]] == 6) {
                         OutputTextBox = "TRUE";
-                        soundYes.Play();
+                        if (ReferenceValues.SequWiresSounds) {
+                            soundYes.Play();
+                        }
                     } else {
                         OutputTextBox = "FALSE";
-                        soundNo.Play();
+                        if (ReferenceValues.SequWiresSounds) {
+                            soundNo.Play();
+                        }
                     }
 
                     _roundCounter[0]++;
@@ -194,10 +224,14 @@ namespace BombGameSolver.Source.ViewModel {
                     if (_redWireStatic[_roundCounter[1]] == 0 || _redWireStatic[_roundCounter[1]] == 3 ||
                         _redWireStatic[_roundCounter[1]] == 5 || _redWireStatic[_roundCounter[1]] == 6) {
                         OutputTextBox = "TRUE";
-                        soundYes.Play();
+                        if (ReferenceValues.SequWiresSounds) {
+                            soundYes.Play();
+                        }
                     } else {
                         OutputTextBox = "FALSE";
-                        soundNo.Play();
+                        if (ReferenceValues.SequWiresSounds) {
+                            soundNo.Play();
+                        }
                     }
 
                     _roundCounter[1]++;
@@ -212,10 +246,14 @@ namespace BombGameSolver.Source.ViewModel {
                     if (_redWireStatic[_roundCounter[1]] == 1 || _redWireStatic[_roundCounter[1]] == 3 ||
                         _redWireStatic[_roundCounter[1]] == 4 || _redWireStatic[_roundCounter[1]] == 6) {
                         OutputTextBox = "TRUE";
-                        soundYes.Play();
+                        if (ReferenceValues.SequWiresSounds) {
+                            soundYes.Play();
+                        }
                     } else {
                         OutputTextBox = "FALSE";
-                        soundNo.Play();
+                        if (ReferenceValues.SequWiresSounds) {
+                            soundNo.Play();
+                        }
                     }
 
                     _roundCounter[1]++;
@@ -230,10 +268,14 @@ namespace BombGameSolver.Source.ViewModel {
                     if (_redWireStatic[_roundCounter[1]] == 2 || _redWireStatic[_roundCounter[1]] == 4 ||
                         _redWireStatic[_roundCounter[1]] == 5 || _redWireStatic[_roundCounter[1]] == 6) {
                         OutputTextBox = "TRUE";
-                        soundYes.Play();
+                        if (ReferenceValues.SequWiresSounds) {
+                            soundYes.Play();
+                        }
                     } else {
                         OutputTextBox = "FALSE";
-                        soundNo.Play();
+                        if (ReferenceValues.SequWiresSounds) {
+                            soundNo.Play();
+                        }
                     }
 
                     _roundCounter[1]++;
@@ -250,10 +292,14 @@ namespace BombGameSolver.Source.ViewModel {
                     if (_blaWireStatic[_roundCounter[2]] == 0 || _blaWireStatic[_roundCounter[2]] == 3 ||
                         _blaWireStatic[_roundCounter[2]] == 5 || _blaWireStatic[_roundCounter[2]] == 6) {
                         OutputTextBox = "TRUE";
-                        soundYes.Play();
+                        if (ReferenceValues.SequWiresSounds) {
+                            soundYes.Play();
+                        }
                     } else {
                         OutputTextBox = "FALSE";
-                        soundNo.Play();
+                        if (ReferenceValues.SequWiresSounds) {
+                            soundNo.Play();
+                        }
                     }
 
                     _roundCounter[2]++;
@@ -268,10 +314,14 @@ namespace BombGameSolver.Source.ViewModel {
                     if (_blaWireStatic[_roundCounter[2]] == 1 || _blaWireStatic[_roundCounter[2]] == 3 ||
                         _blaWireStatic[_roundCounter[2]] == 4 || _blaWireStatic[_roundCounter[2]] == 6) {
                         OutputTextBox = "TRUE";
-                        soundYes.Play();
+                        if (ReferenceValues.SequWiresSounds) {
+                            soundYes.Play();
+                        }
                     } else {
                         OutputTextBox = "FALSE";
-                        soundNo.Play();
+                        if (ReferenceValues.SequWiresSounds) {
+                            soundNo.Play();
+                        }
                     }
 
                     _roundCounter[2]++;
@@ -286,10 +336,14 @@ namespace BombGameSolver.Source.ViewModel {
                     if (_blaWireStatic[_roundCounter[2]] == 2 || _blaWireStatic[_roundCounter[2]] == 4 ||
                         _blaWireStatic[_roundCounter[2]] == 5 || _blaWireStatic[_roundCounter[2]] == 6) {
                         OutputTextBox = "TRUE";
-                        soundYes.Play();
+                        if (ReferenceValues.SequWiresSounds) {
+                            soundYes.Play();
+                        }
                     } else {
                         OutputTextBox = "FALSE";
-                        soundNo.Play();
+                        if (ReferenceValues.SequWiresSounds) {
+                            soundNo.Play();
+                        }
                     }
 
                     _roundCounter[2]++;
