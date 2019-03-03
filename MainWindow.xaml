@@ -6,7 +6,7 @@
         mc:Ignorable="d"
         Icon="{Binding IconImage}"
         WindowStartupLocation="CenterScreen"
-        Title="Bomb Solver - v2.1.0"
+        Title="Bomb Game Solver"
         Height="720" Width="1280"
         MinHeight="540" MinWidth="960">
 
