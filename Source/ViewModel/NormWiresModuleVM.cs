@@ -7,13 +7,7 @@ namespace BombGameSolver.Source.ViewModel {
     public class NormWiresViewModel : BaseViewModel {
         private int _roundCounter;
 
-        private string _wire1Image,
-            _wire2Image,
-            _wire3Image,
-            _wire4Image,
-            _wire5Image,
-            _wire6Image,
-            _wireBrokenImage,
+        private string _wire1Image, _wire2Image, _wire3Image, _wire4Image, _wire5Image, _wire6Image, _wireBrokenImage,
             _outputText;
 
         private string[] _wireArray = {"", "", "", "", "", ""};
@@ -21,7 +15,7 @@ namespace BombGameSolver.Source.ViewModel {
         public NormWiresViewModel() {
             RoundCounter = 0;
 
-            var simpleMessenger = CrossViewMessenger.Instance;
+            CrossViewMessenger simpleMessenger = CrossViewMessenger.Instance;
             simpleMessenger.MessageValueChanged += OnSimpleMessengerValueChanged;
             simpleMessenger.PushMessage("KeyBindings_NormWiresModule", null);
         }
@@ -186,8 +180,8 @@ namespace BombGameSolver.Source.ViewModel {
                 break;
             case 4:
                 /* If 2+ red && serial odd -> cut last red */
-                var temp = 0;
-                foreach (var str in _wireArray) {
+                int temp = 0;
+                foreach (string str in _wireArray) {
                     if (str == "red") {
                         temp++;
                     }
@@ -197,7 +191,7 @@ namespace BombGameSolver.Source.ViewModel {
                     Console.WriteLine(@"[4x] 2+ Red && Serial Odd -> Cut Last Red");
 
                     /* Get largest value of wireArray that has a red wire */
-                    for (var i = 3; i < 4; i--) {
+                    for (int i = 3; i < 4; i--) {
                         if (_wireArray[i] == "red") {
                             /* Don't check for 1st wire... because like logic */
                             switch (i) {
@@ -223,7 +217,7 @@ namespace BombGameSolver.Source.ViewModel {
                 }
                 /* If last is yellow && no red -> cut first */
                 else if (_wireArray[0] != "red" && _wireArray[1] != "red" && _wireArray[2] != "red" &&
-                         _wireArray[3] == "yel") {
+                    _wireArray[3] == "yel") {
                     Console.WriteLine(@"[4x] Last is Yellow && No Red -> Cut First");
                     WireBrokenView = "../../Resources/normal_wires/wire_1_broken.png";
                     OutputText = "First";
@@ -232,7 +226,7 @@ namespace BombGameSolver.Source.ViewModel {
 
                 /* If 1x blue -> cut first */
                 temp = 0;
-                foreach (var str in _wireArray) {
+                foreach (string str in _wireArray) {
                     if (str == "blu") {
                         temp++;
                     }
@@ -247,7 +241,7 @@ namespace BombGameSolver.Source.ViewModel {
 
                 /* If 2+ yellow -> cut last */
                 temp = 0;
-                foreach (var str in _wireArray) {
+                foreach (string str in _wireArray) {
                     if (str == "yel") {
                         temp++;
                     }
@@ -277,7 +271,7 @@ namespace BombGameSolver.Source.ViewModel {
 
                 /* If 1x Red && 2+ Yellow -> Cut First */
                 temp = 0;
-                foreach (var str in _wireArray) {
+                foreach (string str in _wireArray) {
                     if (str == "red") {
                         temp++;
                     }
@@ -285,7 +279,7 @@ namespace BombGameSolver.Source.ViewModel {
 
                 if (temp == 1) {
                     temp = 0;
-                    foreach (var str in _wireArray) {
+                    foreach (string str in _wireArray) {
                         if (str == "yel") {
                             temp++;
                         }
@@ -299,7 +293,7 @@ namespace BombGameSolver.Source.ViewModel {
                 }
                 /* If No Black -> Cut Second */
                 else if (_wireArray[0] != "bla" && _wireArray[1] != "bla" && _wireArray[2] != "bla" &&
-                         _wireArray[3] != "bla" && _wireArray[4] != "bla") {
+                    _wireArray[3] != "bla" && _wireArray[4] != "bla") {
                     Console.WriteLine(@"[5x] No Black -> Cut Second");
                     OutputText = "Second";
                     WireBrokenView = "../../Resources/normal_wires/wire_2_broken.png";
@@ -325,7 +319,7 @@ namespace BombGameSolver.Source.ViewModel {
 
                 /* If 1x Yellow and 2+ White -> Cut Fourth */
                 temp = 0;
-                foreach (var str in _wireArray) {
+                foreach (string str in _wireArray) {
                     if (str == "yel") {
                         temp++;
                     }
@@ -333,7 +327,7 @@ namespace BombGameSolver.Source.ViewModel {
 
                 if (temp == 1) {
                     temp = 0;
-                    foreach (var str in _wireArray) {
+                    foreach (string str in _wireArray) {
                         if (str == "whi") {
                             temp++;
                         }
@@ -349,7 +343,7 @@ namespace BombGameSolver.Source.ViewModel {
                 }
                 /* If No Red -> Cut Last */
                 else if (_wireArray[0] != "red" && _wireArray[1] != "red" && _wireArray[2] != "red" &&
-                         _wireArray[3] != "red" && _wireArray[4] != "red" && _wireArray[5] != "red") {
+                    _wireArray[3] != "red" && _wireArray[4] != "red" && _wireArray[5] != "red") {
                     Console.WriteLine(@"[6x] If No Red -> Cut Last");
                     OutputText = "Last";
                     WireBrokenView = "../../Resources/normal_wires/wire_6_broken.png";

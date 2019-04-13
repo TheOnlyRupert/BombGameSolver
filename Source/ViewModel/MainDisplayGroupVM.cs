@@ -9,7 +9,7 @@ namespace BombGameSolver.Source.ViewModel {
         public MainDisplayGroupVM() {
             _currentModule = "../Modules/ModuleSwitcher.xaml";
 
-            var simpleMessenger = CrossViewMessenger.Instance;
+            CrossViewMessenger simpleMessenger = CrossViewMessenger.Instance;
             simpleMessenger.MessageValueChanged += OnSimpleMessengerValueChanged;
         }
 
@@ -28,8 +28,9 @@ namespace BombGameSolver.Source.ViewModel {
                 Console.WriteLine(@"Switching from " + CurrentModule + @" to " + ReferenceValues.CurrentModule);
                 CurrentModule = ReferenceValues.CurrentModule;
             } else if (e.PropertyName == "KEY_Tab" && CurrentModule != "../Modules/ModuleSwitcher.xaml") {
-                Console.WriteLine(@"Switching from " + ReferenceValues.CurrentModule + @" to " +
-                                  @"../Modules/ModuleSwitcher.xaml");
+                Console.WriteLine(
+                    @"Switching from " + ReferenceValues.CurrentModule + @" to " + @"../Modules/ModuleSwitcher.xaml"
+                );
                 CurrentModule = "../Modules/ModuleSwitcher.xaml";
             }
         }

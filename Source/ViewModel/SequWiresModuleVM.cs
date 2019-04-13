@@ -20,7 +20,7 @@ namespace BombGameSolver.Source.ViewModel {
             BlaRoundTextBox = _roundCounter[2].ToString();
             EnableSoundsCheck = ReferenceValues.SequWiresSounds;
 
-            var simpleMessenger = CrossViewMessenger.Instance;
+            CrossViewMessenger simpleMessenger = CrossViewMessenger.Instance;
             simpleMessenger.MessageValueChanged += OnSimpleMessengerValueChanged;
             simpleMessenger.PushMessage("KeyBindings_SequWiresModule", null);
         }
@@ -112,8 +112,8 @@ namespace BombGameSolver.Source.ViewModel {
         }
 
         private void ButtonCommandLogic(object param) {
-            var soundYes = new PlaySound("yes");
-            var soundNo = new PlaySound("no");
+            PlaySound soundYes = new PlaySound("yes");
+            PlaySound soundNo = new PlaySound("no");
 
             OutputTextBox = param.ToString();
 

@@ -17,7 +17,7 @@ namespace BombGameSolver.Source.ViewModel {
             _wireColor = "white";
             WireLogic();
 
-            var simpleMessenger = CrossViewMessenger.Instance;
+            CrossViewMessenger simpleMessenger = CrossViewMessenger.Instance;
             simpleMessenger.MessageValueChanged += OnSimpleMessengerValueChanged;
         }
 

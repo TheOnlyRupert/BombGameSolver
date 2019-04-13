@@ -1,5 +1,6 @@
 namespace BombGameSolver.Source.Reference {
     public static class ReferenceValues {
+        public const string COPYRIGHT = "Copyright © 2018-2019  Robert Higgins";
         public static bool IsSerialVowel { get; set; }
 
         public static bool IsSerialEven { get; set; }

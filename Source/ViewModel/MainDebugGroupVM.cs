@@ -1,3 +1,4 @@
+using BombGameSolver.Source.Reference;
 using BombGameSolver.Source.ViewModel.Base;
 
 namespace BombGameSolver.Source.ViewModel {
@@ -5,9 +6,9 @@ namespace BombGameSolver.Source.ViewModel {
         private string _debugTextOutput, _caretIndexPos;
 
         public MainDebugGroupVM() {
-            DebugTextOutput = "Copyright © 2018 Robert Higgins\n\n\n";
+            DebugTextOutput = ReferenceValues.COPYRIGHT + "\n\n";
 
-            var simpleMessenger = CrossViewMessenger.Instance;
+            CrossViewMessenger simpleMessenger = CrossViewMessenger.Instance;
             simpleMessenger.MessageValueChanged += OnSimpleMessengerValueChanged;
         }
 

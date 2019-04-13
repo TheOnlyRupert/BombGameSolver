@@ -19,7 +19,7 @@ namespace BombGameSolver.Source.ViewModel {
             ColumnDisabled0 = ColumnDisabled1 = ColumnDisabled2 = ColumnDisabled3 = ColumnDisabled4 =
                 ColumnDisabled5 = "False";
 
-            var simpleMessenger = CrossViewMessenger.Instance;
+            CrossViewMessenger simpleMessenger = CrossViewMessenger.Instance;
             simpleMessenger.MessageValueChanged += OnSimpleMessengerValueChanged;
         }
 
@@ -663,7 +663,7 @@ namespace BombGameSolver.Source.ViewModel {
             }
 
             /* Disable any columns added to the list */
-            foreach (var column in _nonDisabledColumns) {
+            foreach (int column in _nonDisabledColumns) {
                 switch (column) {
                 case 0:
                     ColumnDisabled0 = "False";

@@ -4,10 +4,10 @@ using BombGameSolver.Source.ViewModel.Base;
 
 namespace BombGameSolver.Source.ViewModel {
     public class MorseCodeVM : BaseViewModel {
-        private string _button_1b, _button_1f, _button_1h, _button_1l, _button_1s, _button_1t, _button_1v,
-            _button_2e, _button_2i, _button_2o, _button_2r, _button_2h, _button_2l, _button_2t,
-            _button_3m, _button_3x, _button_3e, _button_3i, _button_3r, _outputText, _columnDisabled2a,
-            _columnDisabled2b, _columnDisabled3a, _columnDisabled3b, _columnDisabled3c, _columnDisabled3d;
+        private string _button_1b, _button_1f, _button_1h, _button_1l, _button_1s, _button_1t, _button_1v, _button_2e,
+            _button_2i, _button_2o, _button_2r, _button_2h, _button_2l, _button_2t, _button_3m, _button_3x, _button_3e,
+            _button_3i, _button_3r, _outputText, _columnDisabled2a, _columnDisabled2b, _columnDisabled3a,
+            _columnDisabled3b, _columnDisabled3c, _columnDisabled3d;
 
         private bool[] isColumnSet;
 
@@ -16,7 +16,7 @@ namespace BombGameSolver.Source.ViewModel {
                 ColumnDisabled3d = "True";
             isColumnSet = new[] {false, false, false};
 
-            var simpleMessenger = CrossViewMessenger.Instance;
+            CrossViewMessenger simpleMessenger = CrossViewMessenger.Instance;
             simpleMessenger.MessageValueChanged += OnSimpleMessengerValueChanged;
         }
 
@@ -408,7 +408,7 @@ namespace BombGameSolver.Source.ViewModel {
             OutputText = "";
         }
 
-#region Buttons
+        #region Buttons
 
         public string OutputText {
             get => _outputText;
@@ -620,6 +620,6 @@ namespace BombGameSolver.Source.ViewModel {
             }
         }
 
-#endregion
+        #endregion
     }
 }

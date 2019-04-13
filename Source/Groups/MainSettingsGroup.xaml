@@ -227,7 +227,7 @@
                         Background="Transparent" Margin="5 0 5 0" Padding="2" MinWidth="110" Foreground="White" />
             </StackPanel>
 
-            <TextBlock Text="Copyright © 2018 Robert Higgins" HorizontalAlignment="Center" VerticalAlignment="Center"
+            <TextBlock Text="{Binding CopyrightText}" HorizontalAlignment="Center" VerticalAlignment="Center"
                        Foreground="White" Margin="0,40,0,0" />
         </StackPanel>
     </ScrollViewer>

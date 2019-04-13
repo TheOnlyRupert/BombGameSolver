@@ -1,0 +1,370 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')"/>
+    <PropertyGroup>
+        <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+        <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+        <ProjectGuid>{D7EEC63E-4B85-4FB9-B560-E41D6E1F8C3C}</ProjectGuid>
+        <OutputType>WinExe</OutputType>
+        <RootNamespace>BombGameSolver</RootNamespace>
+        <AssemblyName>BombGameSolver</AssemblyName>
+        <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+        <FileAlignment>512</FileAlignment>
+        <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+        <WarningLevel>4</WarningLevel>
+        <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+        <PlatformTarget>AnyCPU</PlatformTarget>
+        <DebugSymbols>true</DebugSymbols>
+        <DebugType>full</DebugType>
+        <Optimize>false</Optimize>
+        <OutputPath>bin\Debug\</OutputPath>
+        <DefineConstants>DEBUG;TRACE</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+        <PlatformTarget>AnyCPU</PlatformTarget>
+        <DebugType>pdbonly</DebugType>
+        <Optimize>true</Optimize>
+        <OutputPath>bin\Release\</OutputPath>
+        <DefineConstants>TRACE</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+    </PropertyGroup>
+    <ItemGroup>
+        <Reference Include="System"/>
+        <Reference Include="System.Core"/>
+        <Reference Include="System.Drawing"/>
+        <Reference Include="System.Xaml">
+            <RequiredTargetFramework>4.0</RequiredTargetFramework>
+        </Reference>
+        <Reference Include="WindowsBase"/>
+        <Reference Include="PresentationCore"/>
+        <Reference Include="PresentationFramework"/>
+    </ItemGroup>
+    <ItemGroup>
+        <ApplicationDefinition Include="App.xaml">
+            <Generator>MSBuild:Compile</Generator>
+            <SubType>Designer</SubType>
+        </ApplicationDefinition>
+        <Compile Include="Source\Control\AutoScrollingTextBox.cs"/>
+        <Compile Include="Source\Control\DisableNavigation.cs"/>
+        <Compile Include="Source\Groups\LoggerPrototype.xaml.cs">
+            <DependentUpon>LoggerPrototype.xaml</DependentUpon>
+        </Compile>
+        <Compile Include="Source\Groups\MainDebugGroup.xaml.cs">
+            <DependentUpon>MainDebugGroup.xaml</DependentUpon>
+        </Compile>
+        <Compile Include="Source\Groups\MainDisplayGroup.xaml.cs">
+            <DependentUpon>MainDisplayGroup.xaml</DependentUpon>
+        </Compile>
+        <Compile Include="Source\Groups\MainSettingsGroup.xaml.cs">
+            <DependentUpon>MainSettingsGroup.xaml</DependentUpon>
+        </Compile>
+        <Compile Include="Source\Groups\MainTimerGroup.xaml.cs">
+            <DependentUpon>MainTimerGroup.xaml</DependentUpon>
+        </Compile>
+        <Compile Include="Source\Reference\PlaySound.cs"/>
+        <Compile Include="Source\Reference\ReferenceValues.cs"/>
+        <Compile Include="Source\Modules\BigButtonModule.xaml.cs">
+            <DependentUpon>BigButtonModule.xaml</DependentUpon>
+        </Compile>
+        <Compile Include="Source\Modules\CompWiresModule.xaml.cs">
+            <DependentUpon>CompWiresModule.xaml</DependentUpon>
+        </Compile>
+        <Compile Include="Source\Modules\KeypadsModule.xaml.cs">
+            <DependentUpon>KeypadsModule.xaml</DependentUpon>
+        </Compile>
+        <Compile Include="Source\Modules\KnobModule.xaml.cs">
+            <DependentUpon>KnobModule.xaml</DependentUpon>
+        </Compile>
+        <Compile Include="Source\Modules\MazeModule.xaml.cs">
+            <DependentUpon>MazeModule.xaml</DependentUpon>
+        </Compile>
+        <Compile Include="Source\Modules\MemoryModule.xaml.cs">
+            <DependentUpon>MemoryModule.xaml</DependentUpon>
+        </Compile>
+        <Compile Include="Source\Modules\ModuleSwitcher.xaml.cs">
+            <DependentUpon>ModuleSwitcher.xaml</DependentUpon>
+        </Compile>
+        <Compile Include="Source\Modules\MorseCodeModule.xaml.cs">
+            <DependentUpon>MorseCodeModule.xaml</DependentUpon>
+        </Compile>
+        <Compile Include="Source\Modules\NormWiresModule.xaml.cs">
+            <DependentUpon>NormWiresModule.xaml</DependentUpon>
+        </Compile>
+        <Compile Include="Source\Modules\PasswordsModule.xaml.cs">
+            <DependentUpon>PasswordsModule.xaml</DependentUpon>
+        </Compile>
+        <Compile Include="Source\Modules\SimonSaysModule.xaml.cs">
+            <DependentUpon>SimonSaysModule.xaml</DependentUpon>
+        </Compile>
+        <Compile Include="Source\Modules\WhoFirstModule.xaml.cs">
+            <DependentUpon>WhoFirstModule.xaml</DependentUpon>
+        </Compile>
+        <Compile Include="Source\Modules\SequWiresModule.xaml.cs">
+            <DependentUpon>SequWiresModule.xaml</DependentUpon>
+        </Compile>
+        <Compile Include="Source\Groups\MainButtonsGroup.xaml.cs">
+            <DependentUpon>MainButtonsGroup.xaml</DependentUpon>
+        </Compile>
+        <Compile Include="Source\Reference\SettingsCsv.cs"/>
+        <Compile Include="Source\ViewModel\Base\BaseViewModel.cs"/>
+        <Compile Include="Source\ViewModel\Base\DelegateCommand.cs"/>
+        <Compile Include="Source\ViewModel\Base\CrossViewMessenger.cs"/>
+        <Compile Include="Source\ViewModel\BigButtonModuleVM.cs"/>
+        <Compile Include="Source\ViewModel\CompWiresModuleVM.cs"/>
+        <Compile Include="Source\ViewModel\KeypadsModuleVM.cs"/>
+        <Compile Include="Source\ViewModel\MainButtonsGroupVM.cs"/>
+        <Compile Include="Source\ViewModel\MainDebugGroupVM.cs"/>
+        <Compile Include="Source\ViewModel\MainDisplayGroupVM.cs"/>
+        <Compile Include="Source\ViewModel\MainWindowVM.cs"/>
+        <Compile Include="Source\ViewModel\MazeModuleVM.cs"/>
+        <Compile Include="Source\ViewModel\MemoryModuleVM.cs"/>
+        <Compile Include="Source\ViewModel\ModuleSwitcherVM.cs"/>
+        <Compile Include="Source\ViewModel\MorseCodeVM.cs"/>
+        <Compile Include="Source\ViewModel\NormWiresModuleVM.cs"/>
+        <Compile Include="Source\ViewModel\MainSettingsGroupVM.cs"/>
+        <Compile Include="Source\ViewModel\MainTimerGroupVM.cs"/>
+        <Compile Include="Source\ViewModel\SequWiresModuleVM.cs"/>
+        <Compile Include="Source\ViewModel\SimonSaysModuleVM.cs"/>
+        <Compile Include="Source\ViewModel\WhoFirstModuleVM.cs"/>
+        <Page Include="MainWindow.xaml">
+            <Generator>MSBuild:Compile</Generator>
+            <SubType>Designer</SubType>
+        </Page>
+        <Compile Include="App.xaml.cs">
+            <DependentUpon>App.xaml</DependentUpon>
+            <SubType>Code</SubType>
+        </Compile>
+        <Compile Include="MainWindow.xaml.cs">
+            <DependentUpon>MainWindow.xaml</DependentUpon>
+            <SubType>Code</SubType>
+        </Compile>
+        <Page Include="Source\Groups\LoggerPrototype.xaml"/>
+        <Page Include="Source\Groups\MainDebugGroup.xaml"/>
+        <Page Include="Source\Groups\MainDisplayGroup.xaml"/>
+        <Page Include="Source\Groups\MainSettingsGroup.xaml"/>
+        <Page Include="Source\Groups\MainTimerGroup.xaml"/>
+        <Page Include="Source\Modules\BigButtonModule.xaml"/>
+        <Page Include="Source\Modules\CompWiresModule.xaml"/>
+        <Page Include="Source\Modules\KeypadsModule.xaml"/>
+        <Page Include="Source\Modules\KnobModule.xaml"/>
+        <Page Include="Source\Modules\MazeModule.xaml"/>
+        <Page Include="Source\Modules\MemoryModule.xaml"/>
+        <Page Include="Source\Modules\ModuleSwitcher.xaml"/>
+        <Page Include="Source\Modules\MorseCodeModule.xaml"/>
+        <Page Include="Source\Modules\NormWiresModule.xaml"/>
+        <Page Include="Source\Modules\PasswordsModule.xaml"/>
+        <Page Include="Source\Modules\SimonSaysModule.xaml"/>
+        <Page Include="Source\Modules\WhoFirstModule.xaml"/>
+        <Page Include="Source\Modules\SequWiresModule.xaml"/>
+        <Page Include="Source\Groups\MainButtonsGroup.xaml"/>
+    </ItemGroup>
+    <ItemGroup>
+        <Compile Include="Properties\AssemblyInfo.cs">
+            <SubType>Code</SubType>
+        </Compile>
+        <Compile Include="Properties\Resources.Designer.cs">
+            <AutoGen>True</AutoGen>
+            <DesignTime>True</DesignTime>
+            <DependentUpon>Resources.resx</DependentUpon>
+        </Compile>
+        <EmbeddedResource Include="Properties\Resources.resx">
+            <Generator>ResXFileCodeGenerator</Generator>
+            <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+    </ItemGroup>
+    <ItemGroup>
+        <None Include="App.config"/>
+    </ItemGroup>
+    <ItemGroup>
+        <Resource Include="Resources\simon_says\background_color.png"/>
+        <Resource Include="Resources\simon_says\background_directions.png"/>
+        <Resource Include="Resources\simon_says\background_nsew.png"/>
+        <Resource Include="Resources\simon_says\eas_to_nor.png"/>
+        <Resource Include="Resources\simon_says\eas_to_sou.png"/>
+        <Resource Include="Resources\simon_says\eas_to_wes.png"/>
+        <Resource Include="Resources\simon_says\nor_to_eas.png"/>
+        <Resource Include="Resources\simon_says\nor_to_sou.png"/>
+        <Resource Include="Resources\simon_says\nor_to_wes.png"/>
+        <Resource Include="Resources\simon_says\sou_to_eas.png"/>
+        <Resource Include="Resources\simon_says\sou_to_nor.png"/>
+        <Resource Include="Resources\simon_says\sou_to_wes.png"/>
+        <Resource Include="Resources\simon_says\wes_to_eas.png"/>
+        <Resource Include="Resources\simon_says\wes_to_nor.png"/>
+        <Resource Include="Resources\simon_says\wes_to_sou.png"/>
+        <Resource Include="Resources\simon_says\dow_to_lef.png"/>
+        <Resource Include="Resources\simon_says\dow_to_rig.png"/>
+        <Resource Include="Resources\simon_says\dow_to_up.png"/>
+        <Resource Include="Resources\simon_says\lef_to_dow.png"/>
+        <Resource Include="Resources\simon_says\lef_to_rig.png"/>
+        <Resource Include="Resources\simon_says\lef_to_up.png"/>
+        <Resource Include="Resources\simon_says\rig_to_dow.png"/>
+        <Resource Include="Resources\simon_says\rig_to_lef.png"/>
+        <Resource Include="Resources\simon_says\rig_to_up.png"/>
+        <Resource Include="Resources\simon_says\up_to_dow.png"/>
+        <Resource Include="Resources\simon_says\up_to_lef.png"/>
+        <Resource Include="Resources\simon_says\up_to_rig.png"/>
+        <Resource Include="Resources\simon_says\blu_to_gre.png"/>
+        <Resource Include="Resources\simon_says\blu_to_red.png"/>
+        <Resource Include="Resources\simon_says\blu_to_yel.png"/>
+        <Resource Include="Resources\simon_says\gre_to_blu.png"/>
+        <Resource Include="Resources\simon_says\gre_to_red.png"/>
+        <Resource Include="Resources\simon_says\gre_to_yel.png"/>
+        <Resource Include="Resources\simon_says\red_to_blu.png"/>
+        <Resource Include="Resources\simon_says\red_to_gre.png"/>
+        <Resource Include="Resources\simon_says\red_to_yel.png"/>
+        <Resource Include="Resources\simon_says\text_blu_to_gre.png"/>
+        <Resource Include="Resources\simon_says\text_blu_to_red.png"/>
+        <Resource Include="Resources\simon_says\text_blu_to_yel.png"/>
+        <Resource Include="Resources\simon_says\text_gre_to_blu.png"/>
+        <Resource Include="Resources\simon_says\text_gre_to_red.png"/>
+        <Resource Include="Resources\simon_says\text_gre_to_yel.png"/>
+        <Resource Include="Resources\simon_says\text_red_to_blu.png"/>
+        <Resource Include="Resources\simon_says\text_red_to_gre.png"/>
+        <Resource Include="Resources\simon_says\text_red_to_yel.png"/>
+        <Resource Include="Resources\simon_says\text_yel_to_blu.png"/>
+        <Resource Include="Resources\simon_says\text_yel_to_gre.png"/>
+        <Resource Include="Resources\simon_says\text_yel_to_red.png"/>
+        <Resource Include="Resources\simon_says\yel_to_blu.png"/>
+        <Resource Include="Resources\simon_says\yel_to_gre.png"/>
+        <Resource Include="Resources\simon_says\yel_to_red.png"/>
+        <Resource Include="Resources\maze\blank.png"/>
+        <Resource Include="Resources\comp_wires\led_on.png"/>
+        <Resource Include="Resources\comp_wires\ports.png"/>
+        <Resource Include="Resources\comp_wires\star_on.png"/>
+        <Resource Include="Resources\comp_wires\wire_blu.png"/>
+        <Resource Include="Resources\comp_wires\wire_blu_red.png"/>
+        <Resource Include="Resources\comp_wires\wire_broken.png"/>
+        <Resource Include="Resources\comp_wires\wire_red.png"/>
+        <Resource Include="Resources\comp_wires\wire_whi.png"/>
+        <Resource Include="Resources\button\button_Blue.png"/>
+        <Resource Include="Resources\button\button_Red.png"/>
+        <Resource Include="Resources\button\button_White.png"/>
+        <Resource Include="Resources\button\button_Yellow.png"/>
+        <Resource Include="Resources\global\no.wav"/>
+        <Resource Include="Resources\global\yes.wav"/>
+        <Resource Include="Resources\icons\button.PNG"/>
+        <Resource Include="Resources\icons\comp_wires.PNG"/>
+        <Resource Include="Resources\icons\keypads.PNG"/>
+        <Resource Include="Resources\icons\knob.PNG"/>
+        <Resource Include="Resources\icons\maze.PNG"/>
+        <Resource Include="Resources\icons\memory.PNG"/>
+        <Resource Include="Resources\icons\morse_code.PNG"/>
+        <Resource Include="Resources\icons\normal_wires.PNG"/>
+        <Resource Include="Resources\icons\icon_main.png"/>
+        <Resource Include="Resources\icons\passwords.PNG"/>
+        <Resource Include="Resources\icons\simon_says.PNG"/>
+        <Resource Include="Resources\icons\who_first.PNG"/>
+        <Resource Include="Resources\icons\wire_seq.PNG"/>
+        <Resource Include="Resources\keypads\3_broken.png"/>
+        <Resource Include="Resources\keypads\3_fancy.png"/>
+        <Resource Include="Resources\keypads\6.png"/>
+        <Resource Include="Resources\keypads\ae.png"/>
+        <Resource Include="Resources\keypads\at.png"/>
+        <Resource Include="Resources\keypads\balloon.png"/>
+        <Resource Include="Resources\keypads\boobs.png"/>
+        <Resource Include="Resources\keypads\c.png"/>
+        <Resource Include="Resources\keypads\copyright.png"/>
+        <Resource Include="Resources\keypads\c_rev.png"/>
+        <Resource Include="Resources\keypads\e.png"/>
+        <Resource Include="Resources\keypads\fork.png"/>
+        <Resource Include="Resources\keypads\h.png"/>
+        <Resource Include="Resources\keypads\hk.png"/>
+        <Resource Include="Resources\keypads\kk.png"/>
+        <Resource Include="Resources\keypads\lightining.png"/>
+        <Resource Include="Resources\keypads\n.png"/>
+        <Resource Include="Resources\keypads\omega.png"/>
+        <Resource Include="Resources\keypads\paragraph.png"/>
+        <Resource Include="Resources\keypads\pyramid.png"/>
+        <Resource Include="Resources\keypads\pound.png"/>
+        <Resource Include="Resources\keypads\question.png"/>
+        <Resource Include="Resources\keypads\smile.png"/>
+        <Resource Include="Resources\keypads\star_hol.png"/>
+        <Resource Include="Resources\keypads\star_sol.png"/>
+        <Resource Include="Resources\keypads\tb.png"/>
+        <Resource Include="Resources\keypads\y.png"/>
+        <Resource Include="Resources\maze\maze11.png"/>
+        <Resource Include="Resources\maze\maze12.png"/>
+        <Resource Include="Resources\maze\maze21.png"/>
+        <Resource Include="Resources\maze\maze24.png"/>
+        <Resource Include="Resources\maze\maze32.png"/>
+        <Resource Include="Resources\maze\maze41.png"/>
+        <Resource Include="Resources\maze\maze44.png"/>
+        <Resource Include="Resources\maze\maze51.png"/>
+        <Resource Include="Resources\maze\maze53.png"/>
+        <Resource Include="Resources\memory\background.png"/>
+        <Resource Include="Resources\memory\fir_1.png"/>
+        <Resource Include="Resources\memory\fir_2.png"/>
+        <Resource Include="Resources\memory\fir_3.png"/>
+        <Resource Include="Resources\memory\fir_4.png"/>
+        <Resource Include="Resources\memory\fou_1.png"/>
+        <Resource Include="Resources\memory\fou_2.png"/>
+        <Resource Include="Resources\memory\fou_3.png"/>
+        <Resource Include="Resources\memory\fou_4.png"/>
+        <Resource Include="Resources\memory\light_1.png"/>
+        <Resource Include="Resources\memory\light_2.png"/>
+        <Resource Include="Resources\memory\light_3.png"/>
+        <Resource Include="Resources\memory\light_4.png"/>
+        <Resource Include="Resources\memory\light_5.png"/>
+        <Resource Include="Resources\memory\main_1.png"/>
+        <Resource Include="Resources\memory\main_2.png"/>
+        <Resource Include="Resources\memory\main_3.png"/>
+        <Resource Include="Resources\memory\main_4.png"/>
+        <Resource Include="Resources\memory\out_1.png"/>
+        <Resource Include="Resources\memory\out_4.png"/>
+        <Resource Include="Resources\memory\out_2.png"/>
+        <Resource Include="Resources\memory\out_3.png"/>
+        <Resource Include="Resources\memory\sec_1.png"/>
+        <Resource Include="Resources\memory\sec_2.png"/>
+        <Resource Include="Resources\memory\sec_3.png"/>
+        <Resource Include="Resources\memory\sec_4.png"/>
+        <Resource Include="Resources\memory\thi_1.png"/>
+        <Resource Include="Resources\memory\thi_2.png"/>
+        <Resource Include="Resources\memory\thi_3.png"/>
+        <Resource Include="Resources\memory\thi_4.png"/>
+        <Resource Include="Resources\normal_wires\ports.png"/>
+        <Resource Include="Resources\normal_wires\wire_1_bla.png"/>
+        <Resource Include="Resources\normal_wires\wire_1_blu.png"/>
+        <Resource Include="Resources\normal_wires\wire_1_broken.png"/>
+        <Resource Include="Resources\normal_wires\wire_1_red.png"/>
+        <Resource Include="Resources\normal_wires\wire_1_whi.png"/>
+        <Resource Include="Resources\normal_wires\wire_1_yel.png"/>
+        <Resource Include="Resources\normal_wires\wire_2_bla.png"/>
+        <Resource Include="Resources\normal_wires\wire_2_blu.png"/>
+        <Resource Include="Resources\normal_wires\wire_2_broken.png"/>
+        <Resource Include="Resources\normal_wires\wire_2_red.png"/>
+        <Resource Include="Resources\normal_wires\wire_2_whi.png"/>
+        <Resource Include="Resources\normal_wires\wire_2_yel.png"/>
+        <Resource Include="Resources\normal_wires\wire_3_bla.png"/>
+        <Resource Include="Resources\normal_wires\wire_3_blu.png"/>
+        <Resource Include="Resources\normal_wires\wire_3_broken.png"/>
+        <Resource Include="Resources\normal_wires\wire_3_red.png"/>
+        <Resource Include="Resources\normal_wires\wire_3_whi.png"/>
+        <Resource Include="Resources\normal_wires\wire_3_yel.png"/>
+        <Resource Include="Resources\normal_wires\wire_4_bla.png"/>
+        <Resource Include="Resources\normal_wires\wire_4_blu.png"/>
+        <Resource Include="Resources\normal_wires\wire_4_broken.png"/>
+        <Resource Include="Resources\normal_wires\wire_4_red.png"/>
+        <Resource Include="Resources\normal_wires\wire_4_whi.png"/>
+        <Resource Include="Resources\normal_wires\wire_4_yel.png"/>
+        <Resource Include="Resources\normal_wires\wire_5_bla.png"/>
+        <Resource Include="Resources\normal_wires\wire_5_blu.png"/>
+        <Resource Include="Resources\normal_wires\wire_5_broken.png"/>
+        <Resource Include="Resources\normal_wires\wire_5_red.png"/>
+        <Resource Include="Resources\normal_wires\wire_5_whi.png"/>
+        <Resource Include="Resources\normal_wires\wire_5_yel.png"/>
+        <Resource Include="Resources\normal_wires\wire_6_bla.png"/>
+        <Resource Include="Resources\normal_wires\wire_6_blu.png"/>
+        <Resource Include="Resources\normal_wires\wire_6_broken.png">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Resource>
+        <Resource Include="Resources\normal_wires\wire_6_red.png"/>
+        <Resource Include="Resources\normal_wires\wire_6_whi.png"/>
+        <Resource Include="Resources\normal_wires\wire_6_yel.png"/>
+    </ItemGroup>
+    <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets"/>
+</Project>

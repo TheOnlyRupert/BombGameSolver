@@ -194,7 +194,7 @@ namespace BombGameSolver.Source.ViewModel {
                             Button_You = Button_Your = Button_YoureMarked = Button_You_Are = "False";
         }
 
-#region ButtonTrueFalse
+        #region ButtonTrueFalse
 
         public string Button_Blank {
             get => _button_Blank;
@@ -420,6 +420,6 @@ namespace BombGameSolver.Source.ViewModel {
             }
         }
 
-#endregion
+        #endregion
     }
 }

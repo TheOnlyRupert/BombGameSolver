@@ -12,7 +12,7 @@ namespace BombGameSolver.Source.ViewModel {
             CurrentViewType = "view_0";
             ButtonCommandLogic(CurrentStrikes);
 
-            var simpleMessenger = CrossViewMessenger.Instance;
+            CrossViewMessenger simpleMessenger = CrossViewMessenger.Instance;
             simpleMessenger.MessageValueChanged += OnSimpleMessengerValueChanged;
             simpleMessenger.PushMessage("KeyBindings_SimonSaysModule", null);
         }

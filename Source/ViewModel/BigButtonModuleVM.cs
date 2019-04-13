@@ -12,7 +12,7 @@ namespace BombGameSolver.Source.ViewModel {
             OutputText = "Immediately";
             ButtonImage = "../../Resources/button/button_Red.png";
 
-            var simpleMessenger = CrossViewMessenger.Instance;
+            CrossViewMessenger simpleMessenger = CrossViewMessenger.Instance;
             simpleMessenger.MessageValueChanged += OnSimpleMessengerValueChanged;
             simpleMessenger.PushMessage("KeyBindings_BigButtonModule", null);
         }
