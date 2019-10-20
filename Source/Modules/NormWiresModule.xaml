@@ -1,54 +1,48 @@
-﻿<Page x:Class="BombGameSolver.Source.Modules.NormWiresModule"
-      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-      mc:Ignorable="d" Focusable="False">
+﻿<Page x:Class="BombGameSolver.Source.Modules.NormWiresModule" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" mc:Ignorable="d" Focusable="False">
     <Grid Background="DarkSlateGray" Focusable="False">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="4*" />
-            <ColumnDefinition Width="3*" />
+            <ColumnDefinition Width="4*"/>
+            <ColumnDefinition Width="3*"/>
         </Grid.ColumnDefinitions>
 
-        <Image Source="../../Resources/normal_wires/ports.png" Grid.Column="0" Margin="10" Focusable="False" />
-        <Image Source="{Binding Wire1View}" Grid.Column="0" Margin="10" Focusable="False" />
-        <Image Source="{Binding Wire2View}" Grid.Column="0" Margin="10" Focusable="False" />
-        <Image Source="{Binding Wire3View}" Grid.Column="0" Margin="10" Focusable="False" />
-        <Image Source="{Binding Wire4View}" Grid.Column="0" Margin="10" Focusable="False" />
-        <Image Source="{Binding Wire5View}" Grid.Column="0" Margin="10" Focusable="False" />
-        <Image Source="{Binding Wire6View}" Grid.Column="0" Margin="10" Focusable="False" />
-        <Image Source="{Binding WireBrokenView}" Grid.Column="0" Margin="10" Focusable="False" />
+        <Image Source="../../Resources/normal_wires/ports.png" Grid.Column="0" Margin="10" Focusable="False"/>
+        <Image Source="{Binding Wire1View}" Grid.Column="0" Margin="10" Focusable="False"/>
+        <Image Source="{Binding Wire2View}" Grid.Column="0" Margin="10" Focusable="False"/>
+        <Image Source="{Binding Wire3View}" Grid.Column="0" Margin="10" Focusable="False"/>
+        <Image Source="{Binding Wire4View}" Grid.Column="0" Margin="10" Focusable="False"/>
+        <Image Source="{Binding Wire5View}" Grid.Column="0" Margin="10" Focusable="False"/>
+        <Image Source="{Binding Wire6View}" Grid.Column="0" Margin="10" Focusable="False"/>
+        <Image Source="{Binding WireBrokenView}" Grid.Column="0" Margin="10" Focusable="False"/>
 
         <Grid Grid.Column="1" Focusable="False">
             <Grid.RowDefinitions>
-                <RowDefinition Height="3*" />
-                <RowDefinition Height="2*" />
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="2*"/>
             </Grid.RowDefinitions>
 
             <StackPanel VerticalAlignment="Bottom" Margin="10 0 10 0" Focusable="False">
-                <Button Content="Add White  (1)" Padding="5" FontSize="20" Margin="5" Foreground="Black"
-                        Background="White" Command="{Binding ButtonCommand}" CommandParameter="whi" Focusable="False" />
-                <Button Content="Add Yellow (2)" Padding="5" FontSize="20" Margin="5" Foreground="Black"
-                        Background="Yellow" Command="{Binding ButtonCommand}" CommandParameter="yel" Focusable="False" />
-                <Button Content="Add Blue   (3)" Padding="5" FontSize="20" Margin="5" Foreground="White"
-                        Background="Blue" Command="{Binding ButtonCommand}" CommandParameter="blu" Focusable="False" />
-                <Button Content="Add Red    (4)" Padding="5" FontSize="20" Margin="5" Foreground="White"
-                        Background="Red" Command="{Binding ButtonCommand}" CommandParameter="red" Focusable="False" />
-                <Button Content="Add Black  (5)" Padding="5" FontSize="20" Margin="5" Foreground="White"
-                        Background="Black" Command="{Binding ButtonCommand}" CommandParameter="bla" Focusable="False" />
+                <Button Content="Add White  (1)" Padding="5" FontSize="20" Margin="5" Foreground="Black" Background="White" Command="{Binding ButtonCommand}"
+                        CommandParameter="whi" Focusable="False"/>
+                <Button Content="Add Yellow (2)" Padding="5" FontSize="20" Margin="5" Foreground="Black" Background="Yellow" Command="{Binding ButtonCommand}"
+                        CommandParameter="yel" Focusable="False"/>
+                <Button Content="Add Blue   (3)" Padding="5" FontSize="20" Margin="5" Foreground="White" Background="Blue" Command="{Binding ButtonCommand}" CommandParameter="blu"
+                        Focusable="False"/>
+                <Button Content="Add Red    (4)" Padding="5" FontSize="20" Margin="5" Foreground="White" Background="Red" Command="{Binding ButtonCommand}" CommandParameter="red"
+                        Focusable="False"/>
+                <Button Content="Add Black  (5)" Padding="5" FontSize="20" Margin="5" Foreground="White" Background="Black" Command="{Binding ButtonCommand}"
+                        CommandParameter="bla" Focusable="False"/>
 
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 10 0 0" Focusable="False">
-                    <Button Content="Clear Last Entry  (Back)" Padding="5" FontSize="16" Margin="5" Foreground="White"
-                            Background="Transparent" Command="{Binding ButtonCommand}" CommandParameter="delete"
-                            Focusable="False" />
-                    <TextBlock Text="{Binding RoundCounter}" Padding="5" FontSize="24" Margin="20 0 0 5"
-                               Foreground="White" Focusable="False" />
+                    <Button Content="Clear Last Entry  (Back)" Padding="5" FontSize="16" Margin="5" Foreground="White" Background="Transparent" Command="{Binding ButtonCommand}"
+                            CommandParameter="delete" Focusable="False"/>
+                    <TextBlock Text="{Binding RoundCounter}" Padding="5" FontSize="24" Margin="20 0 0 5" Foreground="White" Focusable="False"/>
                 </StackPanel>
             </StackPanel>
 
-            <TextBox Text="{Binding OutputText}" Grid.Row="1" FontSize="72" HorizontalAlignment="Stretch"
-                     HorizontalContentAlignment="Center" Padding="5 0 5 0" VerticalAlignment="Center"
-                     Foreground="White" Background="Transparent" Margin="20" IsReadOnly="True" Focusable="False" />
+            <TextBox Text="{Binding OutputText}" Grid.Row="1" FontSize="72" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" Padding="5 0 5 0"
+                     VerticalAlignment="Center" Foreground="White" Background="Transparent" Margin="20" IsReadOnly="True" Focusable="False"/>
         </Grid>
     </Grid>
 </Page>

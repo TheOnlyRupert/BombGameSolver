@@ -12,7 +12,9 @@ namespace BombGameSolver.Source.ViewModel {
             _serialEvenButtonText,
             _litCarButtonText,
             _litFrkButtonText,
-            _parPortButtonText;
+            _parPortButtonText,
+            _copyrightText,
+            _versionText;
 
         public MainSettingsGroupVM() {
             SerialVowelButtonText = "False";
@@ -20,11 +22,29 @@ namespace BombGameSolver.Source.ViewModel {
             LitCarButtonText = "False";
             LitFrkButtonText = "False";
             ParPortButtonText = "False";
+            CopyrightText = ReferenceValues.COPYRIGHT;
+            VersionText = "v" + ReferenceValues.VERSION;
 
             _crossViewMessenger = CrossViewMessenger.Instance;
         }
 
-#region SerialVowel
+        public string CopyrightText {
+            get => _copyrightText;
+            set {
+                _copyrightText = value;
+                RaisePropertyChangedEvent("CopyrightText");
+            }
+        }
+
+        public string VersionText {
+            get => _versionText;
+            set {
+                _versionText = value;
+                RaisePropertyChangedEvent("VersionText");
+            }
+        }
+
+        #region SerialVowel
 
         public string SerialVowelButtonText {
             get => _serialVowelButtonText;
@@ -43,9 +63,9 @@ namespace BombGameSolver.Source.ViewModel {
             _crossViewMessenger.PushMessage("SerialVowelLogic", null);
         }
 
-#endregion
+        #endregion
 
-#region SerialEven
+        #region SerialEven
 
         public string SerialEvenButtonText {
             get => _serialEvenButtonText;
@@ -64,9 +84,9 @@ namespace BombGameSolver.Source.ViewModel {
             _crossViewMessenger.PushMessage("SerialEvenLogic", null);
         }
 
-#endregion
+        #endregion
 
-#region LitCAR
+        #region LitCAR
 
         public string LitCarButtonText {
             get => _litCarButtonText;
@@ -85,9 +105,9 @@ namespace BombGameSolver.Source.ViewModel {
             _crossViewMessenger.PushMessage("LitCarLogic", null);
         }
 
-#endregion
+        #endregion
 
-#region LitFRK
+        #region LitFRK
 
         public string LitFrkButtonText {
             get => _litFrkButtonText;
@@ -106,9 +126,9 @@ namespace BombGameSolver.Source.ViewModel {
             _crossViewMessenger.PushMessage("LitFrkLogic", null);
         }
 
-#endregion
+        #endregion
 
-#region ParallelPort
+        #region ParallelPort
 
         public string ParPortButtonText {
             get => _parPortButtonText;
@@ -127,9 +147,9 @@ namespace BombGameSolver.Source.ViewModel {
             _crossViewMessenger.PushMessage("ParPortLogic", null);
         }
 
-#endregion
+        #endregion
 
-#region ResetButton
+        #region ResetButton
 
         public ICommand ResetButtonCommand => new DelegateCommand(ResetButtonLogic, true);
 
@@ -147,12 +167,12 @@ namespace BombGameSolver.Source.ViewModel {
             _crossViewMessenger.PushMessage("ParPortLogic", null);
             _crossViewMessenger.PushMessage("BatteryAmountChanged", null);
             _crossViewMessenger.PushMessage("KEY_F12", null);
-            _crossViewMessenger.PushMessage("KEY_Tab", null);
+            _crossViewMessenger.PushMessage("KEY_F1", null);
         }
 
-#endregion
+        #endregion
 
-#region DevButton
+        #region DevButton
 
         public ICommand DevButtonCommand => new DelegateCommand(DevButtonLogic, true);
 
@@ -162,9 +182,9 @@ namespace BombGameSolver.Source.ViewModel {
             _crossViewMessenger.PushMessage("DevButtonLogic", null);
         }
 
-#endregion
+        #endregion
 
-#region Battery
+        #region Battery
 
         public ICommand BatteryCommand => new DelegateCommand(BatteryLogic, true);
 
@@ -186,6 +206,6 @@ namespace BombGameSolver.Source.ViewModel {
             }
         }
 
-#endregion
+        #endregion
     }
 }

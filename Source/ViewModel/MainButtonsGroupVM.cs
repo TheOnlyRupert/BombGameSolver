@@ -25,12 +25,9 @@ namespace BombGameSolver.Source.ViewModel {
         private void ButtonCommandLogic(object param) {
             switch (param) {
             case "main":
-                /* Just press Tab... nothing else needed */
-                _crossViewMessenger.PushMessage("KEY_Tab", null);
+                _crossViewMessenger.PushMessage("KEY_F1", null);
                 break;
-
             case "reset":
-                /* Just press f12... nothing else needed */
                 _crossViewMessenger.PushMessage("KEY_F12", null);
                 break;
 

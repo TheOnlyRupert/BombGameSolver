@@ -1,6 +1,7 @@
 using System;
 using System.Media;
 using System.Windows;
+using System.Windows.Resources;
 
 namespace BombGameSolver.Source.Reference {
     public class PlaySound {
@@ -8,8 +9,7 @@ namespace BombGameSolver.Source.Reference {
         private readonly bool _canPlay;
 
         public PlaySound(string name) {
-            var sri = Application.GetResourceStream(
-                new Uri("pack://application:,,,/BombGameSolver;component/Resources/global/" + name + ".wav"));
+            StreamResourceInfo sri = Application.GetResourceStream(new Uri("pack://application:,,,/BombGameSolver;component/Resources/global/" + name + ".wav"));
 
             if (sri != null) {
                 _audio = new SoundPlayer(sri.Stream);

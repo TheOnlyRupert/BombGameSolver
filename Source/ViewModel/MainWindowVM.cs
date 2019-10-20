@@ -8,13 +8,30 @@ namespace BombGameSolver.Source.ViewModel {
         private readonly CrossViewMessenger _crossViewMessenger;
         private string _iconImage, _devLogWindowHeight;
 
-        private Key _key_numpad1, _key_numpad2, _key_numpad3, _key_numpad4, _key_numpad5, _key_numpad6, _key_numpad7,
-            _key_numpad8, _key_numpad9, _key_numpad0,
-            _key_D1, _key_D2, _key_D3, _key_D4, _key_D5, _key_D6, _key_D7, _key_D8, _key_D9, _key_D0;
+        private Key _key_numpad1,
+            _key_numpad2,
+            _key_numpad3,
+            _key_numpad4,
+            _key_numpad5,
+            _key_numpad6,
+            _key_numpad7,
+            _key_numpad8,
+            _key_numpad9,
+            _key_numpad0,
+            _key_D1,
+            _key_D2,
+            _key_D3,
+            _key_D4,
+            _key_D5,
+            _key_D6,
+            _key_D7,
+            _key_D8,
+            _key_D9,
+            _key_D0;
 
         public MainWindowVM() {
             /* Settings */
-            var settings = new SettingsCsv();
+            SettingsCsv settings = new SettingsCsv();
             settings.GetSettings_OneTime();
 
             IconImage = "../../Resources/icons/icon_main.png";

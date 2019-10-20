@@ -53,14 +53,14 @@ namespace BombGameSolver.Source.ViewModel {
 
         private void AddTime(object param) {
             if (_timerState == 0) {
-                _startTime = _startTime + 15;
+                _startTime += 15;
                 TimerDisplay = _startTime.ToString();
             }
         }
 
         private void RemTime(object param) {
             if (_timerState == 0) {
-                _startTime = _startTime - 15;
+                _startTime -= 15;
                 TimerDisplay = _startTime.ToString();
             }
         }

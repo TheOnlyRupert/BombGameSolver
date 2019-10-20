@@ -21,7 +21,7 @@ namespace BombGameSolver.Source.ViewModel {
         public NormWiresViewModel() {
             RoundCounter = 0;
 
-            var simpleMessenger = CrossViewMessenger.Instance;
+            CrossViewMessenger simpleMessenger = CrossViewMessenger.Instance;
             simpleMessenger.MessageValueChanged += OnSimpleMessengerValueChanged;
             simpleMessenger.PushMessage("KeyBindings_NormWiresModule", null);
         }
@@ -186,8 +186,8 @@ namespace BombGameSolver.Source.ViewModel {
                 break;
             case 4:
                 /* If 2+ red && serial odd -> cut last red */
-                var temp = 0;
-                foreach (var str in _wireArray) {
+                int temp = 0;
+                foreach (string str in _wireArray) {
                     if (str == "red") {
                         temp++;
                     }
@@ -197,7 +197,7 @@ namespace BombGameSolver.Source.ViewModel {
                     Console.WriteLine(@"[4x] 2+ Red && Serial Odd -> Cut Last Red");
 
                     /* Get largest value of wireArray that has a red wire */
-                    for (var i = 3; i < 4; i--) {
+                    for (int i = 3; i < 4; i--) {
                         if (_wireArray[i] == "red") {
                             /* Don't check for 1st wire... because like logic */
                             switch (i) {
@@ -232,7 +232,7 @@ namespace BombGameSolver.Source.ViewModel {
 
                 /* If 1x blue -> cut first */
                 temp = 0;
-                foreach (var str in _wireArray) {
+                foreach (string str in _wireArray) {
                     if (str == "blu") {
                         temp++;
                     }
@@ -247,7 +247,7 @@ namespace BombGameSolver.Source.ViewModel {
 
                 /* If 2+ yellow -> cut last */
                 temp = 0;
-                foreach (var str in _wireArray) {
+                foreach (string str in _wireArray) {
                     if (str == "yel") {
                         temp++;
                     }
@@ -277,7 +277,7 @@ namespace BombGameSolver.Source.ViewModel {
 
                 /* If 1x Red && 2+ Yellow -> Cut First */
                 temp = 0;
-                foreach (var str in _wireArray) {
+                foreach (string str in _wireArray) {
                     if (str == "red") {
                         temp++;
                     }
@@ -285,7 +285,7 @@ namespace BombGameSolver.Source.ViewModel {
 
                 if (temp == 1) {
                     temp = 0;
-                    foreach (var str in _wireArray) {
+                    foreach (string str in _wireArray) {
                         if (str == "yel") {
                             temp++;
                         }
@@ -325,7 +325,7 @@ namespace BombGameSolver.Source.ViewModel {
 
                 /* If 1x Yellow and 2+ White -> Cut Fourth */
                 temp = 0;
-                foreach (var str in _wireArray) {
+                foreach (string str in _wireArray) {
                     if (str == "yel") {
                         temp++;
                     }
@@ -333,7 +333,7 @@ namespace BombGameSolver.Source.ViewModel {
 
                 if (temp == 1) {
                     temp = 0;
-                    foreach (var str in _wireArray) {
+                    foreach (string str in _wireArray) {
                         if (str == "whi") {
                             temp++;
                         }

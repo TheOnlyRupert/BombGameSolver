@@ -16,7 +16,7 @@ namespace BombGameSolver.Source.Control {
         }
 
         public static void DisableChanged(object sender, DependencyPropertyChangedEventArgs e) {
-            var frame = (Frame) sender;
+            Frame frame = (Frame) sender;
             frame.Navigated += DontNavigate;
             frame.NavigationUIVisibility = NavigationUIVisibility.Hidden;
         }

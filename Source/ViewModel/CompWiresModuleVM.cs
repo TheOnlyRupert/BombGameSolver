@@ -7,8 +7,14 @@ namespace BombGameSolver.Source.ViewModel {
     public class CompWiresModuleVM : BaseViewModel {
         private bool _isLedOn, _isStarOn;
 
-        private string _wireImage, _ledImage, _starImage, _ledButtonText, _starButtonText, _brokenWireImage,
-            _outputText, _wireColor;
+        private string _wireImage,
+            _ledImage,
+            _starImage,
+            _ledButtonText,
+            _starButtonText,
+            _brokenWireImage,
+            _outputText,
+            _wireColor;
 
         public CompWiresModuleVM() {
             WireImage = "../../Resources/comp_wires/wire_whi.png";
@@ -17,7 +23,7 @@ namespace BombGameSolver.Source.ViewModel {
             _wireColor = "white";
             WireLogic();
 
-            var simpleMessenger = CrossViewMessenger.Instance;
+            CrossViewMessenger simpleMessenger = CrossViewMessenger.Instance;
             simpleMessenger.MessageValueChanged += OnSimpleMessengerValueChanged;
         }
 

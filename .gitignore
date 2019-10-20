@@ -3,12 +3,7 @@
 /.idea
 /bin
 /obj
-/info
+/Versions
 
 # Ignored Files:
 .gitattributes
-*.csproj
-*.DotSettings
-*.sln
-*.sln.DotSettings
-BombGameSolver.sln.DotSettings

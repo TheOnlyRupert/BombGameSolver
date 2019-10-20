@@ -4,15 +4,24 @@ using BombGameSolver.Source.ViewModel.Base;
 
 namespace BombGameSolver.Source.ViewModel {
     public class SimonSaysModuleVM : BaseViewModel {
-        private string _currentStrikes, _currentViewType, _bluOutput, _redOutput, _yelOutput, _greOutput,
-            _text_bluOutput, _text_redOutput, _text_yelOutput, _text_greOutput, _backgroundType;
+        private string _currentStrikes,
+            _currentViewType,
+            _bluOutput,
+            _redOutput,
+            _yelOutput,
+            _greOutput,
+            _text_bluOutput,
+            _text_redOutput,
+            _text_yelOutput,
+            _text_greOutput,
+            _backgroundType;
 
         public SimonSaysModuleVM() {
             CurrentStrikes = "strike_0";
             CurrentViewType = "view_0";
             ButtonCommandLogic(CurrentStrikes);
 
-            var simpleMessenger = CrossViewMessenger.Instance;
+            CrossViewMessenger simpleMessenger = CrossViewMessenger.Instance;
             simpleMessenger.MessageValueChanged += OnSimpleMessengerValueChanged;
             simpleMessenger.PushMessage("KeyBindings_SimonSaysModule", null);
         }

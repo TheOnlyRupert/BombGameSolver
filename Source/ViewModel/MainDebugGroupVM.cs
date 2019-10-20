@@ -1,13 +1,17 @@
+using System.Collections.Generic;
+using BombGameSolver.Source.Reference;
 using BombGameSolver.Source.ViewModel.Base;
 
 namespace BombGameSolver.Source.ViewModel {
     public class MainDebugGroupVM : BaseViewModel {
         private string _debugTextOutput, _caretIndexPos;
+        private List<string> TextList = new List<string>();
 
         public MainDebugGroupVM() {
-            DebugTextOutput = "Copyright © 2018 Robert Higgins\n\n\n";
+            //TextList.Add(ReferenceValues.COPYRIGHT);
+            DebugTextOutput = ReferenceValues.COPYRIGHT + ",  v" + ReferenceValues.VERSION + "\n\n";
 
-            var simpleMessenger = CrossViewMessenger.Instance;
+            CrossViewMessenger simpleMessenger = CrossViewMessenger.Instance;
             simpleMessenger.MessageValueChanged += OnSimpleMessengerValueChanged;
         }
 
@@ -28,9 +32,17 @@ namespace BombGameSolver.Source.ViewModel {
         }
 
         private void OnSimpleMessengerValueChanged(object sender, MessageValueChangedEventArgs e) {
-            if (e.PropertyName == "UpdateDebugTextOutput") {
-                DebugTextOutput = DebugTextOutput + "\n" + e.Value;
+            //TODO: This is way too slow...
+            if (e.PropertyName == "AddDebugText") {
+                /*
+                TextList.Add("[INFO] " + DateTime.Now.ToString("HH:mm:ss") + "] " + e.Value);
+
+                foreach (string line in TextList) {
+                    DebugTextOutput += line + "\n";
+                }
+
                 CaretIndexPos = DebugTextOutput.Length.ToString();
+                */
             }
         }
     }

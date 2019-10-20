@@ -1,32 +1,26 @@
-﻿<Page x:Class="BombGameSolver.Source.Groups.MainDebugGroup"
-      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-      xmlns:control="clr-namespace:BombGameSolver.Source.Control"
-      mc:Ignorable="d" Background="DarkSlateGray">
+﻿<Page x:Class="BombGameSolver.Source.Groups.MainDebugGroup" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:control="clr-namespace:BombGameSolver.Source.Control" mc:Ignorable="d" Background="DarkSlateGray">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="*" />
-            <RowDefinition Height="30" />
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="30"/>
         </Grid.RowDefinitions>
 
-        <control:AutoScrollingTextBox Text="{Binding DebugTextOutput}" FontSize="16" Background="Transparent"
-                                      Foreground="LightGray" TextWrapping="Wrap" IsReadOnly="True"
-                                      VerticalScrollBarVisibility="Auto" />
+        <control:AutoScrollingTextBox Text="{Binding DebugTextOutput}" FontSize="16" Background="Transparent" Foreground="LightGray" TextWrapping="Wrap" IsReadOnly="True"
+                                      VerticalScrollBarVisibility="Auto"/>
 
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="160" />
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="160"/>
             </Grid.ColumnDefinitions>
 
-            <TextBox VerticalContentAlignment="Center" FontSize="16" Background="Transparent" Foreground="White"
-                     MaxLength="255" Padding="5 0" />
+            <TextBox VerticalContentAlignment="Center" FontSize="16" Background="Transparent" Foreground="White" MaxLength="255" Padding="5 0"/>
 
             <StackPanel Orientation="Horizontal" Grid.Column="1">
-                <Button Content="Submit" FontSize="18" Width="80" Background="Transparent" Foreground="White" />
-                <Button Content="Clear" FontSize="18" Width="80" Background="Transparent" Foreground="White" />
+                <Button Content="Submit" FontSize="18" Width="80" Background="Transparent" Foreground="White"/>
+                <Button Content="Clear" FontSize="18" Width="80" Background="Transparent" Foreground="White"/>
             </StackPanel>
         </Grid>
     </Grid>

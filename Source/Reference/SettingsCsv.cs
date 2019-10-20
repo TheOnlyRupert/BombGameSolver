@@ -4,8 +4,8 @@ using System.Windows;
 
 namespace BombGameSolver.Source.Reference {
     public class SettingsCsv {
-        private readonly string _fileDirectory =
-            Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "/TheOnlyRupert/BombGameSolver/";
+        private readonly string _fileDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) +
+                                                 "/TheOnlyRupert/BombGameSolver/";
 
         public SettingsCsv() {
             try {
@@ -13,7 +13,7 @@ namespace BombGameSolver.Source.Reference {
 
                 if (!File.Exists(_fileDirectory + "settings.csv")) {
                     Console.WriteLine(@"settings.csv does not exist. Restoring default settings");
-                    var file = new StreamWriter(_fileDirectory + "settings.csv", true);
+                    StreamWriter file = new StreamWriter(_fileDirectory + "settings.csv", true);
                     file.WriteLine("!KEY,VALUE\nSimonSaysViewType,0\nSequWiresSounds,1");
                     file.Close();
                 }
@@ -29,10 +29,10 @@ namespace BombGameSolver.Source.Reference {
             ReferenceValues.SequWiresSounds = true;
 
             try {
-                var streamReader = new StreamReader(_fileDirectory + "settings.csv");
+                StreamReader streamReader = new StreamReader(_fileDirectory + "settings.csv");
 
                 while (!streamReader.EndOfStream) {
-                    var str = streamReader.ReadLine();
+                    string str = streamReader.ReadLine();
 
                     if (str != null && str[0] != '!') {
                         string[] strArray = str.Split(',');

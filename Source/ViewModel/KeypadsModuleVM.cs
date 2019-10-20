@@ -7,11 +7,39 @@ namespace BombGameSolver.Source.ViewModel {
     public class KeypadsModuleVM : BaseViewModel {
         private readonly List<int> _nonDisabledColumns;
 
-        private string _columnDisabled0, _columnDisabled1, _columnDisabled2, _columnDisabled3, _columnDisabled4,
-            _columnDisabled5, _keypad_3_broken, _keypad_3_fancy, _keypad_6, _keypad_ae, _keypad_at, _keypad_balloon,
-            _keypad_boobs, _keypad_c, _keypad_c_rev, _keypad_copyright, _keypad_e, _keypad_fork, _keypad_h, _keypad_hk,
-            _keypad_kk, _keypad_lightning, _keypad_n, _keypad_omega, _keypad_paragraph, _keypad_pound, _keypad_pyramid,
-            _keypad_question, _keypad_smile, _keypad_star_hol, _keypad_star_sol, _keypad_tb, _keypad_y;
+        private string _columnDisabled0,
+            _columnDisabled1,
+            _columnDisabled2,
+            _columnDisabled3,
+            _columnDisabled4,
+            _columnDisabled5,
+            _keypad_3_broken,
+            _keypad_3_fancy,
+            _keypad_6,
+            _keypad_ae,
+            _keypad_at,
+            _keypad_balloon,
+            _keypad_boobs,
+            _keypad_c,
+            _keypad_c_rev,
+            _keypad_copyright,
+            _keypad_e,
+            _keypad_fork,
+            _keypad_h,
+            _keypad_hk,
+            _keypad_kk,
+            _keypad_lightning,
+            _keypad_n,
+            _keypad_omega,
+            _keypad_paragraph,
+            _keypad_pound,
+            _keypad_pyramid,
+            _keypad_question,
+            _keypad_smile,
+            _keypad_star_hol,
+            _keypad_star_sol,
+            _keypad_tb,
+            _keypad_y;
 
         public KeypadsModuleVM() {
             _nonDisabledColumns = new List<int>();
@@ -19,7 +47,7 @@ namespace BombGameSolver.Source.ViewModel {
             ColumnDisabled0 = ColumnDisabled1 = ColumnDisabled2 = ColumnDisabled3 = ColumnDisabled4 =
                 ColumnDisabled5 = "False";
 
-            var simpleMessenger = CrossViewMessenger.Instance;
+            CrossViewMessenger simpleMessenger = CrossViewMessenger.Instance;
             simpleMessenger.MessageValueChanged += OnSimpleMessengerValueChanged;
         }
 
@@ -663,7 +691,7 @@ namespace BombGameSolver.Source.ViewModel {
             }
 
             /* Disable any columns added to the list */
-            foreach (var column in _nonDisabledColumns) {
+            foreach (int column in _nonDisabledColumns) {
                 switch (column) {
                 case 0:
                     ColumnDisabled0 = "False";

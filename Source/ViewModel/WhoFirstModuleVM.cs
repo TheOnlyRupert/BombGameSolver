@@ -3,11 +3,34 @@ using BombGameSolver.Source.ViewModel.Base;
 
 namespace BombGameSolver.Source.ViewModel {
     public class WhoFirstModuleVM : BaseViewModel {
-        private string _button_Blank, _button_Done, _button_First, _button_Hold, _button_Left, _button_Like,
-            _button_Middle, _button_Next, _button_No, _button_Nothing, _button_Okay, _button_Press, _button_Ready,
-            _button_Right, _button_Sure, _button_U, _button_Ur, _button_Uhhh, _button_Uh_Uh, _button_Uh_Huh,
-            _button_Wait, _button_What, _button_WhatQuestion, _button_Yes, _button_You, _button_Your,
-            _button_YoureMarked, _button_You_Are;
+        private string _button_Blank,
+            _button_Done,
+            _button_First,
+            _button_Hold,
+            _button_Left,
+            _button_Like,
+            _button_Middle,
+            _button_Next,
+            _button_No,
+            _button_Nothing,
+            _button_Okay,
+            _button_Press,
+            _button_Ready,
+            _button_Right,
+            _button_Sure,
+            _button_U,
+            _button_Ur,
+            _button_Uhhh,
+            _button_Uh_Uh,
+            _button_Uh_Huh,
+            _button_Wait,
+            _button_What,
+            _button_WhatQuestion,
+            _button_Yes,
+            _button_You,
+            _button_Your,
+            _button_YoureMarked,
+            _button_You_Are;
 
         private string _outputTextBox, _currentValue;
 
@@ -194,7 +217,7 @@ namespace BombGameSolver.Source.ViewModel {
                             Button_You = Button_Your = Button_YoureMarked = Button_You_Are = "False";
         }
 
-#region ButtonTrueFalse
+        #region ButtonTrueFalse
 
         public string Button_Blank {
             get => _button_Blank;
@@ -420,6 +443,6 @@ namespace BombGameSolver.Source.ViewModel {
             }
         }
 
-#endregion
+        #endregion
     }
 }
