@@ -5,7 +5,8 @@ using System.Windows.Navigation;
 namespace BombGameSolver.Source.Control {
     public static class DisableNavigation {
         public static readonly DependencyProperty DisableProperty = DependencyProperty.RegisterAttached(
-            "Disable", typeof(bool), typeof(DisableNavigation), new PropertyMetadata(false, DisableChanged));
+            "Disable", typeof(bool), typeof(DisableNavigation), new PropertyMetadata(false, DisableChanged)
+        );
 
         public static bool GetDisable(DependencyObject o) {
             return (bool) o.GetValue(DisableProperty);

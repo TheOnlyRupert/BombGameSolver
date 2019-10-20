@@ -225,9 +225,11 @@ namespace BombGameSolver.Source.ViewModel {
 
                     _memoryLogic[_roundNum, 4] = int.Parse(lastNum.ToString());
 
-                    Console.WriteLine("Round " + (_roundNum + 1) + " Input: " + _memoryLogic[_roundNum, 0] + ", " +
-                                      _memoryLogic[_roundNum, 1] + ", " + _memoryLogic[_roundNum, 2] + ", " +
-                                      _memoryLogic[_roundNum, 3] + ", " + _memoryLogic[_roundNum, 4]);
+                    Console.WriteLine(
+                        "Round " + (_roundNum + 1) + " Input: " + _memoryLogic[_roundNum, 0] + ", " +
+                        _memoryLogic[_roundNum, 1] + ", " + _memoryLogic[_roundNum, 2] + ", " +
+                        _memoryLogic[_roundNum, 3] + ", " + _memoryLogic[_roundNum, 4]
+                    );
 
                     _canSubmit = true;
                     OutputLogic();
@@ -251,6 +253,7 @@ namespace BombGameSolver.Source.ViewModel {
                     _memoryPosNum[0, 1] = _memoryLogic[0, 2];
                     Console.WriteLine("Round 1 Logic: if 1 or 2, pos 2\nRound 1 Output: Pos: " + _memoryPosNum[0, 0] + ", Num: " +
                                       _memoryPosNum[0, 1]);
+
                     break;
                 /* Position 3 */
                 case 3:
@@ -258,6 +261,7 @@ namespace BombGameSolver.Source.ViewModel {
                     _memoryPosNum[0, 1] = _memoryLogic[0, 3];
                     Console.WriteLine("Round 1 Logic: if 3, pos 3\nRound 1 Output: Pos: " + _memoryPosNum[0, 0] + ", Num: " +
                                       _memoryPosNum[0, 1]);
+
                     break;
                 /* Position 4 */
                 case 4:
@@ -265,6 +269,7 @@ namespace BombGameSolver.Source.ViewModel {
                     _memoryPosNum[0, 1] = _memoryLogic[0, 4];
                     Console.WriteLine("Round 1 Logic: if 4, pos 4\nRound 1 Output: Pos: " + _memoryPosNum[0, 0] + ", Num: " +
                                       _memoryPosNum[0, 1]);
+
                     break;
                 }
 
@@ -284,9 +289,9 @@ namespace BombGameSolver.Source.ViewModel {
                             break;
                         }
                     }
-
                     Console.WriteLine("Round 2 Logic: if 1, label 4\nRound 2 Output: Pos: " + _memoryPosNum[1, 0] + ", Num: " +
                                       _memoryPosNum[1, 1]);
+
                     break;
                 /* Same position as stage 1 */
                 case 2:
@@ -379,6 +384,7 @@ namespace BombGameSolver.Source.ViewModel {
                 case 1:
                     _memoryPosNum[3, 0] = _memoryPosNum[0, 0];
                     _memoryPosNum[3, 1] = _memoryLogic[3, _memoryPosNum[0, 0]];
+
                     Console.WriteLine("Round 4 Logic: if 1, same pos as round 1\nRound 4 Output: Pos: " + _memoryPosNum[3, 0] +
                                       ", Num: " + _memoryPosNum[3, 1]);
 
@@ -404,7 +410,6 @@ namespace BombGameSolver.Source.ViewModel {
 
                 OutputText = "Click on: " + _memoryPosNum[3, 1];
                 OutputHighlightImage = "../../Resources/memory/out_" + _memoryPosNum[3, 0] + ".png";
-
                 break;
             /* Real round 5 */
             case 4:
@@ -422,6 +427,7 @@ namespace BombGameSolver.Source.ViewModel {
 
                     Console.WriteLine("Round 5 Logic: if 1, same label as round 1\nRound 5 Output: Pos: " + _memoryPosNum[4, 0] +
                                       ", Num: " + _memoryPosNum[4, 1]);
+									  
                     break;
                 /* Same label as stage 2 */
                 case 2:
@@ -436,7 +442,6 @@ namespace BombGameSolver.Source.ViewModel {
 
                     Console.WriteLine("Round 5 Logic: if 2, same label as round 2\nRound 5 Output: Pos: " + _memoryPosNum[4, 0] +
                                       ", Num: " + _memoryPosNum[4, 1]);
-
                     break;
                 /* Same label as stage 4 */
                 case 3:
@@ -451,8 +456,8 @@ namespace BombGameSolver.Source.ViewModel {
 
                     Console.WriteLine("Round 5 Logic: if 3, same label as round 4\nRound 5 Output: Pos: " + _memoryPosNum[4, 0] +
                                       ", Num: " + _memoryPosNum[4, 1]);
-
-                    break;
+                    
+					break;
                 /* Same label as stage 3 */
                 case 4:
                     _memoryPosNum[4, 1] = _memoryPosNum[2, 1];
@@ -466,8 +471,8 @@ namespace BombGameSolver.Source.ViewModel {
 
                     Console.WriteLine("Round 5 Logic: if 4, same label as round 3\nRound 5 Output: Pos: " + _memoryPosNum[4, 0] +
                                       ", Num: " + _memoryPosNum[4, 1]);
-
-                    break;
+                    
+					break;
                 }
 
                 OutputText = "Click on: " + _memoryPosNum[4, 1];

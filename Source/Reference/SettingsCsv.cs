@@ -18,8 +18,10 @@ namespace BombGameSolver.Source.Reference {
                     file.Close();
                 }
             } catch (Exception) {
-                MessageBox.Show("Error! Unable to create settings.csv file in documents directory.\n" +
-                                "Using default settings with saving disabled.", "Error");
+                MessageBox.Show(
+                    "Error! Unable to create settings.csv file in documents directory.\n" +
+                    "Using default settings with saving disabled.", "Error"
+                );
             }
         }
 

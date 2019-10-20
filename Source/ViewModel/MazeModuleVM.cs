@@ -209,10 +209,12 @@ namespace BombGameSolver.Source.ViewModel {
                 OutputTextBox = "";
                 try {
                     if (int.Parse(value[5].ToString()) > 0 && int.Parse(value[5].ToString()) < 7) {
-                        MazeLogic(new[] {
-                            int.Parse(value[2].ToString()), int.Parse(value[3].ToString()),
-                            int.Parse(value[4].ToString()), int.Parse(value[5].ToString())
-                        });
+                        MazeLogic(
+                            new[] {
+                                int.Parse(value[2].ToString()), int.Parse(value[3].ToString()),
+                                int.Parse(value[4].ToString()), int.Parse(value[5].ToString())
+                            }
+                        );
                         return value;
                     }
 

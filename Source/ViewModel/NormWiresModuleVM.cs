@@ -7,13 +7,7 @@ namespace BombGameSolver.Source.ViewModel {
     public class NormWiresViewModel : BaseViewModel {
         private int _roundCounter;
 
-        private string _wire1Image,
-            _wire2Image,
-            _wire3Image,
-            _wire4Image,
-            _wire5Image,
-            _wire6Image,
-            _wireBrokenImage,
+        private string _wire1Image, _wire2Image, _wire3Image, _wire4Image, _wire5Image, _wire6Image, _wireBrokenImage,
             _outputText;
 
         private string[] _wireArray = {"", "", "", "", "", ""};
@@ -223,7 +217,7 @@ namespace BombGameSolver.Source.ViewModel {
                 }
                 /* If last is yellow && no red -> cut first */
                 else if (_wireArray[0] != "red" && _wireArray[1] != "red" && _wireArray[2] != "red" &&
-                         _wireArray[3] == "yel") {
+                    _wireArray[3] == "yel") {
                     Console.WriteLine(@"[4x] Last is Yellow && No Red -> Cut First");
                     WireBrokenView = "../../Resources/normal_wires/wire_1_broken.png";
                     OutputText = "First";
@@ -299,7 +293,7 @@ namespace BombGameSolver.Source.ViewModel {
                 }
                 /* If No Black -> Cut Second */
                 else if (_wireArray[0] != "bla" && _wireArray[1] != "bla" && _wireArray[2] != "bla" &&
-                         _wireArray[3] != "bla" && _wireArray[4] != "bla") {
+                    _wireArray[3] != "bla" && _wireArray[4] != "bla") {
                     Console.WriteLine(@"[5x] No Black -> Cut Second");
                     OutputText = "Second";
                     WireBrokenView = "../../Resources/normal_wires/wire_2_broken.png";
@@ -349,7 +343,7 @@ namespace BombGameSolver.Source.ViewModel {
                 }
                 /* If No Red -> Cut Last */
                 else if (_wireArray[0] != "red" && _wireArray[1] != "red" && _wireArray[2] != "red" &&
-                         _wireArray[3] != "red" && _wireArray[4] != "red" && _wireArray[5] != "red") {
+                    _wireArray[3] != "red" && _wireArray[4] != "red" && _wireArray[5] != "red") {
                     Console.WriteLine(@"[6x] If No Red -> Cut Last");
                     OutputText = "Last";
                     WireBrokenView = "../../Resources/normal_wires/wire_6_broken.png";
