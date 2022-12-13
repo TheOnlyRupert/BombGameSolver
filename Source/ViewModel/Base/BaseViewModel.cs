@@ -5,13 +5,13 @@ using System.ComponentModel;
  *  All ViewModel classes that are bound to by the View should implement this as
  *  there is a known memory leak that may occur if they don’t.
  */
-namespace BombGameSolver.Source.ViewModel.Base {
-    public abstract class BaseViewModel : INotifyPropertyChanged {
-        public event PropertyChangedEventHandler PropertyChanged;
+namespace BombGameSolver.Source.ViewModel.Base; 
 
-        protected void RaisePropertyChangedEvent(string propertyName) {
-            PropertyChangedEventHandler handler = PropertyChanged;
-            handler?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
+public abstract class BaseViewModel : INotifyPropertyChanged {
+    public event PropertyChangedEventHandler PropertyChanged;
+
+    protected void RaisePropertyChangedEvent(string propertyName) {
+        PropertyChangedEventHandler handler = PropertyChanged;
+        handler?.Invoke(this, new PropertyChangedEventArgs(propertyName));
     }
 }

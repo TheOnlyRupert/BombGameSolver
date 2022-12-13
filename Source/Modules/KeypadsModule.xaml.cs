@@ -1,11 +1,11 @@
 ﻿using BombGameSolver.Source.ViewModel;
 
-namespace BombGameSolver.Source.Modules {
-    public partial class KeypadsModule {
-        public KeypadsModule() {
-            InitializeComponent();
+namespace BombGameSolver.Source.Modules; 
 
-            DataContext = new KeypadsModuleVM();
-        }
+public partial class KeypadsModule {
+    public KeypadsModule() {
+        InitializeComponent();
+
+        DataContext = new KeypadsModuleVM();
     }
 }

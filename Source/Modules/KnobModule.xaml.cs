@@ -1,7 +1,7 @@
-﻿namespace BombGameSolver.Source.Modules {
-    public partial class KnobModule {
-        public KnobModule() {
-            InitializeComponent();
-        }
+﻿namespace BombGameSolver.Source.Modules; 
+
+public partial class KnobModule {
+    public KnobModule() {
+        InitializeComponent();
     }
 }

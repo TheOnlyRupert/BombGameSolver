@@ -1,11 +1,11 @@
 ﻿using BombGameSolver.Source.ViewModel;
 
-namespace BombGameSolver.Source.Modules {
-    public partial class SequWiresModule {
-        public SequWiresModule() {
-            InitializeComponent();
+namespace BombGameSolver.Source.Modules; 
 
-            DataContext = new SequWiresModuleVM();
-        }
+public partial class SequWiresModule {
+    public SequWiresModule() {
+        InitializeComponent();
+
+        DataContext = new SequWiresModuleVM();
     }
 }

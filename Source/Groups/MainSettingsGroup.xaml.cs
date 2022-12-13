@@ -1,11 +1,11 @@
 ﻿using BombGameSolver.Source.ViewModel;
 
-namespace BombGameSolver.Source.Groups {
-    public partial class MainSettingsGroup {
-        public MainSettingsGroup() {
-            InitializeComponent();
+namespace BombGameSolver.Source.Groups; 
 
-            DataContext = new MainSettingsGroupVM();
-        }
+public partial class MainSettingsGroup {
+    public MainSettingsGroup() {
+        InitializeComponent();
+
+        DataContext = new MainSettingsGroupVM();
     }
 }

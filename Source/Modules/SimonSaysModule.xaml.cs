@@ -1,11 +1,11 @@
 ﻿using BombGameSolver.Source.ViewModel;
 
-namespace BombGameSolver.Source.Modules {
-    public partial class SimonSaysModule {
-        public SimonSaysModule() {
-            InitializeComponent();
+namespace BombGameSolver.Source.Modules; 
 
-            DataContext = new SimonSaysModuleVM();
-        }
+public partial class SimonSaysModule {
+    public SimonSaysModule() {
+        InitializeComponent();
+
+        DataContext = new SimonSaysModuleVM();
     }
 }

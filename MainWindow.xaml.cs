@@ -1,11 +1,11 @@
 ﻿using BombGameSolver.Source.ViewModel;
 
-namespace BombGameSolver {
-    public partial class MainWindow {
-        public MainWindow() {
-            InitializeComponent();
+namespace BombGameSolver; 
 
-            DataContext = new MainWindowVM();
-        }
+public partial class MainWindow {
+    public MainWindow() {
+        InitializeComponent();
+
+        DataContext = new MainWindowVM();
     }
 }
