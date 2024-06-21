@@ -1,6 +1,6 @@
 ﻿using BombGameSolver.Source.ViewModel;
 
-namespace BombGameSolver; 
+namespace BombGameSolver;
 
 public partial class MainWindow {
     public MainWindow() {

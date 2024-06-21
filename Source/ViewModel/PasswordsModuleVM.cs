@@ -2,10 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
-using BombGameSolver.Source.Reference;
 using BombGameSolver.Source.ViewModel.Base;
 
-namespace BombGameSolver.Source.ViewModel; 
+namespace BombGameSolver.Source.ViewModel;
 
 public class PasswordsModuleVM : BaseViewModel {
     private static readonly string[] PasswordMasterList = {

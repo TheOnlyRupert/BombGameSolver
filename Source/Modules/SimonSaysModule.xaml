@@ -1,54 +1,122 @@
-﻿<Page x:Class="BombGameSolver.Source.Modules.SimonSaysModule" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" mc:Ignorable="d" Focusable="False">
-    <Grid Background="DarkSlateGray" Focusable="False">
-        <StackPanel Focusable="False">
-            <Button Content="Colors" FontSize="24" VerticalAlignment="Top" HorizontalAlignment="Right" Padding="10" Command="{Binding ButtonCommand}" CommandParameter="view_0"
-                    Focusable="False" Margin="10,10,5,5" MinWidth="140">
+﻿<Page
+    x:Class="BombGameSolver.Source.Modules.SimonSaysModule"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    mc:Ignorable="d"
+    Focusable="False">
+    <Grid
+        Background="DarkSlateGray"
+        Focusable="False">
+        <StackPanel
+            Focusable="False">
+            <Button
+                Content="Colors"
+                FontSize="24"
+                VerticalAlignment="Top"
+                HorizontalAlignment="Right"
+                Padding="10"
+                Command="{Binding ButtonCommand}"
+                CommandParameter="view_0"
+                Focusable="False"
+                Margin="10,10,5,5"
+                MinWidth="140">
                 <Button.Style>
-                    <Style TargetType="Button">
+                    <Style
+                        TargetType="Button">
                         <!-- Default -->
-                        <Setter Property="Background" Value="Transparent"/>
-                        <Setter Property="Foreground" Value="White"/>
+                        <Setter
+                            Property="Background"
+                            Value="Transparent"/>
+                        <Setter
+                            Property="Foreground"
+                            Value="White"/>
                         <Style.Triggers>
-                            <DataTrigger Binding="{Binding CurrentViewType}" Value="view_0">
+                            <DataTrigger
+                                Binding="{Binding CurrentViewType}"
+                                Value="view_0">
                                 <!-- If True -->
-                                <Setter Property="Background" Value="Yellow"/>
-                                <Setter Property="Foreground" Value="Black"/>
+                                <Setter
+                                    Property="Background"
+                                    Value="Yellow"/>
+                                <Setter
+                                    Property="Foreground"
+                                    Value="Black"/>
                             </DataTrigger>
                         </Style.Triggers>
                     </Style>
                 </Button.Style>
             </Button>
-            <Button Content="Directions" FontSize="24" VerticalAlignment="Top" HorizontalAlignment="Right" Padding="10" Command="{Binding ButtonCommand}" CommandParameter="view_1"
-                    Focusable="False" Margin="10,5,5,5" MinWidth="140">
+            <Button
+                Content="Directions"
+                FontSize="24"
+                VerticalAlignment="Top"
+                HorizontalAlignment="Right"
+                Padding="10"
+                Command="{Binding ButtonCommand}"
+                CommandParameter="view_1"
+                Focusable="False"
+                Margin="10,5,5,5"
+                MinWidth="140">
                 <Button.Style>
-                    <Style TargetType="Button">
+                    <Style
+                        TargetType="Button">
                         <!-- Default -->
-                        <Setter Property="Background" Value="Transparent"/>
-                        <Setter Property="Foreground" Value="White"/>
+                        <Setter
+                            Property="Background"
+                            Value="Transparent"/>
+                        <Setter
+                            Property="Foreground"
+                            Value="White"/>
                         <Style.Triggers>
-                            <DataTrigger Binding="{Binding CurrentViewType}" Value="view_1">
+                            <DataTrigger
+                                Binding="{Binding CurrentViewType}"
+                                Value="view_1">
                                 <!-- If True -->
-                                <Setter Property="Background" Value="Yellow"/>
-                                <Setter Property="Foreground" Value="Black"/>
+                                <Setter
+                                    Property="Background"
+                                    Value="Yellow"/>
+                                <Setter
+                                    Property="Foreground"
+                                    Value="Black"/>
                             </DataTrigger>
                         </Style.Triggers>
                     </Style>
                 </Button.Style>
             </Button>
-            <Button Content="Cardinal" FontSize="24" VerticalAlignment="Top" HorizontalAlignment="Right" Padding="10" Command="{Binding ButtonCommand}" CommandParameter="view_2"
-                    Focusable="False" Margin="10,5,5,5" MinWidth="140">
+            <Button
+                Content="Cardinal"
+                FontSize="24"
+                VerticalAlignment="Top"
+                HorizontalAlignment="Right"
+                Padding="10"
+                Command="{Binding ButtonCommand}"
+                CommandParameter="view_2"
+                Focusable="False"
+                Margin="10,5,5,5"
+                MinWidth="140">
                 <Button.Style>
-                    <Style TargetType="Button">
+                    <Style
+                        TargetType="Button">
                         <!-- Default -->
-                        <Setter Property="Background" Value="Transparent"/>
-                        <Setter Property="Foreground" Value="White"/>
+                        <Setter
+                            Property="Background"
+                            Value="Transparent"/>
+                        <Setter
+                            Property="Foreground"
+                            Value="White"/>
                         <Style.Triggers>
-                            <DataTrigger Binding="{Binding CurrentViewType}" Value="view_2">
+                            <DataTrigger
+                                Binding="{Binding CurrentViewType}"
+                                Value="view_2">
                                 <!-- If True -->
-                                <Setter Property="Background" Value="Yellow"/>
-                                <Setter Property="Foreground" Value="Black"/>
+                                <Setter
+                                    Property="Background"
+                                    Value="Yellow"/>
+                                <Setter
+                                    Property="Foreground"
+                                    Value="Black"/>
                             </DataTrigger>
                         </Style.Triggers>
                     </Style>
@@ -56,53 +124,114 @@
             </Button>
         </StackPanel>
 
-        <StackPanel Focusable="False">
-            <Button Content="Strike 0" FontSize="24" VerticalAlignment="Top" HorizontalAlignment="Left" Padding="10" Command="{Binding ButtonCommand}" CommandParameter="strike_0"
-                    Focusable="False" Margin="10,10,5,5" MinWidth="140">
+        <StackPanel
+            Focusable="False">
+            <Button
+                Content="Strike 0"
+                FontSize="24"
+                VerticalAlignment="Top"
+                HorizontalAlignment="Left"
+                Padding="10"
+                Command="{Binding ButtonCommand}"
+                CommandParameter="strike_0"
+                Focusable="False"
+                Margin="10,10,5,5"
+                MinWidth="140">
                 <Button.Style>
-                    <Style TargetType="Button">
+                    <Style
+                        TargetType="Button">
                         <!-- Default -->
-                        <Setter Property="Background" Value="Transparent"/>
-                        <Setter Property="Foreground" Value="White"/>
+                        <Setter
+                            Property="Background"
+                            Value="Transparent"/>
+                        <Setter
+                            Property="Foreground"
+                            Value="White"/>
                         <Style.Triggers>
-                            <DataTrigger Binding="{Binding CurrentStrikes}" Value="strike_0">
+                            <DataTrigger
+                                Binding="{Binding CurrentStrikes}"
+                                Value="strike_0">
                                 <!-- If True -->
-                                <Setter Property="Background" Value="Yellow"/>
-                                <Setter Property="Foreground" Value="Black"/>
+                                <Setter
+                                    Property="Background"
+                                    Value="Yellow"/>
+                                <Setter
+                                    Property="Foreground"
+                                    Value="Black"/>
                             </DataTrigger>
                         </Style.Triggers>
                     </Style>
                 </Button.Style>
             </Button>
-            <Button Content="Strike 1" FontSize="24" VerticalAlignment="Top" HorizontalAlignment="Left" Padding="10" Command="{Binding ButtonCommand}" CommandParameter="strike_1"
-                    Focusable="False" Margin="10,5,5,5" MinWidth="140">
+            <Button
+                Content="Strike 1"
+                FontSize="24"
+                VerticalAlignment="Top"
+                HorizontalAlignment="Left"
+                Padding="10"
+                Command="{Binding ButtonCommand}"
+                CommandParameter="strike_1"
+                Focusable="False"
+                Margin="10,5,5,5"
+                MinWidth="140">
                 <Button.Style>
-                    <Style TargetType="Button">
+                    <Style
+                        TargetType="Button">
                         <!-- Default -->
-                        <Setter Property="Background" Value="Transparent"/>
-                        <Setter Property="Foreground" Value="White"/>
+                        <Setter
+                            Property="Background"
+                            Value="Transparent"/>
+                        <Setter
+                            Property="Foreground"
+                            Value="White"/>
                         <Style.Triggers>
-                            <DataTrigger Binding="{Binding CurrentStrikes}" Value="strike_1">
+                            <DataTrigger
+                                Binding="{Binding CurrentStrikes}"
+                                Value="strike_1">
                                 <!-- If True -->
-                                <Setter Property="Background" Value="Yellow"/>
-                                <Setter Property="Foreground" Value="Black"/>
+                                <Setter
+                                    Property="Background"
+                                    Value="Yellow"/>
+                                <Setter
+                                    Property="Foreground"
+                                    Value="Black"/>
                             </DataTrigger>
                         </Style.Triggers>
                     </Style>
                 </Button.Style>
             </Button>
-            <Button Content="Strike 2" FontSize="24" VerticalAlignment="Top" HorizontalAlignment="Left" Padding="10" Command="{Binding ButtonCommand}" CommandParameter="strike_2"
-                    Focusable="False" Margin="10,5,5,5" MinWidth="140">
+            <Button
+                Content="Strike 2"
+                FontSize="24"
+                VerticalAlignment="Top"
+                HorizontalAlignment="Left"
+                Padding="10"
+                Command="{Binding ButtonCommand}"
+                CommandParameter="strike_2"
+                Focusable="False"
+                Margin="10,5,5,5"
+                MinWidth="140">
                 <Button.Style>
-                    <Style TargetType="Button">
+                    <Style
+                        TargetType="Button">
                         <!-- Default -->
-                        <Setter Property="Background" Value="Transparent"/>
-                        <Setter Property="Foreground" Value="White"/>
+                        <Setter
+                            Property="Background"
+                            Value="Transparent"/>
+                        <Setter
+                            Property="Foreground"
+                            Value="White"/>
                         <Style.Triggers>
-                            <DataTrigger Binding="{Binding CurrentStrikes}" Value="strike_2">
+                            <DataTrigger
+                                Binding="{Binding CurrentStrikes}"
+                                Value="strike_2">
                                 <!-- If True -->
-                                <Setter Property="Background" Value="Yellow"/>
-                                <Setter Property="Foreground" Value="Black"/>
+                                <Setter
+                                    Property="Background"
+                                    Value="Yellow"/>
+                                <Setter
+                                    Property="Foreground"
+                                    Value="Black"/>
                             </DataTrigger>
                         </Style.Triggers>
                     </Style>
@@ -110,17 +239,45 @@
             </Button>
         </StackPanel>
 
-        <Grid Focusable="False">
-            <Image Source="{Binding BackgroundType}" Margin="10" Focusable="False"/>
-            <Image Source="{Binding BluOutput}" Margin="10" Focusable="False"/>
-            <Image Source="{Binding RedOutput}" Margin="10" Focusable="False"/>
-            <Image Source="{Binding GreOutput}" Margin="10" Focusable="False"/>
-            <Image Source="{Binding YelOutput}" Margin="10" Focusable="False"/>
+        <Grid
+            Focusable="False">
+            <Image
+                Source="{Binding BackgroundType}"
+                Margin="10"
+                Focusable="False"/>
+            <Image
+                Source="{Binding BluOutput}"
+                Margin="10"
+                Focusable="False"/>
+            <Image
+                Source="{Binding RedOutput}"
+                Margin="10"
+                Focusable="False"/>
+            <Image
+                Source="{Binding GreOutput}"
+                Margin="10"
+                Focusable="False"/>
+            <Image
+                Source="{Binding YelOutput}"
+                Margin="10"
+                Focusable="False"/>
 
-            <Image Source="{Binding TextBluOutput}" Margin="10" Focusable="False"/>
-            <Image Source="{Binding TextRedOutput}" Margin="10" Focusable="False"/>
-            <Image Source="{Binding TextGreOutput}" Margin="10" Focusable="False"/>
-            <Image Source="{Binding TextYelOutput}" Margin="10" Focusable="False"/>
+            <Image
+                Source="{Binding TextBluOutput}"
+                Margin="10"
+                Focusable="False"/>
+            <Image
+                Source="{Binding TextRedOutput}"
+                Margin="10"
+                Focusable="False"/>
+            <Image
+                Source="{Binding TextGreOutput}"
+                Margin="10"
+                Focusable="False"/>
+            <Image
+                Source="{Binding TextYelOutput}"
+                Margin="10"
+                Focusable="False"/>
         </Grid>
     </Grid>
 </Page>

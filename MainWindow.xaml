@@ -1,58 +1,158 @@
-﻿<Window x:Class="BombGameSolver.MainWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d"
-        Icon="{Binding IconImage}" WindowStartupLocation="CenterScreen" Title="Bomb Game Solver" Height="720" Width="1280" MinHeight="540" MinWidth="960">
+﻿<Window
+    x:Class="BombGameSolver.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Icon="{Binding IconImage}"
+    WindowStartupLocation="CenterScreen"
+    Title="Bomb Game Solver"
+    Height="720"
+    Width="1280"
+    MinHeight="540"
+    MinWidth="960">
 
     <Window.InputBindings>
-        <KeyBinding Key="Back" Command="{Binding GlobalKeyboardListener}" CommandParameter="Back"/>
-        <KeyBinding Key="F1" Command="{Binding GlobalKeyboardListener}" CommandParameter="F1"/>
-        <KeyBinding Key="Enter" Command="{Binding GlobalKeyboardListener}" CommandParameter="Enter"/>
-        <KeyBinding Key="{Binding Key_D0}" Command="{Binding GlobalKeyboardListener}" CommandParameter="NumPad0"/>
-        <KeyBinding Key="{Binding Key_NumPad0}" Command="{Binding GlobalKeyboardListener}" CommandParameter="NumPad0"/>
-        <KeyBinding Key="{Binding Key_D1}" Command="{Binding GlobalKeyboardListener}" CommandParameter="NumPad1"/>
-        <KeyBinding Key="{Binding Key_NumPad1}" Command="{Binding GlobalKeyboardListener}" CommandParameter="NumPad1"/>
-        <KeyBinding Key="{Binding Key_D2}" Command="{Binding GlobalKeyboardListener}" CommandParameter="NumPad2"/>
-        <KeyBinding Key="{Binding Key_NumPad2}" Command="{Binding GlobalKeyboardListener}" CommandParameter="NumPad2"/>
-        <KeyBinding Key="{Binding Key_D3}" Command="{Binding GlobalKeyboardListener}" CommandParameter="NumPad3"/>
-        <KeyBinding Key="{Binding Key_NumPad3}" Command="{Binding GlobalKeyboardListener}" CommandParameter="NumPad3"/>
-        <KeyBinding Key="{Binding Key_D4}" Command="{Binding GlobalKeyboardListener}" CommandParameter="NumPad4"/>
-        <KeyBinding Key="{Binding Key_NumPad4}" Command="{Binding GlobalKeyboardListener}" CommandParameter="NumPad4"/>
-        <KeyBinding Key="{Binding Key_D5}" Command="{Binding GlobalKeyboardListener}" CommandParameter="NumPad5"/>
-        <KeyBinding Key="{Binding Key_NumPad5}" Command="{Binding GlobalKeyboardListener}" CommandParameter="NumPad5"/>
-        <KeyBinding Key="{Binding Key_D6}" Command="{Binding GlobalKeyboardListener}" CommandParameter="NumPad6"/>
-        <KeyBinding Key="{Binding Key_NumPad6}" Command="{Binding GlobalKeyboardListener}" CommandParameter="NumPad6"/>
-        <KeyBinding Key="{Binding Key_D7}" Command="{Binding GlobalKeyboardListener}" CommandParameter="NumPad7"/>
-        <KeyBinding Key="{Binding Key_NumPad7}" Command="{Binding GlobalKeyboardListener}" CommandParameter="NumPad7"/>
-        <KeyBinding Key="{Binding Key_D8}" Command="{Binding GlobalKeyboardListener}" CommandParameter="NumPad8"/>
-        <KeyBinding Key="{Binding Key_NumPad8}" Command="{Binding GlobalKeyboardListener}" CommandParameter="NumPad8"/>
-        <KeyBinding Key="{Binding Key_D9}" Command="{Binding GlobalKeyboardListener}" CommandParameter="NumPad9"/>
-        <KeyBinding Key="{Binding Key_NumPad9}" Command="{Binding GlobalKeyboardListener}" CommandParameter="NumPad9"/>
-        <KeyBinding Key="F12" Command="{Binding GlobalKeyboardListener}" CommandParameter="F12"/>
+        <KeyBinding
+            Key="Back"
+            Command="{Binding GlobalKeyboardListener}"
+            CommandParameter="Back"/>
+        <KeyBinding
+            Key="F1"
+            Command="{Binding GlobalKeyboardListener}"
+            CommandParameter="F1"/>
+        <KeyBinding
+            Key="Enter"
+            Command="{Binding GlobalKeyboardListener}"
+            CommandParameter="Enter"/>
+        <KeyBinding
+            Key="{Binding Key_D0}"
+            Command="{Binding GlobalKeyboardListener}"
+            CommandParameter="NumPad0"/>
+        <KeyBinding
+            Key="{Binding Key_NumPad0}"
+            Command="{Binding GlobalKeyboardListener}"
+            CommandParameter="NumPad0"/>
+        <KeyBinding
+            Key="{Binding Key_D1}"
+            Command="{Binding GlobalKeyboardListener}"
+            CommandParameter="NumPad1"/>
+        <KeyBinding
+            Key="{Binding Key_NumPad1}"
+            Command="{Binding GlobalKeyboardListener}"
+            CommandParameter="NumPad1"/>
+        <KeyBinding
+            Key="{Binding Key_D2}"
+            Command="{Binding GlobalKeyboardListener}"
+            CommandParameter="NumPad2"/>
+        <KeyBinding
+            Key="{Binding Key_NumPad2}"
+            Command="{Binding GlobalKeyboardListener}"
+            CommandParameter="NumPad2"/>
+        <KeyBinding
+            Key="{Binding Key_D3}"
+            Command="{Binding GlobalKeyboardListener}"
+            CommandParameter="NumPad3"/>
+        <KeyBinding
+            Key="{Binding Key_NumPad3}"
+            Command="{Binding GlobalKeyboardListener}"
+            CommandParameter="NumPad3"/>
+        <KeyBinding
+            Key="{Binding Key_D4}"
+            Command="{Binding GlobalKeyboardListener}"
+            CommandParameter="NumPad4"/>
+        <KeyBinding
+            Key="{Binding Key_NumPad4}"
+            Command="{Binding GlobalKeyboardListener}"
+            CommandParameter="NumPad4"/>
+        <KeyBinding
+            Key="{Binding Key_D5}"
+            Command="{Binding GlobalKeyboardListener}"
+            CommandParameter="NumPad5"/>
+        <KeyBinding
+            Key="{Binding Key_NumPad5}"
+            Command="{Binding GlobalKeyboardListener}"
+            CommandParameter="NumPad5"/>
+        <KeyBinding
+            Key="{Binding Key_D6}"
+            Command="{Binding GlobalKeyboardListener}"
+            CommandParameter="NumPad6"/>
+        <KeyBinding
+            Key="{Binding Key_NumPad6}"
+            Command="{Binding GlobalKeyboardListener}"
+            CommandParameter="NumPad6"/>
+        <KeyBinding
+            Key="{Binding Key_D7}"
+            Command="{Binding GlobalKeyboardListener}"
+            CommandParameter="NumPad7"/>
+        <KeyBinding
+            Key="{Binding Key_NumPad7}"
+            Command="{Binding GlobalKeyboardListener}"
+            CommandParameter="NumPad7"/>
+        <KeyBinding
+            Key="{Binding Key_D8}"
+            Command="{Binding GlobalKeyboardListener}"
+            CommandParameter="NumPad8"/>
+        <KeyBinding
+            Key="{Binding Key_NumPad8}"
+            Command="{Binding GlobalKeyboardListener}"
+            CommandParameter="NumPad8"/>
+        <KeyBinding
+            Key="{Binding Key_D9}"
+            Command="{Binding GlobalKeyboardListener}"
+            CommandParameter="NumPad9"/>
+        <KeyBinding
+            Key="{Binding Key_NumPad9}"
+            Command="{Binding GlobalKeyboardListener}"
+            CommandParameter="NumPad9"/>
+        <KeyBinding
+            Key="F12"
+            Command="{Binding GlobalKeyboardListener}"
+            CommandParameter="F12"/>
     </Window.InputBindings>
 
-    <Grid Background="DarkSlateGray">
+    <Grid
+        Background="DarkSlateGray">
         <Grid.Resources>
-            <Style TargetType="Frame">
-                <Setter Property="NavigationUIVisibility" Value="Hidden"/>
+            <Style
+                TargetType="Frame">
+                <Setter
+                    Property="NavigationUIVisibility"
+                    Value="Hidden"/>
             </Style>
         </Grid.Resources>
 
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="250"/>
-            <ColumnDefinition Width="4*"/>
+            <ColumnDefinition
+                Width="250"/>
+            <ColumnDefinition
+                Width="4*"/>
         </Grid.ColumnDefinitions>
 
-        <Frame Source="Source/Groups/MainSettingsGroup.xaml"/>
+        <Frame
+            Source="Source/Groups/MainSettingsGroup.xaml"/>
 
-        <Grid Grid.Column="1">
+        <Grid
+            Grid.Column="1">
             <Grid.RowDefinitions>
-                <RowDefinition Height="12*"/>
-                <RowDefinition Height="60"/>
-                <RowDefinition Height="{Binding DevLogWindowHeight}"/>
+                <RowDefinition
+                    Height="12*"/>
+                <RowDefinition
+                    Height="60"/>
+                <RowDefinition
+                    Height="{Binding DevLogWindowHeight}"/>
             </Grid.RowDefinitions>
 
-            <Frame Grid.Row="0" Source="Source/Groups/MainDisplayGroup.xaml"/>
-            <Frame Grid.Row="1" Source="Source/Groups/MainButtonsGroup.xaml"/>
-            <Frame Grid.Row="2" Source="Source/Groups/MainDebugGroup.xaml"/>
+            <Frame
+                Grid.Row="0"
+                Source="Source/Groups/MainDisplayGroup.xaml"/>
+            <Frame
+                Grid.Row="1"
+                Source="Source/Groups/MainButtonsGroup.xaml"/>
+            <Frame
+                Grid.Row="2"
+                Source="Source/Groups/MainDebugGroup.xaml"/>
         </Grid>
     </Grid>
 </Window>

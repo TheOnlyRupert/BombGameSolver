@@ -1,31 +1,80 @@
-﻿<Page x:Class="BombGameSolver.Source.Groups.MainTimerGroup" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" mc:Ignorable="d">
+﻿<Page
+    x:Class="BombGameSolver.Source.Groups.MainTimerGroup"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    mc:Ignorable="d">
 
-    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Background="DarkSlateGray">
+    <StackPanel
+        Orientation="Horizontal"
+        HorizontalAlignment="Right"
+        Background="DarkSlateGray">
         <StackPanel.Resources>
-            <Style TargetType="Button">
-                <Setter Property="Foreground" Value="White"/>
-                <Setter Property="Background" Value="Transparent"/>
+            <Style
+                TargetType="Button">
+                <Setter
+                    Property="Foreground"
+                    Value="White"/>
+                <Setter
+                    Property="Background"
+                    Value="Transparent"/>
             </Style>
 
-            <Style TargetType="TextBox">
-                <Setter Property="Foreground" Value="White"/>
-                <Setter Property="Background" Value="Transparent"/>
-                <Setter Property="BorderBrush" Value="Transparent"/>
-                <Setter Property="VerticalAlignment" Value="Center"/>
-                <Setter Property="TextAlignment" Value="Center"/>
-                <Setter Property="IsEnabled" Value="False"/>
+            <Style
+                TargetType="TextBox">
+                <Setter
+                    Property="Foreground"
+                    Value="White"/>
+                <Setter
+                    Property="Background"
+                    Value="Transparent"/>
+                <Setter
+                    Property="BorderBrush"
+                    Value="Transparent"/>
+                <Setter
+                    Property="VerticalAlignment"
+                    Value="Center"/>
+                <Setter
+                    Property="TextAlignment"
+                    Value="Center"/>
+                <Setter
+                    Property="IsEnabled"
+                    Value="False"/>
             </Style>
         </StackPanel.Resources>
 
-        <Button Content="{Binding LButtonText}" Command="{Binding LButtonCommand}" MinWidth="100" Margin="0 5 0 5" Padding="5" FontSize="24"/>
-        <Button Content="{Binding RButtonText}" Command="{Binding RButtonCommand}" MinWidth="100" Margin="10 5 10 5" Padding="5" FontSize="24"/>
-        <TextBox Text="{Binding TimerDisplay, UpdateSourceTrigger=PropertyChanged}" FontSize="30" MinWidth="80" Margin="0 5 5 5"/>
+        <Button
+            Content="{Binding LButtonText}"
+            Command="{Binding LButtonCommand}"
+            MinWidth="100"
+            Margin="0 5 0 5"
+            Padding="5"
+            FontSize="24"/>
+        <Button
+            Content="{Binding RButtonText}"
+            Command="{Binding RButtonCommand}"
+            MinWidth="100"
+            Margin="10 5 10 5"
+            Padding="5"
+            FontSize="24"/>
+        <TextBox
+            Text="{Binding TimerDisplay, UpdateSourceTrigger=PropertyChanged}"
+            FontSize="30"
+            MinWidth="80"
+            Margin="0 5 5 5"/>
 
-        <StackPanel VerticalAlignment="Center" Margin="0 0 5 0">
-            <Button Content="▲" Command="{Binding AddTimeCommand}" BorderBrush="Transparent"/>
-            <Button Content="▼" Command="{Binding RemTimeCommand}" BorderBrush="Transparent"/>
+        <StackPanel
+            VerticalAlignment="Center"
+            Margin="0 0 5 0">
+            <Button
+                Content="▲"
+                Command="{Binding AddTimeCommand}"
+                BorderBrush="Transparent"/>
+            <Button
+                Content="▼"
+                Command="{Binding RemTimeCommand}"
+                BorderBrush="Transparent"/>
         </StackPanel>
     </StackPanel>
 </Page>

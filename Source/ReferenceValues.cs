@@ -1,4 +1,4 @@
-namespace BombGameSolver.Source.Reference; 
+namespace BombGameSolver.Source;
 
 public static class ReferenceValues {
     public const string COPYRIGHT = "Copyright © 2018-2022  Robert Higgins";

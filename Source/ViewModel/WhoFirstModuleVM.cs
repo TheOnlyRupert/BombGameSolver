@@ -1,7 +1,7 @@
 using System.Windows.Input;
 using BombGameSolver.Source.ViewModel.Base;
 
-namespace BombGameSolver.Source.ViewModel; 
+namespace BombGameSolver.Source.ViewModel;
 
 public class WhoFirstModuleVM : BaseViewModel {
     private string _button_Blank,

@@ -1,6 +1,6 @@
 ﻿using BombGameSolver.Source.ViewModel;
 
-namespace BombGameSolver.Source.Groups; 
+namespace BombGameSolver.Source.Groups;
 
 public partial class MainSettingsGroup {
     public MainSettingsGroup() {

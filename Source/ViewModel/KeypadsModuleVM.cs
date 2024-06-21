@@ -1,9 +1,8 @@
 using System.Collections.Generic;
 using System.Windows.Input;
-using BombGameSolver.Source.Reference;
 using BombGameSolver.Source.ViewModel.Base;
 
-namespace BombGameSolver.Source.ViewModel; 
+namespace BombGameSolver.Source.ViewModel;
 
 public class KeypadsModuleVM : BaseViewModel {
     private readonly List<int> _nonDisabledColumns;

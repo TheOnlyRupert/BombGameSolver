@@ -1,7 +1,6 @@
-using BombGameSolver.Source.Reference;
 using BombGameSolver.Source.ViewModel.Base;
 
-namespace BombGameSolver.Source.ViewModel; 
+namespace BombGameSolver.Source.ViewModel;
 
 public class MainDisplayGroupVM : BaseViewModel {
     private readonly CrossViewMessenger _crossViewMessenger;

@@ -3,7 +3,7 @@ using System.Media;
 using System.Windows;
 using System.Windows.Resources;
 
-namespace BombGameSolver.Source.Reference; 
+namespace BombGameSolver.Source.Helpers;
 
 public class PlaySound {
     private readonly SoundPlayer _audio;

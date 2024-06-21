@@ -1,3 +1,3 @@
-﻿namespace BombGameSolver; 
+﻿namespace BombGameSolver;
 
 public partial class App { }

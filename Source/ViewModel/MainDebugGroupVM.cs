@@ -1,8 +1,7 @@
 using System.Collections.Generic;
-using BombGameSolver.Source.Reference;
 using BombGameSolver.Source.ViewModel.Base;
 
-namespace BombGameSolver.Source.ViewModel; 
+namespace BombGameSolver.Source.ViewModel;
 
 public class MainDebugGroupVM : BaseViewModel {
     private string _debugTextOutput, _caretIndexPos;

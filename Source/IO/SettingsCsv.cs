@@ -2,7 +2,7 @@ using System;
 using System.IO;
 using System.Windows;
 
-namespace BombGameSolver.Source.Reference; 
+namespace BombGameSolver.Source.IO;
 
 public class SettingsCsv {
     private static readonly string _fileDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) +

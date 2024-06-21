@@ -1,948 +1,1809 @@
-﻿<Page x:Class="BombGameSolver.Source.Modules.KeypadsModule" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" mc:Ignorable="d" Focusable="False">
-    <Grid Background="DarkSlateGray" Margin="0 10" Focusable="False">
+﻿<Page
+    x:Class="BombGameSolver.Source.Modules.KeypadsModule"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    mc:Ignorable="d"
+    Focusable="False">
+    <Grid
+        Background="DarkSlateGray"
+        Margin="0 10"
+        Focusable="False">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="2*"/>
-            <ColumnDefinition Width="2*"/>
-            <ColumnDefinition Width="2*"/>
-            <ColumnDefinition Width="2*"/>
-            <ColumnDefinition Width="2*"/>
-            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition
+                Width="2*"/>
+            <ColumnDefinition
+                Width="2*"/>
+            <ColumnDefinition
+                Width="2*"/>
+            <ColumnDefinition
+                Width="2*"/>
+            <ColumnDefinition
+                Width="2*"/>
+            <ColumnDefinition
+                Width="2*"/>
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition
+                Height="*"/>
+            <RowDefinition
+                Height="*"/>
+            <RowDefinition
+                Height="*"/>
+            <RowDefinition
+                Height="*"/>
+            <RowDefinition
+                Height="*"/>
+            <RowDefinition
+                Height="*"/>
+            <RowDefinition
+                Height="*"/>
         </Grid.RowDefinitions>
 
-        <Button Width="90" Grid.Column="0" Grid.Row="0" Command="{Binding ButtonCommand}" CommandParameter="balloon" Focusable="False">
+        <Button
+            Width="90"
+            Grid.Column="0"
+            Grid.Row="0"
+            Command="{Binding ButtonCommand}"
+            CommandParameter="balloon"
+            Focusable="False">
             <Button.Style>
-                <Style TargetType="Button">
+                <Style
+                    TargetType="Button">
                     <!-- Default -->
-                    <Setter Property="Background" Value="LightGray"/>
-                    <Setter Property="Foreground" Value="Black"/>
+                    <Setter
+                        Property="Background"
+                        Value="LightGray"/>
+                    <Setter
+                        Property="Foreground"
+                        Value="Black"/>
                     <Style.Triggers>
-                        <DataTrigger Binding="{Binding Keypad_Balloon}" Value="True">
+                        <DataTrigger
+                            Binding="{Binding Keypad_Balloon}"
+                            Value="True">
                             <!-- If True -->
-                            <Setter Property="Background" Value="GreenYellow"/>
+                            <Setter
+                                Property="Background"
+                                Value="GreenYellow"/>
                         </DataTrigger>
-                        <DataTrigger Binding="{Binding ColumnDisabled0}" Value="True">
+                        <DataTrigger
+                            Binding="{Binding ColumnDisabled0}"
+                            Value="True">
                             <!-- If True -->
-                            <Setter Property="Background" Value="Transparent"/>
+                            <Setter
+                                Property="Background"
+                                Value="Transparent"/>
                         </DataTrigger>
                     </Style.Triggers>
                 </Style>
             </Button.Style>
             <StackPanel>
-                <Image Source="../../Resources/keypads/balloon.png"/>
+                <Image
+                    Source="../../Resources/keypads/balloon.png"/>
             </StackPanel>
         </Button>
-        <Button Width="90" Grid.Column="0" Grid.Row="1" Command="{Binding ButtonCommand}" CommandParameter="pyramid" Focusable="False">
+        <Button
+            Width="90"
+            Grid.Column="0"
+            Grid.Row="1"
+            Command="{Binding ButtonCommand}"
+            CommandParameter="pyramid"
+            Focusable="False">
             <Button.Style>
-                <Style TargetType="Button">
+                <Style
+                    TargetType="Button">
                     <!-- Default -->
-                    <Setter Property="Background" Value="LightGray"/>
-                    <Setter Property="Foreground" Value="Black"/>
+                    <Setter
+                        Property="Background"
+                        Value="LightGray"/>
+                    <Setter
+                        Property="Foreground"
+                        Value="Black"/>
                     <Style.Triggers>
-                        <DataTrigger Binding="{Binding Keypad_Pyramid}" Value="True">
+                        <DataTrigger
+                            Binding="{Binding Keypad_Pyramid}"
+                            Value="True">
                             <!-- If True -->
-                            <Setter Property="Background" Value="GreenYellow"/>
+                            <Setter
+                                Property="Background"
+                                Value="GreenYellow"/>
                         </DataTrigger>
-                        <DataTrigger Binding="{Binding ColumnDisabled0}" Value="True">
+                        <DataTrigger
+                            Binding="{Binding ColumnDisabled0}"
+                            Value="True">
                             <!-- If True -->
-                            <Setter Property="Background" Value="Transparent"/>
+                            <Setter
+                                Property="Background"
+                                Value="Transparent"/>
                         </DataTrigger>
                     </Style.Triggers>
                 </Style>
             </Button.Style>
             <StackPanel>
-                <Image Source="../../Resources/keypads/pyramid.png"/>
+                <Image
+                    Source="../../Resources/keypads/pyramid.png"/>
             </StackPanel>
         </Button>
-        <Button Width="90" Grid.Column="0" Grid.Row="2" Command="{Binding ButtonCommand}" CommandParameter="y" Focusable="False">
+        <Button
+            Width="90"
+            Grid.Column="0"
+            Grid.Row="2"
+            Command="{Binding ButtonCommand}"
+            CommandParameter="y"
+            Focusable="False">
             <Button.Style>
-                <Style TargetType="Button">
+                <Style
+                    TargetType="Button">
                     <!-- Default -->
-                    <Setter Property="Background" Value="LightGray"/>
-                    <Setter Property="Foreground" Value="Black"/>
+                    <Setter
+                        Property="Background"
+                        Value="LightGray"/>
+                    <Setter
+                        Property="Foreground"
+                        Value="Black"/>
                     <Style.Triggers>
-                        <DataTrigger Binding="{Binding Keypad_Y}" Value="True">
+                        <DataTrigger
+                            Binding="{Binding Keypad_Y}"
+                            Value="True">
                             <!-- If True -->
-                            <Setter Property="Background" Value="GreenYellow"/>
+                            <Setter
+                                Property="Background"
+                                Value="GreenYellow"/>
                         </DataTrigger>
-                        <DataTrigger Binding="{Binding ColumnDisabled0}" Value="True">
+                        <DataTrigger
+                            Binding="{Binding ColumnDisabled0}"
+                            Value="True">
                             <!-- If True -->
-                            <Setter Property="Background" Value="Transparent"/>
+                            <Setter
+                                Property="Background"
+                                Value="Transparent"/>
                         </DataTrigger>
                     </Style.Triggers>
                 </Style>
             </Button.Style>
             <StackPanel>
-                <Image Source="../../Resources/keypads/y.png"/>
+                <Image
+                    Source="../../Resources/keypads/y.png"/>
             </StackPanel>
         </Button>
-        <Button Width="90" Grid.Column="0" Grid.Row="3" Command="{Binding ButtonCommand}" CommandParameter="lightning" Focusable="False">
+        <Button
+            Width="90"
+            Grid.Column="0"
+            Grid.Row="3"
+            Command="{Binding ButtonCommand}"
+            CommandParameter="lightning"
+            Focusable="False">
             <Button.Style>
-                <Style TargetType="Button">
+                <Style
+                    TargetType="Button">
                     <!-- Default -->
-                    <Setter Property="Background" Value="LightGray"/>
-                    <Setter Property="Foreground" Value="Black"/>
+                    <Setter
+                        Property="Background"
+                        Value="LightGray"/>
+                    <Setter
+                        Property="Foreground"
+                        Value="Black"/>
                     <Style.Triggers>
-                        <DataTrigger Binding="{Binding Keypad_Lightning}" Value="True">
+                        <DataTrigger
+                            Binding="{Binding Keypad_Lightning}"
+                            Value="True">
                             <!-- If True -->
-                            <Setter Property="Background" Value="GreenYellow"/>
+                            <Setter
+                                Property="Background"
+                                Value="GreenYellow"/>
                         </DataTrigger>
-                        <DataTrigger Binding="{Binding ColumnDisabled0}" Value="True">
+                        <DataTrigger
+                            Binding="{Binding ColumnDisabled0}"
+                            Value="True">
                             <!-- If True -->
-                            <Setter Property="Background" Value="Transparent"/>
+                            <Setter
+                                Property="Background"
+                                Value="Transparent"/>
                         </DataTrigger>
                     </Style.Triggers>
                 </Style>
             </Button.Style>
             <StackPanel>
-                <Image Source="../../Resources/keypads/lightining.png"/>
+                <Image
+                    Source="../../Resources/keypads/lightining.png"/>
             </StackPanel>
         </Button>
-        <Button Width="90" Grid.Column="0" Grid.Row="4" Command="{Binding ButtonCommand}" CommandParameter="hk" Focusable="False">
+        <Button
+            Width="90"
+            Grid.Column="0"
+            Grid.Row="4"
+            Command="{Binding ButtonCommand}"
+            CommandParameter="hk"
+            Focusable="False">
             <Button.Style>
-                <Style TargetType="Button">
+                <Style
+                    TargetType="Button">
                     <!-- Default -->
-                    <Setter Property="Background" Value="LightGray"/>
-                    <Setter Property="Foreground" Value="Black"/>
+                    <Setter
+                        Property="Background"
+                        Value="LightGray"/>
+                    <Setter
+                        Property="Foreground"
+                        Value="Black"/>
                     <Style.Triggers>
-                        <DataTrigger Binding="{Binding Keypad_Hk}" Value="True">
+                        <DataTrigger
+                            Binding="{Binding Keypad_Hk}"
+                            Value="True">
                             <!-- If True -->
-                            <Setter Property="Background" Value="GreenYellow"/>
+                            <Setter
+                                Property="Background"
+                                Value="GreenYellow"/>
                         </DataTrigger>
-                        <DataTrigger Binding="{Binding ColumnDisabled0}" Value="True">
+                        <DataTrigger
+                            Binding="{Binding ColumnDisabled0}"
+                            Value="True">
                             <!-- If True -->
-                            <Setter Property="Background" Value="Transparent"/>
+                            <Setter
+                                Property="Background"
+                                Value="Transparent"/>
                         </DataTrigger>
                     </Style.Triggers>
                 </Style>
             </Button.Style>
             <StackPanel>
-                <Image Source="../../Resources/keypads/hk.png"/>
+                <Image
+                    Source="../../Resources/keypads/hk.png"/>
             </StackPanel>
         </Button>
-        <Button Width="90" Grid.Column="0" Grid.Row="5" Command="{Binding ButtonCommand}" CommandParameter="h" Focusable="False">
+        <Button
+            Width="90"
+            Grid.Column="0"
+            Grid.Row="5"
+            Command="{Binding ButtonCommand}"
+            CommandParameter="h"
+            Focusable="False">
             <Button.Style>
-                <Style TargetType="Button">
+                <Style
+                    TargetType="Button">
                     <!-- Default -->
-                    <Setter Property="Background" Value="LightGray"/>
-                    <Setter Property="Foreground" Value="Black"/>
+                    <Setter
+                        Property="Background"
+                        Value="LightGray"/>
+                    <Setter
+                        Property="Foreground"
+                        Value="Black"/>
                     <Style.Triggers>
-                        <DataTrigger Binding="{Binding Keypad_H}" Value="True">
+                        <DataTrigger
+                            Binding="{Binding Keypad_H}"
+                            Value="True">
                             <!-- If True -->
-                            <Setter Property="Background" Value="GreenYellow"/>
+                            <Setter
+                                Property="Background"
+                                Value="GreenYellow"/>
                         </DataTrigger>
-                        <DataTrigger Binding="{Binding ColumnDisabled0}" Value="True">
+                        <DataTrigger
+                            Binding="{Binding ColumnDisabled0}"
+                            Value="True">
                             <!-- If True -->
-                            <Setter Property="Background" Value="Transparent"/>
+                            <Setter
+                                Property="Background"
+                                Value="Transparent"/>
                         </DataTrigger>
                     </Style.Triggers>
                 </Style>
             </Button.Style>
             <StackPanel>
-                <Image Source="../../Resources/keypads/h.png"/>
+                <Image
+                    Source="../../Resources/keypads/h.png"/>
             </StackPanel>
         </Button>
-        <Button Width="90" Grid.Column="0" Grid.Row="6" Command="{Binding ButtonCommand}" CommandParameter="c_rev" Focusable="False">
+        <Button
+            Width="90"
+            Grid.Column="0"
+            Grid.Row="6"
+            Command="{Binding ButtonCommand}"
+            CommandParameter="c_rev"
+            Focusable="False">
             <Button.Style>
-                <Style TargetType="Button">
+                <Style
+                    TargetType="Button">
                     <!-- Default -->
-                    <Setter Property="Background" Value="LightGray"/>
-                    <Setter Property="Foreground" Value="Black"/>
+                    <Setter
+                        Property="Background"
+                        Value="LightGray"/>
+                    <Setter
+                        Property="Foreground"
+                        Value="Black"/>
                     <Style.Triggers>
-                        <DataTrigger Binding="{Binding Keypad_C_Rev}" Value="True">
+                        <DataTrigger
+                            Binding="{Binding Keypad_C_Rev}"
+                            Value="True">
                             <!-- If True -->
-                            <Setter Property="Background" Value="GreenYellow"/>
+                            <Setter
+                                Property="Background"
+                                Value="GreenYellow"/>
                         </DataTrigger>
-                        <DataTrigger Binding="{Binding ColumnDisabled0}" Value="True">
+                        <DataTrigger
+                            Binding="{Binding ColumnDisabled0}"
+                            Value="True">
                             <!-- If True -->
-                            <Setter Property="Background" Value="Transparent"/>
+                            <Setter
+                                Property="Background"
+                                Value="Transparent"/>
                         </DataTrigger>
                     </Style.Triggers>
                 </Style>
             </Button.Style>
             <StackPanel>
-                <Image Source="../../Resources/keypads/c_rev.png"/>
+                <Image
+                    Source="../../Resources/keypads/c_rev.png"/>
             </StackPanel>
         </Button>
-        <Button Width="90" Grid.Column="1" Grid.Row="0" Command="{Binding ButtonCommand}" CommandParameter="e" Focusable="False">
+        <Button
+            Width="90"
+            Grid.Column="1"
+            Grid.Row="0"
+            Command="{Binding ButtonCommand}"
+            CommandParameter="e"
+            Focusable="False">
             <Button.Style>
-                <Style TargetType="Button">
+                <Style
+                    TargetType="Button">
                     <!-- Default -->
-                    <Setter Property="Background" Value="LightGray"/>
-                    <Setter Property="Foreground" Value="Black"/>
+                    <Setter
+                        Property="Background"
+                        Value="LightGray"/>
+                    <Setter
+                        Property="Foreground"
+                        Value="Black"/>
                     <Style.Triggers>
-                        <DataTrigger Binding="{Binding Keypad_E}" Value="True">
+                        <DataTrigger
+                            Binding="{Binding Keypad_E}"
+                            Value="True">
                             <!-- If True -->
-                            <Setter Property="Background" Value="GreenYellow"/>
+                            <Setter
+                                Property="Background"
+                                Value="GreenYellow"/>
                         </DataTrigger>
-                        <DataTrigger Binding="{Binding ColumnDisabled1}" Value="True">
+                        <DataTrigger
+                            Binding="{Binding ColumnDisabled1}"
+                            Value="True">
                             <!-- If True -->
-                            <Setter Property="Background" Value="Transparent"/>
+                            <Setter
+                                Property="Background"
+                                Value="Transparent"/>
                         </DataTrigger>
                     </Style.Triggers>
                 </Style>
             </Button.Style>
             <StackPanel>
-                <Image Source="../../Resources/keypads/e.png"/>
+                <Image
+                    Source="../../Resources/keypads/e.png"/>
             </StackPanel>
         </Button>
-        <Button Width="90" Grid.Column="1" Grid.Row="1" Command="{Binding ButtonCommand}" CommandParameter="balloon" Focusable="False">
+        <Button
+            Width="90"
+            Grid.Column="1"
+            Grid.Row="1"
+            Command="{Binding ButtonCommand}"
+            CommandParameter="balloon"
+            Focusable="False">
             <Button.Style>
-                <Style TargetType="Button">
+                <Style
+                    TargetType="Button">
                     <!-- Default -->
-                    <Setter Property="Background" Value="LightGray"/>
-                    <Setter Property="Foreground" Value="Black"/>
+                    <Setter
+                        Property="Background"
+                        Value="LightGray"/>
+                    <Setter
+                        Property="Foreground"
+                        Value="Black"/>
                     <Style.Triggers>
-                        <DataTrigger Binding="{Binding Keypad_Balloon}" Value="True">
+                        <DataTrigger
+                            Binding="{Binding Keypad_Balloon}"
+                            Value="True">
                             <!-- If True -->
-                            <Setter Property="Background" Value="GreenYellow"/>
+                            <Setter
+                                Property="Background"
+                                Value="GreenYellow"/>
                         </DataTrigger>
-                        <DataTrigger Binding="{Binding ColumnDisabled1}" Value="True">
+                        <DataTrigger
+                            Binding="{Binding ColumnDisabled1}"
+                            Value="True">
                             <!-- If True -->
-                            <Setter Property="Background" Value="Transparent"/>
+                            <Setter
+                                Property="Background"
+                                Value="Transparent"/>
                         </DataTrigger>
                     </Style.Triggers>
                 </Style>
             </Button.Style>
             <StackPanel>
-                <Image Source="../../Resources/keypads/balloon.png"/>
+                <Image
+                    Source="../../Resources/keypads/balloon.png"/>
             </StackPanel>
         </Button>
-        <Button Width="90" Grid.Column="1" Grid.Row="2" Command="{Binding ButtonCommand}" CommandParameter="c_rev" Focusable="False">
+        <Button
+            Width="90"
+            Grid.Column="1"
+            Grid.Row="2"
+            Command="{Binding ButtonCommand}"
+            CommandParameter="c_rev"
+            Focusable="False">
             <Button.Style>
-                <Style TargetType="Button">
+                <Style
+                    TargetType="Button">
                     <!-- Default -->
-                    <Setter Property="Background" Value="LightGray"/>
-                    <Setter Property="Foreground" Value="Black"/>
+                    <Setter
+                        Property="Background"
+                        Value="LightGray"/>
+                    <Setter
+                        Property="Foreground"
+                        Value="Black"/>
                     <Style.Triggers>
-                        <DataTrigger Binding="{Binding Keypad_C_Rev}" Value="True">
+                        <DataTrigger
+                            Binding="{Binding Keypad_C_Rev}"
+                            Value="True">
                             <!-- If True -->
-                            <Setter Property="Background" Value="GreenYellow"/>
+                            <Setter
+                                Property="Background"
+                                Value="GreenYellow"/>
                         </DataTrigger>
-                        <DataTrigger Binding="{Binding ColumnDisabled1}" Value="True">
+                        <DataTrigger
+                            Binding="{Binding ColumnDisabled1}"
+                            Value="True">
                             <!-- If True -->
-                            <Setter Property="Background" Value="Transparent"/>
+                            <Setter
+                                Property="Background"
+                                Value="Transparent"/>
                         </DataTrigger>
                     </Style.Triggers>
                 </Style>
             </Button.Style>
             <StackPanel>
-                <Image Source="../../Resources/keypads/c_rev.png"/>
+                <Image
+                    Source="../../Resources/keypads/c_rev.png"/>
             </StackPanel>
         </Button>
-        <Button Width="90" Grid.Column="1" Grid.Row="3" Command="{Binding ButtonCommand}" CommandParameter="at" Focusable="False">
+        <Button
+            Width="90"
+            Grid.Column="1"
+            Grid.Row="3"
+            Command="{Binding ButtonCommand}"
+            CommandParameter="at"
+            Focusable="False">
             <Button.Style>
-                <Style TargetType="Button">
+                <Style
+                    TargetType="Button">
                     <!-- Default -->
-                    <Setter Property="Background" Value="LightGray"/>
-                    <Setter Property="Foreground" Value="Black"/>
+                    <Setter
+                        Property="Background"
+                        Value="LightGray"/>
+                    <Setter
+                        Property="Foreground"
+                        Value="Black"/>
                     <Style.Triggers>
-                        <DataTrigger Binding="{Binding Keypad_At}" Value="True">
+                        <DataTrigger
+                            Binding="{Binding Keypad_At}"
+                            Value="True">
                             <!-- If True -->
-                            <Setter Property="Background" Value="GreenYellow"/>
+                            <Setter
+                                Property="Background"
+                                Value="GreenYellow"/>
                         </DataTrigger>
-                        <DataTrigger Binding="{Binding ColumnDisabled1}" Value="True">
+                        <DataTrigger
+                            Binding="{Binding ColumnDisabled1}"
+                            Value="True">
                             <!-- If True -->
-                            <Setter Property="Background" Value="Transparent"/>
+                            <Setter
+                                Property="Background"
+                                Value="Transparent"/>
                         </DataTrigger>
                     </Style.Triggers>
                 </Style>
             </Button.Style>
             <StackPanel>
-                <Image Source="../../Resources/keypads/at.png"/>
+                <Image
+                    Source="../../Resources/keypads/at.png"/>
             </StackPanel>
         </Button>
-        <Button Width="90" Grid.Column="1" Grid.Row="4" Command="{Binding ButtonCommand}" CommandParameter="star_hol" Focusable="False">
+        <Button
+            Width="90"
+            Grid.Column="1"
+            Grid.Row="4"
+            Command="{Binding ButtonCommand}"
+            CommandParameter="star_hol"
+            Focusable="False">
             <Button.Style>
-                <Style TargetType="Button">
+                <Style
+                    TargetType="Button">
                     <!-- Default -->
-                    <Setter Property="Background" Value="LightGray"/>
-                    <Setter Property="Foreground" Value="Black"/>
+                    <Setter
+                        Property="Background"
+                        Value="LightGray"/>
+                    <Setter
+                        Property="Foreground"
+                        Value="Black"/>
                     <Style.Triggers>
-                        <DataTrigger Binding="{Binding Keypad_Star_Hol}" Value="True">
+                        <DataTrigger
+                            Binding="{Binding Keypad_Star_Hol}"
+                            Value="True">
                             <!-- If True -->
-                            <Setter Property="Background" Value="GreenYellow"/>
+                            <Setter
+                                Property="Background"
+                                Value="GreenYellow"/>
                         </DataTrigger>
-                        <DataTrigger Binding="{Binding ColumnDisabled1}" Value="True">
+                        <DataTrigger
+                            Binding="{Binding ColumnDisabled1}"
+                            Value="True">
                             <!-- If True -->
-                            <Setter Property="Background" Value="Transparent"/>
+                            <Setter
+                                Property="Background"
+                                Value="Transparent"/>
                         </DataTrigger>
                     </Style.Triggers>
                 </Style>
             </Button.Style>
             <StackPanel>
-                <Image Source="../../Resources/keypads/star_hol.png"/>
+                <Image
+                    Source="../../Resources/keypads/star_hol.png"/>
             </StackPanel>
         </Button>
-        <Button Width="90" Grid.Column="1" Grid.Row="5" Command="{Binding ButtonCommand}" CommandParameter="h" Focusable="False">
+        <Button
+            Width="90"
+            Grid.Column="1"
+            Grid.Row="5"
+            Command="{Binding ButtonCommand}"
+            CommandParameter="h"
+            Focusable="False">
             <Button.Style>
-                <Style TargetType="Button">
+                <Style
+                    TargetType="Button">
                     <!-- Default -->
-                    <Setter Property="Background" Value="LightGray"/>
-                    <Setter Property="Foreground" Value="Black"/>
+                    <Setter
+                        Property="Background"
+                        Value="LightGray"/>
+                    <Setter
+                        Property="Foreground"
+                        Value="Black"/>
                     <Style.Triggers>
-                        <DataTrigger Binding="{Binding Keypad_H}" Value="True">
+                        <DataTrigger
+                            Binding="{Binding Keypad_H}"
+                            Value="True">
                             <!-- If True -->
-                            <Setter Property="Background" Value="GreenYellow"/>
+                            <Setter
+                                Property="Background"
+                                Value="GreenYellow"/>
                         </DataTrigger>
-                        <DataTrigger Binding="{Binding ColumnDisabled1}" Value="True">
+                        <DataTrigger
+                            Binding="{Binding ColumnDisabled1}"
+                            Value="True">
                             <!-- If True -->
-                            <Setter Property="Background" Value="Transparent"/>
+                            <Setter
+                                Property="Background"
+                                Value="Transparent"/>
                         </DataTrigger>
                     </Style.Triggers>
                 </Style>
             </Button.Style>
             <StackPanel>
-                <Image Source="../../Resources/keypads/h.png"/>
+                <Image
+                    Source="../../Resources/keypads/h.png"/>
             </StackPanel>
         </Button>
-        <Button Width="90" Grid.Column="1" Grid.Row="6" Command="{Binding ButtonCommand}" CommandParameter="question" Focusable="False">
+        <Button
+            Width="90"
+            Grid.Column="1"
+            Grid.Row="6"
+            Command="{Binding ButtonCommand}"
+            CommandParameter="question"
+            Focusable="False">
             <Button.Style>
-                <Style TargetType="Button">
+                <Style
+                    TargetType="Button">
                     <!-- Default -->
-                    <Setter Property="Background" Value="LightGray"/>
-                    <Setter Property="Foreground" Value="Black"/>
+                    <Setter
+                        Property="Background"
+                        Value="LightGray"/>
+                    <Setter
+                        Property="Foreground"
+                        Value="Black"/>
                     <Style.Triggers>
-                        <DataTrigger Binding="{Binding Keypad_Question}" Value="True">
+                        <DataTrigger
+                            Binding="{Binding Keypad_Question}"
+                            Value="True">
                             <!-- If True -->
-                            <Setter Property="Background" Value="GreenYellow"/>
+                            <Setter
+                                Property="Background"
+                                Value="GreenYellow"/>
                         </DataTrigger>
-                        <DataTrigger Binding="{Binding ColumnDisabled1}" Value="True">
+                        <DataTrigger
+                            Binding="{Binding ColumnDisabled1}"
+                            Value="True">
                             <!-- If True -->
-                            <Setter Property="Background" Value="Transparent"/>
+                            <Setter
+                                Property="Background"
+                                Value="Transparent"/>
                         </DataTrigger>
                     </Style.Triggers>
                 </Style>
             </Button.Style>
             <StackPanel>
-                <Image Source="../../Resources/keypads/question.png"/>
+                <Image
+                    Source="../../Resources/keypads/question.png"/>
             </StackPanel>
         </Button>
-        <Button Width="90" Grid.Column="2" Grid.Row="0" Command="{Binding ButtonCommand}" CommandParameter="copyright" Focusable="False">
+        <Button
+            Width="90"
+            Grid.Column="2"
+            Grid.Row="0"
+            Command="{Binding ButtonCommand}"
+            CommandParameter="copyright"
+            Focusable="False">
             <Button.Style>
-                <Style TargetType="Button">
+                <Style
+                    TargetType="Button">
                     <!-- Default -->
-                    <Setter Property="Background" Value="LightGray"/>
-                    <Setter Property="Foreground" Value="Black"/>
+                    <Setter
+                        Property="Background"
+                        Value="LightGray"/>
+                    <Setter
+                        Property="Foreground"
+                        Value="Black"/>
                     <Style.Triggers>
-                        <DataTrigger Binding="{Binding Keypad_Copyright}" Value="True">
+                        <DataTrigger
+                            Binding="{Binding Keypad_Copyright}"
+                            Value="True">
                             <!-- If True -->
-                            <Setter Property="Background" Value="GreenYellow"/>
+                            <Setter
+                                Property="Background"
+                                Value="GreenYellow"/>
                         </DataTrigger>
-                        <DataTrigger Binding="{Binding ColumnDisabled2}" Value="True">
+                        <DataTrigger
+                            Binding="{Binding ColumnDisabled2}"
+                            Value="True">
                             <!-- If True -->
-                            <Setter Property="Background" Value="Transparent"/>
+                            <Setter
+                                Property="Background"
+                                Value="Transparent"/>
                         </DataTrigger>
                     </Style.Triggers>
                 </Style>
             </Button.Style>
             <StackPanel>
-                <Image Source="../../Resources/keypads/copyright.png"/>
+                <Image
+                    Source="../../Resources/keypads/copyright.png"/>
             </StackPanel>
         </Button>
-        <Button Width="90" Grid.Column="2" Grid.Row="1" Command="{Binding ButtonCommand}" CommandParameter="boobs" Focusable="False">
+        <Button
+            Width="90"
+            Grid.Column="2"
+            Grid.Row="1"
+            Command="{Binding ButtonCommand}"
+            CommandParameter="boobs"
+            Focusable="False">
             <Button.Style>
-                <Style TargetType="Button">
+                <Style
+                    TargetType="Button">
                     <!-- Default -->
-                    <Setter Property="Background" Value="LightGray"/>
-                    <Setter Property="Foreground" Value="Black"/>
+                    <Setter
+                        Property="Background"
+                        Value="LightGray"/>
+                    <Setter
+                        Property="Foreground"
+                        Value="Black"/>
                     <Style.Triggers>
-                        <DataTrigger Binding="{Binding Keypad_Boobs}" Value="True">
+                        <DataTrigger
+                            Binding="{Binding Keypad_Boobs}"
+                            Value="True">
                             <!-- If True -->
-                            <Setter Property="Background" Value="GreenYellow"/>
+                            <Setter
+                                Property="Background"
+                                Value="GreenYellow"/>
                         </DataTrigger>
-                        <DataTrigger Binding="{Binding ColumnDisabled2}" Value="True">
+                        <DataTrigger
+                            Binding="{Binding ColumnDisabled2}"
+                            Value="True">
                             <!-- If True -->
-                            <Setter Property="Background" Value="Transparent"/>
+                            <Setter
+                                Property="Background"
+                                Value="Transparent"/>
                         </DataTrigger>
                     </Style.Triggers>
                 </Style>
             </Button.Style>
             <StackPanel>
-                <Image Source="../../Resources/keypads/boobs.png"/>
+                <Image
+                    Source="../../Resources/keypads/boobs.png"/>
             </StackPanel>
         </Button>
-        <Button Width="90" Grid.Column="2" Grid.Row="2" Command="{Binding ButtonCommand}" CommandParameter="at" Focusable="False">
+        <Button
+            Width="90"
+            Grid.Column="2"
+            Grid.Row="2"
+            Command="{Binding ButtonCommand}"
+            CommandParameter="at"
+            Focusable="False">
             <Button.Style>
-                <Style TargetType="Button">
+                <Style
+                    TargetType="Button">
                     <!-- Default -->
-                    <Setter Property="Background" Value="LightGray"/>
-                    <Setter Property="Foreground" Value="Black"/>
+                    <Setter
+                        Property="Background"
+                        Value="LightGray"/>
+                    <Setter
+                        Property="Foreground"
+                        Value="Black"/>
                     <Style.Triggers>
-                        <DataTrigger Binding="{Binding Keypad_At}" Value="True">
+                        <DataTrigger
+                            Binding="{Binding Keypad_At}"
+                            Value="True">
                             <!-- If True -->
-                            <Setter Property="Background" Value="GreenYellow"/>
+                            <Setter
+                                Property="Background"
+                                Value="GreenYellow"/>
                         </DataTrigger>
-                        <DataTrigger Binding="{Binding ColumnDisabled2}" Value="True">
+                        <DataTrigger
+                            Binding="{Binding ColumnDisabled2}"
+                            Value="True">
                             <!-- If True -->
-                            <Setter Property="Background" Value="Transparent"/>
+                            <Setter
+                                Property="Background"
+                                Value="Transparent"/>
                         </DataTrigger>
                     </Style.Triggers>
                 </Style>
             </Button.Style>
             <StackPanel>
-                <Image Source="../../Resources/keypads/at.png"/>
+                <Image
+                    Source="../../Resources/keypads/at.png"/>
             </StackPanel>
         </Button>
-        <Button Width="90" Grid.Column="2" Grid.Row="3" Command="{Binding ButtonCommand}" CommandParameter="kk" Focusable="False">
+        <Button
+            Width="90"
+            Grid.Column="2"
+            Grid.Row="3"
+            Command="{Binding ButtonCommand}"
+            CommandParameter="kk"
+            Focusable="False">
             <Button.Style>
-                <Style TargetType="Button">
+                <Style
+                    TargetType="Button">
                     <!-- Default -->
-                    <Setter Property="Background" Value="LightGray"/>
-                    <Setter Property="Foreground" Value="Black"/>
+                    <Setter
+                        Property="Background"
+                        Value="LightGray"/>
+                    <Setter
+                        Property="Foreground"
+                        Value="Black"/>
                     <Style.Triggers>
-                        <DataTrigger Binding="{Binding Keypad_Kk}" Value="True">
+                        <DataTrigger
+                            Binding="{Binding Keypad_Kk}"
+                            Value="True">
                             <!-- If True -->
-                            <Setter Property="Background" Value="GreenYellow"/>
+                            <Setter
+                                Property="Background"
+                                Value="GreenYellow"/>
                         </DataTrigger>
-                        <DataTrigger Binding="{Binding ColumnDisabled2}" Value="True">
+                        <DataTrigger
+                            Binding="{Binding ColumnDisabled2}"
+                            Value="True">
                             <!-- If True -->
-                            <Setter Property="Background" Value="Transparent"/>
+                            <Setter
+                                Property="Background"
+                                Value="Transparent"/>
                         </DataTrigger>
                     </Style.Triggers>
                 </Style>
             </Button.Style>
             <StackPanel>
-                <Image Source="../../Resources/keypads/kk.png"/>
+                <Image
+                    Source="../../Resources/keypads/kk.png"/>
             </StackPanel>
         </Button>
-        <Button Width="90" Grid.Column="2" Grid.Row="4" Command="{Binding ButtonCommand}" CommandParameter="3_broken" Focusable="False">
+        <Button
+            Width="90"
+            Grid.Column="2"
+            Grid.Row="4"
+            Command="{Binding ButtonCommand}"
+            CommandParameter="3_broken"
+            Focusable="False">
             <Button.Style>
-                <Style TargetType="Button">
+                <Style
+                    TargetType="Button">
                     <!-- Default -->
-                    <Setter Property="Background" Value="LightGray"/>
-                    <Setter Property="Foreground" Value="Black"/>
+                    <Setter
+                        Property="Background"
+                        Value="LightGray"/>
+                    <Setter
+                        Property="Foreground"
+                        Value="Black"/>
                     <Style.Triggers>
-                        <DataTrigger Binding="{Binding Keypad_3_Broken}" Value="True">
+                        <DataTrigger
+                            Binding="{Binding Keypad_3_Broken}"
+                            Value="True">
                             <!-- If True -->
-                            <Setter Property="Background" Value="GreenYellow"/>
+                            <Setter
+                                Property="Background"
+                                Value="GreenYellow"/>
                         </DataTrigger>
-                        <DataTrigger Binding="{Binding ColumnDisabled2}" Value="True">
+                        <DataTrigger
+                            Binding="{Binding ColumnDisabled2}"
+                            Value="True">
                             <!-- If True -->
-                            <Setter Property="Background" Value="Transparent"/>
+                            <Setter
+                                Property="Background"
+                                Value="Transparent"/>
                         </DataTrigger>
                     </Style.Triggers>
                 </Style>
             </Button.Style>
             <StackPanel>
-                <Image Source="../../Resources/keypads/3_broken.png"/>
+                <Image
+                    Source="../../Resources/keypads/3_broken.png"/>
             </StackPanel>
         </Button>
-        <Button Width="90" Grid.Column="2" Grid.Row="5" Command="{Binding ButtonCommand}" CommandParameter="y" Focusable="False">
+        <Button
+            Width="90"
+            Grid.Column="2"
+            Grid.Row="5"
+            Command="{Binding ButtonCommand}"
+            CommandParameter="y"
+            Focusable="False">
             <Button.Style>
-                <Style TargetType="Button">
+                <Style
+                    TargetType="Button">
                     <!-- Default -->
-                    <Setter Property="Background" Value="LightGray"/>
-                    <Setter Property="Foreground" Value="Black"/>
+                    <Setter
+                        Property="Background"
+                        Value="LightGray"/>
+                    <Setter
+                        Property="Foreground"
+                        Value="Black"/>
                     <Style.Triggers>
-                        <DataTrigger Binding="{Binding Keypad_Y}" Value="True">
+                        <DataTrigger
+                            Binding="{Binding Keypad_Y}"
+                            Value="True">
                             <!-- If True -->
-                            <Setter Property="Background" Value="GreenYellow"/>
+                            <Setter
+                                Property="Background"
+                                Value="GreenYellow"/>
                         </DataTrigger>
-                        <DataTrigger Binding="{Binding ColumnDisabled2}" Value="True">
+                        <DataTrigger
+                            Binding="{Binding ColumnDisabled2}"
+                            Value="True">
                             <!-- If True -->
-                            <Setter Property="Background" Value="Transparent"/>
+                            <Setter
+                                Property="Background"
+                                Value="Transparent"/>
                         </DataTrigger>
                     </Style.Triggers>
                 </Style>
             </Button.Style>
             <StackPanel>
-                <Image Source="../../Resources/keypads/y.png"/>
+                <Image
+                    Source="../../Resources/keypads/y.png"/>
             </StackPanel>
         </Button>
-        <Button Width="90" Grid.Column="2" Grid.Row="6" Command="{Binding ButtonCommand}" CommandParameter="star_hol" Focusable="False">
+        <Button
+            Width="90"
+            Grid.Column="2"
+            Grid.Row="6"
+            Command="{Binding ButtonCommand}"
+            CommandParameter="star_hol"
+            Focusable="False">
             <Button.Style>
-                <Style TargetType="Button">
+                <Style
+                    TargetType="Button">
                     <!-- Default -->
-                    <Setter Property="Background" Value="LightGray"/>
-                    <Setter Property="Foreground" Value="Black"/>
+                    <Setter
+                        Property="Background"
+                        Value="LightGray"/>
+                    <Setter
+                        Property="Foreground"
+                        Value="Black"/>
                     <Style.Triggers>
-                        <DataTrigger Binding="{Binding Keypad_Star_Hol}" Value="True">
+                        <DataTrigger
+                            Binding="{Binding Keypad_Star_Hol}"
+                            Value="True">
                             <!-- If True -->
-                            <Setter Property="Background" Value="GreenYellow"/>
+                            <Setter
+                                Property="Background"
+                                Value="GreenYellow"/>
                         </DataTrigger>
-                        <DataTrigger Binding="{Binding ColumnDisabled2}" Value="True">
+                        <DataTrigger
+                            Binding="{Binding ColumnDisabled2}"
+                            Value="True">
                             <!-- If True -->
-                            <Setter Property="Background" Value="Transparent"/>
+                            <Setter
+                                Property="Background"
+                                Value="Transparent"/>
                         </DataTrigger>
                     </Style.Triggers>
                 </Style>
             </Button.Style>
             <StackPanel>
-                <Image Source="../../Resources/keypads/star_hol.png"/>
+                <Image
+                    Source="../../Resources/keypads/star_hol.png"/>
             </StackPanel>
         </Button>
-        <Button Width="90" Grid.Column="3" Grid.Row="0" Command="{Binding ButtonCommand}" CommandParameter="6" Focusable="False">
+        <Button
+            Width="90"
+            Grid.Column="3"
+            Grid.Row="0"
+            Command="{Binding ButtonCommand}"
+            CommandParameter="6"
+            Focusable="False">
             <Button.Style>
-                <Style TargetType="Button">
+                <Style
+                    TargetType="Button">
                     <!-- Default -->
-                    <Setter Property="Background" Value="LightGray"/>
-                    <Setter Property="Foreground" Value="Black"/>
+                    <Setter
+                        Property="Background"
+                        Value="LightGray"/>
+                    <Setter
+                        Property="Foreground"
+                        Value="Black"/>
                     <Style.Triggers>
-                        <DataTrigger Binding="{Binding Keypad_6}" Value="True">
+                        <DataTrigger
+                            Binding="{Binding Keypad_6}"
+                            Value="True">
                             <!-- If True -->
-                            <Setter Property="Background" Value="GreenYellow"/>
+                            <Setter
+                                Property="Background"
+                                Value="GreenYellow"/>
                         </DataTrigger>
-                        <DataTrigger Binding="{Binding ColumnDisabled3}" Value="True">
+                        <DataTrigger
+                            Binding="{Binding ColumnDisabled3}"
+                            Value="True">
                             <!-- If True -->
-                            <Setter Property="Background" Value="Transparent"/>
+                            <Setter
+                                Property="Background"
+                                Value="Transparent"/>
                         </DataTrigger>
                     </Style.Triggers>
                 </Style>
             </Button.Style>
             <StackPanel>
-                <Image Source="../../Resources/keypads/6.png"/>
+                <Image
+                    Source="../../Resources/keypads/6.png"/>
             </StackPanel>
         </Button>
-        <Button Width="90" Grid.Column="3" Grid.Row="1" Command="{Binding ButtonCommand}" CommandParameter="paragraph" Focusable="False">
+        <Button
+            Width="90"
+            Grid.Column="3"
+            Grid.Row="1"
+            Command="{Binding ButtonCommand}"
+            CommandParameter="paragraph"
+            Focusable="False">
             <Button.Style>
-                <Style TargetType="Button">
+                <Style
+                    TargetType="Button">
                     <!-- Default -->
-                    <Setter Property="Background" Value="LightGray"/>
-                    <Setter Property="Foreground" Value="Black"/>
+                    <Setter
+                        Property="Background"
+                        Value="LightGray"/>
+                    <Setter
+                        Property="Foreground"
+                        Value="Black"/>
                     <Style.Triggers>
-                        <DataTrigger Binding="{Binding Keypad_Paragraph}" Value="True">
+                        <DataTrigger
+                            Binding="{Binding Keypad_Paragraph}"
+                            Value="True">
                             <!-- If True -->
-                            <Setter Property="Background" Value="GreenYellow"/>
+                            <Setter
+                                Property="Background"
+                                Value="GreenYellow"/>
                         </DataTrigger>
-                        <DataTrigger Binding="{Binding ColumnDisabled3}" Value="True">
+                        <DataTrigger
+                            Binding="{Binding ColumnDisabled3}"
+                            Value="True">
                             <!-- If True -->
-                            <Setter Property="Background" Value="Transparent"/>
+                            <Setter
+                                Property="Background"
+                                Value="Transparent"/>
                         </DataTrigger>
                     </Style.Triggers>
                 </Style>
             </Button.Style>
             <StackPanel>
-                <Image Source="../../Resources/keypads/paragraph.png"/>
+                <Image
+                    Source="../../Resources/keypads/paragraph.png"/>
             </StackPanel>
         </Button>
-        <Button Width="90" Grid.Column="3" Grid.Row="2" Command="{Binding ButtonCommand}" CommandParameter="tb" Focusable="False">
+        <Button
+            Width="90"
+            Grid.Column="3"
+            Grid.Row="2"
+            Command="{Binding ButtonCommand}"
+            CommandParameter="tb"
+            Focusable="False">
             <Button.Style>
-                <Style TargetType="Button">
+                <Style
+                    TargetType="Button">
                     <!-- Default -->
-                    <Setter Property="Background" Value="LightGray"/>
-                    <Setter Property="Foreground" Value="Black"/>
+                    <Setter
+                        Property="Background"
+                        Value="LightGray"/>
+                    <Setter
+                        Property="Foreground"
+                        Value="Black"/>
                     <Style.Triggers>
-                        <DataTrigger Binding="{Binding Keypad_Tb}" Value="True">
+                        <DataTrigger
+                            Binding="{Binding Keypad_Tb}"
+                            Value="True">
                             <!-- If True -->
-                            <Setter Property="Background" Value="GreenYellow"/>
+                            <Setter
+                                Property="Background"
+                                Value="GreenYellow"/>
                         </DataTrigger>
-                        <DataTrigger Binding="{Binding ColumnDisabled3}" Value="True">
+                        <DataTrigger
+                            Binding="{Binding ColumnDisabled3}"
+                            Value="True">
                             <!-- If True -->
-                            <Setter Property="Background" Value="Transparent"/>
+                            <Setter
+                                Property="Background"
+                                Value="Transparent"/>
                         </DataTrigger>
                     </Style.Triggers>
                 </Style>
             </Button.Style>
             <StackPanel>
-                <Image Source="../../Resources/keypads/tb.png"/>
+                <Image
+                    Source="../../Resources/keypads/tb.png"/>
             </StackPanel>
         </Button>
-        <Button Width="90" Grid.Column="3" Grid.Row="3" Command="{Binding ButtonCommand}" CommandParameter="hk" Focusable="False">
+        <Button
+            Width="90"
+            Grid.Column="3"
+            Grid.Row="3"
+            Command="{Binding ButtonCommand}"
+            CommandParameter="hk"
+            Focusable="False">
             <Button.Style>
-                <Style TargetType="Button">
+                <Style
+                    TargetType="Button">
                     <!-- Default -->
-                    <Setter Property="Background" Value="LightGray"/>
-                    <Setter Property="Foreground" Value="Black"/>
+                    <Setter
+                        Property="Background"
+                        Value="LightGray"/>
+                    <Setter
+                        Property="Foreground"
+                        Value="Black"/>
                     <Style.Triggers>
-                        <DataTrigger Binding="{Binding Keypad_Hk}" Value="True">
+                        <DataTrigger
+                            Binding="{Binding Keypad_Hk}"
+                            Value="True">
                             <!-- If True -->
-                            <Setter Property="Background" Value="GreenYellow"/>
+                            <Setter
+                                Property="Background"
+                                Value="GreenYellow"/>
                         </DataTrigger>
-                        <DataTrigger Binding="{Binding ColumnDisabled3}" Value="True">
+                        <DataTrigger
+                            Binding="{Binding ColumnDisabled3}"
+                            Value="True">
                             <!-- If True -->
-                            <Setter Property="Background" Value="Transparent"/>
+                            <Setter
+                                Property="Background"
+                                Value="Transparent"/>
                         </DataTrigger>
                     </Style.Triggers>
                 </Style>
             </Button.Style>
             <StackPanel>
-                <Image Source="../../Resources/keypads/hk.png"/>
+                <Image
+                    Source="../../Resources/keypads/hk.png"/>
             </StackPanel>
         </Button>
-        <Button Width="90" Grid.Column="3" Grid.Row="4" Command="{Binding ButtonCommand}" CommandParameter="kk" Focusable="False">
+        <Button
+            Width="90"
+            Grid.Column="3"
+            Grid.Row="4"
+            Command="{Binding ButtonCommand}"
+            CommandParameter="kk"
+            Focusable="False">
             <Button.Style>
-                <Style TargetType="Button">
+                <Style
+                    TargetType="Button">
                     <!-- Default -->
-                    <Setter Property="Background" Value="LightGray"/>
-                    <Setter Property="Foreground" Value="Black"/>
+                    <Setter
+                        Property="Background"
+                        Value="LightGray"/>
+                    <Setter
+                        Property="Foreground"
+                        Value="Black"/>
                     <Style.Triggers>
-                        <DataTrigger Binding="{Binding Keypad_Kk}" Value="True">
+                        <DataTrigger
+                            Binding="{Binding Keypad_Kk}"
+                            Value="True">
                             <!-- If True -->
-                            <Setter Property="Background" Value="GreenYellow"/>
+                            <Setter
+                                Property="Background"
+                                Value="GreenYellow"/>
                         </DataTrigger>
-                        <DataTrigger Binding="{Binding ColumnDisabled3}" Value="True">
+                        <DataTrigger
+                            Binding="{Binding ColumnDisabled3}"
+                            Value="True">
                             <!-- If True -->
-                            <Setter Property="Background" Value="Transparent"/>
+                            <Setter
+                                Property="Background"
+                                Value="Transparent"/>
                         </DataTrigger>
                     </Style.Triggers>
                 </Style>
             </Button.Style>
             <StackPanel>
-                <Image Source="../../Resources/keypads/kk.png"/>
+                <Image
+                    Source="../../Resources/keypads/kk.png"/>
             </StackPanel>
         </Button>
-        <Button Width="90" Grid.Column="3" Grid.Row="5" Command="{Binding ButtonCommand}" CommandParameter="question" Focusable="False">
+        <Button
+            Width="90"
+            Grid.Column="3"
+            Grid.Row="5"
+            Command="{Binding ButtonCommand}"
+            CommandParameter="question"
+            Focusable="False">
             <Button.Style>
-                <Style TargetType="Button">
+                <Style
+                    TargetType="Button">
                     <!-- Default -->
-                    <Setter Property="Background" Value="LightGray"/>
-                    <Setter Property="Foreground" Value="Black"/>
+                    <Setter
+                        Property="Background"
+                        Value="LightGray"/>
+                    <Setter
+                        Property="Foreground"
+                        Value="Black"/>
                     <Style.Triggers>
-                        <DataTrigger Binding="{Binding Keypad_Question}" Value="True">
+                        <DataTrigger
+                            Binding="{Binding Keypad_Question}"
+                            Value="True">
                             <!-- If True -->
-                            <Setter Property="Background" Value="GreenYellow"/>
+                            <Setter
+                                Property="Background"
+                                Value="GreenYellow"/>
                         </DataTrigger>
-                        <DataTrigger Binding="{Binding ColumnDisabled3}" Value="True">
+                        <DataTrigger
+                            Binding="{Binding ColumnDisabled3}"
+                            Value="True">
                             <!-- If True -->
-                            <Setter Property="Background" Value="Transparent"/>
+                            <Setter
+                                Property="Background"
+                                Value="Transparent"/>
                         </DataTrigger>
                     </Style.Triggers>
                 </Style>
             </Button.Style>
             <StackPanel>
-                <Image Source="../../Resources/keypads/question.png"/>
+                <Image
+                    Source="../../Resources/keypads/question.png"/>
             </StackPanel>
         </Button>
-        <Button Width="90" Grid.Column="3" Grid.Row="6" Command="{Binding ButtonCommand}" CommandParameter="smile" Focusable="False">
+        <Button
+            Width="90"
+            Grid.Column="3"
+            Grid.Row="6"
+            Command="{Binding ButtonCommand}"
+            CommandParameter="smile"
+            Focusable="False">
             <Button.Style>
-                <Style TargetType="Button">
+                <Style
+                    TargetType="Button">
                     <!-- Default -->
-                    <Setter Property="Background" Value="LightGray"/>
-                    <Setter Property="Foreground" Value="Black"/>
+                    <Setter
+                        Property="Background"
+                        Value="LightGray"/>
+                    <Setter
+                        Property="Foreground"
+                        Value="Black"/>
                     <Style.Triggers>
-                        <DataTrigger Binding="{Binding Keypad_Smile}" Value="True">
+                        <DataTrigger
+                            Binding="{Binding Keypad_Smile}"
+                            Value="True">
                             <!-- If True -->
-                            <Setter Property="Background" Value="GreenYellow"/>
+                            <Setter
+                                Property="Background"
+                                Value="GreenYellow"/>
                         </DataTrigger>
-                        <DataTrigger Binding="{Binding ColumnDisabled3}" Value="True">
+                        <DataTrigger
+                            Binding="{Binding ColumnDisabled3}"
+                            Value="True">
                             <!-- If True -->
-                            <Setter Property="Background" Value="Transparent"/>
+                            <Setter
+                                Property="Background"
+                                Value="Transparent"/>
                         </DataTrigger>
                     </Style.Triggers>
                 </Style>
             </Button.Style>
             <StackPanel>
-                <Image Source="../../Resources/keypads/smile.png"/>
+                <Image
+                    Source="../../Resources/keypads/smile.png"/>
             </StackPanel>
         </Button>
-        <Button Width="90" Grid.Column="4" Grid.Row="0" Command="{Binding ButtonCommand}" CommandParameter="fork" Focusable="False">
+        <Button
+            Width="90"
+            Grid.Column="4"
+            Grid.Row="0"
+            Command="{Binding ButtonCommand}"
+            CommandParameter="fork"
+            Focusable="False">
             <Button.Style>
-                <Style TargetType="Button">
+                <Style
+                    TargetType="Button">
                     <!-- Default -->
-                    <Setter Property="Background" Value="LightGray"/>
-                    <Setter Property="Foreground" Value="Black"/>
+                    <Setter
+                        Property="Background"
+                        Value="LightGray"/>
+                    <Setter
+                        Property="Foreground"
+                        Value="Black"/>
                     <Style.Triggers>
-                        <DataTrigger Binding="{Binding Keypad_Fork}" Value="True">
+                        <DataTrigger
+                            Binding="{Binding Keypad_Fork}"
+                            Value="True">
                             <!-- If True -->
-                            <Setter Property="Background" Value="GreenYellow"/>
+                            <Setter
+                                Property="Background"
+                                Value="GreenYellow"/>
                         </DataTrigger>
-                        <DataTrigger Binding="{Binding ColumnDisabled4}" Value="True">
+                        <DataTrigger
+                            Binding="{Binding ColumnDisabled4}"
+                            Value="True">
                             <!-- If True -->
-                            <Setter Property="Background" Value="Transparent"/>
+                            <Setter
+                                Property="Background"
+                                Value="Transparent"/>
                         </DataTrigger>
                     </Style.Triggers>
                 </Style>
             </Button.Style>
             <StackPanel>
-                <Image Source="../../Resources/keypads/fork.png"/>
+                <Image
+                    Source="../../Resources/keypads/fork.png"/>
             </StackPanel>
         </Button>
-        <Button Width="90" Grid.Column="4" Grid.Row="1" Command="{Binding ButtonCommand}" CommandParameter="smile" Focusable="False">
+        <Button
+            Width="90"
+            Grid.Column="4"
+            Grid.Row="1"
+            Command="{Binding ButtonCommand}"
+            CommandParameter="smile"
+            Focusable="False">
             <Button.Style>
-                <Style TargetType="Button">
+                <Style
+                    TargetType="Button">
                     <!-- Default -->
-                    <Setter Property="Background" Value="LightGray"/>
-                    <Setter Property="Foreground" Value="Black"/>
+                    <Setter
+                        Property="Background"
+                        Value="LightGray"/>
+                    <Setter
+                        Property="Foreground"
+                        Value="Black"/>
                     <Style.Triggers>
-                        <DataTrigger Binding="{Binding Keypad_Smile}" Value="True">
+                        <DataTrigger
+                            Binding="{Binding Keypad_Smile}"
+                            Value="True">
                             <!-- If True -->
-                            <Setter Property="Background" Value="GreenYellow"/>
+                            <Setter
+                                Property="Background"
+                                Value="GreenYellow"/>
                         </DataTrigger>
-                        <DataTrigger Binding="{Binding ColumnDisabled4}" Value="True">
+                        <DataTrigger
+                            Binding="{Binding ColumnDisabled4}"
+                            Value="True">
                             <!-- If True -->
-                            <Setter Property="Background" Value="Transparent"/>
+                            <Setter
+                                Property="Background"
+                                Value="Transparent"/>
                         </DataTrigger>
                     </Style.Triggers>
                 </Style>
             </Button.Style>
             <StackPanel>
-                <Image Source="../../Resources/keypads/smile.png"/>
+                <Image
+                    Source="../../Resources/keypads/smile.png"/>
             </StackPanel>
         </Button>
-        <Button Width="90" Grid.Column="4" Grid.Row="2" Command="{Binding ButtonCommand}" CommandParameter="tb" Focusable="False">
+        <Button
+            Width="90"
+            Grid.Column="4"
+            Grid.Row="2"
+            Command="{Binding ButtonCommand}"
+            CommandParameter="tb"
+            Focusable="False">
             <Button.Style>
-                <Style TargetType="Button">
+                <Style
+                    TargetType="Button">
                     <!-- Default -->
-                    <Setter Property="Background" Value="LightGray"/>
-                    <Setter Property="Foreground" Value="Black"/>
+                    <Setter
+                        Property="Background"
+                        Value="LightGray"/>
+                    <Setter
+                        Property="Foreground"
+                        Value="Black"/>
                     <Style.Triggers>
-                        <DataTrigger Binding="{Binding Keypad_Tb}" Value="True">
+                        <DataTrigger
+                            Binding="{Binding Keypad_Tb}"
+                            Value="True">
                             <!-- If True -->
-                            <Setter Property="Background" Value="GreenYellow"/>
+                            <Setter
+                                Property="Background"
+                                Value="GreenYellow"/>
                         </DataTrigger>
-                        <DataTrigger Binding="{Binding ColumnDisabled4}" Value="True">
+                        <DataTrigger
+                            Binding="{Binding ColumnDisabled4}"
+                            Value="True">
                             <!-- If True -->
-                            <Setter Property="Background" Value="Transparent"/>
+                            <Setter
+                                Property="Background"
+                                Value="Transparent"/>
                         </DataTrigger>
                     </Style.Triggers>
                 </Style>
             </Button.Style>
             <StackPanel>
-                <Image Source="../../Resources/keypads/tb.png"/>
+                <Image
+                    Source="../../Resources/keypads/tb.png"/>
             </StackPanel>
         </Button>
-        <Button Width="90" Grid.Column="4" Grid.Row="3" Command="{Binding ButtonCommand}" CommandParameter="c" Focusable="False">
+        <Button
+            Width="90"
+            Grid.Column="4"
+            Grid.Row="3"
+            Command="{Binding ButtonCommand}"
+            CommandParameter="c"
+            Focusable="False">
             <Button.Style>
-                <Style TargetType="Button">
+                <Style
+                    TargetType="Button">
                     <!-- Default -->
-                    <Setter Property="Background" Value="LightGray"/>
-                    <Setter Property="Foreground" Value="Black"/>
+                    <Setter
+                        Property="Background"
+                        Value="LightGray"/>
+                    <Setter
+                        Property="Foreground"
+                        Value="Black"/>
                     <Style.Triggers>
-                        <DataTrigger Binding="{Binding Keypad_C}" Value="True">
+                        <DataTrigger
+                            Binding="{Binding Keypad_C}"
+                            Value="True">
                             <!-- If True -->
-                            <Setter Property="Background" Value="GreenYellow"/>
+                            <Setter
+                                Property="Background"
+                                Value="GreenYellow"/>
                         </DataTrigger>
-                        <DataTrigger Binding="{Binding ColumnDisabled4}" Value="True">
+                        <DataTrigger
+                            Binding="{Binding ColumnDisabled4}"
+                            Value="True">
                             <!-- If True -->
-                            <Setter Property="Background" Value="Transparent"/>
+                            <Setter
+                                Property="Background"
+                                Value="Transparent"/>
                         </DataTrigger>
                     </Style.Triggers>
                 </Style>
             </Button.Style>
             <StackPanel>
-                <Image Source="../../Resources/keypads/c.png"/>
+                <Image
+                    Source="../../Resources/keypads/c.png"/>
             </StackPanel>
         </Button>
-        <Button Width="90" Grid.Column="4" Grid.Row="4" Command="{Binding ButtonCommand}" CommandParameter="paragraph" Focusable="False">
+        <Button
+            Width="90"
+            Grid.Column="4"
+            Grid.Row="4"
+            Command="{Binding ButtonCommand}"
+            CommandParameter="paragraph"
+            Focusable="False">
             <Button.Style>
-                <Style TargetType="Button">
+                <Style
+                    TargetType="Button">
                     <!-- Default -->
-                    <Setter Property="Background" Value="LightGray"/>
-                    <Setter Property="Foreground" Value="Black"/>
+                    <Setter
+                        Property="Background"
+                        Value="LightGray"/>
+                    <Setter
+                        Property="Foreground"
+                        Value="Black"/>
                     <Style.Triggers>
-                        <DataTrigger Binding="{Binding Keypad_Paragraph}" Value="True">
+                        <DataTrigger
+                            Binding="{Binding Keypad_Paragraph}"
+                            Value="True">
                             <!-- If True -->
-                            <Setter Property="Background" Value="GreenYellow"/>
+                            <Setter
+                                Property="Background"
+                                Value="GreenYellow"/>
                         </DataTrigger>
-                        <DataTrigger Binding="{Binding ColumnDisabled4}" Value="True">
+                        <DataTrigger
+                            Binding="{Binding ColumnDisabled4}"
+                            Value="True">
                             <!-- If True -->
-                            <Setter Property="Background" Value="Transparent"/>
+                            <Setter
+                                Property="Background"
+                                Value="Transparent"/>
                         </DataTrigger>
                     </Style.Triggers>
                 </Style>
             </Button.Style>
             <StackPanel>
-                <Image Source="../../Resources/keypads/paragraph.png"/>
+                <Image
+                    Source="../../Resources/keypads/paragraph.png"/>
             </StackPanel>
         </Button>
-        <Button Width="90" Grid.Column="4" Grid.Row="5" Command="{Binding ButtonCommand}" CommandParameter="3_fancy" Focusable="False">
+        <Button
+            Width="90"
+            Grid.Column="4"
+            Grid.Row="5"
+            Command="{Binding ButtonCommand}"
+            CommandParameter="3_fancy"
+            Focusable="False">
             <Button.Style>
-                <Style TargetType="Button">
+                <Style
+                    TargetType="Button">
                     <!-- Default -->
-                    <Setter Property="Background" Value="LightGray"/>
-                    <Setter Property="Foreground" Value="Black"/>
+                    <Setter
+                        Property="Background"
+                        Value="LightGray"/>
+                    <Setter
+                        Property="Foreground"
+                        Value="Black"/>
                     <Style.Triggers>
-                        <DataTrigger Binding="{Binding Keypad_3_Fancy}" Value="True">
+                        <DataTrigger
+                            Binding="{Binding Keypad_3_Fancy}"
+                            Value="True">
                             <!-- If True -->
-                            <Setter Property="Background" Value="GreenYellow"/>
+                            <Setter
+                                Property="Background"
+                                Value="GreenYellow"/>
                         </DataTrigger>
-                        <DataTrigger Binding="{Binding ColumnDisabled4}" Value="True">
+                        <DataTrigger
+                            Binding="{Binding ColumnDisabled4}"
+                            Value="True">
                             <!-- If True -->
-                            <Setter Property="Background" Value="Transparent"/>
+                            <Setter
+                                Property="Background"
+                                Value="Transparent"/>
                         </DataTrigger>
                     </Style.Triggers>
                 </Style>
             </Button.Style>
             <StackPanel>
-                <Image Source="../../Resources/keypads/3_fancy.png"/>
+                <Image
+                    Source="../../Resources/keypads/3_fancy.png"/>
             </StackPanel>
         </Button>
-        <Button Width="90" Grid.Column="4" Grid.Row="6" Command="{Binding ButtonCommand}" CommandParameter="star_sol" Focusable="False">
+        <Button
+            Width="90"
+            Grid.Column="4"
+            Grid.Row="6"
+            Command="{Binding ButtonCommand}"
+            CommandParameter="star_sol"
+            Focusable="False">
             <Button.Style>
-                <Style TargetType="Button">
+                <Style
+                    TargetType="Button">
                     <!-- Default -->
-                    <Setter Property="Background" Value="LightGray"/>
-                    <Setter Property="Foreground" Value="Black"/>
+                    <Setter
+                        Property="Background"
+                        Value="LightGray"/>
+                    <Setter
+                        Property="Foreground"
+                        Value="Black"/>
                     <Style.Triggers>
-                        <DataTrigger Binding="{Binding Keypad_Star_Sol}" Value="True">
+                        <DataTrigger
+                            Binding="{Binding Keypad_Star_Sol}"
+                            Value="True">
                             <!-- If True -->
-                            <Setter Property="Background" Value="GreenYellow"/>
+                            <Setter
+                                Property="Background"
+                                Value="GreenYellow"/>
                         </DataTrigger>
-                        <DataTrigger Binding="{Binding ColumnDisabled4}" Value="True">
+                        <DataTrigger
+                            Binding="{Binding ColumnDisabled4}"
+                            Value="True">
                             <!-- If True -->
-                            <Setter Property="Background" Value="Transparent"/>
+                            <Setter
+                                Property="Background"
+                                Value="Transparent"/>
                         </DataTrigger>
                     </Style.Triggers>
                 </Style>
             </Button.Style>
             <StackPanel>
-                <Image Source="../../Resources/keypads/star_sol.png"/>
+                <Image
+                    Source="../../Resources/keypads/star_sol.png"/>
             </StackPanel>
         </Button>
-        <Button Width="90" Grid.Column="5" Grid.Row="0" Command="{Binding ButtonCommand}" CommandParameter="6" Focusable="False">
+        <Button
+            Width="90"
+            Grid.Column="5"
+            Grid.Row="0"
+            Command="{Binding ButtonCommand}"
+            CommandParameter="6"
+            Focusable="False">
             <Button.Style>
-                <Style TargetType="Button">
+                <Style
+                    TargetType="Button">
                     <!-- Default -->
-                    <Setter Property="Background" Value="LightGray"/>
-                    <Setter Property="Foreground" Value="Black"/>
+                    <Setter
+                        Property="Background"
+                        Value="LightGray"/>
+                    <Setter
+                        Property="Foreground"
+                        Value="Black"/>
                     <Style.Triggers>
-                        <DataTrigger Binding="{Binding Keypad_6}" Value="True">
+                        <DataTrigger
+                            Binding="{Binding Keypad_6}"
+                            Value="True">
                             <!-- If True -->
-                            <Setter Property="Background" Value="GreenYellow"/>
+                            <Setter
+                                Property="Background"
+                                Value="GreenYellow"/>
                         </DataTrigger>
-                        <DataTrigger Binding="{Binding ColumnDisabled5}" Value="True">
+                        <DataTrigger
+                            Binding="{Binding ColumnDisabled5}"
+                            Value="True">
                             <!-- If True -->
-                            <Setter Property="Background" Value="Transparent"/>
+                            <Setter
+                                Property="Background"
+                                Value="Transparent"/>
                         </DataTrigger>
                     </Style.Triggers>
                 </Style>
             </Button.Style>
             <StackPanel>
-                <Image Source="../../Resources/keypads/6.png"/>
+                <Image
+                    Source="../../Resources/keypads/6.png"/>
             </StackPanel>
         </Button>
-        <Button Width="90" Grid.Column="5" Grid.Row="1" Command="{Binding ButtonCommand}" CommandParameter="e" Focusable="False">
+        <Button
+            Width="90"
+            Grid.Column="5"
+            Grid.Row="1"
+            Command="{Binding ButtonCommand}"
+            CommandParameter="e"
+            Focusable="False">
             <Button.Style>
-                <Style TargetType="Button">
+                <Style
+                    TargetType="Button">
                     <!-- Default -->
-                    <Setter Property="Background" Value="LightGray"/>
-                    <Setter Property="Foreground" Value="Black"/>
+                    <Setter
+                        Property="Background"
+                        Value="LightGray"/>
+                    <Setter
+                        Property="Foreground"
+                        Value="Black"/>
                     <Style.Triggers>
-                        <DataTrigger Binding="{Binding Keypad_E}" Value="True">
+                        <DataTrigger
+                            Binding="{Binding Keypad_E}"
+                            Value="True">
                             <!-- If True -->
-                            <Setter Property="Background" Value="GreenYellow"/>
+                            <Setter
+                                Property="Background"
+                                Value="GreenYellow"/>
                         </DataTrigger>
-                        <DataTrigger Binding="{Binding ColumnDisabled5}" Value="True">
+                        <DataTrigger
+                            Binding="{Binding ColumnDisabled5}"
+                            Value="True">
                             <!-- If True -->
-                            <Setter Property="Background" Value="Transparent"/>
+                            <Setter
+                                Property="Background"
+                                Value="Transparent"/>
                         </DataTrigger>
                     </Style.Triggers>
                 </Style>
             </Button.Style>
             <StackPanel>
-                <Image Source="../../Resources/keypads/e.png"/>
+                <Image
+                    Source="../../Resources/keypads/e.png"/>
             </StackPanel>
         </Button>
-        <Button Width="90" Grid.Column="5" Grid.Row="2" Command="{Binding ButtonCommand}" CommandParameter="pound" Focusable="False">
+        <Button
+            Width="90"
+            Grid.Column="5"
+            Grid.Row="2"
+            Command="{Binding ButtonCommand}"
+            CommandParameter="pound"
+            Focusable="False">
             <Button.Style>
-                <Style TargetType="Button">
+                <Style
+                    TargetType="Button">
                     <!-- Default -->
-                    <Setter Property="Background" Value="LightGray"/>
-                    <Setter Property="Foreground" Value="Black"/>
+                    <Setter
+                        Property="Background"
+                        Value="LightGray"/>
+                    <Setter
+                        Property="Foreground"
+                        Value="Black"/>
                     <Style.Triggers>
-                        <DataTrigger Binding="{Binding Keypad_Pound}" Value="True">
+                        <DataTrigger
+                            Binding="{Binding Keypad_Pound}"
+                            Value="True">
                             <!-- If True -->
-                            <Setter Property="Background" Value="GreenYellow"/>
+                            <Setter
+                                Property="Background"
+                                Value="GreenYellow"/>
                         </DataTrigger>
-                        <DataTrigger Binding="{Binding ColumnDisabled5}" Value="True">
+                        <DataTrigger
+                            Binding="{Binding ColumnDisabled5}"
+                            Value="True">
                             <!-- If True -->
-                            <Setter Property="Background" Value="Transparent"/>
+                            <Setter
+                                Property="Background"
+                                Value="Transparent"/>
                         </DataTrigger>
                     </Style.Triggers>
                 </Style>
             </Button.Style>
             <StackPanel>
-                <Image Source="../../Resources/keypads/pound.png"/>
+                <Image
+                    Source="../../Resources/keypads/pound.png"/>
             </StackPanel>
         </Button>
-        <Button Width="90" Grid.Column="5" Grid.Row="3" Command="{Binding ButtonCommand}" CommandParameter="ae" Focusable="False">
+        <Button
+            Width="90"
+            Grid.Column="5"
+            Grid.Row="3"
+            Command="{Binding ButtonCommand}"
+            CommandParameter="ae"
+            Focusable="False">
             <Button.Style>
-                <Style TargetType="Button">
+                <Style
+                    TargetType="Button">
                     <!-- Default -->
-                    <Setter Property="Background" Value="LightGray"/>
-                    <Setter Property="Foreground" Value="Black"/>
+                    <Setter
+                        Property="Background"
+                        Value="LightGray"/>
+                    <Setter
+                        Property="Foreground"
+                        Value="Black"/>
                     <Style.Triggers>
-                        <DataTrigger Binding="{Binding Keypad_Ae}" Value="True">
+                        <DataTrigger
+                            Binding="{Binding Keypad_Ae}"
+                            Value="True">
                             <!-- If True -->
-                            <Setter Property="Background" Value="GreenYellow"/>
+                            <Setter
+                                Property="Background"
+                                Value="GreenYellow"/>
                         </DataTrigger>
-                        <DataTrigger Binding="{Binding ColumnDisabled5}" Value="True">
+                        <DataTrigger
+                            Binding="{Binding ColumnDisabled5}"
+                            Value="True">
                             <!-- If True -->
-                            <Setter Property="Background" Value="Transparent"/>
+                            <Setter
+                                Property="Background"
+                                Value="Transparent"/>
                         </DataTrigger>
                     </Style.Triggers>
                 </Style>
             </Button.Style>
             <StackPanel>
-                <Image Source="../../Resources/keypads/ae.png"/>
+                <Image
+                    Source="../../Resources/keypads/ae.png"/>
             </StackPanel>
         </Button>
-        <Button Width="90" Grid.Column="5" Grid.Row="4" Command="{Binding ButtonCommand}" CommandParameter="fork" Focusable="False">
+        <Button
+            Width="90"
+            Grid.Column="5"
+            Grid.Row="4"
+            Command="{Binding ButtonCommand}"
+            CommandParameter="fork"
+            Focusable="False">
             <Button.Style>
-                <Style TargetType="Button">
+                <Style
+                    TargetType="Button">
                     <!-- Default -->
-                    <Setter Property="Background" Value="LightGray"/>
-                    <Setter Property="Foreground" Value="Black"/>
+                    <Setter
+                        Property="Background"
+                        Value="LightGray"/>
+                    <Setter
+                        Property="Foreground"
+                        Value="Black"/>
                     <Style.Triggers>
-                        <DataTrigger Binding="{Binding Keypad_Fork}" Value="True">
+                        <DataTrigger
+                            Binding="{Binding Keypad_Fork}"
+                            Value="True">
                             <!-- If True -->
-                            <Setter Property="Background" Value="GreenYellow"/>
+                            <Setter
+                                Property="Background"
+                                Value="GreenYellow"/>
                         </DataTrigger>
-                        <DataTrigger Binding="{Binding ColumnDisabled5}" Value="True">
+                        <DataTrigger
+                            Binding="{Binding ColumnDisabled5}"
+                            Value="True">
                             <!-- If True -->
-                            <Setter Property="Background" Value="Transparent"/>
+                            <Setter
+                                Property="Background"
+                                Value="Transparent"/>
                         </DataTrigger>
                     </Style.Triggers>
                 </Style>
             </Button.Style>
             <StackPanel>
-                <Image Source="../../Resources/keypads/fork.png"/>
+                <Image
+                    Source="../../Resources/keypads/fork.png"/>
             </StackPanel>
         </Button>
-        <Button Width="90" Grid.Column="5" Grid.Row="5" Command="{Binding ButtonCommand}" CommandParameter="n" Focusable="False">
+        <Button
+            Width="90"
+            Grid.Column="5"
+            Grid.Row="5"
+            Command="{Binding ButtonCommand}"
+            CommandParameter="n"
+            Focusable="False">
             <Button.Style>
-                <Style TargetType="Button">
+                <Style
+                    TargetType="Button">
                     <!-- Default -->
-                    <Setter Property="Background" Value="LightGray"/>
-                    <Setter Property="Foreground" Value="Black"/>
+                    <Setter
+                        Property="Background"
+                        Value="LightGray"/>
+                    <Setter
+                        Property="Foreground"
+                        Value="Black"/>
                     <Style.Triggers>
-                        <DataTrigger Binding="{Binding Keypad_N}" Value="True">
+                        <DataTrigger
+                            Binding="{Binding Keypad_N}"
+                            Value="True">
                             <!-- If True -->
-                            <Setter Property="Background" Value="GreenYellow"/>
+                            <Setter
+                                Property="Background"
+                                Value="GreenYellow"/>
                         </DataTrigger>
-                        <DataTrigger Binding="{Binding ColumnDisabled5}" Value="True">
+                        <DataTrigger
+                            Binding="{Binding ColumnDisabled5}"
+                            Value="True">
                             <!-- If True -->
-                            <Setter Property="Background" Value="Transparent"/>
+                            <Setter
+                                Property="Background"
+                                Value="Transparent"/>
                         </DataTrigger>
                     </Style.Triggers>
                 </Style>
             </Button.Style>
             <StackPanel>
-                <Image Source="../../Resources/keypads/n.png"/>
+                <Image
+                    Source="../../Resources/keypads/n.png"/>
             </StackPanel>
         </Button>
-        <Button Width="90" Grid.Column="5" Grid.Row="6" Command="{Binding ButtonCommand}" CommandParameter="omega" Focusable="False">
+        <Button
+            Width="90"
+            Grid.Column="5"
+            Grid.Row="6"
+            Command="{Binding ButtonCommand}"
+            CommandParameter="omega"
+            Focusable="False">
             <Button.Style>
-                <Style TargetType="Button">
+                <Style
+                    TargetType="Button">
                     <!-- Default -->
-                    <Setter Property="Background" Value="LightGray"/>
-                    <Setter Property="Foreground" Value="Black"/>
+                    <Setter
+                        Property="Background"
+                        Value="LightGray"/>
+                    <Setter
+                        Property="Foreground"
+                        Value="Black"/>
                     <Style.Triggers>
-                        <DataTrigger Binding="{Binding Keypad_Omega}" Value="True">
+                        <DataTrigger
+                            Binding="{Binding Keypad_Omega}"
+                            Value="True">
                             <!-- If True -->
-                            <Setter Property="Background" Value="GreenYellow"/>
+                            <Setter
+                                Property="Background"
+                                Value="GreenYellow"/>
                         </DataTrigger>
-                        <DataTrigger Binding="{Binding ColumnDisabled5}" Value="True">
+                        <DataTrigger
+                            Binding="{Binding ColumnDisabled5}"
+                            Value="True">
                             <!-- If True -->
-                            <Setter Property="Background" Value="Transparent"/>
+                            <Setter
+                                Property="Background"
+                                Value="Transparent"/>
                         </DataTrigger>
                     </Style.Triggers>
                 </Style>
             </Button.Style>
             <StackPanel>
-                <Image Source="../../Resources/keypads/omega.png"/>
+                <Image
+                    Source="../../Resources/keypads/omega.png"/>
             </StackPanel>
         </Button>
     </Grid>

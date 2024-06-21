@@ -1,9 +1,9 @@
 using System;
 using System.Windows.Input;
-using BombGameSolver.Source.Reference;
+using BombGameSolver.Source.Helpers;
 using BombGameSolver.Source.ViewModel.Base;
 
-namespace BombGameSolver.Source.ViewModel; 
+namespace BombGameSolver.Source.ViewModel;
 
 public class SequWiresModuleVM : BaseViewModel {
     private readonly int[] _blaWireStatic = { 6, 5, 1, 5, 1, 4, 3, 2, 2 };

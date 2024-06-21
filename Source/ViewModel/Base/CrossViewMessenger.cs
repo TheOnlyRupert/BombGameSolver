@@ -3,7 +3,7 @@ using System;
 namespace BombGameSolver.Source {
     public class CrossViewMessenger {
         private static CrossViewMessenger _instance;
-        public static CrossViewMessenger Instance => _instance ?? (_instance = new CrossViewMessenger());
+        public static CrossViewMessenger Instance => _instance ??= new CrossViewMessenger();
 
         public event EventHandler<MessageValueChangedEventArgs> MessageValueChanged;
 
